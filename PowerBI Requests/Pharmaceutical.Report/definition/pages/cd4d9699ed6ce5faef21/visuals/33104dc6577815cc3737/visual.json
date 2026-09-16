@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "aa9cd0ed1fb7df6c2f7e",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "33104dc6577815cc3737",
   "position": {
-    "x": 2139.3034825870645,
-    "y": 606.96517412935316,
-    "z": 32500,
-    "height": 669.15422885572139,
-    "width": 992.53731343283573,
-    "tabOrder": 10000
+    "x": 2139.6406640891519,
+    "y": 465.28693806383137,
+    "z": 33001,
+    "height": 811.70495034493217,
+    "width": 1334.7282237889469,
+    "tabOrder": 32001
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                      "Entity": "Channel Axis"
                     }
                   },
                   "Property": "Channel"
                 }
               },
-              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Channel",
-              "nativeQueryRef": "Channel",
+              "queryRef": "Channel Axis.Channel",
+              "nativeQueryRef": "Channel1",
               "active": true
             }
           ]
@@ -41,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                          "Entity": "Channel Axis"
                         }
                       },
-                      "Property": "Channel sort"
+                      "Property": "SortOrder"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Channel sort)",
-              "nativeQueryRef": "Sum of Channel sort"
+              "queryRef": "Sum(Channel Axis.SortOrder)",
+              "nativeQueryRef": "Sum of SortOrder"
             }
           ]
         },
@@ -65,11 +65,11 @@
                       "Entity": "PH_WH DTbl_AllUserAndCYPValues"
                     }
                   },
-                  "Property": "CY selection (HY/FY)"
+                  "Property": "CY Selection With Total"
                 }
               },
-              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.CY selection (HY/FY)",
-              "nativeQueryRef": "CY selection (HY/FY)"
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.CY Selection With Total",
+              "nativeQueryRef": "CY Selection With Total"
             }
           ]
         }
@@ -78,13 +78,18 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Channel Axis"
+                      }
+                    },
+                    "Property": "SortOrder"
                   }
                 },
-                "Property": "Channel"
+                "Function": 0
               }
             },
             "direction": "Ascending"
@@ -367,6 +372,170 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#989CA3'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Channel Axis"
+                          }
+                        },
+                        "Property": "Channel"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Local Country Contribution'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#185678'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Channel Axis"
+                          }
+                        },
+                        "Property": "Channel"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Partnership'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#5C6068'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Channel Axis"
+                          }
+                        },
+                        "Property": "Channel"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Global HQ Contribution through Supply'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00BCFF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Channel Axis"
+                          }
+                        },
+                        "Property": "Channel"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Total'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -557,6 +726,113 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "2c542a5486c20700c909",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+              }
+            },
+            "Property": "CY Selection With Total"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1d92c937992ac7edac38",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Channel Axis"
+              }
+            },
+            "Property": "Channel"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Channel Axis",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "Channel"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Global HQ Contribution through Supply'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Local Country Contribution'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Partnership'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Total'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "b657256bebc34d820128",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Channel Axis"
+                  }
+                },
+                "Property": "SortOrder"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

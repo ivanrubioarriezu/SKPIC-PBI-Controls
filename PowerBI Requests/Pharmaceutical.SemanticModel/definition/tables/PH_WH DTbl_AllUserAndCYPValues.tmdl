@@ -532,6 +532,35 @@ table 'PH_WH DTbl_AllUserAndCYPValues'
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 0112e93e-cb28-452e-b6af-7edc71e45edf
 
+	measure 'CY Selection With Total' =
+			
+			
+			VAR CurrentChannel =
+			    SELECTEDVALUE('Channel Axis'[Channel])
+			
+			RETURN
+			IF(
+			    CurrentChannel = "Total",
+			    CALCULATE(
+			        [CY selection (HY/FY)],
+			        REMOVEFILTERS('Channel Axis'),
+			        TREATAS(
+			            VALUES('Channel Slicer'[Channel]),
+			            'PH_WH DTbl_AllUserAndCYPValues'[Channel]
+			        )
+			    ),
+			    CALCULATE(
+			        [CY selection (HY/FY)],
+			        TREATAS(
+			            {CurrentChannel},
+			            'PH_WH DTbl_AllUserAndCYPValues'[Channel]
+			        )
+			    )
+			)
+		lineageTag: 2d7e881f-2ace-44f8-9cc3-e120192c750f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Fiscal_Year
 		dataType: int64
 		formatString: 0

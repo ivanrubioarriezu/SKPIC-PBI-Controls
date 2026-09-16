@@ -35,3 +35,7 @@ relationship 5e49c07e-30d1-d0cd-7fb8-de6aa8099afc
 	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Product_Description
 	toColumn: 'Unique Product'.Product_Description
 
+relationship 7c917145-5609-24d1-6a02-f5b30b38ed1c
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Channel
+	toColumn: 'Channel Axis'.Channel
+

@@ -1,0 +1,47 @@
+table 'Channel Axis'
+	lineageTag: 19459304-03ed-426c-a979-b0655ea9bcdf
+
+	column Channel
+		lineageTag: f395978d-b324-4539-90ee-c38c41118463
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Channel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		formatString: 0
+		lineageTag: 5fea1d09-eaf9-4844-a93f-7d8b0103d824
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SortOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Channel Axis' = calculated
+		mode: import
+		source =
+				
+				/*DATATABLE(
+				    "Channel", STRING,
+				    {
+				        {"Local Country Contribution"},
+				        {"Global HQ Contribution through Supply"},
+				        {"Partnership"},
+				        {"Total"}
+				    }
+				)*/
+				
+				DATATABLE(
+				    "Channel", STRING,
+				    "SortOrder", INTEGER,
+				    {
+				        {"Local Country Contribution", 1},
+				        {"Global HQ Contribution through Supply", 2},
+				        {"Partnership", 3},
+				        {"Total", 4}
+				    }
+				)
+
+	annotation PBI_Id = 47dde832304c43a88ec444d76666064f
+

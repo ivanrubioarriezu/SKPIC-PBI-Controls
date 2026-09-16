@@ -31,6 +31,8 @@ ref table 'Unique Country'
 ref table 'Unique Product Category'
 ref table 'Unique Product'
 ref table Parameter
+ref table 'Channel Axis'
+ref table 'Channel Slicer'
 
 ref cultureInfo en-US
 
