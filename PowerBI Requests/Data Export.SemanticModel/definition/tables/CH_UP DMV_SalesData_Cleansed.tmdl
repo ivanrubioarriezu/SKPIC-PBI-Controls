@@ -1,0 +1,108 @@
+table 'CH_UP DMV_SalesData_Cleansed'
+	lineageTag: 30939f37-4921-42d5-adea-303d7930ab26
+
+	column Type
+		dataType: string
+		lineageTag: ac7a7598-baeb-43c9-b8f4-be84f1a8e408
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 0bb0ea46-bc63-43a1-9cf2-1cf7e2ab5752
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 2102f91a-89d6-498f-bad0-e4bda27b12d2
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 30681a08-90f0-4ac9-b520-2a85cc362ed2
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: 6670d41c-f142-4230-b9d4-dec0dd9bbbfb
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: 5d03320f-31d0-4f2c-9f93-ea8867679919
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Description
+		dataType: string
+		lineageTag: 3cbbda81-3d62-4b1a-a47c-186e7315be47
+		summarizeBy: none
+		sourceColumn: Material_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: 0173ac28-26ae-476c-ad95-70271c3daa48
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Last_Updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 94f37522-7acc-40d2-bcc9-a001b3887714
+		summarizeBy: none
+		sourceColumn: Last_Updated
+
+		variation Variation
+			isDefault
+			relationship: 2aa7f438-ee90-4989-8456-f93fe584cdd4
+			defaultHierarchy: LocalDateTable_9995564a-f980-42d0-89c7-ada8f97e8e89.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CH_UP DMV_SalesData_Cleansed' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    type                    AS Type,
+				    version                 AS Version,
+				    year                    AS Year,
+				    country                 AS Country,
+				    brand                   AS Brand,
+				    material                AS Material,
+				    material_description    AS Material_Description,
+				    quantity                AS Quantity,
+				    last_updated            AS Last_Updated
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_salesdata_cleansed_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

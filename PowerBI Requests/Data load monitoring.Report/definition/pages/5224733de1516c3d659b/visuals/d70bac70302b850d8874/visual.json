@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "d70bac70302b850d8874",
+  "position": {
+    "x": 471.18046816008052,
+    "y": 111.75434180719859,
+    "z": 10000,
+    "height": 75.509690410269314,
+    "width": 151.01938082053863,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/Overview",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "20pt",
+                      "color": "#666666",
+                      "lineHeight": "0",
+                      "position": "relative",
+                      "verticalAlign": "baseline",
+                      "scriptType": "sub",
+                      "bottom": "-0.25em"
+                    },
+                    "url": "https://app.powerbi.com/Redirect?action=OpenReport&appId=01d55994-c5e7-4212-b884-c16cd448e796&reportObjectId=781998fd-2077-4621-ad60-c70518667461&ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&pbi_source=appShareLink&portalSessionId=534ae8d8-16b5-4008-83de-ca69f0fc793a"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "114aa5cc08ca664be63b",
+  "displayName": "EV_Scope 3 Ren.Energy",
+  "displayOption": "FitToPage",
+  "height": 1600,
+  "width": 2885,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": -0.3
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "70D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "504777169e68736107ee",
+      "target": "c8d8de55d908d02e91bc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "504777169e68736107ee",
+      "target": "5667ca67ce8a0b660102",
+      "type": "NoFilter"
+    },
+    {
+      "source": "504777169e68736107ee",
+      "target": "dd7a88789d06ddeacbe3",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+table 'PH_WH DTbl_Target'
+	lineageTag: 891c6d23-a783-4001-9241-1c918d30aed4
+
+	measure '_ACT Reporting Year' = ```
+			
+			/*VAR _labelText  = SELECTEDVALUE ( 'PH_WH DTbl_Target'[Reporting Year Label] )  -- e.g., "2024"
+			VAR _targetYear = VALUE ( _labelText )                                         -- convert text → number
+			RETURN
+			IF (
+			    NOT ISBLANK ( _targetYear ),
+			    CALCULATE (
+			        SUM([User_YtD]),                                                           -- use your existing YTD measure
+			        KEEPFILTERS (
+			            TREATAS ( { _targetYear }, 'PH_WH DTbl_Target'[Year] )             -- apply virtual filter: Year = target
+			        )
+			    ),
+			    BLANK ())*/
+			 
+			
+			
+			VAR _labelTextFromAxisOrContext =
+			    -- Pick the label from the current context (e.g., the bar/category) and ignore (Blank)
+			    MAXX (
+			        FILTER (
+			            VALUES ( 'PH_WH DTbl_Target'[Reporting Year Label] ),
+			            NOT ISBLANK ( 'PH_WH DTbl_Target'[Reporting Year Label] )
+			        ),
+			        'PH_WH DTbl_Target'[Reporting Year Label]
+			    )
+			
+			VAR _yearFromLabel =
+			    VAR _v = VALUE ( _labelTextFromAxisOrContext )  -- "2024" -> 2024; returns BLANK() if non-numeric/blank
+			    RETURN IF ( ISBLANK ( _v ), BLANK (), _v )
+			
+			-- Fallback: when no single label is present in context (e.g., totals or no slicer),
+			-- choose the latest Year that has non-blank [User_YtD] and a non-blank label.
+			VAR _fallbackYearWithData =
+			    MAXX (
+			        FILTER (
+			            ALLSELECTED ( 'PH_WH DTbl_Target' ),
+			            NOT ISBLANK ( 'PH_WH DTbl_Target'[Reporting Year Label] ) &&
+			            NOT ISBLANK ( [User_YtD] )
+			        ),
+			        'PH_WH DTbl_Target'[Year]
+			    )
+			
+			VAR _targetYear = COALESCE ( _yearFromLabel, _fallbackYearWithData )
+			
+			RETURN
+			IF (
+			    NOT ISBLANK ( _targetYear ),
+			    CALCULATE (
+			        SUM([User_YtD]),  -- keep this as a MEASURE; if it's a column, use SUM('YourTable'[User_YtD])
+			
+			        -- Guard against (Blank) labels interfering
+			        KEEPFILTERS (
+			            FILTER (
+			                ALL ( 'PH_WH DTbl_Target'[Reporting Year Label] ),
+			                NOT ISBLANK ( 'PH_WH DTbl_Target'[Reporting Year Label] )
+			            )
+			        ),
+			
+			        -- Apply the virtual filter: Year = targetYear
+			        TREATAS ( { _targetYear }, 'PH_WH DTbl_Target'[Year] )
+			    ),
+			       BLANK ())
+			
+			
+			
+			
+			```
+		lineageTag: a434bea1-aa4b-44c1-a483-a06987dcffdd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_Target 2030' =
+			
+			100000000
+		formatString: 0
+		lineageTag: fe0063fa-e3d2-41b5-9586-e4c6a50b470c
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d5feca8-86f9-449f-bd1d-d07a1224a48e
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		lineageTag: efdbda53-a169-477e-b638-b68bef7ab5aa
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0d9a2aee-dc39-4d92-ac82-781482e40d21
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1b7396cd-f76d-44e4-8e68-28396a407ef6
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: 4422e96b-17ac-4044-a633-2853e63a87a1
+			defaultHierarchy: LocalDateTable_9c56350e-32f9-4a1d-9fef-879f9195bdfb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: afbacd82-95f9-4d5c-804e-778fa5501b2c
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: 4a919f7a-d03b-4a3f-b20f-126f2198daef
+			defaultHierarchy: LocalDateTable_c279285b-83d4-451e-ab24-e65dbcbad5f0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year Label' = ```
+			
+			VAR _currentYear   = YEAR ( TODAY() )
+			VAR _isFebOrLater  = ( MONTH ( TODAY() ) = 2 && DAY ( TODAY() ) >= 1 ) || ( MONTH ( TODAY() ) > 2 )
+			VAR _targetYear    = IF ( _isFebOrLater, _currentYear - 1, _currentYear - 2 )
+			RETURN
+			IF (
+			    'PH_WH DTbl_Target'[Year] = _targetYear,
+			    FORMAT ( 'PH_WH DTbl_Target'[Year], "0" ),   -- STR(...) equivalent (text output)
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 9f70c5df-f166-41b2-b14e-10faf14b30c0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column
+		type: calculated
+		lineageTag: 521f65a6-f46f-4297-8c7d-3c789669cf09
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	column 'ACT Base year label' = "BY 2019"
+		lineageTag: 9ee6f10b-974b-4b2d-93e6-7ca198134b6f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column 2'
+		type: calculated
+		lineageTag: cf41eda7-06a5-49eb-b193-066e81ad88d5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	column 'Baseline Year 2019' = ```
+			
+			'PH_WH DTbl_Target'[Year] = 2019
+			
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c0e849ef-e1a8-4285-a26d-104549fa1890
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY (Year Filter)' =
+			
+			
+			VAR _fy    = 'PH_WH DTbl_Target'[Year]
+			VAR _today = TODAY()
+			VAR _year  = YEAR(_today)
+			VAR _month = MONTH(_today)
+			VAR _isFebOrLater =
+			    (_month = 2 && DAY(_today) >= 1) || (_month > 2)   // Feb 1 or later
+			RETURN
+			IF (
+			       _fy < _year - 1
+			        || ( _isFebOrLater && _fy + 1 = _year ),
+			    1,
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: a9d9dd51-19ce-45cc-a123-6d31b26dd21e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual YTD' =
+			
+			/*IF (
+			    SELECTEDVALUE ( 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail'[FY (Year Filter)] ) = 1,
+			    [Farmer_Actual],
+			    BLANK()
+			)*/
+			IF (
+			    [FY (Year Filter)],
+			    [User_YtD],
+			    BLANK()
+			)
+		lineageTag: 58d6ac1f-58c4-475a-b23e-f77bb02a660b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ACT Baseline Year' =
+			
+			
+			IF (
+			    [Baseline Year 2019],    // TRUE/FALSE measure or condition
+			    [Actual YTD],            // Your existing measure
+			    BLANK() )                 // Equivalent to Tableau    BLANK()                  // Equivalent to Tableau's null
+		lineageTag: 0e5af6ee-92f2-4cf2-81f4-7091a45adffc
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Ytd
+		dataType: double
+		lineageTag: 39985315-f0aa-4b04-a698-e54e0fd8cdd3
+		summarizeBy: sum
+		sourceColumn: User_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Ytd
+		dataType: double
+		lineageTag: 0e8143d4-8276-4e38-a772-0b5f058a6905
+		summarizeBy: sum
+		sourceColumn: Cyp_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'PH_WH DTbl_Target' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    target AS Target,
+				    user_ytd AS User_Ytd,
+				    cyp_ytd AS Cyp_Ytd,
+				    is_preliminary AS Is_Preliminary,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_target_intfc_view
+				where is_preliminary = FALSE"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

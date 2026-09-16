@@ -1,0 +1,150 @@
+relationship f3a9f4ad-fe13-4b49-bc0a-a6aad6be36c6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI'.Valid_From
+	toColumn: LocalDateTable_bcae9e0d-076c-4c57-8d45-28fc90fde0cb.Date
+
+relationship 462a9b09-a1e9-4d8d-baf8-841b80989e23
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI'.Valid_To
+	toColumn: LocalDateTable_cac93a84-4bd7-48a1-b6d3-5a7f9e16a771.Date
+
+relationship f154c533-dcac-4918-a03d-87cbce000035
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI'.Fiscal_Date
+	toColumn: LocalDateTable_a33b7b45-80c3-4b23-b979-e840a981c9bd.Date
+
+relationship d40d65de-6aff-4adf-81bb-6d362d5cf820
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP LTbl_ParameterChangeResults'.valid_from_current
+	toColumn: LocalDateTable_2d01965a-1895-4bd0-8388-b744d1ced4f1.Date
+
+relationship a97704bf-d24b-40ce-8dff-a00c03f5b777
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP LTbl_ParameterChangeResults'.valid_from_previous_version
+	toColumn: LocalDateTable_6babd355-4333-40fb-8984-ea817b39e1cd.Date
+
+relationship 2aa7f438-ee90-4989-8456-f93fe584cdd4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMV_SalesData_Cleansed'.Last_Updated
+	toColumn: LocalDateTable_9995564a-f980-42d0-89c7-ada8f97e8e89.Date
+
+relationship a2ba41b6-ea18-4cc2-bfc3-5d520a06c2b2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMV_SalesData_Correction'.Last_Updated
+	toColumn: LocalDateTable_c27a6d5f-9ed6-48c0-96ef-0dd0f2568536.Date
+
+relationship 874ce558-48c9-4b80-853a-28dc8725c222
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMV_Scope_Brand'.Last_Updated
+	toColumn: LocalDateTable_2dfe1656-580d-4d43-ad25-b42dc2563c5a.Date
+
+relationship 57eb30a9-617c-4249-b482-319b5b9c2f3a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMV_Scope_SKU'.Last_Updated
+	toColumn: LocalDateTable_45f588c6-ddee-4aa0-b47d-450786672e3f.Date
+
+relationship 26ee277b-ebcc-45b3-9096-bd8b35b8fad6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMV_SKU_Type'.Last_Updated
+	toColumn: LocalDateTable_e2159750-829d-4280-adcf-f65720909bef.Date
+
+relationship AutoDetected_152124e2-c5cb-4579-b365-5a4514b3d73a
+	fromColumn: 'CH_UP DMV_SalesData_Cleansed'.Brand
+	toColumn: 'CH_UP DMV_Scope_Brand'.Brand
+
+relationship AutoDetected_05b9d34e-1802-4446-b238-04896d5f06c1
+	fromColumn: 'CH_UP DMV_SKU_Type'.SKU_Type
+	toColumn: 'CH_UP DMV_Scope_SKU'.SKU_Type
+
+relationship 2bf9cd6e-096f-49c1-bd12-021774fe93d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'stored procedure CS_SHF DMTbl_SHF'.Valid_From
+	toColumn: LocalDateTable_797302ec-a47f-4673-a3cf-b591fdc30015.Date
+
+relationship 98b2ec76-11a9-4ee1-9628-acf76518c1a2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'stored procedure CS_SHF DMTbl_SHF'.Valid_To
+	toColumn: LocalDateTable_d5c65de6-bf51-497e-89dc-af989a775439.Date
+
+relationship 25e495bc-c77f-499c-89ea-2d2081a2ad5c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'stored procedure CS_SHF DMTbl_SHF'.Fiscal_Date
+	toColumn: LocalDateTable_a5ed1b83-fb81-4192-9bd0-0596fe8ec542.Date
+
+relationship dd31f35b-9392-4f0a-908d-fdbdb5fe2d14
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF LTbl_ParameterChangeResults'.valid_from_current
+	toColumn: LocalDateTable_045038a1-f7f9-4f66-b524-ad29990fe713.Date
+
+relationship b2ea6cee-1d22-4704-9128-5680cb756183
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF LTbl_ParameterChangeResults'.valid_from_previous_version
+	toColumn: LocalDateTable_69647749-7bb7-4aa3-9bc0-86c7d019da2e.Date
+
+relationship 4f2a2e97-6330-4bd3-a39a-29badf81eb23
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Fiscal_Date
+	toColumn: LocalDateTable_08ae03be-63af-41f1-9161-2d76d7b83d09.Date
+
+relationship fd5fdff4-045d-4a85-b09e-782a805aacc5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Valid_From
+	toColumn: LocalDateTable_30e30519-39c2-44a6-bbeb-c2290d4f5891.Date
+
+relationship 8928880b-7659-4791-a25c-be7df49a9389
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Valid_To
+	toColumn: LocalDateTable_3b46964c-b4fc-47ae-b42a-fc3e313bbee4.Date
+
+relationship cf96f6fa-826a-402a-8409-a1ff9df96ed2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DMV_Blacklist'.Last_Updated
+	toColumn: LocalDateTable_0bc2a5da-4ec6-418b-adbf-fa280fc61567.Date
+
+relationship 927aaf65-8e41-42d7-9b6e-4c698b26324a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DMV_Missing_Sectors'.Last_Updated
+	toColumn: LocalDateTable_920cd70f-8ca2-43eb-8d71-51924eed363d.Date
+
+relationship 93e61bfe-a60c-46bc-a953-469a7befd033
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DMV_SalesData'.Last_Updated
+	toColumn: LocalDateTable_f9af4884-22c7-441d-acfa-6f232fcf7cab.Date
+
+relationship f935bf22-e30f-4971-b053-e1cdc6446149
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DMV_SalesData_Cleansed'.Last_Updated
+	toColumn: LocalDateTable_0404df9c-9601-42df-9649-31fdc0304cbb.Date
+
+relationship 68df35a9-780b-4e81-91af-ff83dc02cae7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH LTbl_ParameterChangeResults'.valid_from_current
+	toColumn: LocalDateTable_6c1e4939-6358-4791-afce-a40c600ef0cc.Date
+
+relationship cdd713c8-4f80-443d-9f2c-c9004d9969e6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH LTbl_ParameterChangeResults'.valid_from_previous_version
+	toColumn: LocalDateTable_3e2f07c9-1dc6-4a3b-ace8-cefd4f53bbb4.Date
+
+relationship 1699fab1-1eff-4534-bf43-c7ccc25b634e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DMV_Whitelist'.Last_Updated
+	toColumn: LocalDateTable_b65bcb34-2c2c-41ad-b53b-336020bad319.Date
+
+relationship AutoDetected_aaaa24c0-147e-4c38-bc13-2206b49f09a1
+	fromColumn: 'PH_WH DMF_SalesDataAdapted_Extract'.material
+	toColumn: 'PH_WH DMV_Whitelist'.Material
+
+relationship AutoDetected_3dce63da-4fec-4b72-850e-e91511bc4296
+	fromColumn: 'PH_WH DMF_SalesDataDistributed_Extract'.material
+	toColumn: 'PH_WH DMV_Whitelist'.Material
+
+relationship AutoDetected_85304fff-9530-408a-867e-1e84e894aaaf
+	fromColumn: 'PH_WH DMF_SalesDataBlacklist_Extract (2)'.material
+	toColumn: 'PH_WH DMV_Whitelist'.Material
+
+relationship 883ef664-a84f-4e68-b25a-e517375da74c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMV_SalesData'.LAST_UPDATED
+	toColumn: LocalDateTable_27a4feb6-ec2e-4b64-873a-6f878f3c82e6.Date
+

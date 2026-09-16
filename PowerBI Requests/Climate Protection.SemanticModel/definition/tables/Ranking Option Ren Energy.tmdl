@@ -1,0 +1,26 @@
+table 'Ranking Option Ren Energy'
+	lineageTag: eb3cc354-66e7-4476-acfe-47efcf4e4a0d
+
+	measure 'Ranking Option Ren Energy Value' = SELECTEDVALUE('Ranking Option Ren Energy'[Ranking Option Ren Energy])
+		formatString: 0
+		lineageTag: 5aabf80d-b4f0-41fe-80d0-966d3faec391
+
+	column 'Ranking Option Ren Energy'
+		formatString: 0
+		lineageTag: 026e776c-57bb-4ab8-8240-6b595f09303a
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Ranking Option Ren Energy' = calculated
+		mode: import
+		source = GENERATESERIES(0, 20, 1)
+
+	annotation PBI_Id = 8713c55e29da40bf841b77aa2f01cd86
+

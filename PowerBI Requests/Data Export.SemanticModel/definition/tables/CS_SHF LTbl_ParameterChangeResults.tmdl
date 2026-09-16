@@ -1,0 +1,160 @@
+table 'CS_SHF LTbl_ParameterChangeResults'
+	lineageTag: 1b6ff0bb-abed-42b8-a7be-dbd6eeb88e20
+
+	column Affected_Table
+		dataType: string
+		lineageTag: 1e566cb4-2701-4fbf-af61-512486b89853
+		summarizeBy: none
+		sourceColumn: Affected_Table
+
+		annotation SummarizationSetBy = Automatic
+
+	column Info
+		dataType: string
+		lineageTag: cbe75baa-61d2-4294-ae25-284b2dc7d2c5
+		summarizeBy: none
+		sourceColumn: Info
+
+		annotation SummarizationSetBy = Automatic
+
+	column Affected_Parameter
+		dataType: string
+		lineageTag: 84cc55ef-2c73-4b41-802e-2cb2933a2a83
+		summarizeBy: none
+		sourceColumn: Affected_Parameter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 30d6d423-f2b3-4ac8-b3b0-b5254cdf2cbe
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: c3b7d9fd-2df0-4f3f-ae05-b23b4bd38020
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 2d7c9e1a-cffc-43fe-9b78-5da0f28e501f
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Crop_Main_Group
+		dataType: string
+		lineageTag: b68e30fb-f7ca-4398-a990-ceb7d1a44eaa
+		summarizeBy: none
+		sourceColumn: Crop_Main_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 60e6df3d-c199-4978-828d-7017c2e25004
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Other_Parameters
+		dataType: string
+		lineageTag: a8fb7e95-9f44-4eb3-bad7-53505bc88b9c
+		summarizeBy: none
+		sourceColumn: Other_Parameters
+
+		annotation SummarizationSetBy = Automatic
+
+	column Current_Version
+		dataType: string
+		lineageTag: dfdaf858-4b12-4aaf-9246-d769d6e52e2c
+		summarizeBy: none
+		sourceColumn: Current_Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column Previous_Version
+		dataType: string
+		lineageTag: 1d4b013c-eff6-4322-84b3-16f0e5d0b974
+		summarizeBy: none
+		sourceColumn: Previous_Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column diff
+		dataType: double
+		lineageTag: 75fa8f30-7a9e-4d9b-bf91-ee023ecdc0a7
+		summarizeBy: sum
+		sourceColumn: diff
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column valid_from_current
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3af3de9e-3ef6-41e1-94c6-d7623dd10654
+		summarizeBy: none
+		sourceColumn: valid_from_current
+
+		variation Variation
+			isDefault
+			relationship: dd31f35b-9392-4f0a-908d-fdbdb5fe2d14
+			defaultHierarchy: LocalDateTable_045038a1-f7f9-4f66-b524-ad29990fe713.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column valid_from_previous_version
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 14029263-7480-43a9-9816-db83d26605e5
+		summarizeBy: none
+		sourceColumn: valid_from_previous_version
+
+		variation Variation
+			isDefault
+			relationship: b2ea6cee-1d22-4704-9128-5680cb756183
+			defaultHierarchy: LocalDateTable_69647749-7bb7-4aa3-9bc0-86c7d019da2e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CS_SHF LTbl_ParameterChangeResults' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    affected_table                AS Affected_Table,
+				    info                          AS Info,
+				    affected_parameter            AS Affected_Parameter,
+				    year                          AS Year,
+				    country                       AS Country,
+				    region                        AS Region,
+				    crop_main_group               AS Crop_Main_Group,
+				    product                       AS Product,
+				    other_parameters              AS Other_Parameters,
+				    current_version               AS Current_Version,
+				    previous_version              AS Previous_Version,
+				    diff                          AS diff,
+				    valid_from_current            AS valid_from_current,
+				    valid_from_previous_version   AS valid_from_previous_version
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_parameter_change_results_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

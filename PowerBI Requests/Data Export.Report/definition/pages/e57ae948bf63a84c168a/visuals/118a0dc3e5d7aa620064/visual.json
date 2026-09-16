@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "118a0dc3e5d7aa620064",
+  "position": {
+    "x": 23.143683702989392,
+    "y": 798.457087753134,
+    "z": 10000,
+    "height": 1000.9643201542912,
+    "width": 2950.8196721311474,
+    "tabOrder": 17000
+  },
+  "visualGroup": {
+    "displayName": "CH Sale data",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

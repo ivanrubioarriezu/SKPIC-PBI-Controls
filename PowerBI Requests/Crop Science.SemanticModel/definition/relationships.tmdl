@@ -1,0 +1,56 @@
+relationship 2232e649-b35b-42b3-a1d8-301af8f7dad0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CS_Actual.Valid_From
+	toColumn: LocalDateTable_ca9cefff-56b9-4d6d-8721-432cead41cbc.Date
+
+relationship b9ba4fbd-5e44-4703-a486-68f2377143f4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CS_Actual.Valid_To
+	toColumn: LocalDateTable_83c5f5e4-6ff5-4d58-a8a5-cfe9096d3a18.Date
+
+relationship 61b35458-6a80-4324-a39c-b959d03be52d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CS_Actual.Fiscal_Date
+	toColumn: LocalDateTable_29876631-3c56-4515-a6ff-a3e17d3d9ce8.Date
+
+relationship e3bcb041-6202-4f78-90d4-5382ccae64ff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CS_Target.Valid_From
+	toColumn: LocalDateTable_94c35235-a928-4252-82b7-3d5636da88f9.Date
+
+relationship 512dc55e-5a86-4c80-b871-fa0bdc27147d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CS_Target.Valid_To
+	toColumn: LocalDateTable_c91f5169-20f3-459f-9781-113bfc094a8d.Date
+
+relationship AutoDetected_57ea15f4-cd21-416a-b8e3-8dd181dfd084
+	toCardinality: many
+	fromColumn: CS_Actual.Fiscal_Year
+	toColumn: CS_Target.Fiscal_Year
+
+relationship 54d0de60-007c-dd07-f216-87c510c53f24
+	fromColumn: CS_Actual.Crop_Main_Group_Description
+	toColumn: 'Unique Crop main group'.Crop_Main_Group_Description
+
+relationship dbfd75fc-6c45-6951-d0d1-3b3ecf9ad00d
+	fromColumn: CS_Actual.Country-Indication
+	toColumn: 'Unique Country-Indication'.Country-Indication
+
+relationship 71d733ec-47fd-4c20-d33e-247d4ac0e919
+	fromColumn: CS_Actual.Country-Crop-Indication
+	toColumn: 'Unique Country-Crop-Indication'.Country-Crop-Indication
+
+relationship debb975d-53bd-404c-7b0d-ec2004235c9a
+	fromColumn: CS_Actual.Indication
+	toColumn: 'Unique Indication'.Indication
+
+relationship 2b663055-f7f5-0325-97f9-480750ea20f9
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Unique Cluster'.Cluster
+	toColumn: CS_Actual.Cluster
+
+relationship a28c40b1-03f3-8b28-9362-e44f519f9e9d
+	fromColumn: CS_Actual.Country
+	toColumn: 'Unique Country'.Country
+

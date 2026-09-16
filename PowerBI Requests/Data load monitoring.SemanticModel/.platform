@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Data load monitoring"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ce3da90a-fe60-4a57-a1a4-248f20047a5a"
+  }
+}

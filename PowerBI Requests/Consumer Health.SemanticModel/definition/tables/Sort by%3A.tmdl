@@ -1,0 +1,49 @@
+table 'Sort by:'
+	lineageTag: c70f0d4d-6582-4432-a282-61f13652305a
+
+	column 'Sort by:'
+		lineageTag: ac2cdc43-e1f9-47a2-bf00-7c7c7c7dd552
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Sort by: Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Sort by: Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sort by: Fields'
+		isHidden
+		lineageTag: fbff9c63-2d5d-458e-a0a6-0785511cefbc
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Sort by: Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sort by: Order'
+		isHidden
+		formatString: 0
+		lineageTag: 21007fd0-aca2-4b53-8e64-85ebc7e4e65e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sort by:' = calculated
+		mode: import
+		source =
+				{
+				    ("ACT CY", NAMEOF('CH_UP DMT_KPI'[GMV_CY_Selection (HY/FY)]), 0),
+				    ("ACT PY", NAMEOF('CH_UP DMT_KPI'[GMV_PY_Selection (HY/FY)]), 1),
+				    ("ACT BY 2019", NAMEOF('CH_UP DMT_KPI'[GMV_BY_Selection (HY/FY)]), 2)
+				}
+
+	annotation PBI_Id = 0843fba5e3b34718a5a9487a65a22fc1
+

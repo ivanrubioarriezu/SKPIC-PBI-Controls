@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "1b3940b4b416e16aa5b0",
+  "position": {
+    "x": 699.98480935743589,
+    "y": 119.90480530659781,
+    "z": 47000,
+    "height": 68.054078687528488,
+    "width": 304.62301888703229,
+    "tabOrder": 45000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "/Crop Science",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "28pt",
+                      "color": "#666666",
+                      "lineHeight": "0",
+                      "position": "relative",
+                      "verticalAlign": "baseline",
+                      "scriptType": "sub",
+                      "bottom": "-0.25em"
+                    },
+                    "url": "https://app.powerbi.com/Redirect?action=OpenReport&appId=01d55994-c5e7-4212-b884-c16cd448e796&reportObjectId=e65f8de6-d4c7-43f3-b1a2-f728664b163b&ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&pbi_source=appShareLink&portalSessionId=534ae8d8-16b5-4008-83de-ca69f0fc793a"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

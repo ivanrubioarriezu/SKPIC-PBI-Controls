@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "b313fe8a85e3da6c6410",
+  "position": {
+    "x": 6.52010289006683,
+    "y": 294.44444444444446,
+    "z": 16000,
+    "height": 1462.6543209876543,
+    "width": 1369.7225091778769,
+    "tabOrder": 14000
+  },
+  "visualGroup": {
+    "displayName": "PRD",
+    "groupMode": "ScaleMode"
+  }
+}

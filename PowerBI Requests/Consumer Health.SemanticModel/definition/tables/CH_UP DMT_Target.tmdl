@@ -1,0 +1,295 @@
+table 'CH_UP DMT_Target'
+	lineageTag: fbb3a1c8-64c8-47d8-9de9-4319bebabbc2
+
+	measure M_FY_Year_Filter =
+			
+			VAR CurrentYear = YEAR(TODAY())
+			VAR CurrentMonth = MONTH(TODAY())
+			VAR CurrentDay = DAY(TODAY())
+			RETURN
+			IF (
+			    SELECTEDVALUE('CH_UP DMT_Target'[Year]) + 1 < CurrentYear ||
+			    (
+			        (
+			            (CurrentDay >= 1 && CurrentMonth = 2) || CurrentMonth > 2
+			        ) &&
+			        SELECTEDVALUE('CH_UP DMT_Target'[Year])+ 1 = CurrentYear
+			    ),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 125bb5ec-df2d-41d9-a92a-fbb1bfac9e74
+
+	measure M_ACT =
+			
+			IF (
+			    [M_FY_Year_Filter] = 1,
+			    [Actual_Value]/1000000,
+			    BLANK()
+			)
+		lineageTag: 7151f13f-2123-4a8b-a85a-78427621177c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Actual_Value = SUM('CH_UP DMT_Target'[ActualYear])
+		lineageTag: 7c245495-83d9-4474-90c6-dd8dbceab1c0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_ACT_India = ```
+			
+			 VAR _ActIndia= CALCULATE(
+			    [M_ACT],
+			    'CH_UP DMT_Target'[_Country] = "ACT Reach India"
+			)
+			
+			return
+			VAR _Year = MAX ( 'CH_UP DMT_Target'[Year] )
+			RETURN
+			IF (
+			    _Year <= 2024,
+			    _ActIndia,
+			    BLANK()
+			)
+			```
+		lineageTag: b6138825-a94c-45fa-816f-608f3b3c9772
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_ACT_Excl_India =
+			
+			VAR _Exclindia=CALCULATE(
+			    [M_ACT],
+			    'CH_UP DMT_Target'[_Country] = "ACT Reach Excl. India"
+			)
+			
+			return
+			VAR _Year = MAX ( 'CH_UP DMT_Target'[Year] )
+			RETURN
+			IF (
+			    _Year <= 2024,
+			   _Exclindia,
+			    BLANK()
+			)
+		lineageTag: 8369ae6c-7e2a-44e8-aa3a-ab65a62995c9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_ACT_By_Country =
+			
+			SUMX(
+			    FILTER(
+			        'CH_UP DMT_Target',
+			        NOT(ISBLANK('CH_UP DMT_Target'[_Country]))
+			    ),
+			    'CH_UP DMT_Target'[M_ACT]
+			)
+		lineageTag: e5175feb-4e86-4540-8031-22429bbd854c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'E_FY (Year Filter) Target' =
+			
+			VAR YearPlus1 = MAX('CH_UP DMT_Target'[Year]) + 1
+			VAR CurrentYear = YEAR(TODAY())
+			VAR CurrentMonth = MONTH(TODAY())
+			VAR CurrentDay = DAY(TODAY())
+			
+			RETURN
+			IF(
+			    YearPlus1 < CurrentYear ||
+			    (
+			        ((CurrentDay >= 29 && CurrentMonth = 1) || CurrentMonth > 1) &&
+			        YearPlus1 = CurrentYear
+			    ),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 350e0925-c287-41ca-a74c-d0c47c2bb0da
+
+	measure E_ACT =
+			
+			IF(
+			    [E_FY (Year Filter)] = 1,
+			    'CH_UP DMT_Target'[Actual_Value],
+			    BLANK()
+			)
+		lineageTag: 07d323dc-6c07-411a-ac11-a87247534f90
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure M_ACT_Combined_Visual = ```
+			
+			VAR _Year = SELECTEDVALUE ( 'CH_UP DMT_Target'[Year] )
+			RETURN
+			IF (
+			    _Year >= 2025,
+			    CALCULATE (
+			        [M_ACT],
+			        'CH_UP DMT_Target'[_Country]
+			            IN {
+			                "ACT Reach India",
+			                "ACT Reach Excl. India"
+			            }
+			    )
+			)
+			
+			/*VAR _Year =
+			    MAX ( 'CH_UP DMT_Target'[Year] )
+			RETURN
+			IF (
+			    _Year >= 2025,
+			    [M_ACT_India] + [M_ACT_Excl_India],
+			    BLANK ()
+			)*/
+			
+			
+			```
+		lineageTag: dcf2745f-15c9-4927-8f86-e00b2df3806c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure zero = 0
+		formatString: 0
+		lineageTag: 1b183561-6ecd-44e5-8458-87dbbae81212
+
+	measure 'Target in Millions' =
+			
+			Sum('CH_UP DMT_Target'[Target]) / 1000000
+		lineageTag: b4ed541d-5db2-4315-83be-069c3a6562e6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _Country =
+			
+			SWITCH(
+			    TRUE(),
+			    'CH_UP DMT_Target'[GeographicalLocation] = "India", "ACT Reach India",
+			    'CH_UP DMT_Target'[GeographicalLocation] = "World excl. India", "ACT Reach Excl. India",
+			    BLANK()
+			)
+		lineageTag: d1f74cf5-ab38-400d-abd4-20e5ecdb6ada
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: 230060fc-014e-4248-bfe4-d3905a5cf369
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b32da2b7-4bc2-42b0-a278-10de7a5ff6ea
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeographicalLocation
+		dataType: string
+		lineageTag: bb99d840-bdbb-49b2-8272-8cd68ebe747f
+		summarizeBy: none
+		sourceColumn: GeographicalLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		lineageTag: 58e1cb17-985b-489a-bb04-03d94a01af3b
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TargetYtd
+		dataType: double
+		lineageTag: 305a5c88-dd31-46c6-990d-f16c977f1fc4
+		summarizeBy: sum
+		sourceColumn: TargetYtd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ActualYear
+		dataType: double
+		lineageTag: 4517096d-ce8c-44d0-82fa-ecb88eb640a4
+		summarizeBy: sum
+		sourceColumn: ActualYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsPreliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 18e012b1-28f9-45d8-b58e-6458e72e7f42
+		summarizeBy: none
+		sourceColumn: IsPreliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4f2bf04a-3e64-4874-8161-b44fda22f4e5
+		summarizeBy: none
+		sourceColumn: ValidFrom
+
+		variation Variation
+			isDefault
+			relationship: 81fdbf82-3c26-46bb-bb6f-c229df42e67b
+			defaultHierarchy: LocalDateTable_ac35aa8b-1ffd-4396-98b5-2ac19155bee6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidTo
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 246e7551-d6b2-49dd-9c71-2e67e8d4de45
+		summarizeBy: none
+		sourceColumn: ValidTo
+
+		variation Variation
+			isDefault
+			relationship: 1e894ae8-3460-4608-b41e-2a1a71c1cb79
+			defaultHierarchy: LocalDateTable_a33a21a0-9420-4214-a52e-3df4698bbc8d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CH_UP DMT_Target' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    division AS Division,
+				    year AS Year,
+				    geographical_location AS GeographicalLocation,
+				    target AS Target,
+				    target_ytd AS TargetYtd,
+				    actual_year AS ActualYear,
+				    is_preliminary AS IsPreliminary,
+				    valid_from AS ValidFrom,
+				    valid_to AS ValidTo
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_target_intfc_view
+				WHERE is_preliminary = FALSE"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

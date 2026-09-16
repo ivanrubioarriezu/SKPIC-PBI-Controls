@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "7a0a4345062a5eb8e377",
+  "position": {
+    "x": 21.862709580267808,
+    "y": 750,
+    "z": 11000,
+    "height": 1012.535592530914,
+    "width": 2955.48078625819,
+    "tabOrder": 14000
+  },
+  "visualGroup": {
+    "displayName": "Diff 3 Filters",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

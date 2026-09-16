@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "02922a3a36b33d6a12d3",
+  "position": {
+    "x": 843.01963317999252,
+    "y": 112.2011687621746,
+    "z": 9000,
+    "height": 71.400743757747478,
+    "width": 244.80255002656276,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/ Pharmaceuticals",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "20pt",
+                      "color": "#666666",
+                      "lineHeight": "0",
+                      "position": "relative",
+                      "verticalAlign": "baseline",
+                      "scriptType": "sub",
+                      "bottom": "-0.25em"
+                    },
+                    "url": "https://app.powerbi.com/Redirect?action=OpenReport&appId=01d55994-c5e7-4212-b884-c16cd448e796&reportObjectId=c526e40e-e713-4e70-9f96-9df16e78207d&ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&pbi_source=appShareLink&portalSessionId=534ae8d8-16b5-4008-83de-ca69f0fc793a"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

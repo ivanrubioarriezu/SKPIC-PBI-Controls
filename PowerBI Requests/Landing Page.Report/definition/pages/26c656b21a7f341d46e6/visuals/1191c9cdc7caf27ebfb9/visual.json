@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "1191c9cdc7caf27ebfb9",
+  "position": {
+    "x": 1047.7714285714287,
+    "y": 1599.0857142857144,
+    "z": 25000,
+    "height": 54.857142857142861,
+    "width": 811.88571428571436,
+    "tabOrder": 23000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Offset remaining scope 1&2 emissions",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "28pt",
+                      "color": "#898989"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

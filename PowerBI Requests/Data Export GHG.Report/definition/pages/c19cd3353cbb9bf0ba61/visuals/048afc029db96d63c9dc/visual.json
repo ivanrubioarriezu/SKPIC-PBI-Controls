@@ -1,0 +1,364 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "048afc029db96d63c9dc",
+  "position": {
+    "x": 0,
+    "y": 130.68154265188747,
+    "z": 5500,
+    "height": 872.10908446962981,
+    "width": 2942.7306534443064,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "fiscal_date"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.fiscal_date",
+              "nativeQueryRef": "fiscal_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "division"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.division",
+              "nativeQueryRef": "division"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "country"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.country",
+              "nativeQueryRef": "country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "site"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.site",
+              "nativeQueryRef": "site"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "unit"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.unit",
+              "nativeQueryRef": "unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "scope"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.scope",
+              "nativeQueryRef": "scope"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "Preliminary / Final Data"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.Preliminary / Final Data",
+              "nativeQueryRef": "Preliminary / Final Data"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "Actual scope1&2"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.Actual scope1&2",
+              "nativeQueryRef": "Actual",
+              "displayName": "Actual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "Targets scope1&2"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.Targets scope1&2",
+              "nativeQueryRef": "Targets scope1&2"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CORP_GHG DTbl_Scope1&2"
+                  }
+                },
+                "Property": "Division"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "22D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "480.24027787977803D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.Preliminary / Final Data"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "253.04203130885094D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.fiscal_date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "363.5754539851254D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.division"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "414.9104484187628D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.site"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129.20887157615977D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.unit"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "533.656734650468D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.scope"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "293.5522436047719D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.Actual scope1&2"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "abdb59b1ef52386589a8"
+}

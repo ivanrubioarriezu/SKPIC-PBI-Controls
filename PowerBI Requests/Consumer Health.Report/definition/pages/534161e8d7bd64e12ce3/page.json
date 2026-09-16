@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "534161e8d7bd64e12ce3",
+  "displayName": "Page 1",
+  "displayOption": "ActualSize",
+  "height": 350,
+  "width": 600,
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

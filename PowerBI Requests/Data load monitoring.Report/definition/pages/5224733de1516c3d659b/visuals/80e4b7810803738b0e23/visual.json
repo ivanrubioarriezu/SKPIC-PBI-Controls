@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "80e4b7810803738b0e23",
+  "position": {
+    "x": 839.1798366230413,
+    "y": 111,
+    "z": 12000,
+    "height": 70,
+    "width": 243.05028102688743,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/ Pharmaceuticals",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "20pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/Redirect?action=OpenReport&appId=01d55994-c5e7-4212-b884-c16cd448e796&reportObjectId=c526e40e-e713-4e70-9f96-9df16e78207d&ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&pbi_source=appShareLink&portalSessionId=534ae8d8-16b5-4008-83de-ca69f0fc793a"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "8387908d16d0d49c4fea",
+  "position": {
+    "x": 2468,
+    "y": 288,
+    "z": 12000,
+    "height": 88,
+    "width": 180,
+    "tabOrder": 16000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/Data ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/Redirect?action=OpenReport&appId=01d55994-c5e7-4212-b884-c16cd448e796&reportObjectId=c0be656f-9b98-40af-88b7-38c060e7e8f2&ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&pbi_source=appShareLink&portalSessionId=534ae8d8-16b5-4008-83de-ca69f0fc793a"
+                  },
+                  {
+                    "value": "                                       "
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt"
+                    },
+                    "url": "https://app.powerbi.com/groups/6f6bf644-33d2-4217-adb5-44dfe40e5e31/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/5e135f6e6237962030a7?experience=power-bi"
+                  },
+                  {
+                    "value": "Export",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/6f6bf644-33d2-4217-adb5-44dfe40e5e31/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/5e135f6e6237962030a7?experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

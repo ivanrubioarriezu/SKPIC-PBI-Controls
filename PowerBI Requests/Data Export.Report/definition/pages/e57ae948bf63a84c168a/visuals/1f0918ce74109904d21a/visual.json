@@ -1,0 +1,381 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "1f0918ce74109904d21a",
+  "position": {
+    "x": 0,
+    "y": 140.94763986648815,
+    "z": 0,
+    "height": 851.337798899182,
+    "width": 2950.8196721311479,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Year",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Version"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Version",
+              "nativeQueryRef": "Version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Type"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Type",
+              "nativeQueryRef": "Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Material"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Material",
+              "nativeQueryRef": "Material"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Brand"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Brand",
+              "nativeQueryRef": "Brand"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Country",
+              "nativeQueryRef": "Country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Material_Description"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Material_Description",
+              "nativeQueryRef": "Material_Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData_Cleansed"
+                    }
+                  },
+                  "Property": "Last_Updated"
+                }
+              },
+              "queryRef": "CH_UP DMV_SalesData_Cleansed.Last_Updated",
+              "nativeQueryRef": "Last_Updated"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Quantity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CH_UP DMV_SalesData_Cleansed.Quantity)",
+              "nativeQueryRef": "Quantity",
+              "displayName": "Quantity"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CH_UP DMV_SalesData_Cleansed"
+                      }
+                    },
+                    "Property": "Quantity"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "26D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "183.57474921212486D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Year"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "179.9296064103932D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Version"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "150.18034242797467D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Type"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "376.96624604168943D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Material"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "312.8225580795474D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Brand"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "336.036634180225D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Country"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "666.2931068582129D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Material_Description"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "401.64513355239444D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SalesData_Cleansed.Last_Updated"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "310.3943929386977D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CH_UP DMV_SalesData_Cleansed.Quantity)"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "6baf3b7594250a219203"
+}

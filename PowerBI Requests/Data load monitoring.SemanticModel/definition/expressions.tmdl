@@ -1,0 +1,42 @@
+expression hostname = "adb-4071335540424391.11.azuredatabricks.net" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d4fd7ddc-86e4-478f-a1c7-6b533eda5e41
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression httpPath = "/sql/1.0/warehouses/916c447fdd11cd1e" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 17f64234-608e-4ddb-9ae2-0269ae63bc61
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression Catalogue = "efdataonelh_prd" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 239637fe-60a7-482a-bf18-4060d6a8ea4c
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression hostnameQAS = "adb-8164385335211286.6.azuredatabricks.net" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5a44f317-61d4-47d2-bcda-011fdf908e49
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression httpPathQAS = "/sql/1.0/warehouses/638730ddd6aa4c47" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 97a4bede-4920-4304-a5f1-915232df6370
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression CatalogueQAS = "efdataonelh_qas" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: c1713703-0320-455d-9e53-a51b8faf624d
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Crop Science"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0aad05a8-c8c5-46d1-9f96-316f344f9f35"
+  }
+}

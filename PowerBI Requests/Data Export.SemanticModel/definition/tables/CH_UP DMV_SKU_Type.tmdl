@@ -1,0 +1,70 @@
+table 'CH_UP DMV_SKU_Type'
+	lineageTag: 5e9c4193-8a90-4d6d-8f2a-c6d149df93e3
+
+	column Material_Number
+		dataType: string
+		lineageTag: fa222ab2-d7e0-4ab5-812e-88b5487b20ff
+		summarizeBy: none
+		sourceColumn: Material_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Description
+		dataType: string
+		lineageTag: 14ed2e4f-ed45-4743-8016-53bd8110544b
+		summarizeBy: none
+		sourceColumn: Material_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU_Type
+		dataType: string
+		lineageTag: 55a4be0d-1593-410b-a39d-4c78d28e8907
+		summarizeBy: none
+		sourceColumn: SKU_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: f13a50a8-64da-43a9-9525-f7d92433dc86
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 68a66b14-4e27-41c9-892c-da1c0ec96d1d
+		summarizeBy: none
+		sourceColumn: Last_Updated
+
+		variation Variation
+			isDefault
+			relationship: 26ee277b-ebcc-45b3-9096-bd8b35b8fad6
+			defaultHierarchy: LocalDateTable_e2159750-829d-4280-adcf-f65720909bef.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CH_UP DMV_SKU_Type' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    material_number       AS Material_Number,
+				    material_description  AS Material_Description,
+				    sku_type              AS SKU_Type,
+				    comment               AS Comment,
+				    last_updated          AS Last_Updated
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_sku_type_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

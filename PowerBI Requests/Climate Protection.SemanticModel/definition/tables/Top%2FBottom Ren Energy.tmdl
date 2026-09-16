@@ -1,0 +1,17 @@
+table 'Top/Bottom Ren Energy'
+	lineageTag: 5d2b9e22-85dd-4d06-b939-4319cdc5a996
+
+	column Value
+		lineageTag: a4497699-542c-40d5-8507-c3bc4f220e6e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top/Bottom Ren Energy' = calculated
+		mode: import
+		source = {"Top","Bottom"}
+
+	annotation PBI_Id = b580c6c86d3340779b389340f10a818f
+

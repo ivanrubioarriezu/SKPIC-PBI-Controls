@@ -1,0 +1,23 @@
+table 'Unique Product Category'
+	lineageTag: 30992d94-db3a-45c8-b37b-8a5009ec7f6d
+
+	column 'Product Category'
+		lineageTag: 29e3f835-51ad-4512-ae39-637494344a26
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: PH_WH DTbl_AllUserAndCYPValues[Product Category]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique Product Category' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('PH_WH DTbl_AllUserAndCYPValues'[Product Category]), 
+				    DATATABLE("Product Category", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = e27b93ccf0a4408d8dd890bb4020ff9b
+

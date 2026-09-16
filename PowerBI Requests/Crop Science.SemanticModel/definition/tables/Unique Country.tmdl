@@ -1,0 +1,23 @@
+table 'Unique Country'
+	lineageTag: f2ac5ca5-9913-46bc-a91b-2f5ee3674058
+
+	column Country
+		lineageTag: 86f323bf-f286-4bf7-a78f-f5732759d4ca
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: CS_Actual[Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique Country' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('CS_Actual'[Country]), 
+				    DATATABLE("Country", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = b477553bfaf648c5b536f1991177e6e9
+

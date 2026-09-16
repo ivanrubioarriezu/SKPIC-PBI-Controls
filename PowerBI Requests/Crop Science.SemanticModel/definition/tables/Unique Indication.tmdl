@@ -1,0 +1,23 @@
+table 'Unique Indication'
+	lineageTag: d9a16005-6897-4f85-b6b0-82154bce5ce8
+
+	column Indication
+		lineageTag: 0119b219-a607-4b15-9b2d-3e12b8e1d3f6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: CS_Actual[Indication]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique Indication' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('CS_Actual'[Indication]), 
+				    DATATABLE("Indication", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = 76271ee93b4b4392898caa3a3c0dcdd3
+

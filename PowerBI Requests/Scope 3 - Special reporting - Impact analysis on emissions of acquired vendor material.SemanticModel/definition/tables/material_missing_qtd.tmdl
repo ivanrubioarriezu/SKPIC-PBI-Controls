@@ -1,0 +1,85 @@
+table material_missing_qtd
+	lineageTag: 5611c9aa-59f7-407b-a427-7aa1d35f7971
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1052c2fe-393d-4ff4-9e28-7754a7d16d4d
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Joint Material Id GL'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 25a7cd45-c91f-4ea5-a596-f46d8db95d5d
+		summarizeBy: none
+		sourceColumn: Joint Material Id GL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Joint Material Text GL'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d7635163-de07-49d4-ac57-2b5e02d5f86a
+		summarizeBy: none
+		sourceColumn: Joint Material Text GL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UOM (Unit of Measurement)'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: dd336778-3ade-4a3a-9368-25574d1ab440
+		summarizeBy: none
+		sourceColumn: UOM (Unit of Measurement)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Spend Quantity UOM'
+		dataType: double
+		sourceProviderType: double
+		lineageTag: c7162563-791e-4444-8f5d-b2e0b32628ee
+		summarizeBy: sum
+		sourceColumn: Spend Quantity UOM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PCF Excluding Biogenic Total'
+		dataType: double
+		sourceProviderType: double
+		lineageTag: ed1de3ce-32cf-4eab-a922-6e742df85c44
+		summarizeBy: sum
+		sourceColumn: PCF Excluding Biogenic Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Spend Euro'
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 3ba42da1-4a0c-45f3-a222-d74262f5e82b
+		summarizeBy: sum
+		sourceColumn: Spend Euro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition material_missing_qtd = m
+		mode: directQuery
+		source =
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs("adb-4071335540424391.11.azuredatabricks.net", "/sql/1.0/warehouses/a4d70720d95e4e2a", [Catalog="efdataonelh_prd", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]){[Name="efdataonelh_prd",Kind="Database"]}[Data], "SELECT * FROM generaldiscovery_asset_sustainability_r.sus_ghgas_core_4_dv_dpv_proc_op_mat_miss_qtd_rpt_view_001", null, [EnableFolding=true])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

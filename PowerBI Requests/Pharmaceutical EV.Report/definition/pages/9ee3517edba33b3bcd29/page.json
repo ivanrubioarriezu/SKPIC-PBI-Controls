@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "9ee3517edba33b3bcd29",
+  "displayName": "EV_Pharma",
+  "displayOption": "FitToPage",
+  "height": 2000,
+  "width": 3500,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "76D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#CCCCCC'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "462754c3bef634a5dcac",
+      "target": "bd9993429e7612de8db2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "462754c3bef634a5dcac",
+      "target": "27e8bec595b1b5c382bd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "bd9993429e7612de8db2",
+      "target": "462754c3bef634a5dcac",
+      "type": "NoFilter"
+    }
+  ]
+}

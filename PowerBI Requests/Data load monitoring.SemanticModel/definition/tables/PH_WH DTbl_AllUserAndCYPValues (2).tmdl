@@ -1,0 +1,621 @@
+table 'PH_WH DTbl_AllUserAndCYPValues (2)'
+	lineageTag: 87a9065c-aefe-4234-8efd-da6570147480
+
+	measure 'ACT YTD ph2' =
+			
+			DIVIDE( SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Actual_YtD]), 1000000 )
+		lineageTag: a1851054-0ec9-4beb-8001-02d84460c21d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure h2 = ```
+			
+			VAR anyValue =
+			    COALESCE (
+			        SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Actual_YtD]),
+			        SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Plan_YtD]),
+			        SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Forecast1_YtD]),
+			        SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Forecast2_YtD]),
+			         SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Forecast3_YtD])
+			        
+			    )
+			RETURN
+			    IF ( ISBLANK(anyValue), BLANK(), "●" )
+			```
+		lineageTag: 6ce416f6-c517-4362-ae3b-e623d8e4a88c
+
+	measure 'Dot Color ph QA' =
+			
+			VAR anyValue =
+			    COALESCE (
+			        SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Actual_YtD]),
+			        SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Plan_YtD]),
+			        SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Forecast1_YtD]),
+			         SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Forecast2_YtD]),
+			         SUM('PH_WH DTbl_AllUserAndCYPValues (2)'[User_Value_Forecast3_YtD])
+			    )
+			VAR prelim =
+			    SELECTEDVALUE ( 'PH_WH DTbl_AllUserAndCYPValues (2)'[Is_Preliminary] )
+			RETURN
+			    IF (
+			        ISBLANK ( anyValue ),
+			        BLANK(),
+			        IF ( prelim = TRUE(), "#D9D9D9", "#00AEEF" )
+			    )
+		lineageTag: 44d547ae-cce6-43e6-b286-a9c90ce2d44c
+
+	column Fiscal_Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7cbc1b7e-fd3e-4acb-8727-921189b229ba
+		summarizeBy: sum
+		sourceColumn: Fiscal_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Month
+		dataType: int64
+		formatString: 0
+		lineageTag: ff8d1b56-87bb-412a-8c48-feae62f11055
+		summarizeBy: sum
+		sourceColumn: Fiscal_Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Period
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d7b04e2-0e23-4ce8-bb4b-f3376c37030a
+		summarizeBy: sum
+		sourceColumn: Fiscal_Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geographical_Location
+		dataType: string
+		lineageTag: 44a342b8-2741-474e-af52-213bb0712d24
+		summarizeBy: none
+		sourceColumn: Geographical_Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Income_Group
+		dataType: string
+		lineageTag: e2b52b9b-c843-492f-ac44-53618d2dde9c
+		summarizeBy: none
+		sourceColumn: Income_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Description
+		dataType: string
+		lineageTag: f18b6dd7-d9a1-493e-8fea-af127eb0959f
+		summarizeBy: none
+		sourceColumn: Product_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Category_Description
+		dataType: string
+		lineageTag: 6f078368-ed35-4839-a5f8-9810e32de50b
+		summarizeBy: none
+		sourceColumn: Product_Category_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector
+		dataType: string
+		lineageTag: 5718e1c2-73de-4ce7-9c04-756984957fb3
+		summarizeBy: none
+		sourceColumn: Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column User_Value_Actual
+		dataType: double
+		lineageTag: 17597c3d-3503-4f86-a097-fa7c9fb1142f
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Actual_Ytd
+		dataType: double
+		lineageTag: a00285c5-4f5a-4daf-803a-b614d37a61a9
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Order_Quantity
+		dataType: double
+		lineageTag: 43a06543-ec00-4511-a2d4-70b03b1e1422
+		summarizeBy: sum
+		sourceColumn: User_Value_Order_Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Order_Quantity_Ytd
+		dataType: double
+		lineageTag: 2ba175e1-c831-4d23-9b36-0e02543e2e76
+		summarizeBy: sum
+		sourceColumn: User_Value_Order_Quantity_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual
+		dataType: double
+		lineageTag: ccd973d4-d678-4eb6-8ccf-904ba14f4774
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual_Ytd
+		dataType: double
+		lineageTag: 51a07aa0-11ca-4321-9e94-4352fe630d4c
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Order_Quantity
+		dataType: double
+		lineageTag: 57726451-9215-4d4e-8fb1-a99eb5a62878
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Order_Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Order_Quantity_Ytd
+		dataType: double
+		lineageTag: f23a8419-4612-4cf7-9783-8009cec33ed6
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Order_Quantity_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Plan_Year_Total
+		dataType: double
+		lineageTag: a9f334d8-3749-439a-a003-4a4e083524aa
+		summarizeBy: sum
+		sourceColumn: User_Value_Plan_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Plan_Year_Total
+		dataType: double
+		lineageTag: ca4fcd33-e4df-4af0-8d4f-09cb6055de84
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Plan_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Forecast_Year_Total
+		dataType: double
+		lineageTag: 497da226-66ab-4013-ba6c-77dbfee2f5b0
+		summarizeBy: sum
+		sourceColumn: User_Value_Forecast_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Forecast_Year_Total
+		dataType: double
+		lineageTag: b2e5c6e5-5ac0-47c8-b593-294883352b02
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Forecast_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Actual_Pytd
+		dataType: double
+		lineageTag: d7c53b36-70c4-4892-992e-351e0d2b151e
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual_Pytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual_Pytd
+		dataType: double
+		lineageTag: afed7f96-db37-483a-b806-edf7b623a335
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual_Pytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual_Bfy_Not_Used
+		dataType: double
+		lineageTag: 91b76576-f55e-4133-9e91-af8195430850
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual_Bfy_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual_Bhy_Not_Used
+		dataType: double
+		lineageTag: f85436ec-9d20-4327-8e94-54d749e9b734
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual_Bhy_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual_Bytd_Not_Used
+		dataType: double
+		lineageTag: ed229335-80e4-41be-9f7a-cb378e6cee39
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual_Bytd_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual_Pfy_Not_Used
+		dataType: double
+		lineageTag: 37d89baa-c6d4-43c3-b320-9780f87e9f42
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual_Pfy_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Actual_Phy_Not_Used
+		dataType: double
+		lineageTag: f516a479-6d78-459b-ac1c-c929e3fab058
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Actual_Phy_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Actual_Bfy
+		dataType: double
+		lineageTag: ee4bab62-1e7f-42db-a9df-52ea21c1b4ec
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual_Bfy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Actual_Bhy
+		dataType: double
+		lineageTag: 5e2e8d3a-4403-4f25-9a0d-414b119c80e3
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual_Bhy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Actual_Bytd_Not_Used
+		dataType: double
+		lineageTag: 1e9a5069-e930-42fb-a9da-2be08ef593e5
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual_Bytd_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Actual_Pfy
+		dataType: double
+		lineageTag: c1882486-9b09-49bd-8c78-dc8427274ca2
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual_Pfy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Actual_Phy
+		dataType: double
+		lineageTag: 1a19ede8-73cf-4d4b-be2a-c69f838f032e
+		summarizeBy: sum
+		sourceColumn: User_Value_Actual_Phy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Region
+		dataType: string
+		lineageTag: 3b2122f2-a6cc-4b59-8392-d604a68f9f67
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e8c162c8-8961-4df4-8d41-a4c5693d9504
+		summarizeBy: none
+		sourceColumn: Fiscal_Date
+
+		variation Variation
+			isDefault
+			relationship: 1415ed8a-92d3-4a83-b1ee-c416a8449a1d
+			defaultHierarchy: LocalDateTable_cdbf20b7-baec-42fd-bf19-a562fac4e6c1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3b1b8b9c-3279-4342-8977-daa2fb76cd59
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b7e1bf8c-c111-4f64-ad03-96ab2e280aa7
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: 2baf1288-1edd-40f5-bb76-30efcd91a592
+			defaultHierarchy: LocalDateTable_dc8e0860-ecfd-4221-8b89-c632eecc7b35.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 22938c15-0d39-4123-98db-ce4747c3fb82
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: d293f7d1-c4a0-468d-bb64-5bf6abe2af42
+			defaultHierarchy: LocalDateTable_6c1b2787-3d4e-4314-b129-0fc1665bb57d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column User_Value_Forecast1_Ytd
+		dataType: double
+		lineageTag: 7474965f-ee57-491b-8eb8-e41f05cd8b28
+		summarizeBy: sum
+		sourceColumn: User_Value_Forecast1_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Forecast1_Ytd
+		dataType: double
+		lineageTag: 433aab54-d4d7-443e-bcea-e3a3e5510975
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Forecast1_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Forecast2_Ytd
+		dataType: double
+		lineageTag: 5f07986e-e5ac-43e6-a9f3-f63aee76738c
+		summarizeBy: sum
+		sourceColumn: User_Value_Forecast2_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Forecast2_Ytd
+		dataType: double
+		lineageTag: 7b686f47-140d-4837-b0a8-30dc7461c51d
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Forecast2_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Forecast3_Ytd
+		dataType: double
+		lineageTag: 19180660-6c30-4974-bee0-c1fb57dd3dfa
+		summarizeBy: sum
+		sourceColumn: User_Value_Forecast3_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Forecast3_Ytd
+		dataType: double
+		lineageTag: d5194c15-7257-4cfa-8e72-b3bbdf1e2f0d
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Forecast3_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Forecast1_Year_Total
+		dataType: double
+		lineageTag: 6ff69d50-999b-4321-96ab-a8a0fb732db2
+		summarizeBy: sum
+		sourceColumn: User_Value_Forecast1_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Forecast1_Year_Total
+		dataType: double
+		lineageTag: e5f91fc3-92ef-41d6-86f8-34474494f955
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Forecast1_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Forecast2_Year_Total
+		dataType: double
+		lineageTag: fbcdab98-565b-4a3c-9430-f89f6e4d8fc3
+		summarizeBy: sum
+		sourceColumn: User_Value_Forecast2_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Forecast2_Year_Total
+		dataType: double
+		lineageTag: a33cf450-6986-4a51-822a-76ee1f3df506
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Forecast2_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Forecast3_Year_Total
+		dataType: double
+		lineageTag: 03bb3e39-3852-45ac-8352-947f79a7a895
+		summarizeBy: sum
+		sourceColumn: User_Value_Forecast3_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Forecast3_Year_Total
+		dataType: double
+		lineageTag: 27933ccb-1baa-458f-90f6-8894565a620c
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Forecast3_Year_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Value_Plan_Ytd
+		dataType: double
+		lineageTag: 1bfc42dd-1a0d-4507-ab86-22e4efbbafd1
+		summarizeBy: sum
+		sourceColumn: User_Value_Plan_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Value_Plan_Ytd
+		dataType: double
+		lineageTag: 484ecaaf-9420-4d2a-889e-eecb0820cbb3
+		summarizeBy: sum
+		sourceColumn: Cyp_Value_Plan_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'PH_WH DTbl_AllUserAndCYPValues (2)' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostnameQAS, httpPathQAS, [Catalog=CatalogueQAS, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=CatalogueQAS,Kind="Database"]}[Data], 
+				    "SELECT
+				    fiscal_year AS Fiscal_Year,
+				    fiscal_month AS Fiscal_Month,
+				    fiscal_period AS Fiscal_Period,
+				    geographical_location AS Geographical_Location,
+				    income_group AS Income_Group,
+				    product_description AS Product_Description,
+				    product_category_description AS Product_Category_Description,
+				    sector AS Sector,
+				    user_value_actual AS User_Value_Actual,
+				    user_value_actual_ytd AS User_Value_Actual_Ytd,
+				    user_value_order_quantity AS User_Value_Order_Quantity,
+				    user_value_order_quantity_ytd AS User_Value_Order_Quantity_Ytd,
+				    cyp_value_actual AS Cyp_Value_Actual,
+				    cyp_value_actual_ytd AS Cyp_Value_Actual_Ytd,
+				    cyp_value_order_quantity AS Cyp_Value_Order_Quantity,
+				    cyp_value_order_quantity_ytd AS Cyp_Value_Order_Quantity_Ytd,
+				    user_value_plan_year_total AS User_Value_Plan_Year_Total,
+				    cyp_value_plan_year_total AS Cyp_Value_Plan_Year_Total,
+				    user_value_forecast_year_total AS User_Value_Forecast_Year_Total,
+				    cyp_value_forecast_year_total AS Cyp_Value_Forecast_Year_Total,
+				    user_value_actual_pytd AS User_Value_Actual_Pytd,
+				    cyp_value_actual_pytd AS Cyp_Value_Actual_Pytd,
+				    cyp_value_actual_bfy_not_used AS Cyp_Value_Actual_Bfy_Not_Used,
+				    cyp_value_actual_bhy_not_used AS Cyp_Value_Actual_Bhy_Not_Used,
+				    cyp_value_actual_bytd_not_used AS Cyp_Value_Actual_Bytd_Not_Used,
+				    cyp_value_actual_pfy_not_used AS Cyp_Value_Actual_Pfy_Not_Used,
+				    cyp_value_actual_phy_not_used AS Cyp_Value_Actual_Phy_Not_Used,
+				    user_value_actual_bfy AS User_Value_Actual_Bfy,
+				    user_value_actual_bhy AS User_Value_Actual_Bhy,
+				    user_value_actual_bytd_not_used AS User_Value_Actual_Bytd_Not_Used,
+				    user_value_actual_pfy AS User_Value_Actual_Pfy,
+				    user_value_actual_phy AS User_Value_Actual_Phy,
+				    region AS Region,
+				    fiscal_date AS Fiscal_Date,
+				    is_preliminary AS Is_Preliminary,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    user_value_forecast1_ytd AS User_Value_Forecast1_Ytd,
+				    cyp_value_forecast1_ytd AS Cyp_Value_Forecast1_Ytd,
+				    user_value_forecast2_ytd AS User_Value_Forecast2_Ytd,
+				    cyp_value_forecast2_ytd AS Cyp_Value_Forecast2_Ytd,
+				    user_value_forecast3_ytd AS User_Value_Forecast3_Ytd,
+				    cyp_value_forecast3_ytd AS Cyp_Value_Forecast3_Ytd,
+				    user_value_forecast1_year_total AS User_Value_Forecast1_Year_Total,
+				    cyp_value_forecast1_year_total AS Cyp_Value_Forecast1_Year_Total,
+				    user_value_forecast2_year_total AS User_Value_Forecast2_Year_Total,
+				    cyp_value_forecast2_year_total AS Cyp_Value_Forecast2_Year_Total,
+				    user_value_forecast3_year_total AS User_Value_Forecast3_Year_Total,
+				    cyp_value_forecast3_year_total AS Cyp_Value_Forecast3_Year_Total,
+				    user_value_plan_ytd AS User_Value_Plan_Ytd,
+				    cyp_value_plan_ytd AS Cyp_Value_Plan_Ytd
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_all_user_and_cyp_values_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,17 @@
+expression hostname = "adb-4071335540424391.11.azuredatabricks.net" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+	lineageTag: 02462593-2652-4d08-96fd-979e65c072c4
+
+	annotation PBI_ResultType = Text
+
+expression httpPath = "/sql/1.0/warehouses/a4d70720d95e4e2a" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+	lineageTag: f3cbe4ba-120f-4331-b956-7eed9b175199
+
+	annotation PBI_ResultType = Text
+
+expression Catalogue = "efdataonelh_prd" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+	lineageTag: b3b9c56e-174c-4175-9f4b-f6670e57480b
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["hostname","httpPath","Catalogue","key_area_contributer","material_missing_qtd","top10_emission_contributer_top3_purchase_order","top10_emission_contributer_material","top10_emission_contributer_material_po_li","top10_emission_contributer_material_po"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table key_area_contributer
+ref table material_missing_qtd
+ref table top10_emission_contributer_top3_purchase_order
+ref table top10_emission_contributer_material
+ref table top10_emission_contributer_material_po_li
+ref table top10_emission_contributer_material_po
+
+ref cultureInfo en-US
+

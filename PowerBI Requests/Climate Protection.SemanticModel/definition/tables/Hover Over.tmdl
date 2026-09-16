@@ -1,0 +1,49 @@
+table 'Hover Over'
+	lineageTag: 59c0a7e6-cc8a-4cb4-ae43-57659d225818
+
+	column 'Hover Over'
+		lineageTag: 2b70f997-fefe-4abd-8654-bba0e6a869af
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Hover Over Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Hover Over Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hover Over Fields'
+		isHidden
+		lineageTag: c702d9c8-1129-47e2-86df-c3f27dc34981
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Hover Over Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hover Over Order'
+		isHidden
+		formatString: 0
+		lineageTag: 7cd12c0b-04b9-45b5-857b-c052e4046178
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hover Over' = calculated
+		mode: import
+		source =
+				{
+				    ("Country", NAMEOF('CORP_GHG DTbl_Scope3'[Country]), 0),
+				    ("Business unit", NAMEOF('CORP_GHG DTbl_Scope3'[Business_unit]), 1),
+				    ("Scope 3 category", NAMEOF('CORP_GHG DTbl_Scope3'[CO2 Scope 3 Category]), 2)
+				}
+
+	annotation PBI_Id = a4b798b76e704716903280cb5434d8e7
+

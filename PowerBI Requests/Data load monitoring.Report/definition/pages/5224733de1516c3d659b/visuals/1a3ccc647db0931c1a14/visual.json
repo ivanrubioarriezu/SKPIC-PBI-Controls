@@ -1,0 +1,966 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "1a3ccc647db0931c1a14",
+  "position": {
+    "x": 12.984252729204908,
+    "y": 372.215244903874,
+    "z": 20000,
+    "height": 688.16539464786013,
+    "width": 1328.721862621969,
+    "tabOrder": 20000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMTbl_SHF"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Fiscal_Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Fiscal_Date Year",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMTbl_SHF"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Fiscal_Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Fiscal_Date Month",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "s"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_SHF.Signal Dot New",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Farmer_Actual"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CS_SHF DMTbl_SHF.Farmer_Actual)",
+              "nativeQueryRef": "ACT YTD",
+              "displayName": "ACT YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "s"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_SHF.Signal Dot New",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Farmer_Budget"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CS_SHF DMTbl_SHF.Farmer_Budget)",
+              "nativeQueryRef": "Plan YTD",
+              "displayName": "Plan YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "s"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_SHF.Signal Dot New",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Farmer_Fc1"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc1)",
+              "nativeQueryRef": "FC1 YTD",
+              "displayName": "FC1 YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "s"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_SHF.Signal Dot New",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Farmer_Fc2"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc2)",
+              "nativeQueryRef": "FC2 YTD",
+              "displayName": "FC2 YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "s"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_SHF.Signal Dot New",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Farmer_Fc3"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc3)",
+              "nativeQueryRef": "FC3 YTD",
+              "displayName": "FC3 YTD"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "PropertyVariationSource": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "CS_SHF DMTbl_SHF"
+                          }
+                        },
+                        "Name": "Variation",
+                        "Property": "Fiscal_Date"
+                      }
+                    },
+                    "Hierarchy": "Date Hierarchy"
+                  }
+                },
+                "Level": "Month"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Year"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LocalDateTable_b62ccb55-a5f8-45d2-b9ae-edf1c38efa51"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Month"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "2025L"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "2024L"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "2023L"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "2020L"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "2026L"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "bandedRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Dot Color"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "CS_SHF DMTbl_SHF.Signal Dot New"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "titleAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "33.403809372485384D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_SHF.Signal Dot New"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "285.65865788676143D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Year"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "170.59849722146052D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Actual)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "172.1044690831638D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Budget)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "193.2090259263083D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc1)"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143.95521662908064D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc3)"
+          }
+        }
+      ],
+      "blankRows": [
+        {
+          "properties": {
+            "showBlankRows": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_SHF.Signal Dot New"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Actual)"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Budget)"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc1)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc2)"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_SHF.Farmer_Fc3)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d0746dca8c1b71a8dd1c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CS_SHF DMTbl_SHF"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Fiscal_Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d55d55169d4bb12b59c6",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CS_SHF DMTbl_SHF"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Fiscal_Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "21f381b769a10d68e775",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CS_SHF DMTbl_SHF"
+              }
+            },
+            "Property": "s"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "06e62774c515f90a2a15",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CS_SHF DMTbl_SHF"
+                  }
+                },
+                "Property": "Farmer_Actual"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e58b9299a21cb90c0ef0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CS_SHF DMTbl_SHF"
+                  }
+                },
+                "Property": "Farmer_Budget"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "db2b1661f65c29f4d5f2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CS_SHF DMTbl_SHF"
+                  }
+                },
+                "Property": "Farmer_Fc1"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "439111b1167bfbc7cd8c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CS_SHF DMTbl_SHF"
+                  }
+                },
+                "Property": "Farmer_Fc2"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c830a4e80c493c0bbbb6",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CS_SHF DMTbl_SHF"
+                  }
+                },
+                "Property": "Farmer_Fc3"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

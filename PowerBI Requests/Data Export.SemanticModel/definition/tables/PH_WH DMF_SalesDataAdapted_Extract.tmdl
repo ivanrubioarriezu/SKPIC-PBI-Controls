@@ -1,0 +1,124 @@
+table 'PH_WH DMF_SalesDataAdapted_Extract'
+	lineageTag: 16fbffb4-99a6-4392-99c5-fe94eeaedcba
+
+	column Type
+		dataType: string
+		lineageTag: 39562337-caba-45ac-b291-a6aab3d38e9a
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 31f6f15f-21ac-4a66-b713-c1799caab435
+		summarizeBy: sum
+		sourceColumn: fiscal_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_period
+		dataType: int64
+		formatString: 0
+		lineageTag: 2379a5ad-cb8c-4283-8130-c2965a01ff5f
+		summarizeBy: sum
+		sourceColumn: fiscal_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column geographical_location
+		dataType: string
+		lineageTag: 3985edf9-5be0-4040-966a-4e9256dcf54c
+		summarizeBy: none
+		sourceColumn: geographical_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column material
+		dataType: string
+		lineageTag: 91476157-a0e7-4814-a3d8-e3691672a631
+		summarizeBy: none
+		sourceColumn: material
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Description
+		dataType: string
+		lineageTag: 462c5761-5ae8-4378-b525-99755e50fe57
+		summarizeBy: none
+		sourceColumn: Material_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector
+		dataType: string
+		lineageTag: 5b13454f-828e-4c98-b420-77f3b5687e58
+		summarizeBy: none
+		sourceColumn: sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_description
+		dataType: string
+		lineageTag: 782f8e0d-e4c5-4dca-86c7-87ec6fe4e068
+		summarizeBy: none
+		sourceColumn: product_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Category_Description
+		dataType: string
+		lineageTag: 6b3ca919-8e3e-4368-abc8-5d17d11fe12c
+		summarizeBy: none
+		sourceColumn: Product_Category_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: double
+		lineageTag: 6463da0b-4c68-413a-89fc-0737f7afd4d1
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quantity_adapted
+		dataType: double
+		lineageTag: 9d458ce1-ade4-471b-be0a-15639ed36f9b
+		summarizeBy: sum
+		sourceColumn: quantity_adapted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'PH_WH DMF_SalesDataAdapted_Extract' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    type                          AS Type,
+				    fiscal_year                   AS fiscal_year,
+				    fiscal_period                 AS fiscal_period,
+				    geographical_location         AS geographical_location,
+				    material                      AS material,
+				    material_description          AS Material_Description,
+				    sector                        AS sector,
+				    product_description           AS product_description,
+				    product_category_description  AS Product_Category_Description,
+				    quantity                      AS quantity,
+				    quantity_adapted              AS quantity_adapted
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_salesdata_adapted_extract_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

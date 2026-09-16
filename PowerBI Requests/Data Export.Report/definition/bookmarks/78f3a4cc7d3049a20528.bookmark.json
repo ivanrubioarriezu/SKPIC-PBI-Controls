@@ -1,0 +1,3713 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "PH Sale data Distributed",
+  "name": "78f3a4cc7d3049a20528",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "b95cf70a0e49885904cd",
+      "d0e49d3037146dada2d0",
+      "c2ee13e7d2cee0128cd7",
+      "796b73e3c18acede2930",
+      "4be387e0e754c6c90a77",
+      "82d9628d616678849c95",
+      "cade9f29c7128e756e2b",
+      "75fcf03f4ab33a912373",
+      "b71965078094e79405d6",
+      "e372decf72b549a64031",
+      "a6c0b0b5bc5db801cc57",
+      "ce40bd3330b982017cd0",
+      "8226e44b248ee570d901",
+      "516e263779e7b0f794ad",
+      "da0bd4b7667410e25f81",
+      "957f1b8fc9bdf7a95a13",
+      "d884eb828bda80e10d57",
+      "264cb39a2006057a35e3",
+      "f2ec50b57d8961ed7684",
+      "5e8815e11ac92980cc67",
+      "f3c5b4ac2510986be270",
+      "7b10c2fd4b682ccc4c11",
+      "818d345f335842aae303",
+      "8defdb87db04e62e404b",
+      "df897030568e204bb6c0",
+      "21c688c753da3803dd7a",
+      "d62a762d9d47e756b139",
+      "dcf9046032806494017e",
+      "350a7ba2e267bbac7649",
+      "69532b7fce883539088b",
+      "fa1383c296878ed55298",
+      "36aa858231083427d639",
+      "29a84649ecda253ee35a",
+      "d606f88b830cdda004d2",
+      "21d9cdd380082e9d107c",
+      "e27d2ddd5e25255c9910",
+      "a16722a1adfe4c42b149",
+      "69e5ac9e9a01f167dfba",
+      "560d305b7bdf8807842f",
+      "1c30c14d6095e474d46a",
+      "07fae532b2c0f67f411c",
+      "304620f6d75a0dab9235",
+      "b9b1e9b3573873d51a5e",
+      "6a34359508c0894df9f8",
+      "9cb83c76d27ed7ec5607",
+      "8f5adb42e8da930f9dba",
+      "a2645df16c2a02dc7f82",
+      "38c8b6c70bfb0b5e7863",
+      "f3b85e20a5e7b6720074",
+      "4dbad713ab892b5c6f3c",
+      "5f32e936245d4250baa3",
+      "375a79f744f5acb1537e",
+      "566cfd4c06e0345864f6",
+      "9e458b51be4626188c18",
+      "e7cab21cb717ab07ae0b",
+      "6cee3c5df00b9e403bdb",
+      "dd565586a7c4c8e9aab2",
+      "7aa8aa010b5df6286ea3",
+      "8fbddaef343860d4f781",
+      "0c4549d65af353c70142",
+      "ed7942e5ac1cf6ef2be7",
+      "9dc246a6d2119e5334ef",
+      "783b3ab1586f26b1172f",
+      "51c6f468598ba22f991d",
+      "8816607980dadff522d6",
+      "4c2cd5bc631c0bac918f",
+      "0a3b5208b9b78b11a4df",
+      "79bac7e32bd17fad3b19",
+      "ead2eef0812d67ed430b",
+      "be0966e5efe98d7655fa",
+      "8cef4f92d4180d2bcd04"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "9c5a639891d8c397ef2b",
+    "sections": {
+      "9c5a639891d8c397ef2b": {
+        "visualContainers": {
+          "ad3ed3bba29c42b15dfa": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "61141750f8f089f6f748": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "4d31a755fcd720e6557c": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c5fef46c23113711c904": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "3c3bc23e36382e47c21b": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "51061896858a9a48d56b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "bcee458e506b5d084d39": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "5766941c7f3d28f9d3e9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "304620f6d75a0dab9235": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "b9b1e9b3573873d51a5e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "6a34359508c0894df9f8": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "9cb83c76d27ed7ec5607": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "8f5adb42e8da930f9dba": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "38c8b6c70bfb0b5e7863": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "f3b85e20a5e7b6720074": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "375a79f744f5acb1537e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "566cfd4c06e0345864f6": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9e458b51be4626188c18": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "e7cab21cb717ab07ae0b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "6cee3c5df00b9e403bdb": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "dd565586a7c4c8e9aab2": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7aa8aa010b5df6286ea3": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "8fbddaef343860d4f781": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "0c4549d65af353c70142": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4c2cd5bc631c0bac918f": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "0a3b5208b9b78b11a4df": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "79bac7e32bd17fad3b19": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "ead2eef0812d67ed430b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "be0966e5efe98d7655fa": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "8cef4f92d4180d2bcd04": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "69e5ac9e9a01f167dfba": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "00ab9151c43bfaca05df",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Fiscal_Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ed18b6ed933e23416f53",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Fiscal_Month"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7ba67a061d500fa21bc9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Income_Group"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "43e2723bdd6155d0b818",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Sector"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "064b4dddf4f005e6a69b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "983c8cd3992706df0fba",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "17592d295fe52b4c87d2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product_Category_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4c7ef0bf0560b13cf76b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "767d370c271cf3174e92",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Is_Preliminary"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9900e9bf7aa6d63b01a6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "337c55519e9640ab4c5e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Forecast_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cbeb50b9f699e6ca53d2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "24366c5ab9d429ddfda7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual_BFY_Not_Used"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b7f65237c2a6b81d1fb9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual_BHY_Not_Used"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d5b2a91997a671d24703",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual_BYtD_Not_Used"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bf2eeebb595504a0a408",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual_PFY_Not_Used"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "020c21cd70dc67609e02",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual_PHY_Not_Used"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "83f2e0fe7c831cb3c44f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Actual_PYtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a0d68f72eb0369374287",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Forecast1_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a31858b6a3f05424190f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Forecast1_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c3ad95d598024a920032",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Forecast2_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "418382c0d7157cf48b34",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Forecast2_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c28ebb75c88e28ef8524",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Forecast3_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3f13c2391ece0a38c0e7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Forecast3_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "74e347a62f6999b9714e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Order_Quantity"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6acd84a4c7e6b0a200d2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Order_Quantity_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c519477a42c0e2ee4a7f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Plan_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "89ddba3ef8df9973bb1a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Cyp_Value_Plan_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0b6e8fb4e23f092beadc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Fiscal_Period"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e2d7f6bc4708de861f25",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Actual_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "99edb74351c57b9d7fcf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Forecast_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f707ea11c4b5275f8e83",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Forecast1_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3de1c3b755989dec60ca",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Forecast1_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5e44724622c48e9db9b1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Forecast2_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8afc8f2a432e780a5402",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Forecast2_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3eb8b20f162d10f3ae89",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Forecast3_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dcc903f4e14a79d638e7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Forecast3_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5275fa94b7ce76e413d1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Order_Quantity_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "08b563edccda58a25421",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Plan_Year_Total"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "36de1fb35e94b029150b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Plan_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1cddcf4203eb6bf594ac",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "User_Value_Actual_BYtD_Not_Used"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "560d305b7bdf8807842f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "69f7eee6ae03b6472d02",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "21d9cdd380082e9d107c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d37fe0eedf257426e97f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3ce421dc65a3a380b717",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0FISCPER"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e6e64d853958b91104ba",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0VERSION"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3d00637ecd04569f7b6d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0VTYPE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8fd70ee054002e98242a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DCTRY_FD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "03d99a66bd4dc95ed475",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d45df67d75259094c0c5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DPC"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "267b63dc182331371150",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DPC___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "be622dbe2da24b2cf956",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "29c2bef778a9eefeff5a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e1aa0a5825e783ffeaff",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "50824356e5a3c0385f6c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f4bac10826310adbcc28",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SalesData_Cleansed"
+                            }
+                          },
+                          "Property": "FPER_CO_QTY_CU"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "982224d338054fbec72e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SalesData_Cleansed"
+                            }
+                          },
+                          "Property": "FPER_CO_QTY_TU"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f04ac7871137214e2624",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SalesData_Cleansed"
+                            }
+                          },
+                          "Property": "FPER_SD_QTY_SU"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cd44ce956e9454b4ed9e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0UNIT"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "53807e12ef872fbd2204",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0MATERIAL__DPRODH1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2642d1e3acc83256f03a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0MATERIAL___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e8d27565d2d22f4f0052",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0MATERIAL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8c608a8e037a9574857f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "0BASE_UOM"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "199e56b1131a14253fb3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "e27d2ddd5e25255c9910": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5fba6d2ad7ab63cd359d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8226e44b248ee570d901": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3d136ebf97e423bee7f3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
+                        }
+                      },
+                      "Property": "Material"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f0397c49e3c9bca21fa7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ad4affd937815deea81c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
+                        }
+                      },
+                      "Property": "Reason"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "caef1db29d02a19ad50d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "a6c0b0b5bc5db801cc57": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d5410aca8e3ecc3d150e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Whitelist"
+                        }
+                      },
+                      "Property": "Material"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "88527256fbaab89a2f44",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Whitelist"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8e54ba389c08e5126864",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Whitelist"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b71965078094e79405d6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8b4c3f45d4390d28f835",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Missing_Sectors"
+                        }
+                      },
+                      "Property": "Material"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ee53e8d6fe1c45e4557d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Missing_Sectors"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b0db7f0888c88e8d034a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Missing_Sectors"
+                        }
+                      },
+                      "Property": "First_occurrence"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a645fc71592a215b6aeb",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Missing_Sectors"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "df897030568e204bb6c0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6629f64e3746c669dc4d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "21c688c753da3803dd7a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "17f1ef54c562e85499da",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d62a762d9d47e756b139": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6973da6d6014b9d2dc0d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "67f3b2b540cce55cf784",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0FISCPER"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8fdf92f033ecc6e2a6b1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0VERSION"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b2e9041aceb9c3a63633",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0VTYPE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "781672cbcf0819ea3ded",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4f469610af0146402c25",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ffa39439e11fbe9df382",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DPC___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a87bece3e7fdbbbc7787",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DPC"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3a5692fcc172a93a1b5b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "483704b3260b056dd6c1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "033bf893ab0fd0dc40c9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0MATERIAL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bf2b1318543afcc840f7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0MATERIAL___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "664dbe895a585095ac61",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0MATERIAL__DPRODH1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "50a191e538b44d29b843",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0BASE_UOM"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "de26636a11ca8350eb55",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "0UNIT"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e65fdf49a10294bd2ece",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0e79e55528ec4e35abeb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SalesData"
+                            }
+                          },
+                          "Property": "FPER_CO_QTY_CU"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3446015903eb64ae44e3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SalesData"
+                            }
+                          },
+                          "Property": "FPER_CO_QTY_TU"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2106ba12d8d04e7e4c00",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SalesData"
+                            }
+                          },
+                          "Property": "FPER_SD_QTY_SU"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e76198e5f624de04c635",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dd9cd81b3bf75d01a40d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND___T"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "f3c5b4ac2510986be270": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "77a58fa014c4f605d0e6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7b10c2fd4b682ccc4c11": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "607cd2f17b14addf8612",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9cc275ead5e58106cdda",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "fiscal_period"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9ca37f9749767301e35f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "geographical_location"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f4ec992fd426b192a36d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "material"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2a5e83de45825cdae150",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c70f8bd796e6ff31d898",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "Product_Category_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e9211aa6083e334fc8ed",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "product_description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5e32f60f144669ea9fa0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "sector"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "18d3b2c716da21e19873",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                        }
+                      },
+                      "Property": "Type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bfdaf7226bf564a7f3a3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                            }
+                          },
+                          "Property": "quantity"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7abced15892a7a110f72",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMF_SalesDataAdapted_Extract"
+                            }
+                          },
+                          "Property": "quantity_adapted"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "f2ec50b57d8961ed7684": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "840f5ff7bc9f4385f1ed",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "5e8815e11ac92980cc67": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a919bbace7ea595cf2ea",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3e76699602ec0cccce3c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "fiscal_period"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "912b344e216b8fa5a783",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "geographical_location"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ad5a493705a3bbd5833e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "sector"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "da6b6701cdd99d489d30",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "Product_Category_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c764f9d02f213981dec9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "product_description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "82b9c64abc0b41f85a94",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "material"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ef830534201dc85e5d20",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "533819ff3d631b3957bf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                            }
+                          },
+                          "Property": "quantity"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "28fa28eb7407ec296e9b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                        }
+                      },
+                      "Property": "Type"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "264cb39a2006057a35e3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f2c9fc4a717a3f85083d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c07ef8c50115847e4353",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "fiscal_period"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3e70acc5f279d857dcd7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "geographical_location"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e6ac00db51a06322ea76",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "sector"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "24852ff1d327e096246a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "Product_Category_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c22c116ab566eb9a2812",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "product_description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9cd422b8f0a6e9bd1064",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "material"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7d28438e8945364b9779",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b9f55fdca97420f83b21",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                            }
+                          },
+                          "Property": "quantity"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "633f588ff85f118abf4a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "Type"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            },
+            "highlight": {
+              "selection": [
+                {
+                  "dataMap": {
+                    "Sum(PH_WH DMF_SalesDataDistributed_Extract.fiscal_year)": [
+                      {
+                        "scopeId": {
+                          "And": {
+                            "Left": {
+                              "And": {
+                                "Left": {
+                                  "And": {
+                                    "Left": {
+                                      "And": {
+                                        "Left": {
+                                          "And": {
+                                            "Left": {
+                                              "And": {
+                                                "Left": {
+                                                  "And": {
+                                                    "Left": {
+                                                      "And": {
+                                                        "Left": {
+                                                          "Comparison": {
+                                                            "ComparisonKind": 0,
+                                                            "Left": {
+                                                              "Column": {
+                                                                "Expression": {
+                                                                  "SourceRef": {
+                                                                    "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                                  }
+                                                                },
+                                                                "Property": "fiscal_year"
+                                                              }
+                                                            },
+                                                            "Right": {
+                                                              "Literal": {
+                                                                "Value": "2025L"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "Right": {
+                                                          "Comparison": {
+                                                            "ComparisonKind": 0,
+                                                            "Left": {
+                                                              "Column": {
+                                                                "Expression": {
+                                                                  "SourceRef": {
+                                                                    "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                                  }
+                                                                },
+                                                                "Property": "fiscal_period"
+                                                              }
+                                                            },
+                                                            "Right": {
+                                                              "Literal": {
+                                                                "Value": "2025001L"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "Right": {
+                                                      "Comparison": {
+                                                        "ComparisonKind": 0,
+                                                        "Left": {
+                                                          "Column": {
+                                                            "Expression": {
+                                                              "SourceRef": {
+                                                                "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                              }
+                                                            },
+                                                            "Property": "geographical_location"
+                                                          }
+                                                        },
+                                                        "Right": {
+                                                          "Literal": {
+                                                            "Value": "'Afghanistan'"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "Right": {
+                                                  "Comparison": {
+                                                    "ComparisonKind": 0,
+                                                    "Left": {
+                                                      "Column": {
+                                                        "Expression": {
+                                                          "SourceRef": {
+                                                            "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                          }
+                                                        },
+                                                        "Property": "sector"
+                                                      }
+                                                    },
+                                                    "Right": {
+                                                      "Literal": {
+                                                        "Value": "'Commercial'"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "Right": {
+                                              "Comparison": {
+                                                "ComparisonKind": 0,
+                                                "Left": {
+                                                  "Column": {
+                                                    "Expression": {
+                                                      "SourceRef": {
+                                                        "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                      }
+                                                    },
+                                                    "Property": "Product_Category_Description"
+                                                  }
+                                                },
+                                                "Right": {
+                                                  "Literal": {
+                                                    "Value": "'Oral Contraceptive'"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "Right": {
+                                          "Comparison": {
+                                            "ComparisonKind": 0,
+                                            "Left": {
+                                              "Column": {
+                                                "Expression": {
+                                                  "SourceRef": {
+                                                    "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                  }
+                                                },
+                                                "Property": "product_description"
+                                              }
+                                            },
+                                            "Right": {
+                                              "Literal": {
+                                                "Value": "'Diane'"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Right": {
+                                      "Comparison": {
+                                        "ComparisonKind": 0,
+                                        "Left": {
+                                          "Column": {
+                                            "Expression": {
+                                              "SourceRef": {
+                                                "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                              }
+                                            },
+                                            "Property": "material"
+                                          }
+                                        },
+                                        "Right": {
+                                          "Literal": {
+                                            "Value": "'89618436'"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Right": {
+                                  "Comparison": {
+                                    "ComparisonKind": 0,
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                          }
+                                        },
+                                        "Property": "Material_Description"
+                                      }
+                                    },
+                                    "Right": {
+                                      "Literal": {
+                                        "Value": "'DIANE 35 TASC BLI 1X21 PK'"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Right": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                      }
+                                    },
+                                    "Property": "Type"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "'FC3'"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "metadata": [
+                    "Sum(PH_WH DMF_SalesDataDistributed_Extract.quantity)"
+                  ]
+                }
+              ],
+              "filterExpressionMetadata": {
+                "expressions": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "fiscal_year"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "fiscal_period"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "geographical_location"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "sector"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "Product_Category_Description"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "product_description"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "material"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                        }
+                      },
+                      "Property": "Type"
+                    }
+                  }
+                ],
+                "cachedValueItems": [
+                  {
+                    "identities": [
+                      {
+                        "scopeId": {
+                          "And": {
+                            "Left": {
+                              "And": {
+                                "Left": {
+                                  "And": {
+                                    "Left": {
+                                      "And": {
+                                        "Left": {
+                                          "And": {
+                                            "Left": {
+                                              "And": {
+                                                "Left": {
+                                                  "And": {
+                                                    "Left": {
+                                                      "And": {
+                                                        "Left": {
+                                                          "Comparison": {
+                                                            "ComparisonKind": 0,
+                                                            "Left": {
+                                                              "Column": {
+                                                                "Expression": {
+                                                                  "SourceRef": {
+                                                                    "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                                  }
+                                                                },
+                                                                "Property": "fiscal_year"
+                                                              }
+                                                            },
+                                                            "Right": {
+                                                              "Literal": {
+                                                                "Value": "2025L"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "Right": {
+                                                          "Comparison": {
+                                                            "ComparisonKind": 0,
+                                                            "Left": {
+                                                              "Column": {
+                                                                "Expression": {
+                                                                  "SourceRef": {
+                                                                    "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                                  }
+                                                                },
+                                                                "Property": "fiscal_period"
+                                                              }
+                                                            },
+                                                            "Right": {
+                                                              "Literal": {
+                                                                "Value": "2025001L"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "Right": {
+                                                      "Comparison": {
+                                                        "ComparisonKind": 0,
+                                                        "Left": {
+                                                          "Column": {
+                                                            "Expression": {
+                                                              "SourceRef": {
+                                                                "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                              }
+                                                            },
+                                                            "Property": "geographical_location"
+                                                          }
+                                                        },
+                                                        "Right": {
+                                                          "Literal": {
+                                                            "Value": "'Afghanistan'"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "Right": {
+                                                  "Comparison": {
+                                                    "ComparisonKind": 0,
+                                                    "Left": {
+                                                      "Column": {
+                                                        "Expression": {
+                                                          "SourceRef": {
+                                                            "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                          }
+                                                        },
+                                                        "Property": "sector"
+                                                      }
+                                                    },
+                                                    "Right": {
+                                                      "Literal": {
+                                                        "Value": "'Commercial'"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "Right": {
+                                              "Comparison": {
+                                                "ComparisonKind": 0,
+                                                "Left": {
+                                                  "Column": {
+                                                    "Expression": {
+                                                      "SourceRef": {
+                                                        "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                      }
+                                                    },
+                                                    "Property": "Product_Category_Description"
+                                                  }
+                                                },
+                                                "Right": {
+                                                  "Literal": {
+                                                    "Value": "'Oral Contraceptive'"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "Right": {
+                                          "Comparison": {
+                                            "ComparisonKind": 0,
+                                            "Left": {
+                                              "Column": {
+                                                "Expression": {
+                                                  "SourceRef": {
+                                                    "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                                  }
+                                                },
+                                                "Property": "product_description"
+                                              }
+                                            },
+                                            "Right": {
+                                              "Literal": {
+                                                "Value": "'Diane'"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Right": {
+                                      "Comparison": {
+                                        "ComparisonKind": 0,
+                                        "Left": {
+                                          "Column": {
+                                            "Expression": {
+                                              "SourceRef": {
+                                                "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                              }
+                                            },
+                                            "Property": "material"
+                                          }
+                                        },
+                                        "Right": {
+                                          "Literal": {
+                                            "Value": "'89618436'"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Right": {
+                                  "Comparison": {
+                                    "ComparisonKind": 0,
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                          }
+                                        },
+                                        "Property": "Material_Description"
+                                      }
+                                    },
+                                    "Right": {
+                                      "Literal": {
+                                        "Value": "'DIANE 35 TASC BLI 1X21 PK'"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Right": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "PH_WH DMF_SalesDataDistributed_Extract"
+                                      }
+                                    },
+                                    "Property": "Type"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "'FC3'"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "valueMap": {
+                      "0": "2025",
+                      "1": "2025001",
+                      "2": "Afghanistan",
+                      "3": "Commercial",
+                      "4": "Oral Contraceptive",
+                      "5": "Diane",
+                      "6": "89618436",
+                      "7": "DIANE 35 TASC BLI 1X21 PK",
+                      "8": "FC3"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d0e49d3037146dada2d0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d7ed89f26eaadde90115",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "valid_from_current"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "720b2dee911ea50599e1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "valid_from_previous_version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b4f8b526c52eeef00565",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Affected_Table"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "675bf8101e68147a5f40",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Affected_Parameter"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "047e888dacd91e108a78",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Current_Version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fbe09d94e0bf7415fdcb",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Info"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1c760c0f54ea62c271c3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "parameter_dimensions"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dfa6a7620406269673f5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Previous_Version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f8a0ceaffb3705b6cf6f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH LTbl_ParameterChangeResults"
+                            }
+                          },
+                          "Property": "diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b95cf70a0e49885904cd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "27e3972812a5b6cd293d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SAP_Erroneous_Bookings"
+                        }
+                      },
+                      "Property": "Fiscal_Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4ac84b63c6be043ff974",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SAP_Erroneous_Bookings"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7461e4eade5daffd4f12",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SAP_Erroneous_Bookings"
+                        }
+                      },
+                      "Property": "Affected_profitcenters"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "82d6e55214613a36cad6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SAP_Erroneous_Bookings"
+                        }
+                      },
+                      "Property": "Information"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2e27dc3ba6f1f65111a0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SAP_Erroneous_Bookings"
+                            }
+                          },
+                          "Property": "Material"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dbc10fcb7fb9fc54c608",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DMV_SAP_Erroneous_Bookings"
+                            }
+                          },
+                          "Property": "Number_of_Profitcenters"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "da0bd4b7667410e25f81": {
+            "isHidden": true
+          },
+          "516e263779e7b0f794ad": {
+            "isHidden": true
+          },
+          "ce40bd3330b982017cd0": {
+            "isHidden": true
+          },
+          "e372decf72b549a64031": {
+            "isHidden": true
+          },
+          "75fcf03f4ab33a912373": {
+            "isHidden": true
+          },
+          "cade9f29c7128e756e2b": {
+            "isHidden": true
+          },
+          "82d9628d616678849c95": {
+            "isHidden": true
+          },
+          "4be387e0e754c6c90a77": {
+            "isHidden": true
+          },
+          "796b73e3c18acede2930": {
+            "isHidden": true
+          },
+          "c2ee13e7d2cee0128cd7": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

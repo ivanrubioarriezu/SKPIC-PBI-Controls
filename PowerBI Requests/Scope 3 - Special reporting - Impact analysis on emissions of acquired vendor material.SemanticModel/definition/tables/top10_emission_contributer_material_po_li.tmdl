@@ -1,0 +1,91 @@
+table top10_emission_contributer_material_po_li
+	lineageTag: c5c3e5d9-dc77-4d35-87d3-14be6946241f
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e4f00449-4b6e-491a-bb29-1c5d9126f423
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Joint Material Id GL'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4ec69681-b307-4b14-ab71-166468a4fac5
+		summarizeBy: none
+		sourceColumn: Joint Material Id GL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Joint Material Id GL-text'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 15346879-f5a3-48a6-ab8c-9dbdf4f8a877
+		summarizeBy: none
+		sourceColumn: Joint Material Id GL-text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Order'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f1d1cca8-a7ef-4be7-aeae-e71dcd1629ac
+		summarizeBy: none
+		sourceColumn: Purchase Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Order Line Item'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 32ae3f1a-9707-4671-ad8b-77349a90f5b4
+		summarizeBy: none
+		sourceColumn: Purchase Order Line Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EF Strategy'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 636ab299-16a9-4283-892a-5e5ea7985d93
+		summarizeBy: none
+		sourceColumn: EF Strategy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PCF Excluding Biogenic Total'
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 6e29d1d2-c60d-4600-ac1a-019e8230dc21
+		summarizeBy: sum
+		sourceColumn: PCF Excluding Biogenic Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rank
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 303d8315-3aef-4394-a6b9-034dddddc235
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition top10_emission_contributer_material_po_li = m
+		mode: directQuery
+		source =
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs("adb-4071335540424391.11.azuredatabricks.net", "/sql/1.0/warehouses/a4d70720d95e4e2a", [Catalog="efdataonelh_prd", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]){[Name="efdataonelh_prd",Kind="Database"]}[Data], "SELECT * FROM generaldiscovery_asset_sustainability_r.sus_ghgas_core_4_dv_dpv_proc_op_top10_emssn_ctrbt_mat_po_li_rpt_view_001", null, [EnableFolding=true])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

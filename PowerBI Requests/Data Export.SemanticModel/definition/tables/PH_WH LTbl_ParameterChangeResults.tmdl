@@ -1,0 +1,114 @@
+table 'PH_WH LTbl_ParameterChangeResults'
+	lineageTag: 03afbcc5-f4da-4bc0-92b7-79b864bf7770
+
+	column Affected_Table
+		dataType: string
+		lineageTag: ba256ae2-3144-46e2-8728-420f3d2e2382
+		summarizeBy: none
+		sourceColumn: Affected_Table
+
+		annotation SummarizationSetBy = Automatic
+
+	column Info
+		dataType: string
+		lineageTag: 64e0c6dd-0bed-4f82-b4fb-bb4a373b0a76
+		summarizeBy: none
+		sourceColumn: Info
+
+		annotation SummarizationSetBy = Automatic
+
+	column Affected_Parameter
+		dataType: string
+		lineageTag: dbcaab9f-6c6e-43ce-bcf8-403c16ad837c
+		summarizeBy: none
+		sourceColumn: Affected_Parameter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Current_Version
+		dataType: string
+		lineageTag: 617e43a2-f70a-4066-ae29-b023c1beaca9
+		summarizeBy: none
+		sourceColumn: Current_Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column Previous_Version
+		dataType: string
+		lineageTag: ad7f1d3e-a78b-4a3e-8226-e118b6381efb
+		summarizeBy: none
+		sourceColumn: Previous_Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column parameter_dimensions
+		dataType: string
+		lineageTag: 955aaf58-941d-4e6d-ade5-b003d9b56965
+		summarizeBy: none
+		sourceColumn: parameter_dimensions
+
+		annotation SummarizationSetBy = Automatic
+
+	column diff
+		dataType: double
+		lineageTag: 9af8d386-c5de-48f5-8c27-dbe37aa7af14
+		summarizeBy: sum
+		sourceColumn: diff
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column valid_from_current
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e043e817-79f2-4089-9220-b1b9f6246297
+		summarizeBy: none
+		sourceColumn: valid_from_current
+
+		variation Variation
+			isDefault
+			relationship: 68df35a9-780b-4e81-91af-ff83dc02cae7
+			defaultHierarchy: LocalDateTable_6c1e4939-6358-4791-afce-a40c600ef0cc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column valid_from_previous_version
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2c1df9e5-84d3-4e28-b8b0-e572f0138f68
+		summarizeBy: none
+		sourceColumn: valid_from_previous_version
+
+		variation Variation
+			isDefault
+			relationship: cdd713c8-4f80-443d-9f2c-c9004d9969e6
+			defaultHierarchy: LocalDateTable_3e2f07c9-1dc6-4a3b-ace8-cefd4f53bbb4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PH_WH LTbl_ParameterChangeResults' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    affected_table               AS Affected_Table,
+				    info                         AS Info,
+				    affected_parameter           AS Affected_Parameter,
+				    current_version              AS Current_Version,
+				    previous_version             AS Previous_Version,
+				    parameter_dimensions         AS parameter_dimensions,
+				    diff                         AS diff,
+				    valid_from_current           AS valid_from_current,
+				    valid_from_previous_version  AS valid_from_previous_version
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_parameter_change_results_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

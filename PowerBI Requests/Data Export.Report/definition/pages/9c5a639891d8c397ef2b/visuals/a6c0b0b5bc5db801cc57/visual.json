@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "a6c0b0b5bc5db801cc57",
+  "position": {
+    "x": 24.879328776442385,
+    "y": 951.6343256989212,
+    "z": 13000,
+    "height": 845.89717839904108,
+    "width": 2898.441802455538,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMV_Whitelist"
+                    }
+                  },
+                  "Property": "Material"
+                }
+              },
+              "queryRef": "PH_WH DMV_Whitelist.Material",
+              "nativeQueryRef": "Material"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMV_Whitelist"
+                    }
+                  },
+                  "Property": "Material_Description"
+                }
+              },
+              "queryRef": "PH_WH DMV_Whitelist.Material_Description",
+              "nativeQueryRef": "Material_Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMV_Whitelist"
+                    }
+                  },
+                  "Property": "Last_Updated"
+                }
+              },
+              "queryRef": "PH_WH DMV_Whitelist.Last_Updated",
+              "nativeQueryRef": "Last_Updated"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "566.3777682211869D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PH_WH DMV_Whitelist.Material"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1405.1076591050346D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PH_WH DMV_Whitelist.Material_Description"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "374.26938039133415D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PH_WH DMV_Whitelist.Last_Updated"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PH Wishlist'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "isHidden": true
+}

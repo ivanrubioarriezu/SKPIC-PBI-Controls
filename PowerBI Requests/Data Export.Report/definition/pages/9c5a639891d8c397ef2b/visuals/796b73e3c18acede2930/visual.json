@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "796b73e3c18acede2930",
+  "position": {
+    "x": 22.994945884983085,
+    "y": 813.20952531412149,
+    "z": 17000,
+    "height": 984.28482670888093,
+    "width": 2931.2050951912133,
+    "tabOrder": 15000
+  },
+  "visualGroup": {
+    "displayName": "PH Sale Data Blacklist",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

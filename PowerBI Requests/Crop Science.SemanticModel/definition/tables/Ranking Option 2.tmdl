@@ -1,0 +1,26 @@
+table 'Ranking Option 2'
+	lineageTag: 337674ef-04a5-45b0-99d6-53c687c03993
+
+	measure 'Ranking Option 2 Value' = SELECTEDVALUE('Ranking Option 2'[Ranking Option 2])
+		formatString: 0
+		lineageTag: 4fb8b1a6-06c6-4c9d-99e2-9349cb8b21a8
+
+	column 'Ranking Option 2'
+		formatString: 0
+		lineageTag: 70234afd-91f3-4dd8-8d08-9c843e3668e2
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Ranking Option 2' = calculated
+		mode: import
+		source = GENERATESERIES(0, 16, 1)
+
+	annotation PBI_Id = bc9206fbabd14a7694a91ce3d2ec5502
+

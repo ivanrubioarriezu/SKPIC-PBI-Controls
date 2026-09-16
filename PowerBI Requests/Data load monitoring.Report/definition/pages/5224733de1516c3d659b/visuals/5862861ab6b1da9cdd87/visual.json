@@ -1,0 +1,340 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "5862861ab6b1da9cdd87",
+  "position": {
+    "x": 3.26822417975233,
+    "y": 1160.2195838120772,
+    "z": 21000,
+    "height": 624.230818332695,
+    "width": 1330.1672411591983,
+    "tabOrder": 21000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+                    }
+                  },
+                  "Property": "Fiscal_Year"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.Fiscal_Year",
+              "nativeQueryRef": "Fiscal_Year",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+                    }
+                  },
+                  "Property": "sT"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.sT",
+              "nativeQueryRef": "sT"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+                    }
+                  },
+                  "Property": "Target Display"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.Target Display",
+              "nativeQueryRef": "Target",
+              "displayName": "Target"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+                  }
+                },
+                "Property": "Fiscal_Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+                        }
+                      },
+                      "Property": "Dot Color Target"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.sT"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "blankRows": [
+        {
+          "properties": {
+            "showBlankRows": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "192.355611855303D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.Fiscal_Year"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "934.039045227837D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.sT"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.sT"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.Target Display"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4ed7ca6ef75640281c8f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+              }
+            },
+            "Property": "Fiscal_Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c09a769009d871479fd1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+              }
+            },
+            "Property": "sT"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

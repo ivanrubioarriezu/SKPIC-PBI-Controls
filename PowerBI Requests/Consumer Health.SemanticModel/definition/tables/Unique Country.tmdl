@@ -1,0 +1,23 @@
+table 'Unique Country'
+	lineageTag: 9210debd-e0b7-42b1-a5b2-0dc7c7205429
+
+	column Country
+		lineageTag: 1796248e-582c-4ef2-b563-61a4020ba235
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: CH_UP DMT_KPI[Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique Country' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('CH_UP DMT_KPI'[Country]), 
+				    DATATABLE("Country", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = b512cd5bb0b245ccbddf8608ceaa2f0c
+

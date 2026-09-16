@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "c88472be3bb0308d66aa",
+  "position": {
+    "x": 0,
+    "y": 1674.9999999999998,
+    "z": 41000,
+    "height": 217.85714285714283,
+    "width": 139.28571428571428,
+    "tabOrder": 41000
+  },
+  "visual": {
+    "visualType": "advanceCardE03760C5AB684758B56AA29F9E6C257B",
+    "query": {
+      "queryState": {
+        "mainMeasure": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CORP_GHG DTbl_Scope1&2"
+                        }
+                      },
+                      "Property": "Reporting Year Label/Filter"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(CORP_GHG DTbl_Scope1&2.Reporting Year Label/Filter)",
+              "nativeQueryRef": "First Reporting Year Label/Filter"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabelSettings": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataLabelSettings": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

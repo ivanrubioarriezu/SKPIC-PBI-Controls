@@ -1,0 +1,17 @@
+table Emissio/Reduction
+	lineageTag: 2b1401fa-3b82-4c34-8366-f6b4fbb8209b
+
+	column Value
+		lineageTag: 357ae9df-8a69-49dd-9a91-dc9e5078d3be
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Emissio/Reduction = calculated
+		mode: import
+		source = {"Emission (abc)","Reduction (%)"}
+
+	annotation PBI_Id = b7d322ff0eeb45f0bbeb7879d857c26a
+

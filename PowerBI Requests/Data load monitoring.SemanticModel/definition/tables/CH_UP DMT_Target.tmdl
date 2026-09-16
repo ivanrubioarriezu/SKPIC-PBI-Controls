@@ -1,0 +1,151 @@
+table 'CH_UP DMT_Target'
+	lineageTag: c1e539c9-8d4f-4de8-a575-8914eed66097
+
+	measure 's ch target' = ```
+			
+			VAR anyValue =
+			    
+			        SUM('CH_UP DMT_Target'[Target])
+			        
+			        
+			    
+			RETURN
+			    IF ( ISBLANK(anyValue), BLANK(), "●" )
+			```
+		lineageTag: 1313e323-e36b-40d3-a4e2-c245466df021
+
+	measure 'Dot Color Target ch' = ```
+			
+			VAR anyValue =
+			     (
+			        SUM('CH_UP DMT_Target'[Target])
+			       
+			    )
+			VAR prelim =
+			    SELECTEDVALUE ('CH_UP DMT_Target'[Is_Preliminary] )
+			RETURN
+			    IF (
+			        ISBLANK ( anyValue ),
+			        BLANK(),
+			        IF ( prelim = TRUE(), "#D9D9D9", "#00AEEF" )
+			    )
+			```
+		lineageTag: 588f55e2-b4ef-486d-af05-420b44beafc4
+
+	column Division
+		dataType: string
+		lineageTag: 4a89e16c-1d8f-4900-acb5-ff43cba9d25b
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 8de69621-ff2c-4ba7-b63d-79b8f9665651
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geographical_Location
+		dataType: string
+		lineageTag: a5eb4caf-fec6-4acf-81e8-96df1170b10e
+		summarizeBy: none
+		sourceColumn: Geographical_Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		lineageTag: d2f99920-75d5-47fc-bb4d-9b6cff67f2a9
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_Year
+		dataType: double
+		lineageTag: 089dd024-7349-4ece-9e46-e0715d74536c
+		summarizeBy: sum
+		sourceColumn: Actual_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c7959e34-531a-4dc9-a7ea-8f8bf83006c3
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f4a4486f-d892-4704-a9f8-7c8c4a78895e
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: 79cd81bf-ba26-44c5-8b67-4411e4534b81
+			defaultHierarchy: LocalDateTable_37edd46d-e31f-49c3-a3b9-e204100ee7e0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 09b97475-14b7-4842-b63a-e020d861877e
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: 146f393f-1bab-4a08-b83e-e74a278d37fc
+			defaultHierarchy: LocalDateTable_4953c202-47b4-4628-814d-2d7767477153.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target_Ytd
+		dataType: double
+		lineageTag: bbce7f05-67ff-4da8-ac0f-d2c930fafd14
+		summarizeBy: sum
+		sourceColumn: Target_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CH_UP DMT_Target' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    division AS Division,
+				    year AS Year,
+				    geographical_location AS Geographical_Location,
+				    target AS Target,
+				    target_ytd AS Target_Ytd,
+				    actual_year AS Actual_Year,
+				    is_preliminary AS Is_Preliminary,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_target_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

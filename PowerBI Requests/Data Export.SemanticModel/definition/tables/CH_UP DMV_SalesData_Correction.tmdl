@@ -1,0 +1,241 @@
+table 'CH_UP DMV_SalesData_Correction'
+	lineageTag: ba155128-4b64-4672-b26e-5246f619d3f4
+
+	column 0VTYPE
+		dataType: string
+		lineageTag: 5be3fac5-33f2-45d0-b3e2-76257efb9fec
+		summarizeBy: none
+		sourceColumn: 0VTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0VERSION
+		dataType: string
+		lineageTag: 0a3fe879-49ac-44f2-b1a0-0a153aa4abec
+		summarizeBy: none
+		sourceColumn: 0VERSION
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCYEAR
+		dataType: string
+		lineageTag: 1e211e93-8ca0-47cf-a8c7-edac87a429cc
+		summarizeBy: none
+		sourceColumn: FISCYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD
+		dataType: string
+		lineageTag: 5a9c0516-8ca5-46aa-ba2d-08ad24d50093
+		summarizeBy: none
+		sourceColumn: PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0FISCPER
+		dataType: string
+		lineageTag: 8c10fde0-dc2b-4c8d-87d1-d47cec8308ae
+		summarizeBy: none
+		sourceColumn: 0FISCPER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DCTRY_FD
+		dataType: string
+		lineageTag: 5f3d0d35-f3ba-480a-834b-6a4ed3da9d64
+		summarizeBy: none
+		sourceColumn: DCTRY_FD
+
+		annotation SummarizationSetBy = Automatic
+
+	column DCTRY_FD___T
+		dataType: string
+		lineageTag: 639e0ad8-2778-4337-96f4-5e07d7bd67e2
+		summarizeBy: none
+		sourceColumn: DCTRY_FD___T
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DIMKKA2
+		dataType: string
+		lineageTag: 01483337-cd78-43df-952d-ef695b22c35a
+		summarizeBy: none
+		sourceColumn: DRESPO__DIMKKA2
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DIMKKA2___T
+		dataType: string
+		lineageTag: 0af57a46-94c2-4f68-a54c-a11785a3f0e7
+		summarizeBy: none
+		sourceColumn: DRESPO__DIMKKA2___T
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DIMKKA6
+		dataType: string
+		lineageTag: a8bc451b-7e7c-423d-9858-309f92c19c2a
+		summarizeBy: none
+		sourceColumn: DRESPO__DIMKKA6
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DIMKKA6___T
+		dataType: string
+		lineageTag: 601b5863-1732-449a-93a1-039ee5b1f7ec
+		summarizeBy: none
+		sourceColumn: DRESPO__DIMKKA6___T
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DPC_CV
+		dataType: string
+		lineageTag: fbbbba7c-05ba-475f-85c8-7c2be9a19c07
+		summarizeBy: none
+		sourceColumn: DRESPO__DPC_CV
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DPC_CV___T
+		dataType: string
+		lineageTag: 4576c78c-0db8-4729-b93a-4426984df2e6
+		summarizeBy: none
+		sourceColumn: DRESPO__DPC_CV___T
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DBRAND
+		dataType: string
+		lineageTag: f61910c9-91a7-4413-8ac8-e849ec3ce052
+		summarizeBy: none
+		sourceColumn: DRESPO__DBRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRESPO__DBRAND___T
+		dataType: string
+		lineageTag: bc806c59-3ed3-4105-ad74-274abf4e0957
+		summarizeBy: none
+		sourceColumn: DRESPO__DBRAND___T
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0MATERIAL__DPRODH1
+		dataType: string
+		lineageTag: 7cd9322f-2b42-49bd-8956-01c7a70fca99
+		summarizeBy: none
+		sourceColumn: 0MATERIAL__DPRODH1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0MATERIAL__DPRODH1___T
+		dataType: string
+		lineageTag: a1326041-9598-4fcd-9c36-62d90e344ff7
+		summarizeBy: none
+		sourceColumn: 0MATERIAL__DPRODH1___T
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0MATERIAL
+		dataType: string
+		lineageTag: 4ec5eacf-482b-45fc-b93f-296cff102a72
+		summarizeBy: none
+		sourceColumn: 0MATERIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0MATERIAL___T
+		dataType: string
+		lineageTag: a80935c1-1129-4653-8cb3-b73073144c57
+		summarizeBy: none
+		sourceColumn: 0MATERIAL___T
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0LOC_CURRCY
+		dataType: string
+		lineageTag: 2f4008bc-9bb1-4860-8980-a50141914900
+		summarizeBy: none
+		sourceColumn: 0LOC_CURRCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0BASE_UOM
+		dataType: string
+		lineageTag: fd226147-e92b-44db-b529-549438756045
+		summarizeBy: none
+		sourceColumn: 0BASE_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FPER_QTD_CU
+		dataType: string
+		lineageTag: 31f58fed-0f8f-46d5-ba4d-f9139aeafa10
+		summarizeBy: none
+		sourceColumn: FPER_QTD_CU
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: fa6efcf3-1b8f-43c7-9555-fd17391d4e9d
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 96c60e76-6bb6-4e83-86c8-f909ea910cb6
+		summarizeBy: none
+		sourceColumn: Last_Updated
+
+		variation Variation
+			isDefault
+			relationship: a2ba41b6-ea18-4cc2-bfc3-5d520a06c2b2
+			defaultHierarchy: LocalDateTable_c27a6d5f-9ed6-48c0-96ef-0dd0f2568536.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CH_UP DMV_SalesData_Correction' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    `0vtype`                  AS `0VTYPE`,
+				    `0version`                AS `0VERSION`,
+				    fiscyear                  AS FISCYEAR,
+				    period                    AS PERIOD,
+				    `0fiscper`                AS `0FISCPER`,
+				    dctry_fd                  AS DCTRY_FD,
+				    dctry_fd___t              AS DCTRY_FD___T,
+				    drespo__dimkka2           AS DRESPO__DIMKKA2,
+				    drespo__dimkka2___t       AS DRESPO__DIMKKA2___T,
+				    drespo__dimkka6           AS DRESPO__DIMKKA6,
+				    drespo__dimkka6___t       AS DRESPO__DIMKKA6___T,
+				    drespo__dpc_cv            AS DRESPO__DPC_CV,
+				    drespo__dpc_cv___t        AS DRESPO__DPC_CV___T,
+				    drespo__dbrand            AS DRESPO__DBRAND,
+				    drespo__dbrand___t        AS DRESPO__DBRAND___T,
+				    `0material__dprodh1`      AS `0MATERIAL__DPRODH1`,
+				    `0material__dprodh1___t`  AS `0MATERIAL__DPRODH1___T`,
+				    `0material`               AS `0MATERIAL`,
+				    `0material___t`           AS `0MATERIAL___T`,
+				    `0loc_currcy`             AS `0LOC_CURRCY`,
+				    `0base_uom`               AS `0BASE_UOM`,
+				    fper_qtd_cu               AS FPER_QTD_CU,
+				    comment                   AS Comment,
+				    last_updated              AS Last_Updated
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_salesdata_correction_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

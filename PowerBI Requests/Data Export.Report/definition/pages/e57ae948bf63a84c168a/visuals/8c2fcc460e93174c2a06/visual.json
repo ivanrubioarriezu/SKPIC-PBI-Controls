@@ -1,0 +1,221 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "8c2fcc460e93174c2a06",
+  "position": {
+    "x": 7.6500796883300861,
+    "y": 805.8083938374358,
+    "z": 11000,
+    "height": 963.910040729591,
+    "width": 2945.2806800070834,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_Scope_Brand"
+                    }
+                  },
+                  "Property": "Brand"
+                }
+              },
+              "queryRef": "CH_UP DMV_Scope_Brand.Brand",
+              "nativeQueryRef": "Brand"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_Scope_Brand"
+                    }
+                  },
+                  "Property": "In_Scope"
+                }
+              },
+              "queryRef": "CH_UP DMV_Scope_Brand.In_Scope",
+              "nativeQueryRef": "In_Scope"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_Scope_Brand"
+                    }
+                  },
+                  "Property": "Comment"
+                }
+              },
+              "queryRef": "CH_UP DMV_Scope_Brand.Comment",
+              "nativeQueryRef": "Comment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_Scope_Brand"
+                    }
+                  },
+                  "Property": "Last_Updated"
+                }
+              },
+              "queryRef": "CH_UP DMV_Scope_Brand.Last_Updated",
+              "nativeQueryRef": "Last_Updated"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "26D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "801.1566093634774D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_Scope_Brand.Brand"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "943.7055593223395D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_Scope_Brand.Comment"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "558.9691036140957D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_Scope_Brand.Last_Updated"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "542.6962382042545D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_Scope_Brand.In_Scope"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CH Brand'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "isHidden": true
+}

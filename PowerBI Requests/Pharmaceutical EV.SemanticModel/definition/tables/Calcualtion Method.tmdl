@@ -1,0 +1,24 @@
+table 'Calcualtion Method'
+	lineageTag: 570504ef-c07e-472e-88ea-c4e06b16820a
+
+	column Selection
+		lineageTag: e000aa08-09c6-4ffc-aeff-fe4c2a57c1ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Selection]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Calcualtion Method' = calculated
+		mode: import
+		source =
+				DATATABLE(
+				    "Selection", STRING,
+				    {
+				        {"User"},
+				        {"CYP"}
+				    }
+				)
+
+	annotation PBI_Id = 83feb66b9a3649dda551506e06d4bad8
+

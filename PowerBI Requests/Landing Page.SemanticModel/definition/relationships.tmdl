@@ -1,0 +1,60 @@
+relationship 0c23175a-a9b5-4227-81ba-1dea9303dea4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail'.Valid_From
+	toColumn: LocalDateTable_7cae67b7-00ac-4e4a-a544-9b09fe8346fc.Date
+
+relationship feb66eaf-7834-40a4-b3de-85a833c595a5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail'.Valid_To
+	toColumn: LocalDateTable_4c0cfa6e-4cd8-4a36-8e30-a57ab045013d.Date
+
+relationship 1171f9d5-9026-4e14-8786-e78547161d7a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2'.Fiscal_Date
+	toColumn: LocalDateTable_87f1dd75-6546-437b-82bc-44f5665f927d.Date
+
+relationship 28e87287-204c-4633-b5b3-43de0eab6816
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2'.Valid_From
+	toColumn: LocalDateTable_bf10dae6-27b9-4039-a14e-7a9e9563ff49.Date
+
+relationship 3aab6555-744a-47fb-a70a-bc0489767463
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2'.Valid_To
+	toColumn: LocalDateTable_f7874501-fd5b-406a-a0b5-4553ae263044.Date
+
+relationship ec0f49a9-504c-4698-ae9b-8d30944d2be0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3'.Fiscal_Date
+	toColumn: LocalDateTable_6885f19b-d407-4c7d-9216-a2182c4e86fa.Date
+
+relationship 34dd2855-ab62-4299-a3ae-77dd72697c33
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3'.Valid_From
+	toColumn: LocalDateTable_330f8c6d-ba6e-4ea6-bff7-b2a53f80e3cb.Date
+
+relationship a78f69b5-4b2e-4297-9731-543429720b4e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3'.Valid_To
+	toColumn: LocalDateTable_82350a6c-3759-4aee-ac3d-96d9ec10dc98.Date
+
+relationship 4422e96b-17ac-4044-a633-2853e63a87a1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_Target'.Valid_From
+	toColumn: LocalDateTable_9c56350e-32f9-4a1d-9fef-879f9195bdfb.Date
+
+relationship 4a919f7a-d03b-4a3f-b20f-126f2198daef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_Target'.Valid_To
+	toColumn: LocalDateTable_c279285b-83d4-451e-ab24-e65dbcbad5f0.Date
+
+relationship 31c48292-f370-4e76-be58-9b0b0a24432e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_Target'.ValidFrom
+	toColumn: LocalDateTable_2211dd37-a581-4df3-b3c4-36c25dac8085.Date
+
+relationship e0508a5f-97db-4a99-a415-937a8d4063fd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_Target'.ValidTo
+	toColumn: LocalDateTable_ef6fda95-66c5-4aa7-9c31-b9d6339d0e3d.Date
+

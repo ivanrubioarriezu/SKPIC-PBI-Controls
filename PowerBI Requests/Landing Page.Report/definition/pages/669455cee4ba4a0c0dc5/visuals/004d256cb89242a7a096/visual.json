@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "004d256cb89242a7a096",
+  "position": {
+    "x": 1422.8794413637297,
+    "y": 683.50790716779625,
+    "z": 5000,
+    "height": 62.435818443212163,
+    "width": 315.46518792359831,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "/Overview",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "28pt",
+                      "color": "#0091df"
+                    },
+                    "url": "https://app.powerbi.com/groups/6f6bf644-33d2-4217-adb5-44dfe40e5e31/reports/781998fd-2077-4621-ad60-c70518667461/26c656b21a7f341d46e6?experience=power-bi"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

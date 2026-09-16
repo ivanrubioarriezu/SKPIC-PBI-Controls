@@ -1,0 +1,109 @@
+table 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)'
+	lineageTag: 326c9be4-4d50-429d-8772-e8f6a55845c7
+
+	measure 'Dot Color Target QA' = ```
+			
+			VAR anyValue =
+			     (
+			        SUM('CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)'[Target])
+			       
+			    )
+			VAR prelim =
+			    SELECTEDVALUE ( 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)'[Is_Preliminary] )
+			RETURN
+			    IF (
+			        ISBLANK ( anyValue ),
+			        BLANK(),
+			        IF ( prelim = TRUE(), "#D9D9D9", "#00AEEF" )
+			    )
+			```
+		lineageTag: 5894d020-77f2-454b-bea3-0d5c7d6ee0d5
+
+	column Fiscal_Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 24ddca83-9c49-4ade-9555-6813868fb2ca
+		summarizeBy: sum
+		sourceColumn: Fiscal_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		lineageTag: 789555a1-0c58-4b97-91f7-5a37a64ced0c
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Farmer_Actual
+		dataType: double
+		lineageTag: 808048ce-5f4d-42f6-a95d-92c3950b2641
+		summarizeBy: sum
+		sourceColumn: Farmer_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3d30d82a-cf5f-46a5-9ecc-a22fcc10ff9b
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: d13898de-1430-46a1-9c3e-4cf015a08f82
+			defaultHierarchy: LocalDateTable_1649937c-262f-4ef8-991d-c415c666dffd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 91946c5f-95dc-4a1e-bf39-6ba12d95893c
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: 70b1e3dd-63c3-48ce-b787-cab8240afa2a
+			defaultHierarchy: LocalDateTable_6ae33d6a-e948-4504-aed1-94884622c964.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 86a5d6f2-de08-4336-a4b7-34e682e21f01
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostnameQAS, httpPathQAS, [Catalog=CatalogueQAS, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=CatalogueQAS,Kind="Database"]}[Data], 
+				    "SELECT
+				    fiscal_year AS Fiscal_Year,
+				    target AS Target,
+				    farmer_actual AS Farmer_Actual,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    is_preliminary AS Is_Preliminary
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_shf_target_timeline_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

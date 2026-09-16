@@ -1,0 +1,23 @@
+table 'Unique Country scope3'
+	lineageTag: 0cdb1db3-2deb-409a-b079-0c70a0825efb
+
+	column Country
+		lineageTag: 39a59e72-c2ab-4169-95d9-341aec642b51
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: CORP_GHG DTbl_Scope3[Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique Country scope3' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('CORP_GHG DTbl_Scope3'[Country]), 
+				    DATATABLE("Country", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = 79d318d875c14467b174d7df6ff7c2ae
+

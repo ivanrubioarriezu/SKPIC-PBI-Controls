@@ -1,0 +1,34 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-150
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["CH_UP DMT_KPI","CH_UP DMT_Target","hostname","httpPath","Catalogue"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table 'CH_UP DMT_KPI'
+ref table DateTableTemplate_9f955293-0e66-44aa-aea3-c4783fbac53a
+ref table 'CH_UP DMT_Target'
+ref table GMV_Selection_Table
+ref table CombinedEmissions
+ref table LocalDateTable_578f1ed1-ae60-4beb-b0e7-5a529538ce91
+ref table LocalDateTable_6f7bd68a-92d1-4978-80a6-996cc93f82f5
+ref table ViewBy
+ref table Top/Bottom
+ref table 'Ranking Option'
+ref table 'Sort by:'
+ref table 'Unique Country'
+ref table 'Unique Brand'
+ref table Axis_Pillar_Total
+ref table LocalDateTable_ab3abbfc-dae7-461b-978d-34671703387a
+ref table LocalDateTable_284e5c18-3feb-4a4b-90cf-649804cc08ea
+ref table LocalDateTable_590b83c9-789a-4e18-9312-0804f5952957
+ref table LocalDateTable_ac35aa8b-1ffd-4396-98b5-2ac19155bee6
+ref table LocalDateTable_a33a21a0-9420-4214-a52e-3df4698bbc8d
+
+ref cultureInfo en-US
+

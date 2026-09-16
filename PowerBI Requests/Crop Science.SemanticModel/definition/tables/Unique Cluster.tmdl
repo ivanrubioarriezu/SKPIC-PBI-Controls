@@ -1,0 +1,23 @@
+table 'Unique Cluster'
+	lineageTag: 981aeed0-1dd8-42f0-a4b3-0ff58c0eaf4a
+
+	column Cluster
+		lineageTag: d473cccc-947e-45dd-83db-77836a2338c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: CS_Actual[Cluster]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique Cluster' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('CS_Actual'[Cluster]), 
+				    DATATABLE("Cluster", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = d8a77729aa1c4dcb87563d0f11c99549
+

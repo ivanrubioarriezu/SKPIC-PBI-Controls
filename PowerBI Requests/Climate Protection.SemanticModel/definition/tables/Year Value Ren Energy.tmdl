@@ -1,0 +1,49 @@
+table 'Year Value Ren Energy'
+	lineageTag: baef38eb-4081-46cf-b20c-d0373f7bda88
+
+	column 'Reporting Year Value'
+		lineageTag: 69f171d2-53d3-4c48-9fde-4c950e7f17f4
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Reporting Year Value Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Reporting Year Value Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year Value Fields'
+		isHidden
+		lineageTag: f569df41-f648-4e9d-b3d9-b098379b2e88
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Reporting Year Value Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year Value Order'
+		isHidden
+		formatString: 0
+		lineageTag: 95ff9a76-d721-4ddd-977c-48d1a24cc15c
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Year Value Ren Energy' = calculated
+		mode: import
+		source =
+				{
+				    ("Base Year Value", NAMEOF('CORP_GHG DTbl_RenewableElectricity'[Ranking by Actual BY Emission Ren.Energy]), 0),
+				    ("Reporting Year Value",  NAMEOF('CORP_GHG DTbl_RenewableElectricity'[Ranking by Actual CY Emission Ren.Energy]), 1),
+				    ("Previous Year Value", NAMEOF('CORP_GHG DTbl_RenewableElectricity'[_Ranking by Actual PY Emission Ren.Energy]), 2)
+				}
+
+	annotation PBI_Id = 58c4680ce10445d99c492a90427ae033
+

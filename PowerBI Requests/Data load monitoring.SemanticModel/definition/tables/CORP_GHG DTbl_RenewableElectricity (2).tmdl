@@ -1,0 +1,173 @@
+table 'CORP_GHG DTbl_RenewableElectricity (2)'
+	lineageTag: 20661c58-1cd4-4092-ad8d-fa8c62253b79
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 98411d3f-e4b9-4e86-9afb-c032abc1205a
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indic_Sys_Name
+		dataType: string
+		lineageTag: afc8a60c-bcd5-4c78-a5c3-2e73076a83c1
+		summarizeBy: none
+		sourceColumn: Indic_Sys_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Performance_Indicator
+		dataType: string
+		lineageTag: d6715048-462f-4aea-8862-2f4ef2374f74
+		summarizeBy: none
+		sourceColumn: Performance_Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: 251a69be-1929-4e84-9858-87fed65f420d
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: f502bbdf-a5ec-42da-839a-ef7af3c7e5f0
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 8420bcbb-77ac-455d-b35d-2ad143b8933f
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 5a1a7f5b-b658-44bc-8559-695a6f15995c
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_Py
+		dataType: double
+		lineageTag: 11dd2b80-88b5-458d-89ed-3baeb8260d09
+		summarizeBy: sum
+		sourceColumn: Value_Py
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_By
+		dataType: double
+		lineageTag: ee6a9190-4dd3-40a0-8c5f-354f6b3e8936
+		summarizeBy: sum
+		sourceColumn: Value_By
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Unit
+		dataType: string
+		lineageTag: 51f14066-57a1-4dab-9783-c67e262096ae
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 852cedf0-44dc-4ee2-b38e-d314d7ee093b
+		summarizeBy: none
+		sourceColumn: Fiscal_Date
+
+		variation Variation
+			isDefault
+			relationship: e00054c6-84c6-43d5-8b5c-c1bac34e193e
+			defaultHierarchy: LocalDateTable_9b4ae99e-9a81-4a09-bf70-d958e62dfc4d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 43320f4f-f843-4ad9-99d8-f9d86710832f
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: eb314957-f72f-4e94-884f-5c20cb655542
+			defaultHierarchy: LocalDateTable_c5aa9b34-97be-49ca-9138-4c999ebd83cb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fb5be65f-6465-402e-b136-ffec85b95926
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: a948d977-63af-4418-b8f7-2b1f3c7cbeb6
+			defaultHierarchy: LocalDateTable_4cd496e3-9dfb-4633-9d48-5d222fba9ec7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6fd8c5fa-b525-428a-a388-9a67246353ca
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CORP_GHG DTbl_RenewableElectricity (2)' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostnameQAS, httpPathQAS, [Catalog=CatalogueQAS, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=CatalogueQAS,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    indic_sys_name AS Indic_Sys_Name,
+				    performance_indicator AS Performance_Indicator,
+				    division AS Division,
+				    country AS Country,
+				    site AS Site,
+				    value AS Value,
+				    value_py AS Value_Py,
+				    value_by AS Value_By,
+				    unit AS Unit,
+				    fiscal_date AS Fiscal_Date,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    is_preliminary AS Is_Preliminary
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_corp_ghg_dmt_renewable_electricity_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

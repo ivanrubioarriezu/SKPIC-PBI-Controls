@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "7f2afd3ecd14bfba1871",
+  "position": {
+    "x": 1254.1394500987392,
+    "y": 194.44022482150996,
+    "z": 16000,
+    "height": 97.220112410754979,
+    "width": 994.88581700339262,
+    "tabOrder": 16000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Data for ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontStyle": "italic",
+                      "fontSize": "20pt",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": "current calendar year",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Arial",
+                      "fontStyle": "italic",
+                      "fontSize": "20pt",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": " will be available on 1st February next year.",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontStyle": "italic",
+                      "fontSize": "20pt",
+                      "color": "#666666"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

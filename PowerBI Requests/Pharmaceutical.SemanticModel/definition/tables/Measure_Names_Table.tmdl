@@ -1,0 +1,29 @@
+table Measure_Names_Table
+	lineageTag: 4b4e8c33-0062-4644-933d-b3616a5a8be8
+
+	column 'Measure Name'
+		lineageTag: be78c192-8a29-45ff-81c3-60fc77d04cc9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Measure Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Measure_Names_Table = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "Measure Name", STRING,
+				    {
+				        {"Plan FY"},
+				        {"FC FY"},
+				        {"ACT_PY_YTD"},
+				        {"ACT_YTD"}
+				        
+				        }
+				)
+				```
+
+	annotation PBI_Id = 7600d6861b5442b4bf309def0782263e
+

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "a73cdf2ea5ed91a257f0",
+  "position": {
+    "x": 780.19140209630871,
+    "y": 92.359106790217226,
+    "z": 5000,
+    "height": 63.193073066990735,
+    "width": 269.78581193984508,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "/ Consumer Health",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "20pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/6f6bf644-33d2-4217-adb5-44dfe40e5e31/reports/2ea179cd-caff-4dae-8ddc-f504c721bbeb/36876f674c372e28416c?experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

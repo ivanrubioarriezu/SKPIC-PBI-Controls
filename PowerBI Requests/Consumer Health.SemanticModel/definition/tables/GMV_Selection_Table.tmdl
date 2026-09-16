@@ -1,0 +1,24 @@
+table GMV_Selection_Table
+	lineageTag: 7727ab68-8045-4c00-83ba-4bfaba4c95ef
+
+	column Selection
+		lineageTag: 79fc3333-b334-4849-9c0a-5fdf07374d6b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Selection]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GMV_Selection_Table = calculated
+		mode: import
+		source =
+				DATATABLE(
+				    "Selection", STRING,
+				    {
+				        {"Full Year"},
+				        {"Half Year"}
+				    }
+				)
+
+	annotation PBI_Id = 7c7d22bc5b5d4c6f94f3cfdaeb8e6276
+

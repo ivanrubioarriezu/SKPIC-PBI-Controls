@@ -1,0 +1,52 @@
+table 'Hover Over PRO'
+	lineageTag: 76b1e93a-b869-4526-9ac9-613a943ef54e
+
+	column 'Hover Over PRO'
+		lineageTag: 2199f9c7-375b-40ad-afd6-2ade6e3f070d
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Hover Over PRO Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Hover Over PRO Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hover Over PRO Fields'
+		isHidden
+		lineageTag: 84d2bb7c-7b45-4c5a-91dc-c06fb0238705
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Hover Over PRO Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hover Over PRO Order'
+		isHidden
+		formatString: 0
+		lineageTag: bdcbebcc-c91a-4421-a6a3-cd3ee31f1d43
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hover Over PRO' = calculated
+		mode: import
+		source =
+				{
+				    ("Country", NAMEOF('CORP_GHG DTbl_Scope3'[Country]), 0),
+				    ("Business_unit", NAMEOF('CORP_GHG DTbl_Scope3'[Business_unit]), 1),
+				    ("PRO_Area", NAMEOF('CORP_GHG DTbl_Scope3'[PRO_Area]), 2),
+				    ("PRO_Segment", NAMEOF('CORP_GHG DTbl_Scope3'[PRO_Segment]), 3),
+				    ("PRO_Category", NAMEOF('CORP_GHG DTbl_Scope3'[PRO_Category]), 4),
+				    ("PRO_Subcategory", NAMEOF('CORP_GHG DTbl_Scope3'[PRO_Subcategory]), 5)
+				}
+
+	annotation PBI_Id = aae2bcb6c1024b2d970b24ac054b9db7
+

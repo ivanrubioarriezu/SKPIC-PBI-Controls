@@ -1,0 +1,286 @@
+table 'CORP_GHG DTbl_Scope3 (2)'
+	lineageTag: 6eb4c91f-a8ad-43ff-9923-244083837b0e
+
+	measure 'Actual scp32' =
+			
+			IF (
+			    SELECTEDVALUE('CORP_GHG DTbl_Scope3 (2)'[Is_Target]) = FALSE(),
+			    SUM('CORP_GHG DTbl_Scope3 (2)'[CO2e])
+			)
+		lineageTag: b8874b25-27ea-40f7-8ed8-fb86e5fd75bc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 's ghg actual scp32' = ```
+			
+			VAR anyValue =
+			    
+			       ('CORP_GHG DTbl_Scope3 (2)'[Actual scp32])
+			        
+			        
+			RETURN
+			    IF ( ISBLANK(anyValue), BLANK(), "●" )
+			```
+		lineageTag: b0553cee-089d-448a-99bf-c42aeb246d03
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 77562321-4b79-48fb-90ab-f64e0b1b8419
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Co2_Scope_3_Category
+		dataType: string
+		lineageTag: 61cfb2a9-773b-4a74-85d7-5dc1b051371a
+		summarizeBy: none
+		sourceColumn: Co2_Scope_3_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Business_Unit
+		dataType: string
+		lineageTag: a10875c3-e804-4a86-b48f-5dfec46c2545
+		summarizeBy: none
+		sourceColumn: Business_Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: f84b9873-5c22-48ac-9045-2017d3be0b6d
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor_Country
+		dataType: string
+		lineageTag: c566cdbd-4f03-41dd-a839-7bb8803f2888
+		summarizeBy: none
+		sourceColumn: Vendor_Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pro_Area
+		dataType: string
+		lineageTag: 85f24439-7d23-4556-b902-08587bb2b920
+		summarizeBy: none
+		sourceColumn: Pro_Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pro_Segment_Key
+		dataType: string
+		lineageTag: 0a4c27b1-62a9-4523-9f77-9db2f501b969
+		summarizeBy: none
+		sourceColumn: Pro_Segment_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pro_Segment
+		dataType: string
+		lineageTag: 5e373613-b5e7-47eb-a38c-09902a62ef2f
+		summarizeBy: none
+		sourceColumn: Pro_Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pro_Category_Key
+		dataType: string
+		lineageTag: d570925c-9b42-423b-a151-6b361164cc6d
+		summarizeBy: none
+		sourceColumn: Pro_Category_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pro_Category
+		dataType: string
+		lineageTag: 8664e1dc-745e-4cfc-ae93-b7c7832ee4f8
+		summarizeBy: none
+		sourceColumn: Pro_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pro_Subcategory_Key
+		dataType: string
+		lineageTag: 1566c70c-d798-4113-96b0-c84b710fbdf8
+		summarizeBy: none
+		sourceColumn: Pro_Subcategory_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pro_Subcategory
+		dataType: string
+		lineageTag: ada66c7e-ed79-44d6-be97-bdf181800a9f
+		summarizeBy: none
+		sourceColumn: Pro_Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sbt_Relevant
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aa497fc9-1d48-4461-9fb6-d9be90bb6448
+		summarizeBy: none
+		sourceColumn: Sbt_Relevant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Co2e
+		dataType: double
+		lineageTag: 709dcd79-08aa-4b4a-8df3-710b9daaff45
+		summarizeBy: sum
+		sourceColumn: Co2e
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Co2e_Baseline_Year
+		dataType: double
+		lineageTag: 2e1f8096-3b7b-49ba-93fc-176e53454204
+		summarizeBy: sum
+		sourceColumn: Co2e_Baseline_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Is_Target
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d93c84d7-d604-49e4-986d-3403962a80e8
+		summarizeBy: none
+		sourceColumn: Is_Target
+
+		annotation SummarizationSetBy = Automatic
+
+	column Co2e_Previous_Year
+		dataType: double
+		lineageTag: 9c5c747b-dd8e-4f40-85a2-90bb167afa09
+		summarizeBy: sum
+		sourceColumn: Co2e_Previous_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fiscal_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5105b67d-eefe-4a2d-abd2-4a095c3fb543
+		summarizeBy: none
+		sourceColumn: Fiscal_Date
+
+		variation Variation
+			isDefault
+			relationship: 1efb6a0f-9b34-48b0-a0a1-ce8fbf7f6603
+			defaultHierarchy: LocalDateTable_1f04a5ab-bc0a-4e10-a28d-0788fdec9251.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 129dfb96-6240-4460-80e8-568cdd4e3f7c
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: 6160d8f0-883e-4202-892f-c57adfdfb695
+			defaultHierarchy: LocalDateTable_55ac0cb5-11ce-4796-b87f-3962da0a9d46.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fddf1dd8-8963-4cfe-b53f-fb830a1933f3
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: 17a1f1c5-5c3a-41a2-86e1-2c9ac85a4dd7
+			defaultHierarchy: LocalDateTable_bb8c4f72-aad0-4eca-881a-45e7ec8729b2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 75169249-e4d5-4514-95dc-f90c0205fba1
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column _Actual =
+			
+			IF (
+			    'CORP_GHG DTbl_Scope3 (2)'[Is_Target] = FALSE(),
+			    'CORP_GHG DTbl_Scope3 (2)'[CO2e]
+			)
+		lineageTag: 09dde58f-7d92-4970-8b3e-db8a760ece48
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _Target =
+			
+			IF (
+			    'CORP_GHG DTbl_Scope3 (2)'[Is_Target] = TRUE(),
+			    'CORP_GHG DTbl_Scope3 (2)'[Co2e]
+			)
+		lineageTag: f8f04a7f-5014-4221-898b-c0180bce16ee
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CORP_GHG DTbl_Scope3 (2)' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostnameQAS, httpPathQAS, [Catalog=CatalogueQAS, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=CatalogueQAS,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    co2_scope_3_category AS Co2_Scope_3_Category,
+				    business_unit AS Business_Unit,
+				    country AS Country,
+				    vendor_country AS Vendor_Country,
+				    pro_area AS Pro_Area,
+				    pro_segment_key AS Pro_Segment_Key,
+				    pro_segment AS Pro_Segment,
+				    pro_category_key AS Pro_Category_Key,
+				    pro_category AS Pro_Category,
+				    pro_subcategory_key AS Pro_Subcategory_Key,
+				    pro_subcategory AS Pro_Subcategory,
+				    sbt_relevant AS Sbt_Relevant,
+				    co2e AS Co2e,
+				    co2e_baseline_year AS Co2e_Baseline_Year,
+				    is_target AS Is_Target,
+				    co2e_previous_year AS Co2e_Previous_Year,
+				    fiscal_date AS Fiscal_Date,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    is_preliminary AS Is_Preliminary
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_corp_ghg_dmt_scope3_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

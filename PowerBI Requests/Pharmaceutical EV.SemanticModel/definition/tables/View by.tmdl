@@ -1,0 +1,48 @@
+table 'View by'
+	lineageTag: ea74369c-329c-4b05-a07f-edf3d048feff
+
+	column 'View by'
+		lineageTag: 741e22cd-be29-4a89-867c-40843158f040
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'View by Order'
+
+		relatedColumnDetails
+			groupByColumn: 'View by Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'View by Fields'
+		isHidden
+		lineageTag: 5698efa5-54ce-4563-a4d6-2db204dc0c50
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'View by Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'View by Order'
+		isHidden
+		formatString: 0
+		lineageTag: bf2156ac-7f73-46f5-a0db-ef5d5cb54641
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'View by' = calculated
+		mode: import
+		source =
+				{
+				    ("Region", NAMEOF('PH_WH DTbl_AllUserAndCYPValues'[Region]), 0),
+				    ("Product Category", NAMEOF('PH_WH DTbl_AllUserAndCYPValues'[Product Category]), 1)
+				}
+
+	annotation PBI_Id = 27346ecd72b94725a875aa82168b8bbd
+

@@ -1,0 +1,2446 @@
+table 'CH_UP DMT_KPI'
+	lineageTag: 148d26b9-57fd-40d0-b9fa-4a437cf589eb
+
+	measure CY_FY =
+			
+			SUMX(
+			    FILTER(
+			        'CH_UP DMT_KPI',
+			        'CH_UP DMT_KPI'[Fiscal_Month] = 12
+			    ),
+			    'CH_UP DMT_KPI'[Actual_YtD]
+			)
+		lineageTag: 1298f2b7-e66f-4c6b-a71a-f5b4a7051330
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CY_HY =
+			
+			SUMX(
+			    FILTER(
+			        'CH_UP DMT_KPI',
+			        'CH_UP DMT_KPI'[Fiscal_Month] = 6
+			    ),
+			    'CH_UP DMT_KPI'[Actual_YtD]
+			)
+		lineageTag: 72c0a7e1-a537-4fda-a6ed-b17a242a95d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GMV_CY_Selection (HY/FY)' = ```
+			
+			VAR SelectedValue = SELECTEDVALUE(GMV_Selection_Table[Selection])
+			RETURN 
+			    SWITCH(
+			        SelectedValue,
+			        "Half Year", [CY_HY],
+			        "Full Year", [CY_FY],
+			        BLANK()
+			    )
+			```
+		lineageTag: e7769eaf-4965-405e-b3e0-ff944e3401ae
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PY_FY =
+			
+			SUMX(
+			    FILTER(
+			        'CH_UP DMT_KPI',
+			        'CH_UP DMT_KPI'[Fiscal_Month] = 12
+			    ),
+			    'CH_UP DMT_KPI'[Actual_PFY]
+			)
+		lineageTag: 3f7d0f23-1fa6-4036-80d8-da34829bc60f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PY_HY =
+			
+			SUMX(
+			    FILTER(
+			        'CH_UP DMT_KPI',
+			        'CH_UP DMT_KPI'[Fiscal_Month] = 6
+			    ),
+			    'CH_UP DMT_KPI'[Actual_PHY]
+			)
+		lineageTag: 86a81c58-b5fd-48da-b1a0-8b656ea15933
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure BY_HY =
+			
+			SUMX(
+			    FILTER(
+			        'CH_UP DMT_KPI',
+			        'CH_UP DMT_KPI'[Fiscal_Month] = 6
+			    ),
+			    'CH_UP DMT_KPI'[Actual_BHY]
+			)
+		lineageTag: 79113a7c-f0f0-4377-88b0-6285f9e56453
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure BY_FY =
+			
+			SUMX(
+			    FILTER(
+			        'CH_UP DMT_KPI',
+			        'CH_UP DMT_KPI'[Fiscal_Month] = 12
+			    ),
+			    'CH_UP DMT_KPI'[Actual_BFY]
+			)
+		lineageTag: 059eafec-93f0-4aec-a9e8-98b7457a089f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GMV_PY_Selection (HY/FY)' = ```
+			
+			VAR SelectedValue = SELECTEDVALUE(GMV_Selection_Table[Selection])
+			RETURN 
+			    SWITCH(
+			        SelectedValue,
+			        "Half Year", [PY_HY],
+			        "Full Year", [PY_FY],
+			        BLANK()
+			    )
+			```
+		lineageTag: a55c4b72-296a-4041-9858-ea6a3364e9bb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GMV_BY_Selection (HY/FY)' = ```
+			
+			VAR SelectedValue = SELECTEDVALUE(GMV_Selection_Table[Selection])
+			RETURN 
+			    SWITCH(
+			        SelectedValue,
+			        "Half Year", [BY_HY],
+			        "Full Year", [BY_FY],
+			        BLANK()
+			    )
+			```
+		lineageTag: 566ad34b-ca42-426d-8cda-bbb21341e855
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Year Label' = YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date]))
+		formatString: 0
+		lineageTag: 873900af-8cdb-4c99-afa4-1494fb5da13a
+
+	measure 'ACT CY Label' =
+			
+			VAR Selection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			VAR FiscalYear = YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date]))
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    Selection = "Full Year", FORMAT(FiscalYear, "0"),
+			    Selection = "Half Year", FORMAT(FiscalYear, "0")& " " & "HY1",
+			    BLANK()
+			)
+		lineageTag: 355ec145-aff9-42f0-aed6-c89f8dd29bf1
+
+	measure 'ACT PY Label' =
+			
+			VAR Selection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			VAR FiscalYear =YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date])) - 1
+			RETURN
+			SWITCH(
+			    TRUE(),
+			     Selection = "Full Year", FORMAT(FiscalYear, "0"),
+			    Selection = "Half Year", "PY " & FORMAT(FiscalYear, "0") & "  HY1"&
+			    BLANK()
+			)
+		lineageTag: 8174f4dc-82eb-497f-8e5c-1abad0cc7272
+
+	measure 'ACT BY Label' =
+			
+			VAR Selection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			VAR FiscalYear =YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date])) - 1
+			RETURN
+			SWITCH(
+			    TRUE(),
+			     Selection = "Full Year",  " BY 2019",
+			    Selection = "Half Year",   " BY 2019 HY1"&
+			    BLANK()
+			)
+		lineageTag: 6a20b34c-09fe-48ff-8065-21766cb96e8b
+
+	measure 'E_FY (Year Filter)' =
+			
+			VAR Selection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			VAR FiscalDate = MAX('CH_UP DMT_KPI'[Fiscal_Date])
+			VAR FiscalYearPlus1 = YEAR(FiscalDate) + 1
+			VAR CurrentYear = YEAR(TODAY())
+			VAR CurrentMonth = MONTH(TODAY())
+			VAR CurrentDay = DAY(TODAY())
+			
+			RETURN
+			IF(
+			    Selection = "Full Year" &&
+			    (
+			        FiscalYearPlus1 < CurrentYear ||
+			        (
+			            ((CurrentDay >= 29 && CurrentMonth = 1) || CurrentMonth > 1) &&
+			            FiscalYearPlus1 = CurrentYear
+			        )
+			    ),
+			    FiscalDate,
+			    BLANK()
+			)
+		formatString: General Date
+		lineageTag: fce2336e-a876-4ee1-a838-587cb8e15998
+
+	measure 'E_HY  (Year Filter)' =
+			
+			
+			VAR Selection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			VAR FiscalDate = MAX('CH_UP DMT_KPI'[Fiscal_Date])
+			VAR FiscalYear = YEAR(FiscalDate)
+			VAR CurrentYear = YEAR(TODAY())
+			VAR CurrentMonth = MONTH(TODAY())
+			VAR CurrentDay = DAY(TODAY())
+			
+			RETURN
+			IF(
+			    Selection = "HY1" &&
+			    (
+			        (
+			            (CurrentDay >= 25 && CurrentMonth = 7) || CurrentMonth > 7
+			        ) && FiscalYear = CurrentYear
+			    ) || FiscalYear < CurrentYear,
+			    FiscalDate,
+			    BLANK()
+			)
+		formatString: General Date
+		lineageTag: e6033690-9230-4501-b7a7-5d6ee9104a75
+
+	measure 'FY_HY_Selection measure' =
+			
+			VAR SelectedYear = YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date]))
+			VAR Selection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			RETURN
+			IF(
+			    Selection = "Full Year",
+			    FORMAT(SelectedYear, "0"),
+			    "Half Year " & FORMAT(SelectedYear, "0")
+			)
+		lineageTag: 102a62f1-5337-46f7-b98f-0d098806740e
+
+	measure E_Plan_Full_Year =
+			
+			VAR FiscalMonth = MAX('CH_UP DMT_KPI'[Fiscal_Month])
+			VAR IsMonthValid = SELECTEDVALUE('CH_UP DMT_KPI'[Fiscal_Month]) = 1 ||SELECTEDVALUE('CH_UP DMT_KPI'[Fiscal_Month]) = 6
+			VAR IsYearFilterValid = NOT(ISBLANK([E_FY_Year_Filter_Plan measure]))
+			RETURN
+			IF(
+			    IsMonthValid && IsYearFilterValid,
+			    SELECTEDVALUE('CH_UP DMT_KPI'[Plan_YE],
+			    BLANK()
+			))
+		lineageTag: 2404ee5a-0203-47da-bd57-523b018ae1a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'E_FY_Year_Filter_Plan measure' =
+			
+			VAR FiscalDate = MAX('CH_UP DMT_KPI'[Fiscal_Date])
+			VAR FiscalYearPlus1 = YEAR(FiscalDate) + 1
+			VAR CurrentYear = YEAR(TODAY())
+			VAR CurrentMonth = MONTH(TODAY())
+			VAR CurrentDay = DAY(TODAY())
+			
+			RETURN
+			IF(
+			    FiscalYearPlus1 < CurrentYear ||
+			    (
+			        ((CurrentDay >= 20 && CurrentMonth = 1) || CurrentMonth > 1) &&
+			        FiscalYearPlus1 = CurrentYear
+			    ),
+			    FiscalDate,
+			    BLANK()
+			)
+		formatString: General Date
+		lineageTag: 30cd9fcf-a0dc-4cca-b0d9-dda43ef7bac1
+
+	measure 'Dynamic ACT CY' = ```
+			
+			VAR TopBottomValue = SELECTEDVALUE('Top/Bottom'[Value])        // "Top" or "Bottom"
+			VAR RankingLimit = SELECTEDVALUE('Ranking Option'[Ranking Option])
+			VAR ViewBySelection = SELECTEDVALUE('ViewBy'[ViewBy Fields])
+			
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBrand = CONTAINSSTRING(ViewBySelection, "Brand")
+			
+			// Compute rank for current item
+			VAR CurrentRank =
+			    IF(
+			        IsCountry,
+			        IF(TopBottomValue = "Top",
+			            RANKX(ALL('Unique Country'[Country]), [GMV_CY_Selection (HY/FY)], , DESC),
+			            RANKX(ALL('Unique Country'[Country]), [GMV_CY_Selection (HY/FY)], , ASC)
+			        ),
+			        
+			            IF(TopBottomValue = "Top",
+			                RANKX(ALL('Unique Brand'[Brand]), [GMV_CY_Selection (HY/FY)], , DESC),
+			                RANKX(ALL('Unique Brand'[Brand]), [GMV_CY_Selection (HY/FY)], , ASC)
+			            )
+			        )
+			    
+			VAR TotalRows =
+			    IF(IsCountry,
+			        COUNTROWS(ALL('Unique Country'[Country])),
+			        IF(IsCountry,
+			            COUNTROWS(ALL('Unique Brand'[Brand])), BLANK()
+			           
+			    ))
+			// Calculate Others dynamically
+			VAR OthersValue =
+			    IF(
+			        IsCountry,
+			        CALCULATE(
+			            [GMV_CY_Selection (HY/FY)],
+			            FILTER(
+			                ALL('Unique Country'[Country]),
+			                IF(TopBottomValue = "Top",
+			                    RANKX(ALL('Unique Country'[Country]), [GMV_CY_Selection (HY/FY)], , DESC) > RankingLimit,
+			                    RANKX(ALL('Unique Country'[Country]), [GMV_CY_Selection (HY/FY)], , ASC) > RankingLimit
+			                )
+			            )
+			        ),
+			        
+			            CALCULATE(
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER(
+			                    ALL('Unique Brand'[Brand]),
+			                    IF(TopBottomValue = "Top",
+			                        RANKX(ALL('Unique Brand'[Brand]), [GMV_CY_Selection (HY/FY)], , DESC) > RankingLimit,
+			                        RANKX(ALL('Unique Brand'[Brand]), [GMV_CY_Selection (HY/FY)], , ASC) > RankingLimit
+			                    )
+			                )
+			            )
+			        )
+			    
+			
+			RETURN
+			IF(
+			    (IsCountry && SELECTEDVALUE('Unique Country'[Country]) = "Others") ||
+			    (IsBrand && SELECTEDVALUE('Unique Brand'[Brand]) = "Others"),
+			    OthersValue,
+			    IF(
+			        TopBottomValue = "Top",
+			        IF(CurrentRank <= RankingLimit, [GMV_CY_Selection (HY/FY)], BLANK()),
+			        IF(CurrentRank <= RankingLimit + 1, [GMV_CY_Selection (HY/FY)], BLANK())
+			    )
+			)
+			
+			```
+		lineageTag: a260c36e-5f7a-43dc-9e85-353574254ed3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ViewBy param text' = MAX('ViewBy'[ViewBy])
+		lineageTag: efbfb9bc-41f8-444f-9301-2832c6c4254a
+
+	measure 'BAR chart Dynamic Measure' =
+			
+			VAR TopBottomValue = SELECTEDVALUE('Top/Bottom'[Value])        // "Top" or "Bottom"
+			VAR RankingLimit = SELECTEDVALUE('Ranking Option'[Ranking Option])
+			VAR ViewBySelection = SELECTEDVALUE('ViewBy'[ViewBy Fields])
+			VAR SortBySelection = SELECTEDVALUE('Sort by:'[Sort by:])
+			VAR HYFYSelection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			
+			// Determine sort measure
+			VAR SortMeasure =
+			    SWITCH(
+			        TRUE(),
+			        SortBySelection = "ACT CY", [GMV_CY_Selection (HY/FY)],
+			        SortBySelection = "ACT PY", [GMV_PY_Selection (HY/FY)],
+			        SortBySelection = "ACT BY 2019", [GMV_BY_Selection (HY/FY)],
+			        BLANK()
+			    )
+			
+			// COUNTRY TABLE
+			VAR CountryTable =
+			    ADDCOLUMNS(
+			        VALUES('CH_UP DMT_KPI'[Country]),
+			        "SortValue", CALCULATE(SortMeasure),
+			        "Rank",
+			            SWITCH(
+			                TRUE(),
+			                TopBottomValue = "Top", RANKX(ALL('CH_UP DMT_KPI'[Country]), CALCULATE(SortMeasure), , DESC),
+			                TopBottomValue = "Bottom", RANKX(ALL('CH_UP DMT_KPI'[Country]), CALCULATE(SortMeasure), , ASC)
+			            )
+			    )
+			
+			// BRAND TABLE
+			VAR BrandTable =
+			    ADDCOLUMNS(
+			        VALUES('CH_UP DMT_KPI'[Brand]),
+			        "SortValue", CALCULATE(SortMeasure),
+			        "Rank",
+			            SWITCH(
+			                TRUE(),
+			                TopBottomValue = "Top", RANKX(ALL('CH_UP DMT_KPI'[Brand]), CALCULATE(SortMeasure), , DESC),
+			                TopBottomValue = "Bottom", RANKX(ALL('CH_UP DMT_KPI'[Brand]), CALCULATE(SortMeasure), , ASC)
+			            )
+			    )
+			
+			// Apply ranking filter
+			VAR IsInTopBottom =
+			    SWITCH(
+			        TRUE(),
+			        ViewBySelection = "Country",
+			            MAXX(FILTER(CountryTable, [Rank] <= RankingLimit), 1),
+			        ViewBySelection = "Brand",
+			            MAXX(FILTER(BrandTable, [Rank] <= RankingLimit), 1)
+			    )
+			
+			RETURN
+			IF(IsInTopBottom = 1, SortMeasure, BLANK())
+		lineageTag: e4ffdb0f-80d2-4f3d-891b-43ff295a02cd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Dynamic ACT CY (SKU Legend Safe)' =
+			
+			VAR TopBottomValue = SELECTEDVALUE('Top/Bottom'[Value])        // "Top" or "Bottom"
+			VAR RankingLimit = COALESCE(SELECTEDVALUE('Ranking Option'[Ranking Option]), 10)
+			VAR ViewBySelection = SELECTEDVALUE('ViewBy'[ViewBy Fields])
+			
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBrand = CONTAINSSTRING(ViewBySelection, "Brand")
+			
+			VAR CurrentCountry = SELECTEDVALUE('Unique Country'[Country])
+			VAR CurrentBrand = SELECTEDVALUE('Unique Brand'[Brand])
+			VAR CurrentSKU = SELECTEDVALUE('CH_UP DMT_KPI'[Pillar_SKU_Class]) // SKU granularity
+			
+			// Rank Country or Brand
+			VAR CountryRank =
+			    IF(
+			        IsCountry,
+			        IF(
+			            TopBottomValue = "Top",
+			            RANKX(
+			                ALL('Unique Country'[Country]),
+			                CALCULATE([GMV_CY_Selection (HY/FY)]),
+			                ,
+			                DESC
+			            ),
+			            RANKX(
+			                ALL('Unique Country'[Country]),
+			                CALCULATE([GMV_CY_Selection (HY/FY)]),
+			                ,
+			                ASC
+			            )
+			        ),
+			        BLANK()
+			    )
+			
+			VAR BrandRank =
+			    IF(
+			        IsBrand,
+			        IF(
+			            TopBottomValue = "Top",
+			            RANKX(
+			                ALL('Unique Brand'[Brand]),
+			                CALCULATE([GMV_CY_Selection (HY/FY)]),
+			                ,
+			                DESC
+			            ),
+			            RANKX(
+			                ALL('Unique Brand'[Brand]),
+			                CALCULATE([GMV_CY_Selection (HY/FY)]),
+			                ,
+			                ASC
+			            )
+			        ),
+			        BLANK()
+			    )
+			
+			// Determine if current SKU belongs to a ranked Country/Brand
+			VAR IsRanked =
+			    IF(
+			        IsCountry,
+			        CountryRank <= RankingLimit,
+			        IF(IsBrand,
+			            BrandRank <= RankingLimit,
+			            FALSE
+			        )
+			    )
+			
+			// Final Output
+			RETURN
+			IF(
+			    IsRanked,
+			    [GMV_CY_Selection (HY/FY)],
+			    BLANK()
+			)
+		lineageTag: 359d4016-0e92-49e3-afb0-434c72ad18cb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Dynamic ACT PY' = ```
+			
+			VAR TopBottomValue = SELECTEDVALUE('Top/Bottom'[Value])        // "Top" or "Bottom"
+			VAR RankingLimit = SELECTEDVALUE('Ranking Option'[Ranking Option])
+			VAR ViewBySelection = SELECTEDVALUE('ViewBy'[ViewBy Fields])
+			
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBrand = CONTAINSSTRING(ViewBySelection, "Brand")
+			
+			// Compute rank for current item
+			VAR CurrentRank =
+			    IF(
+			        IsCountry,
+			        IF(TopBottomValue = "Top",
+			            RANKX(ALL('Unique Country'[Country]), [GMV_PY_Selection (HY/FY)], , DESC),
+			            RANKX(ALL('Unique Country'[Country]), [GMV_PY_Selection (HY/FY)], , ASC)
+			        ),
+			        
+			            IF(TopBottomValue = "Top",
+			                RANKX(ALL('Unique Brand'[Brand]), [GMV_PY_Selection (HY/FY)], , DESC),
+			                RANKX(ALL('Unique Brand'[Brand]), [GMV_PY_Selection (HY/FY)], , ASC)
+			            )
+			        )
+			    
+			VAR TotalRows =
+			    IF(IsCountry,
+			        COUNTROWS(ALL('Unique Country'[Country])),
+			        IF(IsCountry,
+			            COUNTROWS(ALL('Unique Brand'[Brand])), BLANK()
+			           
+			    ))
+			// Calculate Others dynamically
+			VAR OthersValue =
+			    IF(
+			        IsCountry,
+			        CALCULATE(
+			            [GMV_PY_Selection (HY/FY)],
+			            FILTER(
+			                ALL('Unique Country'[Country]),
+			                IF(TopBottomValue = "Top",
+			                    RANKX(ALL('Unique Country'[Country]), [GMV_PY_Selection (HY/FY)], , DESC) > RankingLimit,
+			                    RANKX(ALL('Unique Country'[Country]), [GMV_PY_Selection (HY/FY)], , ASC) > RankingLimit
+			                )
+			            )
+			        ),
+			        
+			            CALCULATE(
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER(
+			                    ALL('Unique Brand'[Brand]),
+			                    IF(TopBottomValue = "Top",
+			                        RANKX(ALL('Unique Brand'[Brand]), [GMV_PY_Selection (HY/FY)], , DESC) > RankingLimit,
+			                        RANKX(ALL('Unique Brand'[Brand]), [GMV_PY_Selection (HY/FY)], , ASC) > RankingLimit
+			                    )
+			                )
+			            )
+			        )
+			    
+			
+			RETURN
+			IF(
+			    (IsCountry && SELECTEDVALUE('Unique Country'[Country]) = "Others") ||
+			    (IsBrand && SELECTEDVALUE('Unique Brand'[Brand]) = "Others"),
+			    OthersValue,
+			    IF(
+			        TopBottomValue = "Top",
+			        IF(CurrentRank <= RankingLimit, [GMV_PY_Selection (HY/FY)], BLANK()),
+			        IF(CurrentRank <= RankingLimit + 1, [GMV_PY_Selection (HY/FY)], BLANK())
+			    )
+			)
+			
+			```
+		lineageTag: 711d58a9-3ed0-4c35-8c9e-3a585516dda8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Dynamic ACT BY' = ```
+			
+			VAR TopBottomValue = SELECTEDVALUE('Top/Bottom'[Value])        // "Top" or "Bottom"
+			VAR RankingLimit = SELECTEDVALUE('Ranking Option'[Ranking Option])
+			VAR ViewBySelection = SELECTEDVALUE('ViewBy'[ViewBy Fields])
+			
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBrand = CONTAINSSTRING(ViewBySelection, "Brand")
+			
+			// Compute rank for current item
+			VAR CurrentRank =
+			    IF(
+			        IsCountry,
+			        IF(TopBottomValue = "Top",
+			            RANKX(ALL('Unique Country'[Country]), [GMV_BY_Selection (HY/FY)], , DESC),
+			            RANKX(ALL('Unique Country'[Country]), [GMV_BY_Selection (HY/FY)], , ASC)
+			        ),
+			        
+			            IF(TopBottomValue = "Top",
+			                RANKX(ALL('Unique Brand'[Brand]), [GMV_BY_Selection (HY/FY)], , DESC),
+			                RANKX(ALL('Unique Brand'[Brand]), [GMV_BY_Selection (HY/FY)], , ASC)
+			            )
+			        )
+			    
+			VAR TotalRows =
+			    IF(IsCountry,
+			        COUNTROWS(ALL('Unique Country'[Country])),
+			        IF(IsCountry,
+			            COUNTROWS(ALL('Unique Brand'[Brand])), BLANK()
+			           
+			    ))
+			// Calculate Others dynamically
+			VAR OthersValue =
+			    IF(
+			        IsCountry,
+			        CALCULATE(
+			            [GMV_BY_Selection (HY/FY)],
+			            FILTER(
+			                ALL('Unique Country'[Country]),
+			                IF(TopBottomValue = "Top",
+			                    RANKX(ALL('Unique Country'[Country]), [GMV_BY_Selection (HY/FY)], , DESC) > RankingLimit,
+			                    RANKX(ALL('Unique Country'[Country]), [GMV_BY_Selection (HY/FY)], , ASC) > RankingLimit
+			                )
+			            )
+			        ),
+			        
+			            CALCULATE(
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER(
+			                    ALL('Unique Brand'[Brand]),
+			                    IF(TopBottomValue = "Top",
+			                        RANKX(ALL('Unique Brand'[Brand]), [GMV_BY_Selection (HY/FY)], , DESC) > RankingLimit,
+			                        RANKX(ALL('Unique Brand'[Brand]), [GMV_BY_Selection (HY/FY)], , ASC) > RankingLimit
+			                    )
+			                )
+			            )
+			        )
+			    
+			
+			RETURN
+			IF(
+			    (IsCountry && SELECTEDVALUE('Unique Country'[Country]) = "Others") ||
+			    (IsBrand && SELECTEDVALUE('Unique Brand'[Brand]) = "Others"),
+			    OthersValue,
+			    IF(
+			        TopBottomValue = "Top",
+			        IF(CurrentRank <= RankingLimit, [GMV_BY_Selection (HY/FY)], BLANK()),
+			        IF(CurrentRank <= RankingLimit + 1, [GMV_BY_Selection (HY/FY)], BLANK())
+			    )
+			)
+			
+			```
+		lineageTag: 74a997c7-ba00-438e-8a72-74b0d1404d5f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_CY Emissions' =
+			
+			
+			
+			VAR TopBottomValue = SELECTEDVALUE('Top/Bottom'[Value])
+			VAR TopX = SELECTEDVALUE('Ranking Option'[Ranking Option], 0)
+			VAR ViewBySelection = SELECTEDVALUE(ViewBy[ViewBy Fields])
+			
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBrand   = CONTAINSSTRING(ViewBySelection, "Brand")
+			
+			/* ===================== BASE ===================== */
+			VAR BaseMeasureForRank =
+			    CALCULATE(
+			        [GMV_CY_Selection (HY/FY)],
+			        REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])
+			    )
+			
+			/* ===================== RANK ===================== */
+			VAR RankValue =
+			    SWITCH(
+			        TRUE(),
+			
+			        IsCountry,
+			            IF(
+			                TopBottomValue = "Top",
+			                RANKX(
+			                    FILTER(ALL('Unique Country'), 'Unique Country'[Country] <> "Others"),
+			                    BaseMeasureForRank,
+			                    ,
+			                    DESC,
+			                    DENSE
+			                ),
+			                RANKX(
+			                    FILTER(ALL('Unique Country'), 'Unique Country'[Country] <> "Others"),
+			                    BaseMeasureForRank,
+			                    ,
+			                    ASC,
+			                    DENSE
+			                )
+			            ),
+			
+			        IsBrand,
+			            IF(
+			                TopBottomValue = "Top",
+			                RANKX(
+			                    FILTER(ALL('Unique Brand'), 'Unique Brand'[Brand] <> "Others"),
+			                    BaseMeasureForRank,
+			                    ,
+			                    DESC,
+			                    DENSE
+			                ),
+			                RANKX(
+			                    FILTER(ALL('Unique Brand'), 'Unique Brand'[Brand] <> "Others"),
+			                    BaseMeasureForRank,
+			                    ,
+			                    ASC,
+			                    DENSE
+			                )
+			            )
+			    )
+			
+			/* ===================== OTHERS (FIXED) ===================== */
+			VAR OthersValue =
+			    SWITCH(
+			        TRUE(),
+			
+			        IsCountry,
+			            CALCULATE(
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER(
+			                    ALL('Unique Country'),
+			                    'Unique Country'[Country] <> "Others"
+			                        && RankValue > TopX
+			                )
+			            ),
+			
+			        IsBrand,
+			            CALCULATE(
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER(
+			                    ALL('Unique Brand'),
+			                    'Unique Brand'[Brand] <> "Others"
+			                        && RankValue > TopX
+			                )
+			            )
+			    )
+			
+			/* ===================== FLAGS ===================== */
+			VAR IsOthers =
+			    SWITCH(
+			        TRUE(),
+			        IsCountry, SELECTEDVALUE('Unique Country'[Country]) = "Others",
+			        IsBrand,   SELECTEDVALUE('Unique Brand'[Brand]) = "Others",
+			        FALSE
+			    )
+			
+			/* ===================== FINAL ===================== */
+			RETURN
+			IF(
+			    IsOthers,
+			    OthersValue,
+			    IF(
+			        TopX = 0 || RankValue <= TopX,
+			        [GMV_CY_Selection (HY/FY)],   -- ✅ keeps correct % split
+			        BLANK()
+			    )
+			)
+		lineageTag: 151730a0-1e8e-4ea6-a1f9-fe950971f097
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Rech per labe' = "Reach per" & " " & MAX(ViewBy[ViewBy])
+		lineageTag: 3fed2c74-cb37-4da3-b070-701886821f98
+
+	measure '_GMV Selection (CY / PY / BY – HY / FY)' =
+			
+			VAR PeriodSelected =
+			    SELECTEDVALUE (GMV_Selection_Table[Selection])  -- CY / PY / BY
+			VAR HYFYSelected =
+			    SELECTEDVALUE ( GMV_Selection_Table[Selection] )   -- Half Year / Full Year
+			RETURN
+			    SWITCH (
+			        TRUE(),
+			
+			        PeriodSelected = "CY" && HYFYSelected = "Half Year", [CY_HY],
+			        PeriodSelected = "CY" && HYFYSelected = "Full Year", [CY_FY],
+			
+			        PeriodSelected = "PY" && HYFYSelected = "Half Year", [PY_HY],
+			        PeriodSelected = "PY" && HYFYSelected = "Full Year", [PY_FY],
+			
+			        PeriodSelected = "BY" && HYFYSelected = "Half Year", [BY_HY],
+			        PeriodSelected = "BY" && HYFYSelected = "Full Year", [BY_FY],
+			
+			        BLANK ()
+			    )
+		lineageTag: f40f113c-29c0-4818-a037-d309f17dec14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GMV for Chart' = ```
+			
+			VAR _Axis = SELECTEDVALUE ( Axis_Pillar_Total[AxisLabel] )
+			RETURN
+			SWITCH (
+			    _Axis,
+			
+			    "Commercial - Passive",
+			        CALCULATE (
+			            [GMV_CY_Selection (HY/FY)],
+			            'CH_UP DMT_KPI'[Pillar_SKU_Class] = "Commercial - Passive"
+			        ),
+			
+			    "Commercial - Strategic",
+			        CALCULATE (
+			            [GMV_CY_Selection (HY/FY)],
+			            'CH_UP DMT_KPI'[Pillar_SKU_Class] = "Commercial - Strategic"
+			        ),
+			    
+			    "Partnerships",
+			        CALCULATE (
+			            [GMV_CY_Selection (HY/FY)],
+			            'CH_UP DMT_KPI'[Pillar_SKU_Class] = "Partnerships"
+			        ),
+			
+			
+			    "Total",
+			        CALCULATE (
+			            [GMV_CY_Selection (HY/FY)],
+			            ALL ( 'CH_UP DMT_KPI'[Pillar_SKU_Class] )
+			        )
+			)
+			```
+		lineageTag: 0ff31d11-8ea6-47d1-82c3-8e3ecabc5c64
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Sort_TopX_Others_Last =
+			
+			VAR ViewBySelection = SELECTEDVALUE(ViewBy[ViewBy Fields])
+			
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBrand   = CONTAINSSTRING(ViewBySelection, "Brand")
+			
+			VAR IsOthers =
+			    SWITCH(
+			        TRUE(),
+			        IsCountry, SELECTEDVALUE('Unique Country'[Country]) = "Others",
+			        IsBrand,   SELECTEDVALUE('Unique Brand'[Brand]) = "Others"
+			    )
+			
+			RETURN
+			IF(IsOthers, 999999, [_CY Emissions])
+		lineageTag: 6287e185-2c0d-4d4d-b198-d2de3f73692b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_01CY Emissions Final' =
+			
+			
+			
+			VAR TopX = SELECTEDVALUE('Ranking Option'[Ranking Option], 0)
+			VAR ViewBySelection = SELECTEDVALUE(ViewBy[ViewBy Fields])
+			
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBrand   = CONTAINSSTRING(ViewBySelection, "Brand")
+			
+			/* ✅ Base measure (REMOVE legend only for ranking) */
+			VAR BaseMeasure =
+			    CALCULATE(
+			        [GMV_CY_Selection (HY/FY)],
+			        REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])
+			    )
+			
+			/* ✅ IMPORTANT: Use VALUES to make ranking work per row */
+			VAR RankValue =
+			    SWITCH(
+			        TRUE(),
+			        IsCountry,
+			            RANKX(
+			                VALUES('Unique Country'[Country]),
+			                BaseMeasure,
+			                ,
+			                DESC,
+			                DENSE
+			            ),
+			        IsBrand,
+			            RANKX(
+			                VALUES('Unique Brand'[Brand]),
+			                BaseMeasure,
+			                ,
+			                DESC,
+			                DENSE
+			            )
+			    )
+			
+			/* ✅ Current category */
+			VAR CurrentCategory =
+			    SWITCH(
+			        TRUE(),
+			        IsCountry, SELECTEDVALUE('Unique Country'[Country]),
+			        IsBrand,   SELECTEDVALUE('Unique Brand'[Brand])
+			    )
+			
+			VAR IsOthers = CurrentCategory = "Others"
+			
+			/* ✅ Others calculation (correct ranking set) */
+			VAR OthersValue =
+			    SWITCH(
+			        TRUE(),
+			
+			        IsCountry,
+			            CALCULATE(
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER(
+			                    ALL('Unique Country'),
+			                    RANKX(
+			                        ALL('Unique Country'),
+			                        BaseMeasure,
+			                        ,
+			                        DESC
+			                    ) > TopX
+			                )
+			            ),
+			
+			        IsBrand,
+			            CALCULATE(
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER(
+			                    ALL('Unique Brand'),
+			                    RANKX(
+			                        ALL('Unique Brand'),
+			                        BaseMeasure,
+			                        ,
+			                        DESC
+			                    ) > TopX
+			                )
+			            )
+			    )
+			
+			/* ✅ FINAL */
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    /* ✅ Others row */
+			    IsOthers && TopX > 0,
+			        OthersValue,
+			
+			    /* ✅ TopX rows */
+			    TopX = 0,
+			        [GMV_CY_Selection (HY/FY)],
+			
+			    RankValue <= TopX,
+			        [GMV_CY_Selection (HY/FY)],
+			
+			    BLANK()
+			)
+		lineageTag: cfb3aba6-fd3c-436c-88a9-4e962547ca62
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_Dynamic ACT CY' = ```
+			
+			
+			
+			VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== CURRENT VALUE ===================== */
+			
+			VAR CurrentValue =
+			    [GMV_CY_Selection (HY/FY)]
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            RANKX (
+			                FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			                [GMV_CY_Selection (HY/FY)],
+			                ,
+			                DESC,
+			                DENSE
+			            ),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            RANKX (
+			                FILTER ( ALL ( 'Unique Brand'[Brand] ), 'Unique Brand'[Brand] <> "Others" ),
+			                [GMV_CY_Selection (HY/FY)],
+			                ,
+			                DESC,
+			                DENSE
+			            ),
+			
+			        BLANK ()
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            SELECTEDVALUE ( 'Unique Brand'[Brand] ) = "Others",
+			
+			        FALSE
+			    )
+			
+			/* ===================== OTHERS (FULLY DYNAMIC ✅) ===================== */
+			
+			VAR OthersValue =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            CALCULATE (
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER (
+			                    ALL ( 'Unique Country'[Country] ),
+			                    'Unique Country'[Country] <> "Others"
+			                        && RANKX (
+			                            FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			                            [GMV_CY_Selection (HY/FY)],
+			                            ,
+			                            DESC,
+			                            DENSE
+			                        ) > TopX
+			                )
+			            ),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            CALCULATE (
+			                [GMV_CY_Selection (HY/FY)],
+			                FILTER (
+			                    ALL ( 'Unique Brand'[Brand] ),
+			                    'Unique Brand'[Brand] <> "Others"
+			                        && RANKX (
+			                            FILTER ( ALL ( 'Unique Brand'[Brand] ), 'Unique Brand'[Brand] <> "Others" ),
+			                            [GMV_CY_Selection (HY/FY)],
+			                            ,
+			                            DESC,
+			                            DENSE
+			                        ) > TopX
+			                )
+			            ),
+			
+			        BLANK ()
+			    )
+			
+			/* ===================== FINAL ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- ✅ Others
+			    IsOthers, OthersValue,
+			
+			    -- ✅ TopX values
+			    TopX = 0 || CurrentRank <= TopX,
+			        CurrentValue,
+			
+			    BLANK ()
+			)
+			
+			/*VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== RANKS ===================== */
+			
+			VAR Rank_Country =
+			    RANKX (
+			        FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			        [GMV_CY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			VAR Rank_Brand =
+			    RANKX (
+			        FILTER (
+			            ALL ( 'Unique Brand'[Brand] ),
+			            'Unique Brand'[Brand] <> "Others"
+			        ),
+			        [GMV_CY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			/* ===================== OTHERS ===================== */
+			
+			VAR Others_Country =
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        FILTER ( ALL ( 'Unique Country'[Country] ), Rank_Country > TopX )
+			    )
+			
+			VAR Others_Brand =
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ( 'Unique Brand'[Brand] ),
+			            Rank_Brand > TopX
+			        )
+			    )
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ), Rank_Country,
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ), Rank_Brand,
+			        BLANK()    -- ✅ default required
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            SELECTEDVALUE ( 'Unique Brand'[Brand] ) = "Others",
+			        FALSE
+			    )
+			
+			/* ===================== FINAL ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- ✅ Others
+			    IsOthers,
+			        SWITCH (
+			            TRUE (),
+			            ViewBySelection = NAMEOF ( 'Unique Country'[Country] ), Others_Country,
+			            ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ), Others_Brand,
+			            BLANK()
+			        ),
+			
+			    -- ✅ TopX
+			    TopX = 0 || CurrentRank <= TopX,
+			        [GMV_CY_Selection (HY/FY)],
+			
+			    BLANK ()
+			)*/
+			-------------------------------------------------------------------------------------
+			/*VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== RANKS (exclude Others) ===================== */
+			
+			
+			VAR Rank_Country =
+			    RANKX (
+			        FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			        [GMV_CY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			VAR Rank_Brand =
+			    RANKX (
+			        FILTER (
+			            ALL ( 'Unique Brand'[Brand] ),
+			            'Unique Brand'[Brand] <> "Others"
+			        ),
+			        [GMV_CY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			
+			/* ===================== OTHERS VALUES ===================== */
+			
+			
+			
+			VAR Others_Country =
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        FILTER ( ALL ( 'Unique Country'[Country] ), Rank_Country > TopX )
+			    )
+			
+			VAR Others_Brand =
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ( 'Unique Brand'[Brand]),
+			            Rank_Brand > TopX
+			        )
+			    )
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			        
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ), Rank_Country,
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand]), Rank_Brand,
+			      
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			     
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] )= "Others",
+			            
+			        FALSE
+			    )
+			
+			/* ===================== FINAL RETURN (STEP 1 ONLY) ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- Return aggregated Others
+			    IsOthers,
+			        SWITCH (
+			            TRUE (),
+			           
+			            ViewBySelection = NAMEOF ( 'Unique Country'[Country] ), Others_Country,
+			            ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ), Others_Brand,
+			           
+			        ),
+			
+			    -- Return Top‑X values
+			    TopX = 0 || CurrentRank <= TopX,
+			        [GMV_CY_Selection (HY/FY)],
+			
+			    BLANK ()
+			)*/
+			```
+		lineageTag: ab4ce9d3-76c3-4f1a-affe-2ae334557639
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CY Filter for others' = ```
+			
+			VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== RANKS ===================== */
+			
+			
+			VAR Rank_Country =
+			    RANKX (
+			        FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			        [GMV_CY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			VAR Rank_Brand =
+			    RANKX (
+			        FILTER (
+			            ALL ( 'Unique Brand'[Brand] ),
+			            'Unique Brand'[Brand] <> "Others"
+			        ),
+			        [GMV_CY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			       
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ), Rank_Country,
+			      
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ), Rank_Brand
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			    
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			     
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand]),
+			            SELECTEDVALUE ( 'Unique Brand'[Brand] ) = "Others",
+			        FALSE
+			    )
+			
+			/* ===================== FINAL RETURN (FILTER FLAG) ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- ✅ Always show Others
+			    IsOthers, 1,
+			
+			    -- ✅ Show Top‑X rows
+			    TopX = 0 || CurrentRank <= TopX, 1,
+			
+			    -- ❌ Hide everything else
+			    0
+			)
+			```
+		formatString: 0
+		lineageTag: 0cefac87-5933-42f2-b961-7e1f615622ec
+
+	measure '_Dynamic ACT PY' =
+			
+			VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== CURRENT VALUE ===================== */
+			
+			VAR CurrentValue =
+			    [GMV_PY_Selection (HY/FY)]
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            RANKX (
+			                FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			                [GMV_PY_Selection (HY/FY)],
+			                ,
+			                DESC,
+			                DENSE
+			            ),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            RANKX (
+			                FILTER ( ALL ( 'Unique Brand'[Brand] ), 'Unique Brand'[Brand] <> "Others" ),
+			                [GMV_PY_Selection (HY/FY)],
+			                ,
+			                DESC,
+			                DENSE
+			            ),
+			
+			        BLANK ()
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            SELECTEDVALUE ( 'Unique Brand'[Brand] ) = "Others",
+			
+			        FALSE
+			    )
+			
+			/* ===================== OTHERS (FULLY DYNAMIC ✅) ===================== */
+			
+			VAR OthersValue =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            CALCULATE (
+			                [GMV_PY_Selection (HY/FY)],
+			                FILTER (
+			                    ALL ( 'Unique Country'[Country] ),
+			                    'Unique Country'[Country] <> "Others"
+			                        && RANKX (
+			                            FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			                            [GMV_PY_Selection (HY/FY)],
+			                            ,
+			                            DESC,
+			                            DENSE
+			                        ) > TopX
+			                )
+			            ),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            CALCULATE (
+			                [GMV_PY_Selection (HY/FY)],
+			                FILTER (
+			                    ALL ( 'Unique Brand'[Brand] ),
+			                    'Unique Brand'[Brand] <> "Others"
+			                        && RANKX (
+			                            FILTER ( ALL ( 'Unique Brand'[Brand] ), 'Unique Brand'[Brand] <> "Others" ),
+			                            [GMV_PY_Selection (HY/FY)],
+			                            ,
+			                            DESC,
+			                            DENSE
+			                        ) > TopX
+			                )
+			            ),
+			
+			        BLANK ()
+			    )
+			
+			/* ===================== FINAL ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- ✅ Others
+			    IsOthers, OthersValue,
+			
+			    -- ✅ TopX values
+			    TopX = 0 || CurrentRank <= TopX,
+			        CurrentValue,
+			
+			    BLANK ()
+			)
+		lineageTag: 1b4235f2-ec33-4c62-a2cf-cc7b1352b05b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PY Filter for others' = ```
+			
+			VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== RANKS ===================== */
+			
+			
+			VAR Rank_Country =
+			    RANKX (
+			        FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			        [GMV_PY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			VAR Rank_Brand =
+			    RANKX (
+			        FILTER (
+			            ALL ( 'Unique Brand'[Brand] ),
+			            'Unique Brand'[Brand] <> "Others"
+			        ),
+			        [GMV_PY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			       
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ), Rank_Country,
+			      
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ), Rank_Brand
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			    
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			     
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand]),
+			            SELECTEDVALUE ( 'Unique Brand'[Brand] ) = "Others",
+			        FALSE
+			    )
+			
+			/* ===================== FINAL RETURN (FILTER FLAG) ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- ✅ Always show Others
+			    IsOthers, 1,
+			
+			    -- ✅ Show Top‑X rows
+			    TopX = 0 || CurrentRank <= TopX, 1,
+			
+			    -- ❌ Hide everything else
+			    0
+			)
+			```
+		formatString: 0
+		lineageTag: f2ef1f8f-ecb9-49f4-a4af-b8c5ae4d82bc
+
+	measure '_Dynamic ACT BY' =
+			
+			VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== CURRENT VALUE ===================== */
+			
+			VAR CurrentValue =
+			    [GMV_BY_Selection (HY/FY)]
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            RANKX (
+			                FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC,
+			                DENSE
+			            ),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            RANKX (
+			                FILTER ( ALL ( 'Unique Brand'[Brand] ), 'Unique Brand'[Brand] <> "Others" ),
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC,
+			                DENSE
+			            ),
+			
+			        BLANK ()
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            SELECTEDVALUE ( 'Unique Brand'[Brand] ) = "Others",
+			
+			        FALSE
+			    )
+			
+			/* ===================== OTHERS (FULLY DYNAMIC ✅) ===================== */
+			
+			VAR OthersValue =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            CALCULATE (
+			                [GMV_BY_Selection (HY/FY)],
+			                FILTER (
+			                    ALL ( 'Unique Country'[Country] ),
+			                    'Unique Country'[Country] <> "Others"
+			                        && RANKX (
+			                            FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			                            [GMV_BY_Selection (HY/FY)],
+			                            ,
+			                            DESC,
+			                            DENSE
+			                        ) > TopX
+			                )
+			            ),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ),
+			            CALCULATE (
+			                [GMV_BY_Selection (HY/FY)],
+			                FILTER (
+			                    ALL ( 'Unique Brand'[Brand] ),
+			                    'Unique Brand'[Brand] <> "Others"
+			                        && RANKX (
+			                            FILTER ( ALL ( 'Unique Brand'[Brand] ), 'Unique Brand'[Brand] <> "Others" ),
+			                            [GMV_BY_Selection (HY/FY)],
+			                            ,
+			                            DESC,
+			                            DENSE
+			                        ) > TopX
+			                )
+			            ),
+			
+			        BLANK ()
+			    )
+			
+			/* ===================== FINAL ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- ✅ Others
+			    IsOthers, OthersValue,
+			
+			    -- ✅ TopX values
+			    TopX = 0 || CurrentRank <= TopX,
+			        CurrentValue,
+			
+			    BLANK ()
+			)
+		lineageTag: aa194925-615c-4489-9372-e340019cb408
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'BY Filter for others' = ```
+			
+			VAR TopX =
+			    SELECTEDVALUE ( 'Ranking Option'[Ranking Option], 0 )
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE ( 'ViewBy'[ViewBy Fields] )
+			
+			/* ===================== RANKS ===================== */
+			
+			
+			VAR Rank_Country =
+			    RANKX (
+			        FILTER ( ALL ( 'Unique Country'[Country] ), 'Unique Country'[Country] <> "Others" ),
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			VAR Rank_Brand =
+			    RANKX (
+			        FILTER (
+			            ALL ( 'Unique Brand'[Brand] ),
+			            'Unique Brand'[Brand] <> "Others"
+			        ),
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			       
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ), Rank_Country,
+			      
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand] ), Rank_Brand
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			    
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			     
+			        ViewBySelection = NAMEOF ( 'Unique Brand'[Brand]),
+			            SELECTEDVALUE ( 'Unique Brand'[Brand] ) = "Others",
+			        FALSE
+			    )
+			
+			/* ===================== FINAL RETURN (FILTER FLAG) ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- ✅ Always show Others
+			    IsOthers, 1,
+			
+			    -- ✅ Show Top‑X rows
+			    TopX = 0 || CurrentRank <= TopX, 1,
+			
+			    -- ❌ Hide everything else
+			    0
+			)
+			```
+		formatString: 0
+		lineageTag: 2c3f2048-3ea0-45e3-a520-a23ae93e8664
+
+	measure '_Dynamic ACT CY 100% bar' =
+			
+			
+			VAR TopX =
+			    SELECTEDVALUE('Ranking Option'[Ranking Option], 0)
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE('ViewBy'[ViewBy Fields])
+			
+			
+			/* ===================== RANKS (IGNORE LEGEND) ===================== */
+			
+			VAR Rank_Country =
+			    RANKX (
+			        FILTER (
+			            ALL ('Unique Country'[Country]),
+			            'Unique Country'[Country] <> "Others"
+			        ),
+			        CALCULATE (
+			            [GMV_CY_Selection (HY/FY)],
+			            REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])   -- ✅ KEY FIX
+			        ),
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			VAR Rank_Brand =
+			    RANKX (
+			        FILTER (
+			            ALL ('Unique Brand'[Brand]),
+			            'Unique Brand'[Brand] <> "Others"
+			        ),
+			        CALCULATE (
+			            [GMV_CY_Selection (HY/FY)],
+			            REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])   -- ✅ KEY FIX
+			        ),
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			
+			/* ===================== OTHERS VALUES ===================== */
+			
+			VAR Others_Country =
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ('Unique Country'[Country]),
+			            RANKX (
+			                ALL ('Unique Country'[Country]),
+			                CALCULATE (
+			                    [GMV_CY_Selection (HY/FY)],
+			                    REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])
+			                ),
+			                ,
+			                DESC
+			            ) > TopX
+			        )
+			    )
+			
+			VAR Others_Brand =
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ('Unique Brand'[Brand]),
+			            RANKX (
+			                ALL ('Unique Brand'[Brand]),
+			                CALCULATE (
+			                    [GMV_CY_Selection (HY/FY)],
+			                    REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])
+			                ),
+			                ,
+			                DESC
+			            ) > TopX
+			        )
+			    )
+			
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE(),
+			
+			        ViewBySelection = NAMEOF('Unique Country'[Country]), Rank_Country,
+			        ViewBySelection = NAMEOF('Unique Brand'[Brand]), Rank_Brand,
+			
+			        BLANK()
+			    )
+			
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE(),
+			
+			        ViewBySelection = NAMEOF('Unique Country'[Country]),
+			            SELECTEDVALUE('Unique Country'[Country]) = "Others",
+			
+			        ViewBySelection = NAMEOF('Unique Brand'[Brand]),
+			            SELECTEDVALUE('Unique Brand'[Brand]) = "Others",
+			
+			        FALSE
+			    )
+			
+			
+			/* ===================== FINAL ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE(),
+			
+			    /* ✅ Others row */
+			    IsOthers,
+			        SWITCH (
+			            TRUE(),
+			            ViewBySelection = NAMEOF('Unique Country'[Country]), Others_Country,
+			            ViewBySelection = NAMEOF('Unique Brand'[Brand]), Others_Brand,
+			            BLANK()
+			        ),
+			
+			    /* ✅ TopX selection */
+			    TopX = 0 || CurrentRank <= TopX,
+			        [GMV_CY_Selection (HY/FY)],   -- ✅ DO NOT REMOVE FILTERS HERE
+			
+			    BLANK()
+			)
+		lineageTag: 2aa12dc5-85aa-4c34-aef2-9bc98ddcdb22
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CY Filter for Others 100%' =
+			
+			
+			VAR TopX =
+			    SELECTEDVALUE('Ranking Option'[Ranking Option], 0)
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE('ViewBy'[ViewBy Fields])
+			
+			/* ===================== RANKS (IGNORE LEGEND) ===================== */
+			
+			VAR Rank_Country =
+			    RANKX (
+			        FILTER (
+			            ALL('Unique Country'[Country]),
+			            'Unique Country'[Country] <> "Others"
+			        ),
+			        CALCULATE(
+			            [GMV_CY_Selection (HY/FY)],
+			            REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])   -- ✅ IMPORTANT FIX
+			        ),
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			VAR Rank_Brand =
+			    RANKX (
+			        FILTER (
+			            ALL('Unique Brand'[Brand]),
+			            'Unique Brand'[Brand] <> "Others"
+			        ),
+			        CALCULATE(
+			            [GMV_CY_Selection (HY/FY)],
+			            REMOVEFILTERS('CH_UP DMT_KPI'[Pillar_SKU_Class])   -- ✅ IMPORTANT FIX
+			        ),
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			
+			/* ===================== CURRENT RANK ===================== */
+			
+			VAR CurrentRank =
+			    SWITCH(
+			        TRUE(),
+			        ViewBySelection = NAMEOF('Unique Country'[Country]), Rank_Country,
+			        ViewBySelection = NAMEOF('Unique Brand'[Brand]), Rank_Brand,
+			        BLANK()
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH(
+			        TRUE(),
+			        ViewBySelection = NAMEOF('Unique Country'[Country]),
+			            SELECTEDVALUE('Unique Country'[Country]) = "Others",
+			        ViewBySelection = NAMEOF('Unique Brand'[Brand]),
+			            SELECTEDVALUE('Unique Brand'[Brand]) = "Others",
+			        FALSE
+			    )
+			
+			/* ===================== FINAL FILTER ===================== */
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    -- ✅ Always keep Others
+			    IsOthers, 1,
+			
+			    -- ✅ Show TopX
+			    TopX = 0 || CurrentRank <= TopX, 1,
+			
+			    -- ❌ Hide rest
+			    0
+			)
+		formatString: 0
+		lineageTag: aec876da-8741-4aec-956b-45001564f1e1
+
+	column Pillar =
+			
+			SWITCH(
+			    'CH_UP DMT_KPI'[Impact],
+			    "Campaign", "Partnerships",
+			    "Commercial"  // default value
+			)
+		lineageTag: 844f2ef4-78c6-48f7-92ed-07d33c372db8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar_SKU_Class =
+			
+			IF (
+			    'CH_UP DMT_KPI'[Pillar] = "Partnerships",
+			    "Partnerships",
+			    'CH_UP DMT_KPI'[Pillar] & " - " & 'CH_UP DMT_KPI'[SKU_Class]
+			)
+		lineageTag: b832ee69-0fbd-4bdb-9482-1e173784dfeb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country (India+Rest)' =
+			
+			IF(
+			    'CH_UP DMT_KPI'[Geographical_Location]= "India",
+			    "ACT Reach India",
+			    "ACT Reach excl. India"
+			)
+		lineageTag: 94f6ccdf-cc18-4422-9ef8-3f2fa28f641f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Combined_Group = ```
+			
+			IF(
+			    'CH_UP DMT_KPI'[Geographical_Location] = "India",
+			    "ACT Reach India - " & 
+			        IF(
+			            'CH_UP DMT_KPI'[Pillar] = "Partnerships",
+			            "Partnerships",
+			            'CH_UP DMT_KPI'[Pillar] & " - " & 'CH_UP DMT_KPI'[SKU_Class]
+			        ),
+			    "ACT Reach excl. India - " & 
+			        IF(
+			            'CH_UP DMT_KPI'[Pillar] = "Partnerships",
+			            "Partnerships",
+			            'CH_UP DMT_KPI'[Pillar] & " - " & 'CH_UP DMT_KPI'[SKU_Class]
+			        )
+			)
+			```
+		lineageTag: 2c2cc863-86a1-45d9-bf41-75594e96b214
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column GMV_ACT_CY_Label =
+			
+			VAR Selection = SELECTEDVALUE('GMV_Selection_Table'[Selection])
+			VAR YearLabel = YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date]))
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        Selection = "Full Year", FORMAT(YearLabel, "0000"),
+			        Selection = "Half Year", FORMAT(YearLabel, "0000") & " Half Year",
+			        BLANK()
+			    )
+		lineageTag: eb88ca18-135c-4a3c-b6e5-0029b638ef54
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_Label = YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date]))
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 64a7da3a-fd36-4533-aab4-1132db5916b8
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 99daf34b-6af7-4c4a-9f38-49608d04b409
+			defaultHierarchy: LocalDateTable_578f1ed1-ae60-4beb-b0e7-5a529538ce91.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FY_HY_Selection =
+			
+			VAR SelectedYear = YEAR(MAX('CH_UP DMT_KPI'[Fiscal_Date]))
+			RETURN
+			    IF (
+			        SELECTEDVALUE(GMV_Selection_Table[Selection]) = "Full Year",
+			        FORMAT(SelectedYear, "0"),
+			        "Half Year " & FORMAT(SelectedYear, "0")
+			    )
+		lineageTag: 6d2fc02c-3dd9-417f-9ca9-6e84be66db16
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'E_FY (Year Filter)_Plan' =
+			
+			VAR FiscalYearPlus1 = YEAR('CH_UP DMT_KPI'[Fiscal_Date]) + 1
+			VAR CurrentYear = YEAR(TODAY())
+			VAR CurrentMonth = MONTH(TODAY())
+			VAR CurrentDay = DAY(TODAY())
+			
+			RETURN
+			FiscalYearPlus1 < CurrentYear ||
+			(
+			    ((CurrentDay >= 20 && CurrentMonth = 1) || CurrentMonth > 1) &&
+			    FiscalYearPlus1 = CurrentYear
+			)
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 54920b20-bae5-48a0-b3a3-75696a956bf3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'E_FY (Year Filter) column' =
+			
+			VAR FiscalYearPlus1 = YEAR('CH_UP DMT_KPI'[Fiscal_Date]) + 1
+			VAR CurrentYear = YEAR(TODAY())
+			VAR CurrentMonth = MONTH(TODAY())
+			VAR CurrentDay = DAY(TODAY())
+			
+			RETURN
+			IF(
+			    FiscalYearPlus1 < CurrentYear ||
+			    (
+			        ((CurrentDay >= 29 && CurrentMonth = 1) || CurrentMonth > 1) &&
+			        FiscalYearPlus1 = CurrentYear
+			    ),
+			    'CH_UP DMT_KPI'[Fiscal_Date],
+			    BLANK()
+			)
+		formatString: General Date
+		lineageTag: d2d0af68-9aa7-4997-9d94-1d579fe3ec51
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 43f7bd5c-a9c7-4b6c-8fe8-732da0cd5f70
+			defaultHierarchy: LocalDateTable_6f7bd68a-92d1-4978-80a6-996cc93f82f5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pillar Label Column' = "Pillar: " & 'CH_UP DMT_KPI'[Pillar_SKU_Class]
+		lineageTag: ff5ae307-2e7f-4475-be76-9566f1c8f664
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand = 'CH_UP DMT_KPI'[Product_Description]
+		lineageTag: 1ee90bef-ecc7-4e80-a224-e0625bd6118e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country = 'CH_UP DMT_KPI'[Geographical_Location]
+		lineageTag: 0e19b086-2978-4ac5-a44a-9ebf91c1f05e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region_Display = ```
+			
+			VAR r = TRIM ( [Region] )
+			RETURN
+			    IF ( ISBLANK ( r ) || r = "Blank", "Not assigned", r )
+			
+			```
+		lineageTag: 745f22cc-8cd0-4e06-aebd-7b65eec97f5d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region_SortOrder = ```
+			
+			    SWITCH (
+			        TRUE(),
+			        'CH_UP DMT_KPI'[Region_Display] = "Asian Pacific", 1,
+			        'CH_UP DMT_KPI'[Region_Display]  = "EMEA",          2,
+			        'CH_UP DMT_KPI'[Region_Display]  = "Latin America", 3,
+			        'CH_UP DMT_KPI'[Region_Display]  = "North America", 4,
+			        'CH_UP DMT_KPI'[Region_Display]  = "Not assigned",  5,
+			        6
+			    )
+			
+			```
+		formatString: 0
+		lineageTag: d5036c0a-095e-4dd6-a800-38caf72251b0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 82e458b4-629c-47cf-808f-6ec895e47d1c
+		summarizeBy: sum
+		sourceColumn: Fiscal_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_month
+		dataType: int64
+		formatString: 0
+		lineageTag: cbd2204e-495a-4abe-bb15-bfb363a34519
+		summarizeBy: sum
+		sourceColumn: Fiscal_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_period
+		dataType: int64
+		formatString: 0
+		lineageTag: 508cc9b9-13d8-4db7-8069-8c5ee2c9a2c4
+		summarizeBy: sum
+		sourceColumn: Fiscal_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_current
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 78d24499-58ef-41f5-9c0e-866280b0447a
+		summarizeBy: none
+		sourceColumn: Is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geographical_location
+		dataType: string
+		lineageTag: 26b2c9e3-28d5-4869-ac7a-7af40cd98dc2
+		summarizeBy: none
+		sourceColumn: Geographical_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 32ad3741-a126-46aa-8812-cbbc12f603da
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subregion
+		dataType: string
+		lineageTag: 58248807-e9b7-4a9d-95bf-2ef97c0b0b07
+		summarizeBy: none
+		sourceColumn: Subregion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Impact
+		dataType: string
+		lineageTag: 2adac752-c6f9-4bba-a1bb-84a26ce7cc0b
+		summarizeBy: none
+		sourceColumn: Impact
+
+		annotation SummarizationSetBy = Automatic
+
+	column Income_group
+		dataType: string
+		lineageTag: 200e9236-5685-4af1-a231-2065d4031366
+		summarizeBy: none
+		sourceColumn: Income_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_description
+		dataType: string
+		lineageTag: e4637ef8-9977-47bb-98ea-372e453e5bd3
+		summarizeBy: none
+		sourceColumn: Product_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_category
+		dataType: string
+		lineageTag: 2dd8a07b-dbb4-4fa8-a917-33e305cc5bee
+		summarizeBy: none
+		sourceColumn: Product_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_cm
+		dataType: double
+		lineageTag: 5d44cf63-6611-4796-8036-34e35d10e3ef
+		summarizeBy: sum
+		sourceColumn: Actual_cm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_pm_not_used
+		dataType: double
+		lineageTag: bdd59cde-d03c-4a37-8480-ab32e6c7b14f
+		summarizeBy: sum
+		sourceColumn: Actual_pm_not_used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_ytd
+		dataType: double
+		lineageTag: d5ae0e4d-a4eb-42a9-b681-e04022ed4a9e
+		summarizeBy: sum
+		sourceColumn: Actual_ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_pytd_not_used
+		dataType: double
+		lineageTag: d7a77109-4623-465d-882c-5826419ee580
+		summarizeBy: sum
+		sourceColumn: Actual_pytd_not_used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_bytd_not_used
+		dataType: double
+		lineageTag: f1d4fb24-02dd-4320-a63a-c7e752e69119
+		summarizeBy: sum
+		sourceColumn: Actual_bytd_not_used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Plan_ytd
+		dataType: double
+		lineageTag: 4984217d-30d7-4c26-88d4-774df6f300c3
+		summarizeBy: sum
+		sourceColumn: Plan_ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Forecast_ytd
+		dataType: double
+		lineageTag: fe3d4740-6f18-4b05-92ca-0c672d2c08ad
+		summarizeBy: sum
+		sourceColumn: Forecast_ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valid_from
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 890e701a-68a5-4566-bc93-2beba21b3df7
+		summarizeBy: none
+		sourceColumn: Valid_from
+
+		variation Variation
+			isDefault
+			relationship: 5c43a544-1d22-4106-b6dc-ee6806195650
+			defaultHierarchy: LocalDateTable_ab3abbfc-dae7-461b-978d-34671703387a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_to
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2a85122e-2cdd-4c05-aac9-4f271e56dccf
+		summarizeBy: none
+		sourceColumn: Valid_to
+
+		variation Variation
+			isDefault
+			relationship: 16e42fce-fb1e-45c6-a14c-68e81ef79fc2
+			defaultHierarchy: LocalDateTable_284e5c18-3feb-4a4b-90cf-649804cc08ea.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_bfy
+		dataType: double
+		lineageTag: 9f1015ad-8fdb-490a-9a31-824b3af999a2
+		summarizeBy: sum
+		sourceColumn: Actual_bfy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_bhy
+		dataType: double
+		lineageTag: ce537f18-fa6a-461c-b146-3bc190b4251e
+		summarizeBy: sum
+		sourceColumn: Actual_bhy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_pfy
+		dataType: double
+		lineageTag: 329e0628-8398-4b2a-af7c-cf0050935e95
+		summarizeBy: sum
+		sourceColumn: Actual_pfy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_phy
+		dataType: double
+		lineageTag: 9ab58c58-a008-4cab-abcc-b34e404f2d3b
+		summarizeBy: sum
+		sourceColumn: Actual_phy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fiscal_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4382e764-dd85-4f27-9e70-d440eec9a7d0
+		summarizeBy: none
+		sourceColumn: Fiscal_date
+
+		variation Variation
+			isDefault
+			relationship: 9f7b12fa-4b76-41da-ae25-21f82138b693
+			defaultHierarchy: LocalDateTable_590b83c9-789a-4e18-9312-0804f5952957.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Is_preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 13726054-d133-4383-8e94-279c18162821
+		summarizeBy: none
+		sourceColumn: Is_preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plan_ye
+		dataType: double
+		lineageTag: a817adaf-89c6-40a1-a612-cbbf98a5aea3
+		summarizeBy: sum
+		sourceColumn: Plan_ye
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Forecast_ye
+		dataType: double
+		lineageTag: 203f19e7-9c19-4c2f-8606-c27ecd2ecc5d
+		summarizeBy: sum
+		sourceColumn: Forecast_ye
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sku_class
+		dataType: string
+		lineageTag: 80097b73-7356-4a61-b13c-9b5395f102b5
+		summarizeBy: none
+		sourceColumn: Sku_class
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CH_UP DMT_KPI' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    fiscal_year AS Fiscal_year,
+				    fiscal_month AS Fiscal_month,
+				    fiscal_period AS Fiscal_period,
+				    is_current AS Is_current,
+				    geographical_location AS Geographical_location,
+				    region AS Region,
+				    subregion AS Subregion,
+				    impact AS Impact,
+				    income_group AS Income_group,
+				    product_description AS Product_description,
+				    product_category AS Product_category,
+				    actual_cm AS Actual_cm,
+				    actual_pm_not_used AS Actual_pm_not_used,
+				    actual_ytd AS Actual_ytd,
+				    actual_pytd_not_used AS Actual_pytd_not_used,
+				    actual_bytd_not_used AS Actual_bytd_not_used,
+				    plan_ytd AS Plan_ytd,
+				    forecast_ytd AS Forecast_ytd,
+				    valid_from AS Valid_from,
+				    valid_to AS Valid_to,
+				    actual_bfy AS Actual_bfy,
+				    actual_bhy AS Actual_bhy,
+				    actual_pfy AS Actual_pfy,
+				    actual_phy AS Actual_phy,
+				    fiscal_date AS Fiscal_date,
+				    is_preliminary AS Is_preliminary,
+				    plan_ye AS Plan_ye,
+				    forecast_ye AS Forecast_ye,
+				    sku_class AS Sku_class
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_kpi_intfc_view
+				where is_preliminary = FALSE"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

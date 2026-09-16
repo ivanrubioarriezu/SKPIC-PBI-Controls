@@ -1,0 +1,249 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3aa162fb000ee52010cd",
+  "position": {
+    "x": 30.600318753320344,
+    "y": 813.45847352576584,
+    "z": 12000,
+    "height": 986.86027979458117,
+    "width": 2945.2806800070834,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SKU_Type"
+                    }
+                  },
+                  "Property": "Material_Number"
+                }
+              },
+              "queryRef": "CH_UP DMV_SKU_Type.Material_Number",
+              "nativeQueryRef": "Material_Number"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SKU_Type"
+                    }
+                  },
+                  "Property": "Material_Description"
+                }
+              },
+              "queryRef": "CH_UP DMV_SKU_Type.Material_Description",
+              "nativeQueryRef": "Material_Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SKU_Type"
+                    }
+                  },
+                  "Property": "SKU_Type"
+                }
+              },
+              "queryRef": "CH_UP DMV_SKU_Type.SKU_Type",
+              "nativeQueryRef": "SKU_Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SKU_Type"
+                    }
+                  },
+                  "Property": "Comment"
+                }
+              },
+              "queryRef": "CH_UP DMV_SKU_Type.Comment",
+              "nativeQueryRef": "Comment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SKU_Type"
+                    }
+                  },
+                  "Property": "Last_Updated"
+                }
+              },
+              "queryRef": "CH_UP DMV_SKU_Type.Last_Updated",
+              "nativeQueryRef": "Last_Updated"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "26D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "371.8225635491445D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SKU_Type.Material_Number"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "970.8987481659539D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SKU_Type.Material_Description"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "647.1524138966593D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SKU_Type.SKU_Type"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "299.20638036508166D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SKU_Type.Comment"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "582.4001741367981D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMV_SKU_Type.Last_Updated"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CH SKU type'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "isHidden": true
+}

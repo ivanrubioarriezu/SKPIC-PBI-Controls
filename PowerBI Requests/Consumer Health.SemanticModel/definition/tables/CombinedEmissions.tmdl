@@ -1,0 +1,67 @@
+table CombinedEmissions
+	lineageTag: 58588a15-dc00-4250-a287-4c046737810a
+
+	column Region
+		lineageTag: 5ba9b702-a22f-4397-b2cf-5dd14cfd2a76
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Region]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		lineageTag: 42c34590-4395-4429-b5fd-4bc771b05ab0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MeasureType
+		lineageTag: cf1c13e0-7ca4-401a-b71c-ada8cf70028f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MeasureType]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c1c448c5-6ce1-4109-b1dd-656f5861a2f3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition CombinedEmissions = calculated
+		mode: import
+		source =
+				
+				UNION(
+				    SELECTCOLUMNS(
+				        'CH_UP DMT_KPI',
+				        "Region", 'CH_UP DMT_KPI'[Region],
+				        "Country", 'CH_UP DMT_KPI'[Pillar_SKU_Class],
+				        "MeasureType", "Current Year",
+				        "Value", CALCULATE([GMV_CY_Selection (HY/FY)])
+				    ),
+				    SELECTCOLUMNS(
+				        'CH_UP DMT_KPI',
+				        "Region", 'CH_UP DMT_KPI'[Region],
+				        "Country", 'CH_UP DMT_KPI'[Pillar_SKU_Class],
+				        "MeasureType", "PY Year",
+				        "Value", CALCULATE([GMV_PY_Selection (HY/FY)])
+				    ),
+				    SELECTCOLUMNS(
+				        'CH_UP DMT_KPI',
+				        "Region", 'CH_UP DMT_KPI'[Region],
+				        "Country", 'CH_UP DMT_KPI'[Pillar_SKU_Class],
+				        "MeasureType", "BY Year",
+				        "Value", CALCULATE([GMV_BY_Selection (HY/FY)])
+				    )
+				)
+
+	annotation PBI_Id = 448e105c3e15473f9b1a41bc5c876f8a
+

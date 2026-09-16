@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU02",
+      "reportVersionAtImport": {
+        "visual": "2.6.0",
+        "report": "3.1.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU02",
+          "path": "BaseThemes/CY26SU02.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Bayer_logo3908089143961293.png",
+          "path": "Bayer_logo3908089143961293.png",
+          "type": "Image"
+        },
+        {
+          "name": "CH07623189900028016.PNG",
+          "path": "CH07623189900028016.PNG",
+          "type": "Image"
+        },
+        {
+          "name": "CS2732552207284894.PNG",
+          "path": "CS2732552207284894.PNG",
+          "type": "Image"
+        },
+        {
+          "name": "GHG_Export_logo3750733608444561.PNG",
+          "path": "GHG_Export_logo3750733608444561.PNG",
+          "type": "Image"
+        },
+        {
+          "name": "ph0773955731626802.PNG",
+          "path": "ph0773955731626802.PNG",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "pagesPosition": "Bottom",
+    "useDefaultAggregateDisplayName": true
+  }
+}

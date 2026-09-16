@@ -1,0 +1,240 @@
+relationship a832c68f-fb3e-448a-83a8-e3f83ad3ae16
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_SHF'.Valid_From
+	toColumn: LocalDateTable_56bf2fe4-4540-4d9a-aeef-96ea73f32441.Date
+
+relationship fc09ef7e-cd7c-4099-b46f-b3c2a47c3538
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_SHF'.Valid_To
+	toColumn: LocalDateTable_dd412c5b-c21b-43d7-b73b-8c60c846f800.Date
+
+relationship afd26f76-0fd9-4049-84c6-764d03267530
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_SHF'.Fiscal_Date
+	toColumn: LocalDateTable_b62ccb55-a5f8-45d2-b9ae-edf1c38efa51.Date
+
+relationship 97abd83d-e405-49fb-9f8b-669160b9ad7c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail'.Valid_From
+	toColumn: LocalDateTable_5d0002cf-fa65-4ba0-b391-252d3afa3cdb.Date
+
+relationship df29b8b2-1420-4d22-aa9e-0d8f37e4dfb7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail'.Valid_To
+	toColumn: LocalDateTable_20e37be0-683c-41a7-9fe5-c959ab8772bd.Date
+
+relationship 64085848-add1-4a0c-84ea-6c06dfb2cdb0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI'.Valid_From
+	toColumn: LocalDateTable_8911893f-c32d-4b41-9a21-08f635ec3f02.Date
+
+relationship ec1d277e-aa4d-4b02-8131-0382166b7966
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI'.Valid_To
+	toColumn: LocalDateTable_b85aa092-f307-45e5-b591-4fdb4a6b0092.Date
+
+relationship 20023e4a-d4e5-49a0-b20b-c4a832830560
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI'.Fiscal_Date
+	toColumn: LocalDateTable_7fc3457b-1e91-48c1-9420-7c5d271eb5a6.Date
+
+relationship 79cd81bf-ba26-44c5-8b67-4411e4534b81
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_Target'.Valid_From
+	toColumn: LocalDateTable_37edd46d-e31f-49c3-a3b9-e204100ee7e0.Date
+
+relationship 146f393f-1bab-4a08-b83e-e74a278d37fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_Target'.Valid_To
+	toColumn: LocalDateTable_4953c202-47b4-4628-814d-2d7767477153.Date
+
+relationship d041449e-c77c-4db4-8124-5e59b8775783
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Fiscal_Date
+	toColumn: LocalDateTable_9d349a18-d6b5-43c9-88a4-98dd79ce11e3.Date
+
+relationship c67b220f-0a33-44db-9f83-3c3a61cb1d20
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Valid_From
+	toColumn: LocalDateTable_78c1aecf-bdb6-48d8-98a6-695f61a7ea18.Date
+
+relationship 1868f105-c5d6-48f2-b133-cfcf0e74cbe3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues'.Valid_To
+	toColumn: LocalDateTable_f7b9c672-2b77-4c91-ae5e-09e619949a75.Date
+
+relationship 2f621672-d6a2-4577-ad7e-37dd939bb683
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_Target'.Valid_From
+	toColumn: LocalDateTable_8129e5fa-2df1-4573-a7a1-fed54b8d2cf9.Date
+
+relationship 5cd52916-8163-4be1-a7d2-b070c7d9d446
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_Target'.Valid_To
+	toColumn: LocalDateTable_52b5610b-360b-4e19-9962-2acbb698471b.Date
+
+relationship d6dc680e-4cb8-4966-aedc-c6409c00834d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_RenewableElectricity'.Fiscal_Date
+	toColumn: LocalDateTable_94360960-b4f3-43e2-a7ac-6ae445aba3b0.Date
+
+relationship 9e9855c7-7311-40ba-871a-685398d5b4aa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_RenewableElectricity'.Valid_From
+	toColumn: LocalDateTable_b55f3425-f273-4a91-8904-3a7af335eb51.Date
+
+relationship 1071b68b-a586-4351-87f0-0ad46872dc2c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_RenewableElectricity'.Valid_To
+	toColumn: LocalDateTable_bec770d9-d04e-4703-97df-b91f6e665c8a.Date
+
+relationship d31503b9-c501-469b-8700-c176639483b5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2'.Fiscal_Date
+	toColumn: LocalDateTable_be9e5e67-6c01-4dc6-8ff4-32d01908ddc9.Date
+
+relationship da683cd5-05a3-4593-921b-84c6a519b02e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2'.Valid_From
+	toColumn: LocalDateTable_d80a22fc-8b7d-4ccc-bd14-a0830ed7d3e3.Date
+
+relationship e9e80b48-e918-45ca-a266-4b00cc8cf7c0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2'.Valid_To
+	toColumn: LocalDateTable_0bd59155-2243-4ae0-b131-84e1b4afe244.Date
+
+relationship 097948da-3fc5-4187-9c29-9d59d247e823
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3'.Fiscal_Date
+	toColumn: LocalDateTable_d18cd09b-02d8-4908-b5ba-abba6364e4f6.Date
+
+relationship 2188f74b-bab5-4a31-9446-893c4b761a75
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3'.Valid_From
+	toColumn: LocalDateTable_ae45c7c4-4dd5-4b42-8374-50cddcf9bb6c.Date
+
+relationship 9e3995fe-66e9-426e-b8df-61b4275df7fa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3'.Valid_To
+	toColumn: LocalDateTable_4c6310f2-3b54-40c8-b378-fc80ffb06f65.Date
+
+relationship 1285e8b3-9b07-4d6a-8617-f60d01b1b1a2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_SHF (2)'.Valid_From
+	toColumn: LocalDateTable_7b0410d2-97d0-4b3c-b1a5-e6e4a4096b9d.Date
+
+relationship 35c7480d-99e9-47bb-860e-5eaefb7ad22e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_SHF (2)'.Valid_To
+	toColumn: LocalDateTable_ab7537c0-8190-4f35-93f7-fce946474a1d.Date
+
+relationship 416c92f7-9493-42db-9856-96f162e0f8b9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_SHF (2)'.Fiscal_Date
+	toColumn: LocalDateTable_ed3fe2ce-3a21-49c2-90a7-6c3e856a306d.Date
+
+relationship d13898de-1430-46a1-9c3e-4cf015a08f82
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)'.Valid_From
+	toColumn: LocalDateTable_1649937c-262f-4ef8-991d-c415c666dffd.Date
+
+relationship 70b1e3dd-63c3-48ce-b787-cab8240afa2a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)'.Valid_To
+	toColumn: LocalDateTable_6ae33d6a-e948-4504-aed1-94884622c964.Date
+
+relationship 9f7df221-72f8-4d65-8ae2-0b9431023159
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI (2)'.Valid_From
+	toColumn: LocalDateTable_23eb9a36-cc20-4477-a09d-19afe1f9b276.Date
+
+relationship 90f9c42c-e4a8-4672-82e5-0fae3822f5da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI (2)'.Valid_To
+	toColumn: LocalDateTable_a50f37c9-0d8e-4b02-8bb3-279d58d60e9f.Date
+
+relationship 4fce047a-1a34-486f-8401-ce6850153987
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_KPI (2)'.Fiscal_Date
+	toColumn: LocalDateTable_1424d510-0517-4da2-a3dc-e0ed1741d327.Date
+
+relationship 647255eb-d269-4c7f-8e64-8da34a974877
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_Target (2)'.Valid_From
+	toColumn: LocalDateTable_cf4f9a6e-977b-4da4-ad03-a0f1119f050a.Date
+
+relationship 88575b7f-d4db-4efe-98fe-e11f02930cc4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CH_UP DMT_Target (2)'.Valid_To
+	toColumn: LocalDateTable_53cfe4d3-6d13-4701-8f69-a25b64b03f2e.Date
+
+relationship 1415ed8a-92d3-4a83-b1ee-c416a8449a1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues (2)'.Fiscal_Date
+	toColumn: LocalDateTable_cdbf20b7-baec-42fd-bf19-a562fac4e6c1.Date
+
+relationship 2baf1288-1edd-40f5-bb76-30efcd91a592
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues (2)'.Valid_From
+	toColumn: LocalDateTable_dc8e0860-ecfd-4221-8b89-c632eecc7b35.Date
+
+relationship d293f7d1-c4a0-468d-bb64-5bf6abe2af42
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_AllUserAndCYPValues (2)'.Valid_To
+	toColumn: LocalDateTable_6c1b2787-3d4e-4314-b129-0fc1665bb57d.Date
+
+relationship 4ed1628f-01ef-4121-a870-e8d8f1ddb4cf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_Target (2)'.Valid_From
+	toColumn: LocalDateTable_96d2d38e-4bc3-4761-97ef-362bdd459a8d.Date
+
+relationship 309eb954-2236-43df-9c17-27f02265499f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PH_WH DTbl_Target (2)'.Valid_To
+	toColumn: LocalDateTable_af5db0b8-2a55-424c-a06b-333d3beda588.Date
+
+relationship e00054c6-84c6-43d5-8b5c-c1bac34e193e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_RenewableElectricity (2)'.Fiscal_Date
+	toColumn: LocalDateTable_9b4ae99e-9a81-4a09-bf70-d958e62dfc4d.Date
+
+relationship eb314957-f72f-4e94-884f-5c20cb655542
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_RenewableElectricity (2)'.Valid_From
+	toColumn: LocalDateTable_c5aa9b34-97be-49ca-9138-4c999ebd83cb.Date
+
+relationship a948d977-63af-4418-b8f7-2b1f3c7cbeb6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_RenewableElectricity (2)'.Valid_To
+	toColumn: LocalDateTable_4cd496e3-9dfb-4633-9d48-5d222fba9ec7.Date
+
+relationship aec0a96f-363c-4e36-b834-d1d425754352
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2 (2)'.Fiscal_Date
+	toColumn: LocalDateTable_0659dc54-1cf0-4371-a091-aeafb81bbc92.Date
+
+relationship 670febe8-d58a-42bd-85d4-3837b1bacb6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2 (2)'.Valid_From
+	toColumn: LocalDateTable_0387b23c-2349-4201-94e0-3cf20b603b00.Date
+
+relationship 349a407c-8e9a-49e2-b485-94cb2dd90510
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope1&2 (2)'.Valid_To
+	toColumn: LocalDateTable_973691ea-d2a1-4615-ad89-3f7ab05cce7e.Date
+
+relationship 1efb6a0f-9b34-48b0-a0a1-ce8fbf7f6603
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3 (2)'.Fiscal_Date
+	toColumn: LocalDateTable_1f04a5ab-bc0a-4e10-a28d-0788fdec9251.Date
+
+relationship 6160d8f0-883e-4202-892f-c57adfdfb695
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3 (2)'.Valid_From
+	toColumn: LocalDateTable_55ac0cb5-11ce-4796-b87f-3962da0a9d46.Date
+
+relationship 17a1f1c5-5c3a-41a2-86e1-2c9ac85a4dd7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CORP_GHG DTbl_Scope3 (2)'.Valid_To
+	toColumn: LocalDateTable_bb8c4f72-aad0-4eca-881a-45e7ec8729b2.Date
+

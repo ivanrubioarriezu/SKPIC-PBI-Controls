@@ -1,0 +1,2299 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "CH SKU",
+  "name": "b2d1d1efbc91b0c6292b",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "7542826f979410b04078",
+      "0b26ea228b7156025ec1",
+      "d042232a7b5622cd4a1d",
+      "d31b86d0be23b0522735",
+      "789219d9541002074186",
+      "e22961030a954e40dea0",
+      "6baf3b7594250a219203",
+      "84818e30d501416631c1",
+      "3aa162fb000ee52010cd",
+      "8c2fcc460e93174c2a06",
+      "118a0dc3e5d7aa620064",
+      "dd0715e5852b7765aad2",
+      "9b4a4b20d0994450d3a7",
+      "ce5388faa9702c5acdea",
+      "273348911493d5ca37c8",
+      "275b47c901b00a0ccb7d",
+      "012fb070e665095be091",
+      "5cc7566633b8ee61e608",
+      "1ff5556d8200749c35c6",
+      "43e09bcea3099bcbbb40",
+      "d3f3a80eda2543320d6d",
+      "49b1958d99ade5307ce6",
+      "7fd946c25006206cd04d",
+      "adceb7075920a94727dd",
+      "1f0918ce74109904d21a",
+      "c40eeef9310040047092",
+      "4ab22e2a0103bbd94e4c",
+      "36256cc21ddb198519a8",
+      "a2b1ec91275879c49d2e",
+      "a136d2103455883e04b4",
+      "d14725451c9db100153d",
+      "76448ee564307a3788e8",
+      "48ffc1094ea001e8addb",
+      "aedd143c6c50034760e3",
+      "08fdbf55000ac3890710",
+      "041981f19c7d05252a9a",
+      "edf07e4f73a016a70364",
+      "8714dd9e18aad0d7a025",
+      "f657475d38b922be9eb3",
+      "3a4b997c0cae0707bc02",
+      "57145b121195792eac59",
+      "25376a340a6bdea58317",
+      "328da0f32389eddc5ccd",
+      "55078f22d4e887c5e74e",
+      "fcba1411a462a6806c6a",
+      "1cb0edfe278124a675c0",
+      "170ee0272028c97a44e5",
+      "662236bf3c45ba5c5284",
+      "9d5e15e99e0067c51bb9",
+      "d1e25c2b88aa39c0760b",
+      "dd127de584e0e98dc097",
+      "8dec336e4a1e48c2d1ae",
+      "fe35b43501e01b45245a",
+      "2bf7ef90209b4e8683e6",
+      "d3ccc9e2b2b6b5d42261",
+      "b6642a6b670c2b05036b",
+      "d00185fd9eac349e6c27"
+    ],
+    "suppressActiveSection": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "e57ae948bf63a84c168a",
+    "sections": {
+      "e57ae948bf63a84c168a": {
+        "visualContainers": {
+          "0fb6458401cecfbddf09": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "68160f6b3efb153ccf91": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "10179515e21165584666": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "8d27215bd703aeb95795": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "8c60a27a0eaa25acd654": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "ae70e2cbf3df8fa8d23c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "02f3edc045cfe721db93": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c36f048fb29e9a2933e4": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "aedd143c6c50034760e3": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "8714dd9e18aad0d7a025": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "3a4b997c0cae0707bc02": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "328da0f32389eddc5ccd": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "55078f22d4e887c5e74e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "fcba1411a462a6806c6a": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "1cb0edfe278124a675c0": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "170ee0272028c97a44e5": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "662236bf3c45ba5c5284": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9d5e15e99e0067c51bb9": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "d1e25c2b88aa39c0760b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "dd127de584e0e98dc097": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "8dec336e4a1e48c2d1ae": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "fe35b43501e01b45245a": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2bf7ef90209b4e8683e6": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "d00185fd9eac349e6c27": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "a136d2103455883e04b4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "eafeecdb91b240733215",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Fiscal_Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Fiscal_Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d14725451c9db100153d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2329f77f9e8980807232",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "76448ee564307a3788e8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ac4e7e27418d5257c2c1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "48ffc1094ea001e8addb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6318626dc5d083f1e9a4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Fiscal_Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5b5b3b5246479fa3ce74",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Impact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "025b8df5ac7510675162",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ba8e56721c68ec954bf1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Subregion"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "09809df82d477b24bf06",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Income_Group"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "587c74f9ccc9c758ba11",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "12be37645aba44e6e4fd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Product_Category"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e95fbcfdf08fd963c80c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "Product_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8d0fbf91b15dfa3ca29c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
+                        }
+                      },
+                      "Property": "SKU_Class"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d72f87a5d4bd7347d672",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMT_KPI"
+                            }
+                          },
+                          "Property": "Actual_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5e792320622b95f74216",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMT_KPI"
+                            }
+                          },
+                          "Property": "Forecast_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "410b77eae4de91146afc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMT_KPI"
+                            }
+                          },
+                          "Property": "Forecast_YE"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fe02887667d90bbcec1c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMT_KPI"
+                            }
+                          },
+                          "Property": "Plan_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "68376470473466d5d238",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMT_KPI"
+                            }
+                          },
+                          "Property": "Plan_YE"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c154bc5c780d756e6976",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CH_UP DMT_KPI"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "c40eeef9310040047092": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "98bff70f5a85b9a7d177",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4ab22e2a0103bbd94e4c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "12863a6461fea795bcaa",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA2___T"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA2___T"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "36256cc21ddb198519a8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b271397a0fcd51cbc5e0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a2b1ec91275879c49d2e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "dbb48e7457efb575e485",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0813d3b2f997a78c99ea",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0FISCPER"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9777beca54ab054b0a01",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0VERSION"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cd10fe7234c201e465ff",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0VTYPE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c67c026a7353c464d6bf",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "PERIOD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b8849c6c8c41001c675e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "017ce8379f835df2804e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2842fc27eba8be9e4f19",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA2"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dfcf058ab39b3818a452",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "eb7e22b9a88c427a701c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "29142b1e690e49d13afc",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2424a278785dacbfc6a6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4f1948af62720160adf5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA2___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "da96a4498fb5bb0765e2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA6"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ecc3d02d2cd01e7efaf4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA6___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fd7395b9723fc13562c4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0BASE_UOM"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c0a454072948f7b6e768",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0LOC_CURRCY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a18cc06a82d2547161b4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0MATERIAL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "91da7bce0e2e34598659",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0MATERIAL___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bd674135a9ce1957ffac",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0MATERIAL__DPRODH1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "62c972b20d91404673a4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "0MATERIAL__DPRODH1___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "73374cac07ec5ae20b47",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMV_SalesData"
+                            }
+                          },
+                          "Property": "FPER_QTD_CU"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "71b1e7cec23787c94a69",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "8c2fcc460e93174c2a06": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e279a3b5659d428947d4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_Brand"
+                        }
+                      },
+                      "Property": "Brand"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "15147d610f9a6a5fafea",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_Brand"
+                        }
+                      },
+                      "Property": "In_Scope"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "476361d5da9652f290da",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_Brand"
+                        }
+                      },
+                      "Property": "Comment"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9fe53199c28fdcf5360b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_Brand"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "3aa162fb000ee52010cd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "de2fd62fdc25c79b264d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SKU_Type"
+                        }
+                      },
+                      "Property": "Material_Number"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "905de5041cccb1ed2773",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SKU_Type"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "59bd56327f78d653c59d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SKU_Type"
+                        }
+                      },
+                      "Property": "SKU_Type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b63792ee5d8af42fe596",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SKU_Type"
+                        }
+                      },
+                      "Property": "Comment"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d003d10fb5422f52f714",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SKU_Type"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "84818e30d501416631c1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ffe26e9bec7f5b725ab1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_SKU"
+                        }
+                      },
+                      "Property": "SKU_Type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "92ddceabebed6cef7137",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_SKU"
+                        }
+                      },
+                      "Property": "In_Scope"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "31b55bcfcd08e5139e48",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_SKU"
+                        }
+                      },
+                      "Property": "Comment"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f07f39d10cee2d242c0a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_SKU"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_Scope_SKU"
+                        }
+                      },
+                      "Property": "SKU_Type"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "7fd946c25006206cd04d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d229dbccb3cab6fc9fd3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "adceb7075920a94727dd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f8961fee25a277fe86ed",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "1f0918ce74109904d21a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b26bde4d300bcdac1537",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e9ff7be21bd1459de99f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "271cc697df99140347f8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "94078dcae74179f3f1f8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Material"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e99b7b1c3980d9061e83",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Brand"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d0ac86f6de2e0142abf1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c9863f47149463482afe",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Material_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c6888350be8351eb92d7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Cleansed"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a66a158ec1779f4fd688",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMV_SalesData_Cleansed"
+                            }
+                          },
+                          "Property": "Quantity"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP DMV_SalesData_Cleansed"
+                            }
+                          },
+                          "Property": "Quantity"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "0b26ea228b7156025ec1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2b1c52c21ad9b65ef5a8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Affected_Parameter"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "811a8bf2fc7b1856bb49",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Affected_Table"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "68ad43f2a889b508f9c4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Info"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "01139d3a2d5f36829b4f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "parameter_dimensions"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "16d07366d5fe496b47ac",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Current_Version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c99c7025cdd7abd3f546",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Previous_Version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d24de2b5006a9dc2845f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CH_UP LTbl_ParameterChangeResults"
+                            }
+                          },
+                          "Property": "diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7b7257e8d1d7659e7ec6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "valid_from_previous_version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "80ddbbd2d8d7e18a1701",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "valid_from_current"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7542826f979410b04078": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "857bc048f1328cd27270",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0BASE_UOM"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f33cd55dcbd830dbcc16",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0FISCPER"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "73baea4763794d77d852",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0LOC_CURRCY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cf8a0b65633e645b5025",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0MATERIAL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f0695c3ddd56c18b7d23",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0MATERIAL___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "77993d86f41fd355a9f0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0MATERIAL__DPRODH1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a1ad7fc2d35c3ebca53d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0MATERIAL__DPRODH1___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "28805148660dab5c6680",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0VERSION"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "eb29fac7dfc8003c172f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "0VTYPE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d2ee81cf3e0445b5aeab",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "Comment"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "aa74c527f60ebc7e0e1d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DCTRY_FD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "09c0d1a9efb6ea4ce7eb",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DCTRY_FD___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1e8ef15dc25d349533af",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1bb4340b1b7c23869ffd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DBRAND___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "00f8b35e2cf8ef23ed02",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA2"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c4aaa9b6529ac9f369d0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA2___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fd7d56c68aa3abc5d684",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA6"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "38f59dc8c73fc65b9dcf",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DIMKKA6___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d76a94f965e2a827d094",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "08b898b5c0fbcb65069b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "DRESPO__DPC_CV___T"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bedf8276de7e81dc0636",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "FISCYEAR"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d6be6bf789ade09bc47c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "FPER_QTD_CU"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "00b05ec9d24b62715959",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "PERIOD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "719a8c63213da532730f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CH_UP DMV_SalesData_Correction"
+                        }
+                      },
+                      "Property": "Last_Updated"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "dd0715e5852b7765aad2": {
+            "isHidden": true
+          },
+          "118a0dc3e5d7aa620064": {
+            "isHidden": true
+          },
+          "6baf3b7594250a219203": {
+            "isHidden": true
+          },
+          "e22961030a954e40dea0": {
+            "isHidden": true
+          },
+          "789219d9541002074186": {
+            "isHidden": true
+          },
+          "d31b86d0be23b0522735": {
+            "isHidden": true
+          },
+          "d042232a7b5622cd4a1d": {
+            "isHidden": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

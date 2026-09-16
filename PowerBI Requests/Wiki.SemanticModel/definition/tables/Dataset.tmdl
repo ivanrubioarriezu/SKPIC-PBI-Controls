@@ -1,0 +1,66 @@
+table Dataset
+	lineageTag: 67ee7cfa-8bc2-43d6-ad6b-020997c53b8e
+
+	column 'Dashboard Section'
+		dataType: string
+		lineageTag: ee5aa83a-c289-4fb7-b79b-9a091670538b
+		summarizeBy: none
+		sourceColumn: Dashboard Section
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dashboard
+		dataType: string
+		lineageTag: e476b23c-50d9-49f5-bca9-760c0db3c63d
+		summarizeBy: none
+		sourceColumn: Dashboard
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key terms'
+		dataType: string
+		lineageTag: 47097210-f76b-4f6b-9ec2-e9364126851c
+		summarizeBy: none
+		sourceColumn: Key terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column Definition
+		dataType: string
+		lineageTag: a24acf14-6761-4b36-b17b-eb5adc13383e
+		summarizeBy: none
+		sourceColumn: Definition
+
+		annotation SummarizationSetBy = Automatic
+
+	column Link
+		dataType: string
+		lineageTag: 04bd6d9c-bcc0-4380-a0f4-b040db502b58
+		summarizeBy: none
+		sourceColumn: Link
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link available label' =
+			
+			VAR _url = TRIM([Link])
+			RETURN IF( ISBLANK(_url) || _url = "", BLANK(), " / Learn more" )
+		lineageTag: cbf3491c-525c-44a9-869f-d25ae5e3439a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dataset = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://bayergroup.sharepoint.com/:x:/r/sites/SustainabilityKPICockpitIT-Stream/Shared%20Documents/General/111%20Production%20(Tableau%20-%20Wiki%20dataset)/SKPIC/WIKI%20Page%20Data%20Set.xlsx"), null, true),
+				    Custom1 = Source{[Item="Dataset",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Custom1, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

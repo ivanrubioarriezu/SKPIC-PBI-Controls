@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Crop Science EV"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "26f6da20-1d93-4504-9bbc-721fa00cc146"
+  }
+}

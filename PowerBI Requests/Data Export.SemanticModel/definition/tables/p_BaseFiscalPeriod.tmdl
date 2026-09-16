@@ -1,0 +1,26 @@
+table p_BaseFiscalPeriod
+	lineageTag: cf32ba87-77a1-4e5e-98ba-1099d0be74b9
+
+	measure 'p_BaseFiscalPeriod Value' = SELECTEDVALUE('p_BaseFiscalPeriod'[p_BaseFiscalPeriod], 2025004)
+		formatString: 0
+		lineageTag: b753db8d-b3ad-4817-8a91-31956cfad974
+
+	column p_BaseFiscalPeriod
+		formatString: 0
+		lineageTag: c549bcb2-38cf-4a2d-bbf8-521cbaac369b
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition p_BaseFiscalPeriod = calculated
+		mode: import
+		source = GENERATESERIES(0, 2028012, 1)
+
+	annotation PBI_Id = 0e2da3a6861e416ca9398eedbe042a92
+

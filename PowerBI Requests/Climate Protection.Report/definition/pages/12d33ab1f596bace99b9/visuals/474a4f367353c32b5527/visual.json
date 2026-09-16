@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "474a4f367353c32b5527",
+  "position": {
+    "x": 691.48936170212767,
+    "y": 388.29787234042556,
+    "z": 42000,
+    "height": 117.02127659574468,
+    "width": 714.89361702127667,
+    "tabOrder": 43000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Dashboard currently displaying categories 3.1-7 and 3.12. New categories and enhancements will be displayed at a later point in time.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Arial, \"sans-serif\"",
+                      "fontStyle": "italic",
+                      "fontSize": "14pt",
+                      "color": "#3b7d23"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

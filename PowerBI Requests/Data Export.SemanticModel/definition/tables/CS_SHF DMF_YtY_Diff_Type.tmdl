@@ -1,0 +1,313 @@
+table 'CS_SHF DMF_YtY_Diff_Type'
+	lineageTag: 01fb386f-c8b4-44c8-a3d7-5d224002d6ed
+
+	column Region
+		dataType: string
+		lineageTag: 98674eb1-575d-4915-b773-4d2ab3c68b8a
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: ded86f5c-d20d-4cdb-8f6c-98d93a4fd3d8
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Crop_Main_Group
+		dataType: string
+		lineageTag: 1cb06d96-ea0c-4fdc-ab1d-7d7b8ec73f3a
+		summarizeBy: none
+		sourceColumn: Crop_Main_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 366fb6bd-bcdf-4ae0-8f51-aaccf0704444
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Period_Base
+		dataType: int64
+		formatString: 0
+		lineageTag: ceb504c6-057c-442b-bc04-182b3356be65
+		summarizeBy: sum
+		sourceColumn: Fiscal_Period_Base
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_Type_Base
+		dataType: string
+		lineageTag: d40ad221-2439-4d45-b5ab-25e315142529
+		summarizeBy: none
+		sourceColumn: Value_Type_Base
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_Type_Target
+		dataType: string
+		lineageTag: 96cf7ed2-2b8e-47a8-9ca9-986ad4f86e73
+		summarizeBy: none
+		sourceColumn: Value_Type_Target
+
+		annotation SummarizationSetBy = Automatic
+
+	column Netsales_EUR_base
+		dataType: double
+		lineageTag: 6d568614-1bf4-479c-81fe-21cd6f44e1a3
+		summarizeBy: sum
+		sourceColumn: Netsales_EUR_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_EUR_base
+		dataType: double
+		lineageTag: 0170089c-50bd-43b7-841d-d697725832d0
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_EUR_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Avg_Farm_Size_ha_base
+		dataType: double
+		lineageTag: ff7f2226-71b0-454d-8bb4-3e3bc5617979
+		summarizeBy: sum
+		sourceColumn: Avg_Farm_Size_ha_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Share_base
+		dataType: double
+		lineageTag: c6cd29b2-f6f3-41ef-a0dd-9a83c421cc7f
+		summarizeBy: sum
+		sourceColumn: SH_Share_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Farmers_base
+		dataType: double
+		lineageTag: 890390e1-00ce-4927-8ce4-f8886bbe127f
+		summarizeBy: sum
+		sourceColumn: Number_of_Farmers_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Unique_SH_Farmers_base
+		dataType: double
+		lineageTag: 169bb704-ce85-4aa8-a903-dc837f17a014
+		summarizeBy: sum
+		sourceColumn: Number_of_Unique_SH_Farmers_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Farmer_base
+		dataType: double
+		lineageTag: 30326816-25be-45b5-88b2-c01686bc22bc
+		summarizeBy: sum
+		sourceColumn: SH_Farmer_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fiscal_Period_trg
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b790efe-f55f-4e12-a513-0de911d22f9a
+		summarizeBy: sum
+		sourceColumn: Fiscal_Period_trg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Netsales_EUR_trg
+		dataType: double
+		lineageTag: 0ed9f0b0-5d1f-4112-bd78-2a867c45ad9d
+		summarizeBy: sum
+		sourceColumn: Netsales_EUR_trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_EUR_trg
+		dataType: double
+		lineageTag: 2397b306-2379-4ebf-b868-67404f82d1e3
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_EUR_trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Avg_Farm_Size_ha_trg
+		dataType: double
+		lineageTag: 37aa9283-9223-4382-aa5a-3549d01b5f38
+		summarizeBy: sum
+		sourceColumn: Avg_Farm_Size_ha_trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Share_trg
+		dataType: double
+		lineageTag: 5aa713de-feca-4d54-a79d-fcd34cde6d5a
+		summarizeBy: sum
+		sourceColumn: SH_Share_trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Farmers_trg
+		dataType: double
+		lineageTag: 1b6c3f90-b9b0-4e14-b503-41e771139d1d
+		summarizeBy: sum
+		sourceColumn: Number_of_Farmers_trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Unique_SH_Farmers_trg
+		dataType: double
+		lineageTag: 78e4cd2c-a9d1-42b3-b0fc-4b137abbed21
+		summarizeBy: sum
+		sourceColumn: Number_of_Unique_SH_Farmers_trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Farmer_trg
+		dataType: double
+		lineageTag: ea8fd9ec-b20c-4c30-b2db-9667106a868d
+		summarizeBy: sum
+		sourceColumn: SH_Farmer_trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Netsales_Diff
+		dataType: double
+		lineageTag: 253d611d-40c2-4f29-8d5c-3818f7a9a07c
+		summarizeBy: sum
+		sourceColumn: Netsales_Diff
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Netsales_Diff_Rel
+		dataType: double
+		lineageTag: f2df61fc-a18f-4e29-a903-71aa3024b850
+		summarizeBy: sum
+		sourceColumn: Netsales_Diff_Rel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_Diff
+		dataType: double
+		lineageTag: 41306e6b-7180-4ed2-99ae-02b71fc32565
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_Diff
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_Diff_Rel
+		dataType: double
+		lineageTag: 0bb357aa-776a-407a-9bcd-33a7809f787e
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_Diff_Rel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SHF_Diff
+		dataType: double
+		lineageTag: 115454ca-5e9f-439c-9862-98f1bdda0d09
+		summarizeBy: sum
+		sourceColumn: SHF_Diff
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SHF_Diff_Rel
+		dataType: double
+		lineageTag: 28d43168-593b-465c-b89a-e3517f22c1cf
+		summarizeBy: sum
+		sourceColumn: SHF_Diff_Rel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CS_SHF DMF_YtY_Diff_Type' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    region                                    AS Region,
+				    country                                   AS Country,
+				    crop_main_group                           AS Crop_Main_Group,
+				    product                                   AS Product,
+				    fiscal_period_base                        AS Fiscal_Period_Base,
+				    value_type_base                           AS Value_Type_Base,
+				    value_type_target                         AS Value_Type_Target,
+				    netsales_eur_base                         AS Netsales_EUR_base,
+				    average_bayer_farmer_spend_eur_base       AS Average_Bayer_Farmer_Spend_EUR_base,
+				    avg_farm_size_ha_base                     AS Avg_Farm_Size_ha_base,
+				    sh_share_base                             AS SH_Share_base,
+				    number_of_farmers_base                    AS Number_of_Farmers_base,
+				    number_of_unique_sh_farmers_base          AS Number_of_Unique_SH_Farmers_base,
+				    sh_farmer_base                            AS SH_Farmer_base,
+				    fiscal_period_trg                         AS Fiscal_Period_trg,
+				    netsales_eur_trg                          AS Netsales_EUR_trg,
+				    average_bayer_farmer_spend_eur_trg        AS Average_Bayer_Farmer_Spend_EUR_trg,
+				    avg_farm_size_ha_trg                      AS Avg_Farm_Size_ha_trg,
+				    sh_share_trg                              AS SH_Share_trg,
+				    number_of_farmers_trg                     AS Number_of_Farmers_trg,
+				    number_of_unique_sh_farmers_trg           AS Number_of_Unique_SH_Farmers_trg,
+				    sh_farmer_trg                             AS SH_Farmer_trg,
+				    netsales_diff                             AS Netsales_Diff,
+				    netsales_diff_rel                         AS Netsales_Diff_Rel,
+				    average_bayer_farmer_spend_diff           AS Average_Bayer_Farmer_Spend_Diff,
+				    average_bayer_farmer_spend_diff_rel       AS Average_Bayer_Farmer_Spend_Diff_Rel,
+				    shf_diff                                  AS SHF_Diff,
+				    shf_diff_rel                              AS SHF_Diff_Rel
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_yty_diff_act_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

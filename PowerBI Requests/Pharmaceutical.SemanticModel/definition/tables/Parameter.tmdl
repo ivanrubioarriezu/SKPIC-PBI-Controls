@@ -1,0 +1,47 @@
+table Parameter
+	lineageTag: bbf2bbb3-b109-4292-80bc-98339135beca
+
+	column Parameter
+		lineageTag: 42f1d5ad-6b49-49ae-8b5f-d173fc943d81
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 0a09629e-85b0-4444-9075-205404356e03
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 44f72867-a8a2-4506-b683-18db1fd177b5
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Sector", NAMEOF('PH_WH DTbl_AllUserAndCYPValues'[Sector]), 0)
+				}
+
+	annotation PBI_Id = a5cacb01d7fc47b7b8113d29cfc6ae2c
+

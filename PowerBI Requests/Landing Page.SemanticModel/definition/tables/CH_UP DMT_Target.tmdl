@@ -1,0 +1,342 @@
+table 'CH_UP DMT_Target'
+	lineageTag: 4a9e1fb7-cea6-427d-b49e-0b5e726e5a98
+
+	measure 'Target 2030 CH' =
+			
+			100000000
+		formatString: 0
+		lineageTag: f6a3d1a9-531b-45bd-b48a-a52a65ac6509
+
+	measure 'ACT Reporting Year CH' = ```
+			
+			
+			/*VAR _labelText =
+			    // If [Reporting Year Label] is a column, use SELECTEDVALUE(Column)
+			    // If it's a measure, just use the measure name directly.
+			    SELECTEDVALUE ( 'CH_UP DMT_Target'[Reporting Year Label] )
+			VAR _yearText =
+			    FORMAT ( SELECTEDVALUE ( 'CH_UP DMT_Target'[Year] ), "0" )
+			    
+			RETURN
+			IF ( _labelText = _yearText, SUM([Actual_Year]), BLANK () )
+			
+			
+			
+			VAR _labelYear = SELECTEDVALUE ('CH_UP DMT_Target' [Reporting Year Label] )  -- measure → numeric year
+			VAR _Year=  FORMAT ( SELECTEDVALUE ( 'CH_UP DMT_Target'[Year] ), "0" )
+			RETURN
+			IF (
+			    NOT ISBLANK ( _labelYear ),
+			    CALCULATE (
+			        SUM ( 'CH_UP DMT_Target'[Actual_Year] ),   -- aggregate the COLUMN
+			        TREATAS ( { _labelYear }, 'CH_UP DMT_Target'[Year])
+			    ),
+			    BLANK ()
+			)
+			
+			
+			
+			VAR _labelText = SELECTEDVALUE ( 'CH_UP DMT_Target'[Reporting Year Label] )
+			VAR _yearText  = FORMAT ( SELECTEDVALUE ( 'CH_UP DMT_Target'[Year] ), "0" )
+			RETURN
+			IF (
+			    NOT ISBLANK ( _labelText ) && _labelText = _yearText,
+			    SUM ( 'CH_UP DMT_Target'[Actual_Year] ),
+			    BLANK ()
+			)*/
+			
+			
+			
+			VAR _labelFromContext =
+			    MAXX (
+			        FILTER (
+			            VALUES ( 'CH_UP DMT_Target'[Reporting Year Label] ),
+			            NOT ISBLANK ( 'CH_UP DMT_Target'[Reporting Year Label] )
+			        ),
+			        'CH_UP DMT_Target'[Reporting Year Label]
+			    )
+			VAR _yearFromLabel =
+			    VAR _v = VALUE ( _labelFromContext )  -- "2024" -> 2024; returns BLANK() for non-numeric/blank
+			    RETURN IF ( ISBLANK ( _v ), BLANK (), _v )
+			RETURN
+			IF (
+			    NOT ISBLANK ( _yearFromLabel ),
+			    CALCULATE (
+			        SUM ( 'CH_UP DMT_Target'[ActualYear] ),
+			
+			        -- Guard against (Blank) labels interfering
+			        KEEPFILTERS (
+			            FILTER (
+			                ALL ( 'CH_UP DMT_Target'[Reporting Year Label] ),
+			                NOT ISBLANK ( 'CH_UP DMT_Target'[Reporting Year Label] )
+			            )
+			        ),
+			
+			        -- Apply virtual filter: Year = parsed label
+			        TREATAS ( { _yearFromLabel }, 'CH_UP DMT_Target'[Year] )
+			    )
+			)
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			```
+		lineageTag: be1997c7-5a7f-48e1-b440-2f9c1ef73b00
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ACT Reporting Year (By Country)' = ```
+			
+			VAR _labelText =
+			    SELECTEDVALUE ( 'CH_UP DMT_Target'[Reporting Year Label] )   -- text like "2024"
+			VAR _yearText  =
+			    FORMAT ( SELECTEDVALUE ( 'CH_UP DMT_Target'[Year] ), "0" )   -- STR([Year]) equivalent
+			VAR _country   =
+			    SELECTEDVALUE ( 'CH_UP DMT_Target'[Country] )                -- current Country in context
+			RETURN
+			IF (
+			    NOT ISBLANK ( _labelText )
+			        && _labelText = _yearText
+			        && NOT ISBLANK ( _country ),
+			    CALCULATE (
+			        SUM ( 'CH_UP DMT_Target'[ActualYear] ),
+			        KEEPFILTERS ( 'CH_UP DMT_Target'[Country] = _country )
+			    ),
+			       BLANK ())
+			
+			```
+		lineageTag: 1606c274-9373-46d4-8999-288c57d0cb23
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Division
+		dataType: string
+		lineageTag: 1f3c3697-5048-4860-b111-e54fa264aeb5
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bfccfca-2d18-427a-b517-7deea9aeb18a
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		lineageTag: 914d7ecc-494e-4582-ba7c-0a800f0dba17
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Country = ```
+			
+			
+			VAR _geo = TRIM ( 'CH_UP DMT_Target'[GeographicalLocation] )
+			RETURN
+			IF (
+			    _geo = "India",
+			    "ACT Reach India",
+			       IF (
+			        _geo = "World" || _geo = "World excl. India",
+			        "ACT Reach Excl. India",
+			        BLANK()    // or "Other"
+			    ))
+			
+			```
+		lineageTag: 4b0047ab-6e40-47df-945c-3a8081e1161f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year Label' =
+			
+			VAR _currentYear   = YEAR ( TODAY() )
+			VAR _isFebOrLater  = ( MONTH ( TODAY() ) = 2 && DAY ( TODAY() ) >= 1 ) || ( MONTH ( TODAY() ) > 2 )
+			VAR _targetYear    = IF ( _isFebOrLater, _currentYear - 1, _currentYear - 2 )
+			RETURN
+			IF (
+			    'CH_UP DMT_Target'[Year] = _targetYear,
+			    FORMAT ( 'CH_UP DMT_Target'[Year], "0" ),   -- STR(...) equivalent (text output)
+			    BLANK()
+			)
+		lineageTag: 4cac46b5-86df-4816-9729-4a3e2cb340eb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY (Year Filter) CH' =
+			
+			
+			VAR _fy    = 'CH_UP DMT_Target'[Year]
+			VAR _today = TODAY()
+			VAR _year  = YEAR(_today)
+			VAR _month = MONTH(_today)
+			VAR _isFebOrLater =
+			    (_month = 2 && DAY(_today) >= 1) || (_month > 2)   // Feb 1 or later
+			RETURN
+			IF (
+			       _fy < _year - 1
+			        || ( _isFebOrLater && _fy + 1 = _year ),
+			    1,
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: b6a14f5c-5d6c-47b0-a6d8-e3db29d5570f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual YTD' =
+			
+			/*IF (
+			    SELECTEDVALUE ( 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail'[FY (Year Filter)] ) = 1,
+			    [Farmer_Actual],
+			    BLANK()
+			)*/
+			IF (
+			    [FY (Year Filter) CH],
+			    [ActualYear],
+			    BLANK()
+			)
+		lineageTag: 8719bd11-391d-4a95-abd5-22d8f4b9136b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ACT Base year label CH' = "BY 2019"
+		lineageTag: 22230018-56cb-4503-b36b-246bce962648
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACT Baseline Year CH' =
+			
+			
+			IF (
+			    [Baseline Year 2019 CH],    // TRUE/FALSE measure or condition
+			    [Actual YTD],            // Your existing measure
+			    BLANK() )                 // Equivalent to Tableau    BLANK()                  // Equivalent to Tableau's null
+		lineageTag: 2a6d6368-50f3-463e-80d3-e820c948f956
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Baseline Year 2019 CH' =
+			
+			'CH_UP DMT_Target'[Year]=2019
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d7148fae-9b6f-4eef-a428-49249897ae44
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeographicalLocation
+		dataType: string
+		lineageTag: 6b6b03ff-a8e1-4ed4-ac3c-f23b49899272
+		summarizeBy: none
+		sourceColumn: GeographicalLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column TargetYtd
+		dataType: double
+		lineageTag: 71e68cec-b76c-4d3f-bbe7-d98a5de24ea0
+		summarizeBy: sum
+		sourceColumn: TargetYtd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ActualYear
+		dataType: double
+		lineageTag: 66bb823e-ac24-4b02-bb2e-5e10ef98ef6e
+		summarizeBy: sum
+		sourceColumn: ActualYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsPreliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3d094801-686a-4c9a-a34f-d8af498ceff0
+		summarizeBy: none
+		sourceColumn: IsPreliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b4d11850-99eb-4667-86a4-c9933995b097
+		summarizeBy: none
+		sourceColumn: ValidFrom
+
+		variation Variation
+			isDefault
+			relationship: 31c48292-f370-4e76-be58-9b0b0a24432e
+			defaultHierarchy: LocalDateTable_2211dd37-a581-4df3-b3c4-36c25dac8085.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidTo
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e4c4b518-6278-4ae7-9ad4-b9f100dccd5f
+		summarizeBy: none
+		sourceColumn: ValidTo
+
+		variation Variation
+			isDefault
+			relationship: e0508a5f-97db-4a99-a415-937a8d4063fd
+			defaultHierarchy: LocalDateTable_ef6fda95-66c5-4aa7-9c31-b9d6339d0e3d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CH_UP DMT_Target' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    division AS Division,
+				    year AS Year,
+				    geographical_location AS GeographicalLocation,
+				    target AS Target,
+				    target_ytd AS TargetYtd,
+				    actual_year AS ActualYear,
+				    is_preliminary AS IsPreliminary,
+				    valid_from AS ValidFrom,
+				    valid_to AS ValidTo
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_target_intfc_view
+				WHERE is_preliminary = FALSE"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

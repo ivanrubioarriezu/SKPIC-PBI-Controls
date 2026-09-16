@@ -1,0 +1,52 @@
+table ViewBy
+	lineageTag: d83330ca-8240-425f-a146-26599aacb3e3
+
+	measure Cat = Max(ViewBy[ViewBy])
+		lineageTag: 6fe598f0-fc21-4bd1-b005-ba18a022e91e
+
+	column ViewBy
+		lineageTag: 37570208-7e16-4aa5-94de-1d265e7daab1
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'ViewBy Order'
+
+		relatedColumnDetails
+			groupByColumn: 'ViewBy Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ViewBy Fields'
+		isHidden
+		lineageTag: 448f3898-daa1-4f9c-9d58-014e0e31a6ab
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'ViewBy Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ViewBy Order'
+		isHidden
+		formatString: 0
+		lineageTag: 40c4bf4f-2aca-443f-b7c1-77dc9d3417cb
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ViewBy = calculated
+		mode: import
+		source =
+				{
+				    ("Country", NAMEOF('Unique Country scope3'[Country]), 0),
+				    ("Business unit", NAMEOF('Unique Business unit scope3'[Business_unit]), 1),
+				    ("Scope 3 Category", NAMEOF('Unique Categories scope3'[CO2 Scope 3 Category]), 2)
+				}
+
+	annotation PBI_Id = c8c4fa4b9e5d4846b01a4c23ebbec2c6
+

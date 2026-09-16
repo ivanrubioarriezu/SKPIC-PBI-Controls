@@ -1,0 +1,352 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "cfbffd253444039d0acd",
+  "position": {
+    "x": 0,
+    "y": 134.42003182351806,
+    "z": 8500,
+    "height": 916.25098858464537,
+    "width": 2954.0571428571429,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "year"
+                }
+              },
+              "queryRef": "Sum(CORP_GHG DTbl_Scope3 (2).year)",
+              "nativeQueryRef": "year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "business_unit"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).business_unit",
+              "nativeQueryRef": "business_unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "country"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).country",
+              "nativeQueryRef": "country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "vendor_country"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).vendor_country",
+              "nativeQueryRef": "vendor_country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "pro_area"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).pro_area",
+              "nativeQueryRef": "pro_area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "pro_segment"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).pro_segment",
+              "nativeQueryRef": "pro_segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "pro_category"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).pro_category",
+              "nativeQueryRef": "pro_category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "pro_subcategory"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).pro_subcategory",
+              "nativeQueryRef": "pro_subcategory"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "CO2 Scope 3 Category"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).CO2 Scope 3 Category",
+              "nativeQueryRef": "CO2 Scope 3 Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "sbt_relevant"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).sbt_relevant",
+              "nativeQueryRef": "sbt_relevant"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "Actuals scope3"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).Actuals scope3",
+              "nativeQueryRef": "Actuals",
+              "displayName": "Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
+                    }
+                  },
+                  "Property": "Targets scope3"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope3 (2).Targets scope3",
+              "nativeQueryRef": "Targets",
+              "displayName": "Targets"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "22D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "17D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).Targets scope3"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).Actuals scope3"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "3ab447c25f487a4e7423"
+}

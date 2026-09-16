@@ -1,0 +1,922 @@
+table 'CORP_GHG DTbl_Scope1&2'
+	lineageTag: 07ed419a-b6d6-4265-80e5-8bdce7aa4d0d
+
+	measure 'Scope 1&2_Target 2029 % (Own Operations)' = 0.100000000
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5baadafa-1495-490a-9517-8c58e4e7934a
+
+	measure 'Scope 1&2_ Reporting Year' = ```
+			
+			
+			
+			VAR _yearText =
+			 FORMAT ( SELECTEDVALUE ('CORP_GHG DTbl_Scope1&2'[Year] ), "0" )
+			RETURN
+			CALCULATE (
+			   SUM( [Value]),   -- <- measure, DO NOT wrap with SUM()
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter]=_yearText),
+			    FILTER  ( 'CORP_GHG DTbl_Scope1&2', [Is Target Filter] = 0 ))
+			
+			
+			
+			
+			
+			```
+		lineageTag: 2a4b3336-33e7-459d-a0e0-f7bdc2b42fa3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scope 1&2_Baseline Year 2019' =
+			
+			
+			CALCULATE (
+			   SUM( [Value]),   -- <- measure, DO NOT wrap with SUM()
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Baseline Year Filter] =1 ),
+			    FILTER  ( 'CORP_GHG DTbl_Scope1&2', [Is Target Filter] = 0 ))
+		lineageTag: 6157911e-59ca-46d8-af14-4dd57255c81b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scope 1&2 % (Own Operations)' = ```
+			
+			
+			/*VAR _reporting = COALESCE ( [_Scope 1&2_ Reporting Year], 0 )          -- ZN(...)
+			VAR _baseline  = COALESCE ( [_Scope 1&2_Baseline Year 2019], 0 )       -- ZN(...)
+			RETURN
+			IF (
+			    _baseline = 0,
+			    BLANK (),                                                          -- avoid 1 - (x/0)
+			    1 - DIVIDE ( _reporting, _baseline )
+			)*/
+			
+			VAR _yearText =
+			    FORMAT( SELECTEDVALUE( 'CORP_GHG DTbl_Scope1&2'[Year] ), "0" )
+			VAR _reporting =
+			    IF (
+			        NOT ISBLANK( _yearText ),
+			        CALCULATE (
+			            SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			            REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2' ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			            KEEPFILTERS (
+			                'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] <> BLANK()
+			                && 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] <> ""
+			            ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] = _yearText ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 )
+			        )
+			    )
+			VAR _baseline =
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2' ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Baseline Year Filter] = 1 ),
+			        KEEPFILTERS( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 )
+			    )
+			RETURN
+			1 - DIVIDE ( _reporting, _baseline,BLANK())
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1665d8b7-35b3-4ed0-902d-c9661697337b
+
+	measure '_Scope 1&2_ Reporting Year' = ```
+			
+			
+			VAR _yearText =
+			    FORMAT ( SELECTEDVALUE ( 'CORP_GHG DTbl_Scope1&2'[Year] ), "0" )  -- 2019 -> "2019"
+			RETURN
+			IF (
+			    NOT ISBLANK ( _yearText ),
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        /* Fixed filters pushed into the measure (no filter pane needed) */
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			        /* Exclude blanks/empty strings in label first */
+			        KEEPFILTERS (
+			            'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] <> BLANK()
+			            && 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] <> ""
+			        ),
+			        /* Then match the selected year text */
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] = _yearText ),
+			        /* Keep only non-target rows if Is Target Filter is a column (0/1) */
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 )
+			       ))
+			
+			```
+		lineageTag: fdb3efa9-36f8-4d8c-8786-0ab4bc54c590
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_Scope 1&2_Baseline Year 2019' = ```
+			
+			
+			--IF (
+			    --NOT ISBLANK ( _yearText ),
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        /* Fixed filters pushed into the measure (no filter pane needed) */
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			        /* Exclude blanks/empty strings in label first */
+			        KEEPFILTERS (
+			            'CORP_GHG DTbl_Scope1&2'[Baseline Year Filter] <> BLANK()
+			            --&&
+			             --'CORP_GHG DTbl_Scope1&2'[Baseline Year Filter] <> ""
+			        ),
+			       
+			        /* Keep only non-target rows if Is Target Filter is a column (0/1) */
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 ))
+			       
+			
+			```
+		formatString: 0
+		lineageTag: d950b232-13d6-435d-9f66-59b96460f4f0
+
+	measure 'Offsetting_Target 2029%' = 1
+		formatString: 0
+		lineageTag: adbff49d-8d97-4647-a3ee-b326fff43f7b
+
+	measure 'Offsetting_ Reporting Year' = ```
+			
+			
+			
+			VAR _yearText =
+			 FORMAT ( SELECTEDVALUE ('CORP_GHG DTbl_Scope1&2'[Year] ), "0" )
+			RETURN
+			CALCULATE (
+			   SUM( [Value]),   -- <- measure, DO NOT wrap with SUM()
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting" ),
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter]=_yearText),
+			    FILTER  ( 'CORP_GHG DTbl_Scope1&2', [Is Target Filter] = 0 ))
+			
+			```
+		lineageTag: 93f3301c-e3c5-4346-9a23-626fb0b58113
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Offsetting %' = ```
+			
+			/*VAR _yearText =
+			    FORMAT( SELECTEDVALUE( 'CORP_GHG DTbl_Scope1&2'[Year] ), "0" )
+			VAR _reporting =
+			    IF (
+			        NOT ISBLANK( _yearText ),
+			        CALCULATE (
+			            SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			            REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2' ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			            KEEPFILTERS (
+			                'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] <> BLANK()
+			                && 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] <> ""
+			            ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] = _yearText ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 )
+			        )
+			    )
+			VAR _baseline =
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2' ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Baseline Year Filter] = 1 ),
+			        KEEPFILTERS( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 )
+			    )
+			RETURN
+			1 - DIVIDE ( _reporting, _baseline,BLANK())
+			
+			VAR _reporting = COALESCE ( [_Scope 1&2_ Reporting Year], 0 )          -- ZN(...)
+			VAR _baseline  = COALESCE ( [_Scope 1&2_Baseline Year 2019], 0 )       -- ZN(...)
+			RETURN
+			IF (
+			    _baseline = 0,
+			    BLANK (),                                                          -- avoid 1 - (x/0)
+			    1 - DIVIDE ( _reporting, _baseline )
+			)*/
+			
+			DIVIDE([Offsetting_ Reporting Year],[Scope 1&2_ Reporting Year])
+			    
+			
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f60e8e71-6320-4939-8a18-5309cbf27737
+
+	measure '_test Scope 1&2 % (Own Operations)' = ```
+			
+			VAR _labelTextFromContext =
+			    // Pick the year label from current visual context and ignore blanks
+			    MAXX (
+			        FILTER (
+			            VALUES ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] ),
+			            NOT ISBLANK ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] )
+			        ),
+			        'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter]
+			    )
+			
+			VAR _yearFromLabel =
+			    VAR _v = VALUE ( _labelTextFromContext )   // e.g., "2024" -> 2024; returns BLANK() if non-numeric/blank
+			    RETURN IF ( ISBLANK ( _v ), BLANK (), _v )
+			
+			// Fallback: when there is no single label present in context (e.g., totals or the label field not used),
+			// choose the latest Year that has data and a non-blank label, under Scope 1+2 & Is Target Filter = 0.
+			VAR _fallbackYearWithData =
+			    MAXX (
+			        FILTER (
+			            ALLSELECTED ( 'CORP_GHG DTbl_Scope1&2' ),
+			            'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" &&
+			            'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 &&
+			            NOT ISBLANK ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] ) &&
+			            NOT ISBLANK ( 'CORP_GHG DTbl_Scope1&2'[Value] )
+			        ),
+			        'CORP_GHG DTbl_Scope1&2'[Year]
+			    )
+			
+			VAR _targetYear =
+			    COALESCE ( _yearFromLabel, _fallbackYearWithData )
+			
+			// Reporting (numerator) for the targetYear
+			VAR _reporting =
+			    IF (
+			        NOT ISBLANK ( _targetYear ),
+			        CALCULATE (
+			            SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			            REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2' ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			            KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 ),
+			
+			            // Guard against (Blank) labels interfering even if that field is not in the visual
+			            KEEPFILTERS (
+			                FILTER (
+			                    ALL ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] ),
+			                    NOT ISBLANK ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] )
+			                )
+			            ),
+			
+			            // Apply virtual filter: Year = _targetYear (no need for filter pane selection)
+			            TREATAS ( { _targetYear }, 'CORP_GHG DTbl_Scope1&2'[Year] )
+			        )
+			    )
+			
+			// Baseline (denominator) fixed to baseline year (BY 2019) with your flag
+			VAR _baseline =
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2' ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2" ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Baseline Year Filter] = 1 )
+			    )
+			
+			RETURN
+			1 - DIVIDE ( _reporting, _baseline, BLANK() )
+			
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 50316b61-d244-4fbf-91ac-4b4b74cf784a
+
+	measure Target = ```
+			
+			VAR _offsettingSum =
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting" )
+			    )
+			VAR _otherTargetSum =
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] <> "Offsetting" )
+			    )
+			RETURN
+			IF (
+			    NOT ISBLANK ( _offsettingSum ),
+			    - _offsettingSum,
+			    IF ( NOT ISBLANK ( _otherTargetSum ), _otherTargetSum, BLANK () )
+			)
+			
+			```
+		lineageTag: e6ca40b9-29c8-4888-befd-97ad3e53def1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ACT measure' = ```
+			
+			/*VAR _isTarget0 =
+			    SELECTEDVALUE ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] ) = 0
+			VAR _isFY1 =
+			    SELECTEDVALUE ( 'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] ) = 1
+			VAR _cond = _isTarget0 && _isFY1
+			
+			// Partition the measure into Offsetting vs other scopes
+			VAR _value_Offsetting =
+			    CALCULATE ( SUM([Value]), KEEPFILTERS ( 'CORP_GHG Dtbl_Scope1&2'[Scope] = "Offsetting" ) )
+			VAR _value_OtherScopes =
+			    CALCULATE ( SUM([Value]), KEEPFILTERS ( 'CORP_GHG Dtbl_Scope1&2'[Scope] <> "Offsetting" ) )
+			RETURN
+			SUM('CORP_GHG DTbl_Scope1&2'[Value])
+			
+			
+			
+			
+			VAR _offsetting =
+			    CALCULATE (
+			        SUM([Value]),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 1 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting" )
+			    )
+			VAR _otherScopes =
+			    CALCULATE (
+			        SUM([Value]),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 1 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] <> "Offsetting" )
+			    )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( _offsetting ) || NOT ISBLANK ( _otherScopes ),
+			        COALESCE ( _otherScopes, 0 ) - COALESCE ( _offsetting, 0 ),
+			        0
+			    )*/
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			VAR BaseRows =
+			    FILTER (
+			        ALLSELECTED ( 'CORP_GHG DTbl_Scope1&2' ),
+			        'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0
+			            && 'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 1
+			    )
+			RETURN
+			    SUMX (
+			        BaseRows,
+			        'CORP_GHG DTbl_Scope1&2'[Value]
+			            * IF ( TRIM ( 'CORP_GHG DTbl_Scope1&2'[Scope] ) = "Offsetting", -1, 1 )
+			    )
+			
+			
+			
+			
+			
+			
+			
+			
+			   
+			
+			
+			```
+		lineageTag: 8ad1f884-ca6f-4749-8eed-3e351b021b7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Act new measure' = ```
+			
+			
+			
+			
+			/*CALCULATE (
+			    SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1,
+			    //'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",
+			    'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 0
+			)*/
+			
+			
+			VAR _labelText =
+			    SELECTEDVALUE ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] )
+			VAR _labelYear =
+			    VALUE ( _labelText )                    -- convert "2024" -> 2024; returns BLANK if text is blank
+			VAR _capYear =
+			    COALESCE ( MIN ( _labelYear, 2024 ), 2024 )   -- if label is blank, fallback to 2024
+			
+			RETURN
+			CALCULATE (
+			    SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1,
+			    'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 0,
+			    //'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] <= _capYear )
+			)
+			
+			
+			
+			```
+		lineageTag: 058c6189-518e-49f6-9022-acbeb9d286df
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Offsetting % (Auto Reporting Year)' = ```
+			
+			/*VAR _targetYear = [Reporting Year (Target Year)]
+			VAR _num =
+			    CALCULATE (
+			        [Offsetting_ Reporting Year],
+			        REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] = _targetYear )
+			    )
+			VAR _den =
+			    CALCULATE (
+			        [Scope 1&2_ Reporting Year],
+			        REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] = _targetYear )
+			    )
+			RETURN
+			IF ( ISBLANK ( _num ) && ISBLANK ( _den ), 0.0 &"%", DIVIDE ( _num, _den, 0.0 ) )*/
+			
+			
+			VAR _targetYear = [Reporting Year (Target Year)]
+			VAR _num =
+			    CALCULATE (
+			        [Offsetting_ Reporting Year],
+			        REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] = _targetYear )
+			    )
+			VAR _den =
+			    CALCULATE (
+			        [Scope 1&2_ Reporting Year],
+			        REMOVEFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] = _targetYear )
+			    )
+			RETURN
+			COALESCE (
+			    DIVIDE ( _num, _den, 0 ),
+			    0&"%"
+			)
+			
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 6a98d27b-a57c-409e-be31-6d6c4bfd251e
+
+	measure 'Reporting Year (Target Year)' = ```
+			
+			VAR _currentYear  = YEAR ( TODAY() )
+			VAR _isFebOrLater = MONTH ( TODAY() ) >= 2
+			VAR _targetYear   = IF ( _isFebOrLater, _currentYear - 1, _currentYear - 2 )
+			RETURN _targetYear
+			
+			```
+		formatString: 0
+		lineageTag: db81cfbc-3edc-44b3-a113-20fc68a59831
+
+	measure '1Act new measure' = ```
+			
+			
+			
+			
+			VAR _labelText =
+			    SELECTEDVALUE ( 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter] )
+			VAR _labelYear =
+			    VALUE ( _labelText )                    -- convert "2024" -> 2024; returns BLANK if text is blank
+			VAR _capYear =
+			    COALESCE ( MIN ( _labelYear, 2024 ), 2024 )   -- if label is blank, fallback to 2024
+			
+			RETURN
+			CALCULATE (
+			    SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] )*(-1),
+			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1,
+			    'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 0,
+			    //'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",
+			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] <= _capYear )
+			)
+			
+			
+			
+			```
+		lineageTag: 265556ca-8ceb-426b-a472-f653347938cc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Reporting Year (Text)' =
+			
+			VAR _Today = TODAY()
+			VAR _CurrentYear = YEAR(_Today)
+			VAR _ConditionDate =
+			    ( ( DAY(_Today) >= 29 && MONTH(_Today) = 1 )
+			        || MONTH(_Today) > 1 )
+			
+			RETURN
+			MAXX (
+			    FILTER (
+			        ALL ( 'CORP_GHG DTbl_Scope1&2' ),
+			        (
+			            _ConditionDate
+			                && 'CORP_GHG DTbl_Scope1&2'[Year] + 1 = _CurrentYear
+			                && 'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE ()
+			        )
+			        ||
+			        'CORP_GHG DTbl_Scope1&2'[Year] = _CurrentYear - 1
+			    ),
+			    FORMAT ( 'CORP_GHG DTbl_Scope1&2'[Year], "0" )
+			)
+		lineageTag: c5d2b898-6ffa-40c3-a20c-22a737c181ff
+
+	measure '_Scope 1+2 Reporting Year Value' =
+			
+			
+			VAR _ReportingYearNum =
+			    VALUE ( [Reporting Year (Text)] )
+			RETURN
+			CALCULATE (
+			    SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			    FILTER (
+			        ALL ( 'CORP_GHG DTbl_Scope1&2' ),
+			        'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0
+			            && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2"
+			            && 'CORP_GHG DTbl_Scope1&2'[Year] = _ReportingYearNum-1
+			    )
+			)
+		lineageTag: 1a69ce0b-3cbe-4c7b-b268-fd8c527fca84
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_Scope 1&2 Reduction' =
+			
+			VAR _ReportingValue =
+			    COALESCE (
+			         ( 'CORP_GHG DTbl_Scope1&2'[_Scope 1+2 Reporting Year Value] ),
+			        0
+			    )
+			VAR _BaselineValue =
+			    COALESCE (
+			     ( 'CORP_GHG DTbl_Scope1&2'[_Scope 1&2_Baseline Year 2019] ),
+			        0
+			    )
+			RETURN
+			IF (
+			    _BaselineValue = 0,
+			    BLANK(),
+			    1 - ( _ReportingValue / _BaselineValue )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7870f04e-bfe3-4926-8f92-8f25e5cc32df
+
+	measure 'Scope 1&2_Target 2024 % (Own Operations)' = 0.20
+		lineageTag: 13cc1c58-99ca-4766-b2da-fbcccb21547e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scope 1&2_ Target 2029' = ```
+			
+			
+			CALCULATE (
+			    SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1,
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2",
+			    'CORP_GHG DTbl_Scope1&2'[Year] = 2029
+			)
+			
+			```
+		lineageTag: 1f98ed7d-757a-47ff-8e6e-a6c8fbc574d0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _Target = (0.42)
+		lineageTag: d1118734-2687-48d9-9659-eaa509bf36f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: e4b73f48-11ff-4329-81b3-50fff9eaec76
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scope
+		dataType: string
+		lineageTag: bd17772d-dd89-4bc7-8475-bc070ae6c7a9
+		summarizeBy: none
+		sourceColumn: Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: b8634562-6a7f-429e-ba5c-aee117a0a0c3
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: f3483be7-4a53-4652-9927-13bb7851524f
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 62b94137-0435-4966-80c1-c097eb703662
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 97eec8cd-d7be-4e72-b5f9-d5a4e7192c81
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Unit
+		dataType: string
+		lineageTag: 97cd4f28-5df4-4a88-91aa-e1337bfc3d53
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Target
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 78d7be4a-7120-4ea9-9880-164e92040102
+		summarizeBy: none
+		sourceColumn: Is_Target
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ec1a1b1b-e560-4946-bf8d-87a99d03ef94
+		summarizeBy: none
+		sourceColumn: Fiscal_Date
+
+		variation Variation
+			isDefault
+			relationship: 1171f9d5-9026-4e14-8786-e78547161d7a
+			defaultHierarchy: LocalDateTable_87f1dd75-6546-437b-82bc-44f5665f927d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ffe44d52-c621-4b79-991e-aaa59118f4e0
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: 28e87287-204c-4633-b5b3-43de0eab6816
+			defaultHierarchy: LocalDateTable_bf10dae6-27b9-4039-a14e-7a9e9563ff49.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8066dce9-f636-46c2-a2d5-995cb5a8d06e
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: 3aab6555-744a-47fb-a70a-bc0489767463
+			defaultHierarchy: LocalDateTable_f7874501-fd5b-406a-a0b5-4553ae263044.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0bbdc2b8-be5c-4c80-a3e5-39d072836b06
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year Label/Filter' =
+			
+			VAR _currentYear   = YEAR ( TODAY() )
+			VAR _isFebOrLater  = ( MONTH ( TODAY() ) = 2 && DAY ( TODAY() ) >= 1 ) || ( MONTH ( TODAY() ) > 2 )
+			VAR _targetYear    = IF ( _isFebOrLater, _currentYear - 1, _currentYear - 2 )
+			RETURN
+			IF (
+			    'CORP_GHG DTbl_Scope1&2'[Fiscal_Date].[Year] = _targetYear,
+			    FORMAT ('CORP_GHG DTbl_Scope1&2'[Fiscal_Date].[Year], "0" ),   -- STR(...) equivalent (text output)
+			    BLANK()
+			)
+		lineageTag: 5c74cf25-2cfc-47db-bd4b-470806d3f023
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Target Filter' = ```
+			
+			IF ( 'CORP_GHG DTbl_Scope1&2'[Is_Target], 1, 0 )
+			
+			
+			```
+		formatString: 0
+		lineageTag: 8f45eb6c-bc13-44ce-9248-9fafe790d00a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'column Scope 1&2_ Reporting Year' = ```
+			
+			SUMX (
+			    FILTER (
+			        'CORP_GHG DTbl_Scope1&2',
+			        'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0
+			            && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2"
+			            && 'CORP_GHG DTbl_Scope1&2'[Reporting Year Label/Filter]
+			                = FORMAT ( 'CORP_GHG DTbl_Scope1&2'[Year], "0" )
+			    ),
+			    SUM('CORP_GHG DTbl_Scope1&2'[Value]))
+			
+			```
+		lineageTag: f6a0b0d7-cdeb-4b00-9d2e-79491af40841
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Baseline Year Filter' = ```
+			
+			
+			IF (
+			    'CORP_GHG DTbl_Scope1&2'[Year] = 2019,
+			    1,
+			    0
+			)
+			
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: ef616b5a-6575-4648-900c-b0b58d3a700a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target clm' = ```
+			
+			VAR _offsettingSum =
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting" )
+			    )
+			VAR _otherTargetSum =
+			    CALCULATE (
+			        SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1 ),
+			        KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Scope] <> "Offsetting" )
+			    )
+			RETURN
+			IF (
+			    NOT ISBLANK ( _offsettingSum ),
+			    - _offsettingSum,
+			    IF ( NOT ISBLANK ( _otherTargetSum ), _otherTargetSum, BLANK () )
+			)
+			
+			```
+		lineageTag: 1ea9fcde-0440-4cfd-968d-ca0473ce4d3a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ACT = ```
+			
+			VAR _isTarget  = 'CORP_GHG DTbl_Scope1&2'[Is Target Filter]        -- 0/1
+			VAR _scope     = 'CORP_GHG DTbl_Scope1&2'[Scope]                   -- text
+			VAR _fyFlag    = 'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)]        -- 0/1
+			VAR _value     = 'CORP_GHG DTbl_Scope1&2'[Value]                   -- numeric
+			RETURN
+			IF (
+			    _isTarget = 0 && _fyFlag = 1,
+			    IF ( _scope = "Offsetting", -_value, _value ),
+			    BLANK ()
+			)
+			
+			
+			```
+		lineageTag: 4c1ad046-38df-4c74-af4a-562887acaa94
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FY (Year Filter)' = ```
+			
+			VAR _today        = TODAY()
+			VAR _curYear      = YEAR ( _today )
+			VAR _isAfterJan29 =
+			    ( ( DAY ( _today ) >= 29 && MONTH ( _today ) = 1 )
+			      || ( MONTH ( _today ) > 1 ) )
+			
+			VAR _year =
+			    SELECTEDVALUE ( 'CORP_GHG DTbl_Scope1&2'[Year] )   // numeric year expected
+			
+			VAR _isTarget =
+			    SELECTEDVALUE ( 'CORP_GHG DTbl_Scope1&2'[Is_Target] )  // Boolean expected; if 1/0, adjust below
+			
+			VAR _condCurrent =
+			    _isAfterJan29
+			        && NOT ISBLANK ( _year )
+			        && ( _year + 1 = _curYear )
+			        && ( NOT _isTarget )
+			
+			VAR _condPast =
+			    NOT ISBLANK ( _year )
+			        && ( _year < ( _curYear - 1 ) )
+			
+			RETURN
+			IF ( _condCurrent || _condPast, 1, 0 )
+			
+			```
+		formatString: 0
+		lineageTag: 8076c053-e069-4384-ad27-b88de21b83e0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_Py
+		dataType: double
+		lineageTag: a9117452-b822-4df6-8971-2e1d371ad8fc
+		summarizeBy: sum
+		sourceColumn: Value_Py
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_By
+		dataType: double
+		lineageTag: 966e66c6-010a-43da-894e-0188c61282b9
+		summarizeBy: sum
+		sourceColumn: Value_By
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_Rounded_By_50k
+		dataType: double
+		lineageTag: 0c8127df-5cab-45ad-ba77-68a49c954e96
+		summarizeBy: sum
+		sourceColumn: Value_Rounded_By_50k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CORP_GHG DTbl_Scope1&2' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    scope AS Scope,
+				    division AS Division,
+				    country AS Country,
+				    site AS Site,
+				    value AS Value,
+				    value_py AS Value_Py,
+				    value_by AS Value_By,
+				    unit AS Unit,
+				    is_target AS Is_Target,
+				    fiscal_date AS Fiscal_Date,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    is_preliminary AS Is_Preliminary,
+				    value_rounded_by_50k AS Value_Rounded_By_50k
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_corp_ghg_dmt_scope1_and_2_intfc_view
+				WHERE is_preliminary = FALSE"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

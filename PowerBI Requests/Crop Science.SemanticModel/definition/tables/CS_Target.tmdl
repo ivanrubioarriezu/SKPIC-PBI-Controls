@@ -1,0 +1,130 @@
+table CS_Target
+	lineageTag: 775f6fe6-8c88-4102-b185-a91988ef1611
+
+	measure E_ACT =
+			
+			IF (
+			    SELECTEDVALUE('CS_Target'[M_FY (Year Filter)]) = 1,
+			    SUM('CS_Target'[Farmer_Actual])/1000000,
+			    BLANK()
+			)
+		lineageTag: e38da366-1489-4ce5-8657-b01002bc1174
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Target in Millions' =
+			
+			Sum(CS_Target[Target])/1000000
+		lineageTag: 3fb2522e-bc21-4d51-a4b5-482547857471
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fiscal_Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 59f4d682-4a63-4579-be52-f785143c48da
+		summarizeBy: none
+		sourceColumn: Fiscal_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		lineageTag: d2d652ad-03e3-4a9f-bca3-f791c7ff57f9
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Farmer_Actual
+		dataType: double
+		lineageTag: d7edefff-53ba-451d-ae89-ca6f355886d2
+		summarizeBy: sum
+		sourceColumn: Farmer_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a2d6847f-f0b7-4e2c-87c2-bfdd783bd6fa
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: e3bcb041-6202-4f78-90d4-5382ccae64ff
+			defaultHierarchy: LocalDateTable_94c35235-a928-4252-82b7-3d5636da88f9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bc5a70f4-9234-46a7-bf75-49429a1312bf
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: 512dc55e-5a86-4c80-b871-fa0bdc27147d
+			defaultHierarchy: LocalDateTable_c91f5169-20f3-459f-9781-113bfc094a8d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b7c4b807-4643-4baf-bd20-f6a005c0d71a
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'M_FY (Year Filter)' =
+			
+			IF (
+			    ([Fiscal_Year] + 1 < YEAR(TODAY()))
+			        || (
+			            (
+			                (DAY(TODAY()) >= 1 && MONTH(TODAY()) = 2)
+			                    || MONTH(TODAY()) > 2
+			            )
+			                && ([Fiscal_Year] + 1 = YEAR(TODAY()))
+			        ),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: b6be13e4-cdc5-4a01-bb51-a4e7277f5aeb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CS_Target = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    fiscal_year AS Fiscal_Year,
+				    target AS Target,
+				    farmer_actual AS Farmer_Actual,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    is_preliminary AS Is_Preliminary
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_shf_target_timeline_intfc_view
+				where is_preliminary = FALSE"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

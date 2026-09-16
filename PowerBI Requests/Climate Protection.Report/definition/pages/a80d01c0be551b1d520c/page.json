@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a80d01c0be551b1d520c",
+  "displayName": "Scop3 BU Actual Emission Tooltip",
+  "displayOption": "FitToPage",
+  "height": 40,
+  "width": 200,
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

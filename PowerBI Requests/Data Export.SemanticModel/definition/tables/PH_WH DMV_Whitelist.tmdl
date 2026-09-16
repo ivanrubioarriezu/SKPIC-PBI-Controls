@@ -1,0 +1,52 @@
+table 'PH_WH DMV_Whitelist'
+	lineageTag: b1bb2433-e56a-4f65-994f-e6496928db7d
+
+	column Material
+		dataType: string
+		lineageTag: 93b8064b-61f3-46f6-a475-8546f8291dfb
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Description
+		dataType: string
+		lineageTag: 58f43d17-fbb0-4f42-9761-bf6f4324c2c6
+		summarizeBy: none
+		sourceColumn: Material_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2e929adf-4d55-497b-adb1-c77b6afdf37f
+		summarizeBy: none
+		sourceColumn: Last_Updated
+
+		variation Variation
+			isDefault
+			relationship: 1699fab1-1eff-4534-bf43-c7ccc25b634e
+			defaultHierarchy: LocalDateTable_b65bcb34-2c2c-41ad-b53b-336020bad319.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PH_WH DMV_Whitelist' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    material               AS Material,
+				    material_description   AS Material_Description,
+				    last_updated           AS Last_Updated
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_whitelist_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

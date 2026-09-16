@@ -1,0 +1,133 @@
+table 'PH_WH DTbl_Target (2)'
+	lineageTag: 38e5898f-f760-4324-aca8-a85ea1e06b69
+
+	measure 's ph 2' = ```
+			
+			VAR anyValue =
+			    
+			        SUM('PH_WH DTbl_Target (2)'[Target])
+			        
+			        
+			    
+			RETURN
+			    IF ( ISBLANK(anyValue), BLANK(), "●" )
+			```
+		lineageTag: ec5ad9dc-3f21-48b0-86d6-132f540ddc12
+
+	measure 'Dot Color Target ph QA' = ```
+			
+			VAR anyValue =
+			     (
+			        SUM('PH_WH DTbl_Target (2)'[Target])
+			       
+			    )
+			VAR prelim =
+			    SELECTEDVALUE ('PH_WH DTbl_Target (2)'[Is_Preliminary] )
+			RETURN
+			    IF (
+			        ISBLANK ( anyValue ),
+			        BLANK(),
+			        IF ( prelim = TRUE(), "#D9D9D9", "#00AEEF" )
+			    )
+			```
+		lineageTag: fe76d806-b7bd-4211-92af-59a7dcd34369
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d3485b08-450e-40e9-bded-00fe5b1f8485
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		lineageTag: 2af1bb47-f257-41fe-a2e5-3b5bb60a0dbf
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column User_Ytd
+		dataType: double
+		lineageTag: 0440813e-ce3f-4315-9781-1990fa206789
+		summarizeBy: sum
+		sourceColumn: User_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyp_Ytd
+		dataType: double
+		lineageTag: 13e48222-14e4-41b3-975e-796f5f153df2
+		summarizeBy: sum
+		sourceColumn: Cyp_Ytd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5db6775d-1798-4455-a9fd-434b6ae71d66
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b5a34a77-1298-4e14-8bff-03ceee73c084
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: 4ed1628f-01ef-4121-a870-e8d8f1ddb4cf
+			defaultHierarchy: LocalDateTable_96d2d38e-4bc3-4761-97ef-362bdd459a8d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2a9c2a87-1408-4086-adf3-35fff81b3e45
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: 309eb954-2236-43df-9c17-27f02265499f
+			defaultHierarchy: LocalDateTable_af5db0b8-2a55-424c-a06b-333d3beda588.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PH_WH DTbl_Target (2)' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostnameQAS, httpPathQAS, [Catalog=CatalogueQAS, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=CatalogueQAS,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    target AS Target,
+				    user_ytd AS User_Ytd,
+				    cyp_ytd AS Cyp_Ytd,
+				    is_preliminary AS Is_Preliminary,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_target_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

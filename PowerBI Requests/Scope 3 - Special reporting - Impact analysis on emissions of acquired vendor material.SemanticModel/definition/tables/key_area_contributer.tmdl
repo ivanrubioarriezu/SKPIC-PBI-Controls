@@ -1,0 +1,112 @@
+table key_area_contributer
+	lineageTag: e409899f-2b95-4e6b-8152-814ab64de3bc
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6e54b24d-6cd3-4184-8767-1bf8f2673546
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Procurement Area Key'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6587fc35-020e-4aef-a8c3-4269bb952fa7
+		summarizeBy: none
+		sourceColumn: Procurement Area Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Procurement Area'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 209ddc2b-46e5-4cd0-8b14-02e41a862b13
+		summarizeBy: none
+		sourceColumn: Procurement Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Joint Material Id GL'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 72950dae-56a8-4160-9a58-cead0d2d64d8
+		summarizeBy: none
+		sourceColumn: Joint Material Id GL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Order'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: fdcdc1a8-b80c-4d91-9d2b-04b09da53467
+		summarizeBy: none
+		sourceColumn: Purchase Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Order Line Item'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b2ffed3f-6537-40bb-b94f-a288c51789ea
+		summarizeBy: none
+		sourceColumn: Purchase Order Line Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total CO2e Emissions'
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 7de2b7f2-5221-4c1c-b8f3-9c4b42ce6edb
+		summarizeBy: sum
+		sourceColumn: Total CO2e Emissions
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Spend Eur'
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 891229b0-7f2e-4a1d-bcae-12eb57b367dd
+		summarizeBy: sum
+		sourceColumn: Total Spend Eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Emission Decile'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b2178e92-40f8-4140-8ae6-686c6851e914
+		summarizeBy: sum
+		sourceColumn: Emission Decile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c52f64a1-ef1f-40cd-adc3-62ae6a974be8
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition key_area_contributer = m
+		mode: directQuery
+		source =
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs("adb-4071335540424391.11.azuredatabricks.net", "/sql/1.0/warehouses/a4d70720d95e4e2a", [Catalog="efdataonelh_prd", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]){[Name="efdataonelh_prd",Kind="Database"]}[Data], "SELECT * FROM generaldiscovery_asset_sustainability_r.sus_ghgas_core_4_dv_dpv_proc_op_ka_ctrbt_rpt_view_001", null, [EnableFolding=true])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

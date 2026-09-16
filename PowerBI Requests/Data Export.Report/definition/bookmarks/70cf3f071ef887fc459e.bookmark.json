@@ -1,0 +1,3706 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "CS Diff Vegseeds",
+  "name": "70cf3f071ef887fc459e",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "cc47550e8fcf06b55ab1",
+      "43f5077f2c5bf4dd18b0",
+      "82cfbb4c655b4c6a42e4",
+      "664a85a15a38dec3efcf",
+      "c034d61857f6c09e61be",
+      "068107953209c29cf275",
+      "4513cdfca24a8487b618",
+      "ac9c9653637f837faf05",
+      "0e396ee253240914701d",
+      "a36c3736584a3335545d",
+      "c8e98bac53386b3f4c5c",
+      "9cdd9a218c4529506bc6",
+      "ce9008c10c4244729580",
+      "c75ffbdd78e75c589fd5",
+      "cb564118f46b0cc0b2aa",
+      "ca7f87d04d8557686375",
+      "54174773c15b10568c97",
+      "14f50c21292bd57e5dc8",
+      "ce29256b6a259a3820b2",
+      "f5a6f9b35c9b0ec79e26",
+      "ddbb0f3c0a80982cf00d",
+      "a01b9f6390c1f9ab9109",
+      "22128e90fc4b49d55699",
+      "b2a0fd21e158cbaf85e6",
+      "ca1cbea4b3bb40e11c90",
+      "4250fb5872e57611646b",
+      "2c42317fd76340c78c74",
+      "f379878fae48a2c0103f",
+      "cb1fb17d0bcd36c2f9fb",
+      "8b8c3012c6f1ecfb2d84",
+      "faaee3c2fbc304a208f9",
+      "a1ae686a8329af623665",
+      "9358d891dd6ade79dd50",
+      "06258089c11d0665b51e",
+      "3a420ca0ab1ce25ebbcf",
+      "470968c83cc6f01dbd94",
+      "9da65fe94833986de701",
+      "25db0703b975e0d8d588",
+      "3fec9fca545454dd89b3",
+      "9ea72ee3afe0f158135b"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "407bef34fb562fd9dac4",
+    "sections": {
+      "407bef34fb562fd9dac4": {
+        "visualContainers": {
+          "2d9e619272114173ce47": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "e61aa778196e511ad52e": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "e1898f93c50d88ca0081": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "741e505a61fa664bf3e8": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "9fa6f3e27cb1c633ba82": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c31a3f6afa8c00eee165": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7b12ec263ff2aa49fb3f": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "3ef6d5f7f9c2b14cc107": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "4513cdfca24a8487b618": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "ac9c9653637f837faf05": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "0e396ee253240914701d": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "c8e98bac53386b3f4c5c": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9cdd9a218c4529506bc6": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "ce9008c10c4244729580": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "c75ffbdd78e75c589fd5": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "cb564118f46b0cc0b2aa": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "54174773c15b10568c97": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "ce29256b6a259a3820b2": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "f5a6f9b35c9b0ec79e26": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ef9458753b85212ddb24",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dcc3845f704afe4e365c",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e9fb14c118a2fa8cb083",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Indication"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f6fdbbbce1551472ab29",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "744d16297e0f0734d176",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "72a739689acc6bfb39de",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Sector"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "68aac653a389fcf6ae1e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Cluster"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "17effcfed91a5b30646d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Crop_Main_Group_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f436b4040318b86cb19a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Preliminary / Final Data"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "99387070903c68ff3498",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                            }
+                          },
+                          "Property": "Farmer_FC1_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4296c414952f9815308c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                            }
+                          },
+                          "Property": "Farmer_FC2_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a5f8ba768141a303ccfa",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                            }
+                          },
+                          "Property": "Farmer_FC3_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "11706313ef90521c9a8d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "SHF_ACT YTD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "89ac4cd2852832210326",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                            }
+                          },
+                          "Property": "Farmer_Actual_Previous_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1834e5dcbc5f5e964d1f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "SFY_PLAN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "ddbb0f3c0a80982cf00d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5aed34280129ebc03a73",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a01b9f6390c1f9ab9109": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "303b98b759f5ee92310b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "22128e90fc4b49d55699": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "94e39e37ce4ca0e0158b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b2a0fd21e158cbaf85e6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2b3a89fc7f3d8fa66d37",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Indication"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                        }
+                      },
+                      "Property": "Indication"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4250fb5872e57611646b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c1aadd937289c9fb8084",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ab9713743cb95e51bf9c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Fiscal_Period"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1a92c69081516eba3548",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0e318a0e107db5dcc55b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4e3a625a621ce93c9753",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Crop_Main_Group"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7246c9067bcad2c4bfd0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Product"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ce6ba7b5851d4afbc2d1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Net_Sales_Dimension"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "efc1c64e98c3d61bf3d5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Net_Sales_Actual_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d5f2009443035978a350",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "SH_Farmer_Budget_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2ad5a9c45eb454dbf7cb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Net_Sales_FC1_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e98ad3c305183e9523f4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Net_Sales_FC2_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "469f411c1c00c04f7d76",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Net_Sales_FC3_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6a4543d0b6d610b766fe",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_Actual"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dd4c5fd9f339c3242955",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_Budget"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8e0b6e53fe94acd8fa28",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_FC1"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7ccc91af6db332c0b298",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_FC2"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2efc0f589d39aaf1daa4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_FC3"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "965f154fa5361deb1e7e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Avg_Farm_Size_ha"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1746acfe4246f491c43a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "SH_Share"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "68de31a3d8c60e9950c6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Seeding_Rate_kg_ha"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9ba810a0c3a5fcbd4c9b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Number_of_Seasons"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3d55dc0b98216c257abd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "SH_Farmer_Actual_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dacc8ed8a4bc12f5ca86",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_Actual_YtD"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bc670f87a00a08e76c4b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_Budget_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cdff3abe2f044dce2a6f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_FC1_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0c05317d5519537fe95a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_FC2_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "95dff00cfccb5959b85a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_FC3_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0fddc64794e181455305",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "SH_Farmer_FC1_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fdf5de39d509300a5f16",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "SH_Farmer_FC2_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9c166fe635d44af28aef",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF DMV_Parameter_Set"
+                            }
+                          },
+                          "Property": "SH_Farmer_FC3_Full_Year"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "2c42317fd76340c78c74": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f4fef3184ff2845802b4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f379878fae48a2c0103f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "69861f76734f129b1dc0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "cb1fb17d0bcd36c2f9fb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "76dd82892438bb2f44b3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Fiscal_Period"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Fiscal_Period"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8b8c3012c6f1ecfb2d84": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fd90c1b6257af0ecd4c6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF DMV_Parameter_Set"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "664a85a15a38dec3efcf": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b8257d5c0a3034fda120",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Affected_Parameter"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fd43bbabcd5e89d2dbc0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Info"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a12645e02b4b368ce4be",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Affected_Table"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ff98011508ab20c0f986",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_current"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "909e00eb84b731254ebe",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_current"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Quarter"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3abfbcd50ff622227c66",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_current"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fcc2c785a5931e766f30",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_current"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Day"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2a945af6c88c4efd6da2",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_previous_version"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "733ff9630d55e86284f7",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_previous_version"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Quarter"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "474975f8e467d980b22c",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_previous_version"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f96764c10d50bd18dfd3",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "valid_from_previous_version"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Day"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "48fb7a824b368145d636",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "91010ada274bcb851928",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b4ba08b43bdd04548451",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Crop_Main_Group"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9ed43496b579e9c8d89b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Product"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4629184decdb2e3135be",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Other_Parameters"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46d3ae1d4b2bc3aacf11",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Current_Version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bc8250ba50170a6d8fce",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                        }
+                      },
+                      "Property": "Previous_Version"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0abe26d549c34a2bee35",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                            }
+                          },
+                          "Property": "diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "faaee3c2fbc304a208f9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "90ce31d4d6743ba8001e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Fiscal_Period_base"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "c1d9c58cbbf7eb4c7195",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Fiscal_Period_Base"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "s",
+                                "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "s"
+                                            }
+                                          },
+                                          "Property": "Fiscal_Period_Base"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "2025004L"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Fiscal_Period_Base"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a1ae686a8329af623665": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3276a7f6930569b350d5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Base"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a3b0f95577b3eb6ba761",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Value_Type_Base"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Value_Type_Base"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "9358d891dd6ade79dd50": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5ba1feb366605d75d902",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Fiscal_Period_trg"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "4d3cc7c05a25e7d7a12e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Fiscal_Period_trg"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Fiscal_Period_trg"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "06258089c11d0665b51e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9c3e20298ccca081d168",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Target"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a9069425acc40ee9cb7e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Value_Type_Target"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Value_Type_Target"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "3a420ca0ab1ce25ebbcf": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2007a43b90feb620ea61",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d61b086643bac731deb3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Crop_Main_Group"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "813ee5e348d6f1d48539",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Product"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1b299f98483e562e893f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7ff55a5ad0d6838ce684",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_Diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d69f7a9f8617d60127d6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_Diff_Rel"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e801acb24d9d8e105dcc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_EUR_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e50f8c34b3fd96016138",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_EUR_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "55fc2ba1403d2de8a90a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Avg_Farm_Size_ha_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f29ce29344794bf29683",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Avg_Farm_Size_ha_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8269a113ff409a8f1c75",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Fiscal_Period_Base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e46ad06a622410778126",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Fiscal_Period_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "aa9e6ebfa146d27ea9e2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Netsales_Diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0d94f56d69d51ada33e8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Netsales_Diff_Rel"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9aae266ea9d3e7f7baea",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Netsales_EUR_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cd0ae429954b79e05f8f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Netsales_EUR_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b8fb258cb36ebc024c30",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Number_of_Farmers_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "20d605e582ad71ee3fb9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Number_of_Farmers_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7c25481b323ea52d606e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8407ccbb7e0e7cdb748b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "233561cc6660d13be8d1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "SH_Farmer_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "65658afa3d2acd00560a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "SH_Farmer_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4bf6dd5c49530583791a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "SH_Share_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a7bcdabd58e61d0c9136",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "SH_Share_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4f02983bea54dba270b7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "SHF_Diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d951e386d93eea825945",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                            }
+                          },
+                          "Property": "SHF_Diff_Rel"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7e1cdd81b535262dccc0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Value_Type_Base"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4c95204a3900da0b19b4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Value_Type_Target"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "9ea72ee3afe0f158135b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "546abc4a9f1c9ff9a91f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Fiscal_Period_base"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Fiscal_Period_base"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "3fec9fca545454dd89b3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "127b527ed106e7be4149",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Base"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Base"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "25db0703b975e0d8d588": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "63d9b6d58bff01b72123",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Fiscal_Period_trg"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Fiscal_Period_trg"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "9da65fe94833986de701": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "977208aac5b558b61cc7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Target"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Target"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "470968c83cc6f01dbd94": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d2ae62365042a8f9fcaa",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b1ef3f3a4861cdf13533",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Crop"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fda077e9b07c2ee58785",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Crop_Main_Group"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6b47701c4cd67f993844",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Product"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "43133c3014667f6c5721",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2d378a6a00d82c7233e4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Fiscal_Period_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7dfa5d52cf030ba8144a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Fiscal_Period_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dc3fa03a25f1426e6a7e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Netsales_Diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ac5fc2ea0a4da6e54b60",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Netsales_Diff_Rel"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c5fa070967231b3680c9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Netsales_EUR_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "047fab9f0709a33f0829",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Netsales_EUR_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5eafa1f318afbb4a0a99",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_Farmers_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "177dfa857aed60deaa7a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_Farmers_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e08a3879e29c9c9fa9cb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_growers_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e3bbb1d154e7ef5cfc75",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Avg_Farm_Size_ha_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46f90be66663126943b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Avg_Farm_Size_ha_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "77a267580e4f2d6c97e5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_EUR_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "13abb62888301a995922",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_EUR_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "683e3035ca9012bd980d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_Diff_Rel"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c588584c048322004871",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Average_Bayer_Farmer_Spend_Diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2646a7c8c790159d386f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_growers_Diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3fd1085b409126fd2435",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_growers_Diff_Rel"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8f42460c6fd7e6186917",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_growers_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c60e08014e56ea366fac",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ec32a717860123ca7a62",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "Number_of_Unique_SH_Farmers_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f34a65b5c099d4a6557d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "SH_Farmer_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d339a439560b811b3df1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "SH_Farmer_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b613252b9597a161d7f4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "SH_Share_base"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "24204c2e849b8728564f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "SH_Share_trg"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0df4b978107720bea78c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "SHF_Diff"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "86b8c5ed37ea72a0082c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                            }
+                          },
+                          "Property": "SHF_Diff_Rel"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3a1f7b2566c6ec5ea4ff",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Base"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4b6c6d39fd6047b25dbd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                        }
+                      },
+                      "Property": "Value_Type_Target"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "cc47550e8fcf06b55ab1": {
+            "isHidden": false
+          },
+          "43f5077f2c5bf4dd18b0": {
+            "isHidden": true
+          },
+          "82cfbb4c655b4c6a42e4": {
+            "isHidden": true
+          },
+          "c034d61857f6c09e61be": {
+            "isHidden": true
+          },
+          "068107953209c29cf275": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,624 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3a420ca0ab1ce25ebbcf",
+  "position": {
+    "x": 0,
+    "y": 129.24304383882878,
+    "z": 3000,
+    "height": 919.78609625668446,
+    "width": 2954.5454545454545,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Stored Procedure CS_SHF DMF_YtY_Diff_Type.Country",
+              "nativeQueryRef": "Country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                    }
+                  },
+                  "Property": "Crop_Main_Group"
+                }
+              },
+              "queryRef": "Stored Procedure CS_SHF DMF_YtY_Diff_Type.Crop_Main_Group",
+              "nativeQueryRef": "Crop_Main_Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "Stored Procedure CS_SHF DMF_YtY_Diff_Type.Product",
+              "nativeQueryRef": "Product"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "Stored Procedure CS_SHF DMF_YtY_Diff_Type.Region",
+              "nativeQueryRef": "Region"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Average_Bayer_Farmer_Spend_Diff"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Average_Bayer_Farmer_Spend_Diff)",
+              "nativeQueryRef": "Average_Bayer_Farmer_Spend_Diff",
+              "displayName": "Average_Bayer_Farmer_Spend_Diff"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Average_Bayer_Farmer_Spend_Diff_Rel"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Average_Bayer_Farmer_Spend_Diff_Rel)",
+              "nativeQueryRef": "Average_Bayer_Farmer_Spend_Diff_Rel",
+              "displayName": "Average_Bayer_Farmer_Spend_Diff_Rel"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Average_Bayer_Farmer_Spend_EUR_base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Average_Bayer_Farmer_Spend_EUR_base)",
+              "nativeQueryRef": "Average_Bayer_Farmer_Spend_EUR_base",
+              "displayName": "Average_Bayer_Farmer_Spend_EUR_base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Average_Bayer_Farmer_Spend_EUR_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Average_Bayer_Farmer_Spend_EUR_trg)",
+              "nativeQueryRef": "Average_Bayer_Farmer_Spend_EUR_trg",
+              "displayName": "Average_Bayer_Farmer_Spend_EUR_trg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Avg_Farm_Size_ha_base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Avg_Farm_Size_ha_base)",
+              "nativeQueryRef": "Avg_Farm_Size_ha_base",
+              "displayName": "Avg_Farm_Size_ha_base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Avg_Farm_Size_ha_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Avg_Farm_Size_ha_trg)",
+              "nativeQueryRef": "Avg_Farm_Size_ha_trg",
+              "displayName": "Avg_Farm_Size_ha_trg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Fiscal_Period_Base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Fiscal_Period_Base)",
+              "nativeQueryRef": "Fiscal_Period_Base",
+              "displayName": "Fiscal_Period_Base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Fiscal_Period_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Fiscal_Period_trg)",
+              "nativeQueryRef": "Fiscal_Period_tgr",
+              "displayName": "Fiscal_Period_tgr"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Netsales_Diff"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Netsales_Diff)",
+              "nativeQueryRef": "Netsales_Diff",
+              "displayName": "Netsales_Diff"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Netsales_Diff_Rel"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Netsales_Diff_Rel)",
+              "nativeQueryRef": "Netsales_Diff_Rel",
+              "displayName": "Netsales_Diff_Rel"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Netsales_EUR_base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Netsales_EUR_base)",
+              "nativeQueryRef": "Netsales_EUR_base",
+              "displayName": "Netsales_EUR_base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Netsales_EUR_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Netsales_EUR_trg)",
+              "nativeQueryRef": "Netsales_EUR_trg",
+              "displayName": "Netsales_EUR_trg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Number_of_Farmers_base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Number_of_Farmers_base)",
+              "nativeQueryRef": "Number_of_Farmers_base",
+              "displayName": "Number_of_Farmers_base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Number_of_Farmers_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Number_of_Farmers_trg)",
+              "nativeQueryRef": "Number_of_Farmers_trg",
+              "displayName": "Number_of_Farmers_trg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Number_of_Unique_SH_Farmers_base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Number_of_Unique_SH_Farmers_base)",
+              "nativeQueryRef": "Number_of_Unique_SH_Farmers_base",
+              "displayName": "Number_of_Unique_SH_Farmers_base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "Number_of_Unique_SH_Farmers_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.Number_of_Unique_SH_Farmers_trg)",
+              "nativeQueryRef": "Number_of_Unique_SH_Farmers_trg",
+              "displayName": "Number_of_Unique_SH_Farmers_trg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "SH_Farmer_base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.SH_Farmer_base)",
+              "nativeQueryRef": "SH_Farmer_base",
+              "displayName": "SH_Farmer_base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "SH_Farmer_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.SH_Farmer_trg)",
+              "nativeQueryRef": "SH_Farmer_trg",
+              "displayName": "SH_Farmer_trg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "SH_Share_base"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.SH_Share_base)",
+              "nativeQueryRef": "SH_Share_base",
+              "displayName": "SH_Share_base"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "SH_Share_trg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.SH_Share_trg)",
+              "nativeQueryRef": "SH_Share_trg",
+              "displayName": "SH_Share_trg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "SHF_Diff"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.SHF_Diff)",
+              "nativeQueryRef": "SHF_Diff",
+              "displayName": "SHF_Diff"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                        }
+                      },
+                      "Property": "SHF_Diff_Rel"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Stored Procedure CS_SHF DMF_YtY_Diff_Type.SHF_Diff_Rel)",
+              "nativeQueryRef": "SHF_Diff_Rel",
+              "displayName": "SHF_Diff_Rel"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                    }
+                  },
+                  "Property": "Value_Type_Base"
+                }
+              },
+              "queryRef": "Stored Procedure CS_SHF DMF_YtY_Diff_Type.Value_Type_Base",
+              "nativeQueryRef": "Value_Type_Base"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Stored Procedure CS_SHF DMF_YtY_Diff_Type"
+                    }
+                  },
+                  "Property": "Value_Type_Target"
+                }
+              },
+              "queryRef": "Stored Procedure CS_SHF DMF_YtY_Diff_Type.Value_Type_Target",
+              "nativeQueryRef": "Value_Type_Target"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "c034d61857f6c09e61be"
+}

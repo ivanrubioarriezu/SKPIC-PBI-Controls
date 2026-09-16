@@ -1,0 +1,37 @@
+table Axis_Pillar_Total
+	lineageTag: 288d0039-df8f-4571-8d0f-6eab425d043e
+
+	column AxisLabel
+		lineageTag: 21194a6d-c76c-4b29-9a57-1f0a54c480eb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [AxisLabel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		formatString: 0
+		lineageTag: 6af4442e-5208-46a8-b24f-8d91de95aa77
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [SortOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Axis_Pillar_Total = calculated
+		mode: import
+		source =
+				
+				DATATABLE (
+				    "AxisLabel", STRING,
+				    "SortOrder", INTEGER,
+				    {
+				        { "Commercial - Passive", 1 },
+				        { "Commercial - Strategic", 2 },
+				        {"Partnerships",3},
+				        { "Total", 4 }
+				    }
+				)
+
+	annotation PBI_Id = a7be57ab36c341f9972c304f5171b61c
+

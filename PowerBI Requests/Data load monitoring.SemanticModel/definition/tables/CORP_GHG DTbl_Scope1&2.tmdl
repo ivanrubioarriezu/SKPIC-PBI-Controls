@@ -1,0 +1,257 @@
+table 'CORP_GHG DTbl_Scope1&2'
+	lineageTag: 61793713-4d20-4cb5-91fc-879f90417f64
+
+	measure Actual =
+			
+			IF (
+			    SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Is_Target]) = FALSE(),
+			    SUM('CORP_GHG DTbl_Scope1&2'[Value])
+			)
+		lineageTag: 97720e62-c838-4bc4-8ad2-5912d2998e40
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Target =
+			
+			IF (
+			    SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Is_Target]) = TRUE(),
+			    SUM('CORP_GHG DTbl_Scope1&2'[Value])
+			)
+		lineageTag: 6c53763b-e785-4cd4-89bd-ed2d09a927b5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 's ghg target' = ```
+			
+			     "●" 
+			```
+		lineageTag: 8aad84e5-7273-48c7-87ad-21ffe82af1c4
+
+	measure 's ghg actual' = ```
+			
+			VAR anyValue =
+			    
+			       ('CORP_GHG DTbl_Scope1&2'[Actual])
+			        
+			        
+			    
+			RETURN
+			    IF ( ISBLANK(anyValue), BLANK(), "●" )
+			```
+		lineageTag: 9e94d5ad-9056-4684-9e33-0e39c43c41c1
+
+	measure 'Dot Color Target GHG' = ```
+			
+			         "#66B512"
+			    
+			```
+		lineageTag: 106f506a-8840-4140-a767-652b257564c4
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b4f35928-7bf9-4b66-a047-1452894886e6
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scope
+		dataType: string
+		lineageTag: b9a1731a-0681-49c4-81e3-d873c856fa77
+		summarizeBy: none
+		sourceColumn: Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: 071f40c9-46b4-4e55-a735-e7f9860f071a
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 6e3f587f-d962-42d1-8c3c-abff10dbbb86
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: a021cfb9-df8d-4554-a285-ac7c259b0c9c
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 5f60568c-804c-4275-b16a-398cd2d0b130
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Unit
+		dataType: string
+		lineageTag: 87709762-d307-45e7-915e-d0169c956d4e
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Target
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5af8ac2b-dddf-4846-bfb0-b3b8e4b4f8ab
+		summarizeBy: none
+		sourceColumn: Is_Target
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0894639f-3843-40cd-b0b2-8bd065b712f7
+		summarizeBy: none
+		sourceColumn: Fiscal_Date
+
+		variation Variation
+			isDefault
+			relationship: d31503b9-c501-469b-8700-c176639483b5
+			defaultHierarchy: LocalDateTable_be9e5e67-6c01-4dc6-8ff4-32d01908ddc9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2a419099-2b0c-4410-a863-4f471dff7873
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: da683cd5-05a3-4593-921b-84c6a519b02e
+			defaultHierarchy: LocalDateTable_d80a22fc-8b7d-4ccc-bd14-a0830ed7d3e3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6536de20-de72-4792-8a1e-3a4348a43ba9
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: e9e80b48-e918-45ca-a266-4b00cc8cf7c0
+			defaultHierarchy: LocalDateTable_0bd59155-2243-4ae0-b131-84e1b4afe244.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d1e13efe-2b39-4f01-8fe9-d5cc57c89f49
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		annotation SummarizationSetBy = Automatic
+
+	column _Actual =
+			
+			IF (
+			    'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE(),
+			    'CORP_GHG DTbl_Scope1&2'[Value]
+			)
+		lineageTag: 1eec9df3-54a5-4d60-ab0f-5696ba70a0df
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _Target =
+			
+			IF (
+			    'CORP_GHG DTbl_Scope1&2'[Is_Target] = TRUE(),
+			    'CORP_GHG DTbl_Scope1&2'[Value]
+			)
+		lineageTag: 6af818c9-ccdb-42e8-b52f-0012e43a76fe
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_Py
+		dataType: double
+		lineageTag: 3053f017-b7a7-4dd2-8186-5c72c1791c67
+		summarizeBy: sum
+		sourceColumn: Value_Py
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_By
+		dataType: double
+		lineageTag: 3f58c57c-7be5-4344-a83e-778c243edc05
+		summarizeBy: sum
+		sourceColumn: Value_By
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_Rounded_By_50k
+		dataType: double
+		lineageTag: 704af57f-d8da-4086-af24-10dfa9903e93
+		summarizeBy: sum
+		sourceColumn: Value_Rounded_By_50k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CORP_GHG DTbl_Scope1&2' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    scope AS Scope,
+				    division AS Division,
+				    country AS Country,
+				    site AS Site,
+				    value AS Value,
+				    value_py AS Value_Py,
+				    value_by AS Value_By,
+				    unit AS Unit,
+				    is_target AS Is_Target,
+				    fiscal_date AS Fiscal_Date,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    is_preliminary AS Is_Preliminary,
+				    value_rounded_by_50k AS Value_Rounded_By_50k
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_corp_ghg_dmt_scope1_and_2_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

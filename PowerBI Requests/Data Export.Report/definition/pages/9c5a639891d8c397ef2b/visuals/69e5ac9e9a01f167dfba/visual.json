@@ -1,0 +1,853 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "69e5ac9e9a01f167dfba",
+  "position": {
+    "x": 3.3925133689839591,
+    "y": 127.51046600458361,
+    "z": 0,
+    "height": 864,
+    "width": 2948.5714285714289,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Fiscal_Year"
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Fiscal_Year)",
+              "nativeQueryRef": "Fiscal_Year1",
+              "displayName": "Fiscal_Year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Fiscal_Month"
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Fiscal_Month)",
+              "nativeQueryRef": "Fiscal_Month1",
+              "displayName": "Fiscal_Month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Income_Group"
+                }
+              },
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Income_Group",
+              "nativeQueryRef": "Income_Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Sector"
+                }
+              },
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Sector",
+              "nativeQueryRef": "Sector"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Region",
+              "nativeQueryRef": "Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Geographical_Location"
+                }
+              },
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Geographical_Location",
+              "nativeQueryRef": "Geographical_Location"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Product_Category_Description"
+                }
+              },
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Product_Category_Description",
+              "nativeQueryRef": "Product_Category_Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Product_Description"
+                }
+              },
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Product_Description",
+              "nativeQueryRef": "Product_Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                    }
+                  },
+                  "Property": "Is_Preliminary"
+                }
+              },
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Is_Preliminary",
+              "nativeQueryRef": "Is_Preliminary"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual_YtD)",
+              "nativeQueryRef": "Cyp_Value_Actual_YtD",
+              "displayName": "Cyp_Value_Actual_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Forecast_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Forecast_Year_Total)",
+              "nativeQueryRef": "Cyp_Value_Forecast_Year_Total",
+              "displayName": "Cyp_Value_Forecast_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual)",
+              "nativeQueryRef": "Cyp_Value_Actual",
+              "displayName": "Cyp_Value_Actual"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual_BFY_Not_Used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual_BFY_Not_Used)",
+              "nativeQueryRef": "Cyp_Value_Actual_BFY_Not_Used",
+              "displayName": "Cyp_Value_Actual_BFY_Not_Used"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual_BHY_Not_Used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual_BHY_Not_Used)",
+              "nativeQueryRef": "Cyp_Value_Actual_BHY_Not_Used",
+              "displayName": "Cyp_Value_Actual_BHY_Not_Used"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual_BYtD_Not_Used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual_BYtD_Not_Used)",
+              "nativeQueryRef": "Cyp_Value_Actual_BYtD_Not_Used",
+              "displayName": "Cyp_Value_Actual_BYtD_Not_Used"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual_PFY_Not_Used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual_PFY_Not_Used)",
+              "nativeQueryRef": "Cyp_Value_Actual_PFY_Not_Used",
+              "displayName": "Cyp_Value_Actual_PFY_Not_Used"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual_PHY_Not_Used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual_PHY_Not_Used)",
+              "nativeQueryRef": "Cyp_Value_Actual_PHY_Not_Used",
+              "displayName": "Cyp_Value_Actual_PHY_Not_Used"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Actual_PYtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Actual_PYtD)",
+              "nativeQueryRef": "Cyp_Value_Actual_PYtD",
+              "displayName": "Cyp_Value_Actual_PYtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Forecast1_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Forecast1_Year_Total)",
+              "nativeQueryRef": "Cyp_Value_Forecast1_Year_Total",
+              "displayName": "Cyp_Value_Forecast1_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Forecast1_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Forecast1_YtD)",
+              "nativeQueryRef": "Cyp_Value_Forecast1_YtD",
+              "displayName": "Cyp_Value_Forecast1_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Forecast2_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Forecast2_Year_Total)",
+              "nativeQueryRef": "Cyp_Value_Forecast2_Year_Total",
+              "displayName": "Cyp_Value_Forecast2_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Forecast2_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Forecast2_YtD)",
+              "nativeQueryRef": "Cyp_Value_Forecast2_YtD",
+              "displayName": "Cyp_Value_Forecast2_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Forecast3_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Forecast3_YtD)",
+              "nativeQueryRef": "Cyp_Value_Forecast3_YtD",
+              "displayName": "Cyp_Value_Forecast3_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Forecast3_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Forecast3_Year_Total)",
+              "nativeQueryRef": "Cyp_Value_Forecast3_Year_Total",
+              "displayName": "Cyp_Value_Forecast3_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Order_Quantity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Order_Quantity)",
+              "nativeQueryRef": "Cyp_Value_Order_Quantity",
+              "displayName": "Cyp_Value_Order_Quantity"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Order_Quantity_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Order_Quantity_YtD)",
+              "nativeQueryRef": "Cyp_Value_Order_Quantity_YtD",
+              "displayName": "Cyp_Value_Order_Quantity_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Plan_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Plan_Year_Total)",
+              "nativeQueryRef": "Cyp_Value_Plan_Year_Total",
+              "displayName": "Cyp_Value_Plan_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Cyp_Value_Plan_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Cyp_Value_Plan_YtD)",
+              "nativeQueryRef": "Cyp_Value_Plan_YtD",
+              "displayName": "Cyp_Value_Plan_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Fiscal_Period"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.Fiscal_Period)",
+              "nativeQueryRef": "Fiscal_Period",
+              "displayName": "Fiscal_Period"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Actual_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Actual_YtD)",
+              "nativeQueryRef": "User_Value_Actual_YtD",
+              "displayName": "User_Value_Actual_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Forecast_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Forecast_Year_Total)",
+              "nativeQueryRef": "User_Value_Forecast_Year_Total",
+              "displayName": "User_Value_Forecast_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Forecast1_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Forecast1_Year_Total)",
+              "nativeQueryRef": "User_Value_Forecast1_Year_Total",
+              "displayName": "User_Value_Forecast1_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Forecast1_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Forecast1_YtD)",
+              "nativeQueryRef": "User_Value_Forecast1_YtD",
+              "displayName": "User_Value_Forecast1_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Forecast2_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Forecast2_Year_Total)",
+              "nativeQueryRef": "User_Value_Forecast2_Year_Total",
+              "displayName": "User_Value_Forecast2_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Forecast2_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Forecast2_YtD)",
+              "nativeQueryRef": "User_Value_Forecast2_YtD",
+              "displayName": "User_Value_Forecast2_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Forecast3_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Forecast3_Year_Total)",
+              "nativeQueryRef": "User_Value_Forecast3_Year_Total",
+              "displayName": "User_Value_Forecast3_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Forecast3_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Forecast3_YtD)",
+              "nativeQueryRef": "User_Value_Forecast3_YtD",
+              "displayName": "User_Value_Forecast3_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Order_Quantity_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Order_Quantity_YtD)",
+              "nativeQueryRef": "User_Value_Order_Quantity_YtD",
+              "displayName": "User_Value_Order_Quantity_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Plan_Year_Total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Plan_Year_Total)",
+              "nativeQueryRef": "User_Value_Plan_Year_Total",
+              "displayName": "User_Value_Plan_Year_Total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Plan_YtD"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Plan_YtD)",
+              "nativeQueryRef": "User_Value_Plan_YtD",
+              "displayName": "User_Value_Plan_YtD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "User_Value_Actual_BYtD_Not_Used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(PH_WH DTbl_AllUserAndCYPValues.User_Value_Actual_BYtD_Not_Used)",
+              "nativeQueryRef": "User_Value_Actual_BYtD_Not_Used",
+              "displayName": "User_Value_Actual_BYtD_Not_Used"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "da0bd4b7667410e25f81"
+}

@@ -1,0 +1,61 @@
+table 'PH_WH DMV_Blacklist'
+	lineageTag: 148bf034-6121-4cad-bcab-f8a4426e0880
+
+	column Material
+		dataType: string
+		lineageTag: 5b6ab48e-cfea-44e1-901e-41bd13886609
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Description
+		dataType: string
+		lineageTag: e76d8798-4352-461a-90e3-f9b6e124da26
+		summarizeBy: none
+		sourceColumn: Material_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason
+		dataType: string
+		lineageTag: 16a429a5-45f1-4a24-b951-2a7f14ae3581
+		summarizeBy: none
+		sourceColumn: Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 35604da1-52c0-407f-bb85-e54732c5e061
+		summarizeBy: none
+		sourceColumn: Last_Updated
+
+		variation Variation
+			isDefault
+			relationship: cf96f6fa-826a-402a-8409-a1ff9df96ed2
+			defaultHierarchy: LocalDateTable_0bc2a5da-4ec6-418b-adbf-fa280fc61567.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PH_WH DMV_Blacklist' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    material               AS Material,
+				    material_description   AS Material_Description,
+				    reason                 AS Reason,
+				    last_updated           AS Last_Updated
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_blacklist_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

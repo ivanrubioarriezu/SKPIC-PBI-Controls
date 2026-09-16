@@ -1,0 +1,49 @@
+table 'View by channel'
+	lineageTag: e468e1b4-dc63-42f3-b240-e082d4676cf2
+
+	column 'View by channel'
+		lineageTag: 5828e9b8-ebea-4e2b-9081-699d35e2a7a1
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'View by channel Order'
+
+		relatedColumnDetails
+			groupByColumn: 'View by channel Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'View by channel Fields'
+		isHidden
+		lineageTag: 765a14a7-6751-4dfd-b3e8-91d867a3e61c
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'View by channel Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'View by channel Order'
+		isHidden
+		formatString: 0
+		lineageTag: 6d2cb62f-a645-4cf0-8c18-ea66771b95f6
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'View by channel' = calculated
+		mode: import
+		source =
+				{
+				    ("Country", NAMEOF('Unique Country'[Geographical_Location]), 0),
+				    ("Product Category", NAMEOF('Unique Product Category'[Product Category]), 1),
+				    ("Product", NAMEOF('Unique Product'[Product_Description]), 2)
+				}
+
+	annotation PBI_Id = aef73425c00844089e19c84b83330a32
+

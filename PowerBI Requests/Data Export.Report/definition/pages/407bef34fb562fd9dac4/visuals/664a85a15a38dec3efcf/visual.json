@@ -1,0 +1,317 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "664a85a15a38dec3efcf",
+  "position": {
+    "x": 24.064171122994651,
+    "y": 791.44385026737973,
+    "z": 11000,
+    "height": 1008.0213903743315,
+    "width": 2954.5454545454545,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "Sum(CS_SHF LTbl_ParameterChangeResults.Year)",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Affected_Table"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Affected_Table",
+              "nativeQueryRef": "Affected_Table"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Affected_Parameter"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Affected_Parameter",
+              "nativeQueryRef": "Affected_Parameter"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Info"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Info",
+              "nativeQueryRef": "Info"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "valid_from_current"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.valid_from_current",
+              "nativeQueryRef": "valid_from_current"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "valid_from_previous_version"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.valid_from_previous_version",
+              "nativeQueryRef": "valid_from_previous_version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Region",
+              "nativeQueryRef": "Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Country",
+              "nativeQueryRef": "Country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Crop_Main_Group"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Crop_Main_Group",
+              "nativeQueryRef": "Crop_Main_Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Product",
+              "nativeQueryRef": "Product"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Other_Parameters"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Other_Parameters",
+              "nativeQueryRef": "Other_Parameters"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Current_Version"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Current_Version",
+              "nativeQueryRef": "Current_Version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "Previous_Version"
+                }
+              },
+              "queryRef": "CS_SHF LTbl_ParameterChangeResults.Previous_Version",
+              "nativeQueryRef": "Previous_Version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF LTbl_ParameterChangeResults"
+                    }
+                  },
+                  "Property": "diff"
+                }
+              },
+              "queryRef": "Sum(CS_SHF LTbl_ParameterChangeResults.diff)",
+              "nativeQueryRef": "diff",
+              "displayName": "diff"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CS Param Changes '"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "isHidden": true
+}

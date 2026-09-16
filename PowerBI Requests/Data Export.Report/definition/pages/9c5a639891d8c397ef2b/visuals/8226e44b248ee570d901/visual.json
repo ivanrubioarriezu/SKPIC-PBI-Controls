@@ -1,0 +1,193 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "8226e44b248ee570d901",
+  "position": {
+    "x": 26.827632461435275,
+    "y": 949.69818913480879,
+    "z": 12000,
+    "height": 853.11871227364179,
+    "width": 2951.0395707578805,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMV_Blacklist"
+                    }
+                  },
+                  "Property": "Material"
+                }
+              },
+              "queryRef": "PH_WH DMV_Blacklist.Material",
+              "nativeQueryRef": "Material"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMV_Blacklist"
+                    }
+                  },
+                  "Property": "Material_Description"
+                }
+              },
+              "queryRef": "PH_WH DMV_Blacklist.Material_Description",
+              "nativeQueryRef": "Material_Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMV_Blacklist"
+                    }
+                  },
+                  "Property": "Reason"
+                }
+              },
+              "queryRef": "PH_WH DMV_Blacklist.Reason",
+              "nativeQueryRef": "Reason"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMV_Blacklist"
+                    }
+                  },
+                  "Property": "Last_Updated"
+                }
+              },
+              "queryRef": "PH_WH DMV_Blacklist.Last_Updated",
+              "nativeQueryRef": "Last_Updated"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "24D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "383.2004011939973D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PH_WH DMV_Blacklist.Material"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1093.5668384595654D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PH_WH DMV_Blacklist.Material_Description"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "758.7754142086416D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PH_WH DMV_Blacklist.Reason"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PH Blacklist'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "isHidden": true
+}

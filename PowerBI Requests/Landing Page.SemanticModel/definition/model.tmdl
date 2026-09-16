@@ -1,0 +1,33 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-150
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["CH_UP DMT_Target","CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail","CORP_GHG DTbl_Scope1&2","CORP_GHG DTbl_Scope3","PH_WH DTbl_Target","hostname","httpPath","Catalogue"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table 'CH_UP DMT_Target'
+ref table DateTableTemplate_2c18b2ad-0e5f-43ed-87c3-f44727b25005
+ref table 'CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail'
+ref table LocalDateTable_7cae67b7-00ac-4e4a-a544-9b09fe8346fc
+ref table LocalDateTable_4c0cfa6e-4cd8-4a36-8e30-a57ab045013d
+ref table 'CORP_GHG DTbl_Scope1&2'
+ref table LocalDateTable_87f1dd75-6546-437b-82bc-44f5665f927d
+ref table LocalDateTable_bf10dae6-27b9-4039-a14e-7a9e9563ff49
+ref table LocalDateTable_f7874501-fd5b-406a-a0b5-4553ae263044
+ref table 'CORP_GHG DTbl_Scope3'
+ref table LocalDateTable_6885f19b-d407-4c7d-9216-a2182c4e86fa
+ref table LocalDateTable_330f8c6d-ba6e-4ea6-bff7-b2a53f80e3cb
+ref table LocalDateTable_82350a6c-3759-4aee-ac3d-96d9ec10dc98
+ref table 'PH_WH DTbl_Target'
+ref table LocalDateTable_9c56350e-32f9-4a1d-9fef-879f9195bdfb
+ref table LocalDateTable_c279285b-83d4-451e-ab24-e65dbcbad5f0
+ref table LocalDateTable_2211dd37-a581-4df3-b3c4-36c25dac8085
+ref table LocalDateTable_ef6fda95-66c5-4aa7-9c31-b9d6339d0e3d
+
+ref cultureInfo en-US
+
