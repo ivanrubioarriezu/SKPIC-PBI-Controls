@@ -1,0 +1,276 @@
+table commits
+	lineageTag: 79e06b38-71b2-4729-89ef-8e4967286632
+
+	column count
+		dataType: int64
+		formatString: 0
+		lineageTag: 833f45c7-be9e-4f3e-a0a4-2649edc22810
+		summarizeBy: sum
+		sourceColumn: count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.commitId'
+		dataType: string
+		lineageTag: f485773b-445d-4a9c-89e8-0c2850563fbc
+		summarizeBy: none
+		sourceColumn: value.commitId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.author.name'
+		dataType: string
+		lineageTag: a0ea338e-519d-443f-a157-8cc520558449
+		summarizeBy: none
+		sourceColumn: value.author.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.author.email'
+		dataType: string
+		lineageTag: b0022e81-b2df-4b23-a9fe-21d98f3b5902
+		summarizeBy: none
+		sourceColumn: value.author.email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.author.date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e830b3f5-30c3-4844-b04c-b57e4045781f
+		summarizeBy: none
+		sourceColumn: value.author.date
+
+		variation Variation
+			isDefault
+			relationship: 9c69dedd-4742-496e-b472-7d4d2d82dd22
+			defaultHierarchy: LocalDateTable_7a620f8b-2dc6-42cb-ac84-7532ee617cb7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.committer.name'
+		dataType: string
+		lineageTag: 94f9e3cc-a95e-42d8-96b6-d1eb18c7c0c4
+		summarizeBy: none
+		sourceColumn: value.committer.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.committer.email'
+		dataType: string
+		lineageTag: caab68df-b005-46fb-8659-e59ad4334d07
+		summarizeBy: none
+		sourceColumn: value.committer.email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.committer.date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88269e82-29e0-4ff2-9918-8ae40cf3d447
+		summarizeBy: none
+		sourceColumn: value.committer.date
+
+		variation Variation
+			isDefault
+			relationship: 27032b4c-330d-401a-8e80-065839f92fc2
+			defaultHierarchy: LocalDateTable_e011ac78-5db3-41fe-8397-c656c60fc867.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.comment'
+		dataType: string
+		lineageTag: 9ef741c3-3192-4877-902c-1096dfc597f3
+		summarizeBy: none
+		sourceColumn: value.comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.changeCounts.Add'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0899e295-f136-40a1-af5b-9c6aa9f23f49
+		summarizeBy: sum
+		sourceColumn: value.changeCounts.Add
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.changeCounts.Edit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 586f7bc2-99ce-4ec7-b99d-cf7dd693c0c3
+		summarizeBy: sum
+		sourceColumn: value.changeCounts.Edit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.changeCounts.Delete'
+		dataType: int64
+		formatString: 0
+		lineageTag: 36a0ef8e-cd6c-4f06-ba7b-3afa28eada48
+		summarizeBy: sum
+		sourceColumn: value.changeCounts.Delete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.url'
+		dataType: string
+		lineageTag: 49b9ed50-59cd-4173-bde1-10739491288b
+		summarizeBy: none
+		sourceColumn: value.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.remoteUrl'
+		dataType: string
+		lineageTag: c3d144bd-d411-4b54-b132-68237e801804
+		summarizeBy: none
+		sourceColumn: value.remoteUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changeCounts.Delete'
+		dataType: string
+		lineageTag: d764b459-592f-4f34-be6b-b692027522ea
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changeCounts.Delete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changeCounts.Edit'
+		dataType: string
+		lineageTag: bb8b5a8a-77b4-4489-aa9e-16469d4018de
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changeCounts.Edit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changeCounts.Add'
+		dataType: string
+		lineageTag: e24ab7e5-3e0f-415b-b8fa-9f5d7e3198df
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changeCounts.Add
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.item.objectId'
+		dataType: string
+		lineageTag: ddbb6e57-60a6-4187-bbdc-a2a5a30a1a5b
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.item.objectId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.item.originalObjectId'
+		dataType: string
+		lineageTag: 46e3a664-d7e2-432f-adaf-007949b699a8
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.item.originalObjectId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.item.gitObjectType'
+		dataType: string
+		lineageTag: 9e988739-27b5-4cbb-bf53-0428f2924246
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.item.gitObjectType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.item.commitId'
+		dataType: string
+		lineageTag: d58d0113-1099-4ab4-8bfe-21fa4ec708d6
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.item.commitId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.item.path'
+		dataType: string
+		lineageTag: 9c9de604-8405-436a-9cb6-2e10c950e49a
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.item.path
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.item.isFolder'
+		dataType: string
+		lineageTag: 67e38a82-e666-4449-8b35-22c0e37a7737
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.item.isFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.item.url'
+		dataType: string
+		lineageTag: 9bd7394a-95ed-4605-9946-0ac45f522d62
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.item.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fnCommitChanges.changes.changeType'
+		dataType: string
+		lineageTag: 5f585203-5615-4df0-bf19-54b04e887dae
+		summarizeBy: none
+		sourceColumn: fnCommitChanges.changes.changeType
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileName
+		dataType: string
+		lineageTag: c8bd03cf-7129-47d3-9c84-e54a61c44046
+		summarizeBy: none
+		sourceColumn: FileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Classification
+		dataType: string
+		lineageTag: be0eb4fb-d770-4292-8f36-a3e2cbc41265
+		summarizeBy: none
+		sourceColumn: Classification
+
+		annotation SummarizationSetBy = Automatic
+
+	partition commits = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(Web.Contents("https://dev.azure.com/EF-GDA/Sustainability%20Reporting%20Bayer%20Global/_apis/git/repositories/Sustainability%20Reporting%20Bayer%20Global/commits?api-version=7.1")),
+				    #"Converted to Table" = Table.FromRecords({Source}),
+				    #"Expanded value" = Table.ExpandListColumn(#"Converted to Table", "value"),
+				    #"Expanded value1" = Table.ExpandRecordColumn(#"Expanded value", "value", {"commitId", "author", "committer", "comment", "changeCounts", "url", "remoteUrl"}, {"value.commitId", "value.author", "value.committer", "value.comment", "value.changeCounts", "value.url", "value.remoteUrl"}),
+				    #"Expanded value.author" = Table.ExpandRecordColumn(#"Expanded value1", "value.author", {"name", "email", "date"}, {"value.author.name", "value.author.email", "value.author.date"}),
+				    #"Expanded value.committer" = Table.ExpandRecordColumn(#"Expanded value.author", "value.committer", {"name", "email", "date"}, {"value.committer.name", "value.committer.email", "value.committer.date"}),
+				    #"Expanded value.changeCounts" = Table.ExpandRecordColumn(#"Expanded value.committer", "value.changeCounts", {"Add", "Edit", "Delete"}, {"value.changeCounts.Add", "value.changeCounts.Edit", "value.changeCounts.Delete"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded value.changeCounts",{{"count", Int64.Type}, {"value.commitId", type text}, {"value.author.name", type text}, {"value.author.email", type text}, {"value.author.date", type datetime}, {"value.committer.name", type text}, {"value.committer.email", type text}, {"value.committer.date", type datetime}, {"value.comment", type text}, {"value.changeCounts.Add", Int64.Type}, {"value.changeCounts.Edit", Int64.Type}, {"value.changeCounts.Delete", Int64.Type}, {"value.url", type text}, {"value.remoteUrl", type text}}),
+				    #"Invoked Custom Function" = Table.AddColumn(#"Changed Type", "fnCommitChanges", each fnCommitChanges([value.commitId])),
+				    #"Expanded fnCommitChanges" = Table.ExpandRecordColumn(#"Invoked Custom Function", "fnCommitChanges", {"changeCounts", "changes"}, {"fnCommitChanges.changeCounts", "fnCommitChanges.changes"}),
+				    #"Expanded fnCommitChanges.changeCounts" = Table.ExpandRecordColumn(#"Expanded fnCommitChanges", "fnCommitChanges.changeCounts", {"Delete", "Edit", "Add"}, {"fnCommitChanges.changeCounts.Delete", "fnCommitChanges.changeCounts.Edit", "fnCommitChanges.changeCounts.Add"}),
+				    #"Expanded fnCommitChanges.changes" = Table.ExpandListColumn(#"Expanded fnCommitChanges.changeCounts", "fnCommitChanges.changes"),
+				    #"Expanded fnCommitChanges.changes1" = Table.ExpandRecordColumn(#"Expanded fnCommitChanges.changes", "fnCommitChanges.changes", {"item", "changeType"}, {"fnCommitChanges.changes.item", "fnCommitChanges.changes.changeType"}),
+				    #"Expanded fnCommitChanges.changes.item" = Table.ExpandRecordColumn(#"Expanded fnCommitChanges.changes1", "fnCommitChanges.changes.item", {"objectId", "originalObjectId", "gitObjectType", "commitId", "path", "isFolder", "url"}, {"fnCommitChanges.changes.item.objectId", "fnCommitChanges.changes.item.originalObjectId", "fnCommitChanges.changes.item.gitObjectType", "fnCommitChanges.changes.item.commitId", "fnCommitChanges.changes.item.path", "fnCommitChanges.changes.item.isFolder", "fnCommitChanges.changes.item.url"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Expanded fnCommitChanges.changes.item", each Text.StartsWith([fnCommitChanges.changes.item.path], "/PowerBI Requests")),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "FileName", each Text.AfterDelimiter(
+				    [fnCommitChanges.changes.item.path],
+				    "/",
+				    {0, RelativePosition.FromEnd}
+				)),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Classification", each if Text.Contains([fnCommitChanges.changes.item.path],".Report")
+				then "Report"
+				
+				else if Text.Contains([fnCommitChanges.changes.item.path],".SemanticModel")
+				then "Semantic Model"
+				
+				else if Text.Contains([fnCommitChanges.changes.item.path],".pbir")
+				then "PBIR Definition"
+				
+				else "Other")
+				in
+				    #"Added Custom1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

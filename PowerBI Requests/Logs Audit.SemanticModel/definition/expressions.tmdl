@@ -1,0 +1,27 @@
+expression fnCommitChanges =
+		(commitId as text) =>
+		
+		let
+		    Source =
+		        Json.Document(
+		            Web.Contents(
+		                "https://dev.azure.com",
+		                [
+		                    RelativePath =
+		                        "EF-GDA/Sustainability%20Reporting%20Bayer%20Global/_apis/git/repositories/72767a98-d07b-4942-9c39-6f4999faf0b1/commits/"
+		                        & commitId &
+		                        "/changes",
+		                    Query = [
+		                        #"api-version" = "7.1"
+		                    ]
+		                ]
+		            )
+		        )
+		in
+		    Source
+	lineageTag: f2e43fe1-d6a9-460d-90ed-3d47d46864b8
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+

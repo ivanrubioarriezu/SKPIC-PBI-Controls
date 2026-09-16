@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["commits","changes","fnCommitChanges","pullrequests"]
+
+ref table commits
+ref table DateTableTemplate_909654cd-998a-4034-9ad8-f143e1c2f678
+ref table LocalDateTable_7a620f8b-2dc6-42cb-ac84-7532ee617cb7
+ref table LocalDateTable_e011ac78-5db3-41fe-8397-c656c60fc867
+ref table changes
+ref table LocalDateTable_787ddd4a-8c3c-4111-9c5b-1e0becf12087
+ref table pullrequests
+
+ref cultureInfo en-US
+

@@ -1,0 +1,183 @@
+table changes
+	lineageTag: f33e66df-4395-43c8-893f-2d8732067ced
+
+	column 'value.id'
+		dataType: string
+		lineageTag: 7a6a9d8e-f786-4b01-8ef7-6b7be5fd3a02
+		summarizeBy: none
+		sourceColumn: value.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.name'
+		dataType: string
+		lineageTag: c038cc82-ce85-4bb2-b593-f471b21137cb
+		summarizeBy: none
+		sourceColumn: value.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.url'
+		dataType: string
+		lineageTag: 63b63130-082b-4092-af1d-0daf25704e9d
+		summarizeBy: none
+		sourceColumn: value.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.id'
+		dataType: string
+		lineageTag: b3117cad-fd65-46e0-8d90-f28a5c2fd67d
+		summarizeBy: none
+		sourceColumn: value.project.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.name'
+		dataType: string
+		lineageTag: 1d00f9e5-d086-47e6-9f06-34e8af836f9f
+		summarizeBy: none
+		sourceColumn: value.project.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.description'
+		dataType: string
+		lineageTag: 2bf4dc0f-4177-46df-81ca-75812f45b2b8
+		summarizeBy: none
+		sourceColumn: value.project.description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.url'
+		dataType: string
+		lineageTag: 7bfcb723-e7e3-45b3-b3f5-25bf49b72453
+		summarizeBy: none
+		sourceColumn: value.project.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.state'
+		dataType: string
+		lineageTag: f5f023d5-aa2e-4296-9a77-584dfd96b86a
+		summarizeBy: none
+		sourceColumn: value.project.state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.revision'
+		dataType: int64
+		formatString: 0
+		lineageTag: 72e339b7-464f-4236-a116-bf9bc8fd51a0
+		summarizeBy: sum
+		sourceColumn: value.project.revision
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.visibility'
+		dataType: string
+		lineageTag: b65f0154-4277-4b13-b217-5278ab29c2bd
+		summarizeBy: none
+		sourceColumn: value.project.visibility
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.project.lastUpdateTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ab2c6625-1ea0-4401-8800-890411e5889a
+		summarizeBy: none
+		sourceColumn: value.project.lastUpdateTime
+
+		variation Variation
+			isDefault
+			relationship: e248f800-6c64-4b62-8ab1-3f12b1dce173
+			defaultHierarchy: LocalDateTable_787ddd4a-8c3c-4111-9c5b-1e0becf12087.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.defaultBranch'
+		dataType: string
+		lineageTag: d14bc18f-1801-46d9-916f-bab7b9057094
+		summarizeBy: none
+		sourceColumn: value.defaultBranch
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.size'
+		dataType: int64
+		formatString: 0
+		lineageTag: a7bd4cce-1cfc-402f-999f-b5094cb3f1fb
+		summarizeBy: sum
+		sourceColumn: value.size
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.remoteUrl'
+		dataType: string
+		lineageTag: 83bd5822-3ff5-4058-8f2d-7bdede038e4c
+		summarizeBy: none
+		sourceColumn: value.remoteUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.sshUrl'
+		dataType: string
+		lineageTag: 0dddfdc9-a26d-4f85-8b05-361157ee73dd
+		summarizeBy: none
+		sourceColumn: value.sshUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.webUrl'
+		dataType: string
+		lineageTag: e5c199c4-8c38-43f0-8fd1-0c325942d8f1
+		summarizeBy: none
+		sourceColumn: value.webUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.isDisabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cee8736c-54b9-4305-951c-423bd18744db
+		summarizeBy: none
+		sourceColumn: value.isDisabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'value.isInMaintenance'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 384c405d-c8f4-47e9-8061-02d95a72b195
+		summarizeBy: none
+		sourceColumn: value.isInMaintenance
+
+		annotation SummarizationSetBy = Automatic
+
+	column count
+		dataType: int64
+		formatString: 0
+		lineageTag: f9781662-5079-4afb-aa7f-3b4e6d56980c
+		summarizeBy: sum
+		sourceColumn: count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition changes = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(Web.Contents("https://dev.azure.com/EF-GDA/Sustainability%20Reporting%20Bayer%20Global/_apis/git/repositories?api-version=7.1")),
+				    #"Converted to Table" = Table.FromRecords({Source}),
+				    #"Expanded value" = Table.ExpandListColumn(#"Converted to Table", "value"),
+				    #"Expanded value1" = Table.ExpandRecordColumn(#"Expanded value", "value", {"id", "name", "url", "project", "defaultBranch", "size", "remoteUrl", "sshUrl", "webUrl", "isDisabled", "isInMaintenance"}, {"value.id", "value.name", "value.url", "value.project", "value.defaultBranch", "value.size", "value.remoteUrl", "value.sshUrl", "value.webUrl", "value.isDisabled", "value.isInMaintenance"}),
+				    #"Expanded value.project" = Table.ExpandRecordColumn(#"Expanded value1", "value.project", {"id", "name", "description", "url", "state", "revision", "visibility", "lastUpdateTime"}, {"value.project.id", "value.project.name", "value.project.description", "value.project.url", "value.project.state", "value.project.revision", "value.project.visibility", "value.project.lastUpdateTime"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded value.project",{{"value.id", type text}, {"value.name", type text}, {"value.url", type text}, {"value.project.id", type text}, {"value.project.name", type text}, {"value.project.description", type text}, {"value.project.url", type text}, {"value.project.state", type text}, {"value.project.revision", Int64.Type}, {"value.project.visibility", type text}, {"value.project.lastUpdateTime", type datetime}, {"value.defaultBranch", type text}, {"value.size", Int64.Type}, {"value.remoteUrl", type text}, {"value.sshUrl", type text}, {"value.webUrl", type text}, {"value.isDisabled", type logical}, {"value.isInMaintenance", type logical}, {"count", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

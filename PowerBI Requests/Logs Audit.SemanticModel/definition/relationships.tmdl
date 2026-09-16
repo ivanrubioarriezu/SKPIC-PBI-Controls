@@ -1,0 +1,15 @@
+relationship 9c69dedd-4742-496e-b472-7d4d2d82dd22
+	joinOnDateBehavior: datePartOnly
+	fromColumn: commits.'value.author.date'
+	toColumn: LocalDateTable_7a620f8b-2dc6-42cb-ac84-7532ee617cb7.Date
+
+relationship 27032b4c-330d-401a-8e80-065839f92fc2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: commits.'value.committer.date'
+	toColumn: LocalDateTable_e011ac78-5db3-41fe-8397-c656c60fc867.Date
+
+relationship e248f800-6c64-4b62-8ab1-3f12b1dce173
+	joinOnDateBehavior: datePartOnly
+	fromColumn: changes.'value.project.lastUpdateTime'
+	toColumn: LocalDateTable_787ddd4a-8c3c-4111-9c5b-1e0becf12087.Date
+

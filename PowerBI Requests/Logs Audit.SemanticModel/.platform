@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Logs Audit"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "92d3e310-12dc-8147-430f-bb57b17bab48"
+  }
+}
