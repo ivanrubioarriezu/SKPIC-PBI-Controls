@@ -23,6 +23,21 @@
                       "Entity": "commits"
                     }
                   },
+                  "Property": "value.author.date"
+                }
+              },
+              "queryRef": "commits.value.author.date",
+              "nativeQueryRef": "Date",
+              "displayName": "Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "commits"
+                    }
+                  },
                   "Property": "Classification"
                 }
               },
@@ -96,12 +111,12 @@
                       "Entity": "commits"
                     }
                   },
-                  "Property": "value.author.date"
+                  "Property": "value.comment"
                 }
               },
-              "queryRef": "commits.value.author.date",
-              "nativeQueryRef": "Date",
-              "displayName": "Date"
+              "queryRef": "commits.value.comment",
+              "nativeQueryRef": "Comment",
+              "displayName": "Comment"
             },
             {
               "field": {
@@ -117,21 +132,6 @@
               "queryRef": "commits.fnCommitChanges.changes.item.path",
               "nativeQueryRef": "Path",
               "displayName": "Path"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "commits"
-                    }
-                  },
-                  "Property": "value.comment"
-                }
-              },
-              "queryRef": "commits.value.comment",
-              "nativeQueryRef": "Comment",
-              "displayName": "Comment"
             },
             {
               "field": {
@@ -270,6 +270,22 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "217.41134562858284D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "commits.FileName"
           }
         }
       ]
