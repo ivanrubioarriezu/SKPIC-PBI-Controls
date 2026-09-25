@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "48ffc1094ea001e8addb",
   "position": {
-    "x": 1.9454732575475029,
-    "y": 148.18527938754514,
+    "x": 0,
+    "y": 167.77777777777754,
     "z": 0,
-    "height": 845.48578384716268,
-    "width": 2948.1688214858318,
-    "tabOrder": 3000
+    "height": 820,
+    "width": 2946.666666666667,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
@@ -160,11 +160,11 @@
                       "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Property": "Sku_Class"
+                  "Property": "Pillar_SKU_Class"
                 }
               },
-              "queryRef": "CH_UP DMT_KPI.Sku_Class",
-              "nativeQueryRef": "Sku_Class"
+              "queryRef": "CH_UP DMT_KPI.Pillar_SKU_Class",
+              "nativeQueryRef": "Pillar_SKU_Class"
             },
             {
               "field": {
@@ -305,6 +305,28 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
                 }
               }
             }

@@ -1,10 +1,10 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "9bc5516e4873607af7a4",
   "position": {
     "x": 1402.5146095271825,
     "y": 204.00212502213563,
-    "z": 12000,
+    "z": 13000,
     "height": 119.0012395962458,
     "width": 487.33840977510181,
     "tabOrder": 11000
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CH_UP DMT_KPI"
+                      "Entity": "Pillar SKU Axis"
                     }
                   },
                   "Property": "Pillar_SKU_Class"
                 }
               },
-              "queryRef": "CH_UP DMT_KPI.Pillar_SKU_Class",
-              "nativeQueryRef": "Pillar_SKU_Class",
+              "queryRef": "Pillar SKU Axis.Pillar_SKU_Class",
+              "nativeQueryRef": "Pillar_SKU_Class1",
               "active": true
             }
           ]
@@ -270,6 +270,78 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "9b997511cad50c54c308",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pillar SKU Axis"
+              }
+            },
+            "Property": "Pillar_SKU_Class"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Pillar SKU Axis",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "p"
+                              }
+                            },
+                            "Property": "Pillar_SKU_Class"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Total'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

@@ -1,0 +1,31 @@
+table 'Channel Slicer'
+	lineageTag: 5d493929-dffc-47bc-a926-29a290e69402
+
+	column Channel
+		lineageTag: 2d268c44-62e2-48eb-8a01-bf061f6ad941
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Channel Axis[Channel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		formatString: 0
+		lineageTag: 19a3f1b8-aab4-4923-8059-cb169b391747
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Channel Axis[SortOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Channel Slicer' = calculated
+		mode: import
+		source =
+				
+				FILTER(
+				    'Channel Axis',
+				    'Channel Axis'[Channel] <> "Total"
+				)
+
+	annotation PBI_Id = 36259d0647414f9cb2289e458f54cc9f
+

@@ -3,10 +3,10 @@
   "name": "21d9cdd380082e9d107c",
   "position": {
     "x": 0,
-    "y": 153.12214704867074,
+    "y": 162.40230686198402,
     "z": 0,
-    "height": 845.44801509494232,
-    "width": 2941.1764705882351,
+    "height": 832.83582089552237,
+    "width": 2940.2985074626863,
     "tabOrder": 0
   },
   "visual": {
@@ -366,6 +366,29 @@
               "expr": {
                 "Literal": {
                   "Value": "'Center'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
                 }
               }
             }

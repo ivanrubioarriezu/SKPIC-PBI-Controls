@@ -3,11 +3,10 @@
   "name": "048afc029db96d63c9dc",
   "position": {
     "x": 0,
-    "y": 130.68154265188747,
-    "z": 5500,
-    "height": 872.10908446962981,
-    "width": 2942.7306534443064,
-    "tabOrder": 0
+    "y": 163.42245989304814,
+    "z": 4000,
+    "height": 857.96791443850259,
+    "width": 2935.8288770053477
   },
   "visual": {
     "visualType": "tableEx",
@@ -101,20 +100,6 @@
             },
             {
               "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope1&2"
-                    }
-                  },
-                  "Property": "Preliminary / Final Data"
-                }
-              },
-              "queryRef": "CORP_GHG DTbl_Scope1&2.Preliminary / Final Data",
-              "nativeQueryRef": "Preliminary / Final Data"
-            },
-            {
-              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
@@ -200,6 +185,29 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -218,20 +226,6 @@
         }
       ],
       "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "480.24027787977803D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "CORP_GHG DTbl_Scope1&2.Preliminary / Final Data"
-          }
-        },
         {
           "properties": {
             "value": {
@@ -265,7 +259,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "414.9104484187628D"
+                  "Value": "535.2584994228197D"
                 }
               }
             }
@@ -293,7 +287,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "533.656734650468D"
+                  "Value": "710.2410259741216D"
                 }
               }
             }
@@ -314,6 +308,20 @@
           },
           "selector": {
             "metadata": "CORP_GHG DTbl_Scope1&2.Actual scope1&2"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "341.2084379174124D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2.country"
           }
         }
       ],

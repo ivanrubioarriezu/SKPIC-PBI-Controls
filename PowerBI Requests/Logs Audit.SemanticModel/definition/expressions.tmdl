@@ -1,5 +1,6 @@
 expression fnCommitChanges =
-		(commitId as text) =>
+		let
+		    Source = (commitId as text) =>
 		
 		let
 		    Source =
@@ -19,7 +20,9 @@ expression fnCommitChanges =
 		        )
 		in
 		    Source
-	lineageTag: f2e43fe1-d6a9-460d-90ed-3d47d46864b8
+		in
+		    Source
+	lineageTag: b8d0a471-0156-4599-ba96-7a7fea5bd916
 
 	annotation PBI_NavigationStepName = Navigation
 

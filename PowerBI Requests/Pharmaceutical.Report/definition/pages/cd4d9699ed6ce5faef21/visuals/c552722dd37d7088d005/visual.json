@@ -1,21 +1,18 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "c552722dd37d7088d005",
   "position": {
     "x": 288,
     "y": 1376,
-    "z": 13000,
+    "z": 12000,
     "height": 601.6,
     "width": 3187.2,
-    "tabOrder": 13000
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": []
-        },
         "Rows": {
           "projections": [
             {
@@ -602,62 +599,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "714838de0b316507c380",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PH_WH DTbl_AllUserAndCYPValues"
-              }
-            },
-            "Property": "Product Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "002c92e9ab663121613b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PH_WH DTbl_AllUserAndCYPValues"
-              }
-            },
-            "Property": "CY selection (HY/FY)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "afb4c5cc55d5e62212b8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PH_WH DTbl_AllUserAndCYPValues"
-              }
-            },
-            "Property": "PY selection (HY/FY)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a9b65a5345c7aa90b5e5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PH_WH DTbl_AllUserAndCYPValues"
-              }
-            },
-            "Property": "BY selection (HY/FY)"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "37e09530e732ac20eeeb",
         "field": {

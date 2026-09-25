@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "4941092346465552df7c",
   "position": {
     "x": 325.68737657602918,
@@ -24,8 +24,7 @@
                       "fontFamily": "Arial",
                       "fontSize": "20pt",
                       "color": "#666666"
-                    },
-                    "url": "https://app.powerbi.com/groups/6f6bf644-33d2-4217-adb5-44dfe40e5e31/reports/e65f8de6-d4c7-43f3-b1a2-f728664b163b/9f4f4a87d84ce50b32ba?experience=power-bi"
+                    }
                   }
                 ],
                 "horizontalTextAlignment": "center"

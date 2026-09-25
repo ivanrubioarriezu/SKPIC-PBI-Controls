@@ -4,10 +4,10 @@
   "position": {
     "x": 508.8,
     "y": 115.2,
-    "z": 27000,
+    "z": 25000,
     "height": 73.6,
     "width": 191,
-    "tabOrder": 27000
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "textbox",
@@ -42,8 +42,7 @@
                       "verticalAlign": "baseline",
                       "scriptType": "sub",
                       "bottom": "-0.25em"
-                    },
-                    "url": "https://app.powerbi.com/Redirect?action=OpenReport&appId=01d55994-c5e7-4212-b884-c16cd448e796&reportObjectId=781998fd-2077-4621-ad60-c70518667461&ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&pbi_source=appShareLink&portalSessionId=534ae8d8-16b5-4008-83de-ca69f0fc793a"
+                    }
                   }
                 ]
               }

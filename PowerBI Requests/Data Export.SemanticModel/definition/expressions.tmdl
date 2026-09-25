@@ -8,6 +8,8 @@ expression httpPath = "/sql/1.0/warehouses/916c447fdd11cd1e" meta [IsParameterQu
 
 	annotation PBI_ResultType = Text
 
+	annotation PBI_NavigationStepName = Navigation
+
 expression Catalogue = "efdataonelh_prd" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: bd9f26a4-684a-45d9-9530-45e20f0a4592
 

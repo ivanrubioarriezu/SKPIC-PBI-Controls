@@ -32,6 +32,25 @@ table 'PH_WH DTbl_Target'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'E_ACT YTD' =
+			DIVIDE (
+			    SUM ( 'PH_WH DTbl_Target'[User_YtD] ),
+			    1000000
+			)
+		lineageTag: 8fb5143a-2c24-4e25-9e09-f1f860a4a527
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YearFilter YTD' =
+			IF (
+			    [E_FY (Year Filter)] = 1,
+			    'PH_WH DTbl_Target'[E_ACT YTD],
+			    BLANK()
+			)
+		lineageTag: 33ab4022-904a-45fc-9621-3306721ad5c1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Year
 		dataType: int64
 		formatString: 0
@@ -87,20 +106,6 @@ table 'PH_WH DTbl_Target'
 			defaultHierarchy: LocalDateTable_89f3a2c9-f7ad-4f37-ba1d-e76814455bfe.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
-
-	column 'E_ACT YTD' =
-			[User_YtD]/1000000
-			/*IF (
-			    [E_FY (Year Filter)] = 1,
-			    [User_YtD]/1000000,
-			    BLANK()
-			)*/
-		lineageTag: fd666b42-5c5b-4607-8947-7f27e42d1fa2
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column User_Ytd
 		dataType: double

@@ -54,3 +54,7 @@ relationship a28c40b1-03f3-8b28-9362-e44f519f9e9d
 	fromColumn: CS_Actual.Country
 	toColumn: 'Unique Country'.Country
 
+relationship 6d8709b1-c8c3-384e-3057-0b55638d86d8
+	fromColumn: CS_Actual.Channel
+	toColumn: 'Channel Axis'.Channel
+

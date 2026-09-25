@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "1483e06ced4cd080329a",
   "position": {
     "x": 0,
@@ -57,7 +57,8 @@
               "queryRef": "Dataset.Link available label",
               "nativeQueryRef": "Link available label"
             }
-          ]
+          ],
+          "showAll": true
         }
       },
       "sortDefinition": {
@@ -378,46 +379,49 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Dataset",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Dashboard"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Climate Protection'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
+      },
+      {
+        "name": "ab118cbe46cee899c901",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Key terms"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0b5a94616842498a502b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Definition"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bbad8b563cbc075c6c7c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Link available label"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

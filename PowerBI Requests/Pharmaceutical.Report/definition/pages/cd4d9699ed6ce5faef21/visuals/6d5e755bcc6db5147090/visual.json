@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "6d5e755bcc6db5147090",
   "position": {
     "x": 9.9167699663538169,
     "y": 203,
-    "z": 11000,
+    "z": 10000,
     "height": 119,
     "width": 253.86931113865771,
-    "tabOrder": 11000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "slicer",
@@ -194,5 +194,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "71b4d62e6148e070701b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HY / FY selection"
+              }
+            },
+            "Property": "Selection"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

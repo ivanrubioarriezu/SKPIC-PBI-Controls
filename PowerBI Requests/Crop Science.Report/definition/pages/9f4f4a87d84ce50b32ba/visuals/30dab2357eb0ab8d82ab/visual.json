@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "30dab2357eb0ab8d82ab",
   "position": {
     "x": 374.67018469656989,
@@ -542,60 +542,6 @@
         }
       },
       {
-        "name": "944193a39569e6cd5cad",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CS_Target"
-              }
-            },
-            "Property": "M_FY (Year Filter)"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c",
-              "Entity": "CS_Target",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "c"
-                          }
-                        },
-                        "Property": "M_FY (Year Filter)"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "1L"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
         "name": "8e85ccc8429e4aa0edfe",
         "field": {
           "Column": {
@@ -624,6 +570,62 @@
             }
           ]
         }
+      },
+      {
+        "name": "149cc5f809b7bd910979",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CS_Actual"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "83898303c04ed1b59a06",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CS_Actual"
+              }
+            },
+            "Property": "GMV_CY_Selection (HY/FY)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "875f56ded4027764e848",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CS_Actual"
+              }
+            },
+            "Property": "GMV_PY_Selection (HY/FY)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e9e1c12d7400736a8c7e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CS_Actual"
+              }
+            },
+            "Property": "GMV_BY_Selection (HY/FY)"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

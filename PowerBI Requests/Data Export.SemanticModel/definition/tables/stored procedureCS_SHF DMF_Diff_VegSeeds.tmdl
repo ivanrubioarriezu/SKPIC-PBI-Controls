@@ -41,184 +41,6 @@ table 'stored procedureCS_SHF DMF_Diff_VegSeeds'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Fiscal_Period_base
-		dataType: int64
-		formatString: 0
-		lineageTag: 282b55c9-1aa3-4ffe-9351-f55ed84024f6
-		summarizeBy: sum
-		sourceColumn: Fiscal_Period_base
-
-		annotation SummarizationSetBy = Automatic
-
-	column Netsales_EUR_base
-		dataType: double
-		lineageTag: eb5c19f3-14c7-4a4e-9d8b-733d10958c19
-		summarizeBy: sum
-		sourceColumn: Netsales_EUR_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Average_Bayer_Farmer_Spend_EUR_base
-		dataType: double
-		lineageTag: a045d7b2-d2ed-4c60-af17-393e9abbc071
-		summarizeBy: sum
-		sourceColumn: Average_Bayer_Farmer_Spend_EUR_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Avg_Farm_Size_ha_base
-		dataType: double
-		lineageTag: 00711b20-169d-45ca-8f94-6773e22fc07e
-		summarizeBy: sum
-		sourceColumn: Avg_Farm_Size_ha_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column SH_Share_base
-		dataType: double
-		lineageTag: ab22b9e9-99bf-4253-8b82-be8c327beaaf
-		summarizeBy: sum
-		sourceColumn: SH_Share_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Number_of_growers_base
-		dataType: double
-		lineageTag: 4d9fb172-e5ce-421f-a3f8-efbef2beac6b
-		summarizeBy: sum
-		sourceColumn: Number_of_growers_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Number_of_Farmers_base
-		dataType: double
-		lineageTag: fc85cc3e-2c56-4253-9460-e5f7dcc07b26
-		summarizeBy: sum
-		sourceColumn: Number_of_Farmers_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Number_of_Unique_SH_Farmers_base
-		dataType: double
-		lineageTag: 486d6195-0436-4f2b-aea7-70c56e7991f2
-		summarizeBy: sum
-		sourceColumn: Number_of_Unique_SH_Farmers_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column SH_Farmer_base
-		dataType: double
-		lineageTag: b8352587-a80e-46eb-945c-536ac27f368a
-		summarizeBy: sum
-		sourceColumn: SH_Farmer_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Fiscal_Period_trg
-		dataType: int64
-		formatString: 0
-		lineageTag: 14bdc7d1-1f9f-4d1b-b85a-6387576b4775
-		summarizeBy: sum
-		sourceColumn: Fiscal_Period_trg
-
-		annotation SummarizationSetBy = Automatic
-
-	column Netsales_EUR_trg
-		dataType: double
-		lineageTag: ee589455-81fa-4b27-b957-305a2944dc02
-		summarizeBy: sum
-		sourceColumn: Netsales_EUR_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Average_Bayer_Farmer_Spend_EUR_trg
-		dataType: double
-		lineageTag: d83c82f1-946c-46c9-9e8c-9b766dc5efb9
-		summarizeBy: sum
-		sourceColumn: Average_Bayer_Farmer_Spend_EUR_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Avg_Farm_Size_ha_trg
-		dataType: double
-		lineageTag: 10e53344-efbf-4c43-9c64-df5ea634009d
-		summarizeBy: sum
-		sourceColumn: Avg_Farm_Size_ha_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column SH_Share_trg
-		dataType: double
-		lineageTag: a202092f-9608-495c-9bdf-c8aed009645f
-		summarizeBy: sum
-		sourceColumn: SH_Share_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Number_of_growers_trg
-		dataType: double
-		lineageTag: 5fe40ecb-5964-454b-a56a-f91ac3697af4
-		summarizeBy: sum
-		sourceColumn: Number_of_growers_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Number_of_Farmers_trg
-		dataType: double
-		lineageTag: 9865c694-2292-4476-836d-951693086367
-		summarizeBy: sum
-		sourceColumn: Number_of_Farmers_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Number_of_Unique_SH_Farmers_trg
-		dataType: double
-		lineageTag: 6f1cfc89-6940-4b84-99db-400e46713ed5
-		summarizeBy: sum
-		sourceColumn: Number_of_Unique_SH_Farmers_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column SH_Farmer_trg
-		dataType: double
-		lineageTag: bb04bae8-0603-4ee6-b73b-5c2e66c19a4e
-		summarizeBy: sum
-		sourceColumn: SH_Farmer_trg
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Netsales_Diff
 		dataType: double
 		lineageTag: 4719bee3-0966-4eb5-a67a-b2e6d9c6e3c1
@@ -259,102 +81,239 @@ table 'stored procedureCS_SHF DMF_Diff_VegSeeds'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Number_of_growers_Diff
-		dataType: double
-		lineageTag: ef5ad5e1-72a0-4d53-8941-9c93b4519848
-		summarizeBy: sum
-		sourceColumn: Number_of_growers_Diff
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Number_of_growers_Diff_Rel
-		dataType: double
-		lineageTag: 48fc1ce0-6e10-4a43-b667-b67e7f7dd90d
-		summarizeBy: sum
-		sourceColumn: Number_of_growers_Diff_Rel
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column SHF_Diff
-		dataType: double
-		lineageTag: c730fff0-6ed7-4008-93f8-95889623c156
-		summarizeBy: sum
-		sourceColumn: SHF_Diff
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column SHF_Diff_Rel
-		dataType: double
-		lineageTag: 3c24ba3c-b368-4f7e-b907-4bddd1e32db7
-		summarizeBy: sum
-		sourceColumn: SHF_Diff_Rel
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Value_Type_base
-		dataType: string
-		lineageTag: 59979aca-904c-428b-a73f-1e267edd6340
-		summarizeBy: none
-		sourceColumn: Value_Type_base
-
-		annotation SummarizationSetBy = Automatic
-
-	column Value_Type_trg
-		dataType: string
-		lineageTag: 7e2e9784-b30c-485f-8933-6f21cfedbedc
-		summarizeBy: none
-		sourceColumn: Value_Type_trg
-
-		annotation SummarizationSetBy = Automatic
-
-	column Optime
-		dataType: string
-		lineageTag: e712b2d2-9bc7-4fcd-93e2-8c5ee0772bee
-		summarizeBy: none
-		sourceColumn: Optime
-
-		annotation SummarizationSetBy = Automatic
-
-	column Opsys
-		dataType: string
-		lineageTag: 9c6dfcbb-06e2-4757-b77f-7aa8bbdb4e04
-		summarizeBy: none
-		sourceColumn: Opsys
-
-		annotation SummarizationSetBy = Automatic
-
-	column Optype
-		dataType: string
-		lineageTag: 29e1611f-1e4a-44ff-bfcc-637af46b7f5c
-		summarizeBy: none
-		sourceColumn: Optype
-
-		annotation SummarizationSetBy = Automatic
-
-	column Dbx_Optime
-		dataType: string
-		lineageTag: c3681059-d66c-41e4-b185-2dd9f334ce0f
-		summarizeBy: none
-		sourceColumn: Dbx_Optime
-
-		annotation SummarizationSetBy = Automatic
-
-	column Div_Flag
+	column Fiscal_Period_Base
 		dataType: int64
 		formatString: 0
-		lineageTag: b9971f76-cff3-4b1b-83d1-6ace7ba19257
+		lineageTag: 18a4d59d-026c-4137-83b4-3655e51bed18
 		summarizeBy: sum
-		sourceColumn: Div_Flag
+		sourceColumn: Fiscal_Period_Base
 
 		annotation SummarizationSetBy = Automatic
+
+	column Value_Type_Base
+		dataType: string
+		lineageTag: 0f52a1e1-f9e4-4d2f-b144-27fde38fa110
+		summarizeBy: none
+		sourceColumn: Value_Type_Base
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_Type_Target
+		dataType: string
+		lineageTag: 3f573d2e-3664-432b-806b-6e3d70783145
+		summarizeBy: none
+		sourceColumn: Value_Type_Target
+
+		annotation SummarizationSetBy = Automatic
+
+	column Netsales_Eur_Base
+		dataType: double
+		lineageTag: da539477-c935-444d-8bfb-7ea1fd772105
+		summarizeBy: sum
+		sourceColumn: Netsales_Eur_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_Eur_Base
+		dataType: double
+		lineageTag: eb4eae10-7bb8-44cf-afc9-07200d0141d3
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_Eur_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Avg_Farm_Size_Ha_Base
+		dataType: double
+		lineageTag: 144f7055-fc44-440c-85b8-e7b8c35e3e4b
+		summarizeBy: sum
+		sourceColumn: Avg_Farm_Size_Ha_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sh_Share_Base
+		dataType: double
+		lineageTag: e9c6cbd6-17a2-40d9-9ef3-f61dcf531f71
+		summarizeBy: sum
+		sourceColumn: Sh_Share_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Growers_Base
+		dataType: double
+		lineageTag: 458d9180-fbcb-4d40-b2ef-cf8da73c0e74
+		summarizeBy: sum
+		sourceColumn: Number_Of_Growers_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Farmers_Base
+		dataType: double
+		lineageTag: ab279779-f3a6-43e8-aa16-cf9318715d7a
+		summarizeBy: sum
+		sourceColumn: Number_Of_Farmers_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Unique_Sh_Farmers_Base
+		dataType: double
+		lineageTag: da3a4f44-6346-4cab-807e-5b5180f13c7d
+		summarizeBy: sum
+		sourceColumn: Number_Of_Unique_Sh_Farmers_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sh_Farmer_Base
+		dataType: double
+		lineageTag: 8ea86a88-a849-4b60-ae2f-e9a4a4b250f8
+		summarizeBy: sum
+		sourceColumn: Sh_Farmer_Base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fiscal_Period_Trg
+		dataType: int64
+		formatString: 0
+		lineageTag: d36152c4-93a2-4e13-be13-4e28982938c4
+		summarizeBy: sum
+		sourceColumn: Fiscal_Period_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Netsales_Eur_Trg
+		dataType: double
+		lineageTag: f2d216d6-c17f-4e54-83f4-7d9ca1fd27b6
+		summarizeBy: sum
+		sourceColumn: Netsales_Eur_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_Eur_Trg
+		dataType: double
+		lineageTag: 324f160c-bbb8-407f-94ca-c1205dc31fb0
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_Eur_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Avg_Farm_Size_Ha_Trg
+		dataType: double
+		lineageTag: 1d99a72d-7037-4acd-ba4b-f74c50a59d56
+		summarizeBy: sum
+		sourceColumn: Avg_Farm_Size_Ha_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sh_Share_Trg
+		dataType: double
+		lineageTag: 840e014f-8116-404c-b2cf-9709a589c1e5
+		summarizeBy: sum
+		sourceColumn: Sh_Share_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Growers_Trg
+		dataType: double
+		lineageTag: a9f9f0d7-012a-4766-8b85-3cadd945db29
+		summarizeBy: sum
+		sourceColumn: Number_Of_Growers_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Farmers_Trg
+		dataType: double
+		lineageTag: 9400d736-36ad-430b-932a-91bc876c99c0
+		summarizeBy: sum
+		sourceColumn: Number_Of_Farmers_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Unique_Sh_Farmers_Trg
+		dataType: double
+		lineageTag: 97c2898f-d633-4f76-8db4-e36e86153eda
+		summarizeBy: sum
+		sourceColumn: Number_Of_Unique_Sh_Farmers_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sh_Farmer_Trg
+		dataType: double
+		lineageTag: 76bd6ad0-42b4-413f-8eed-7b9183cf0653
+		summarizeBy: sum
+		sourceColumn: Sh_Farmer_Trg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Growers_Diff
+		dataType: double
+		lineageTag: 28d2656c-e125-4c69-8a59-5655e67a389d
+		summarizeBy: sum
+		sourceColumn: Number_Of_Growers_Diff
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_Of_Growers_Diff_Rel
+		dataType: double
+		lineageTag: 14df3a60-288c-4343-aaba-1e550b6b9fee
+		summarizeBy: sum
+		sourceColumn: Number_Of_Growers_Diff_Rel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Shf_Diff
+		dataType: double
+		lineageTag: 9adc1a4c-f1e0-4901-ab4c-45e897c23fa4
+		summarizeBy: sum
+		sourceColumn: Shf_Diff
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Shf_Diff_Rel
+		dataType: double
+		lineageTag: 1aed451e-fb95-43e8-a7a9-b543c1f25331
+		summarizeBy: sum
+		sourceColumn: Shf_Diff_Rel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition 'stored procedureCS_SHF DMF_Diff_VegSeeds' = m
 		mode: import
@@ -362,51 +321,46 @@ table 'stored procedureCS_SHF DMF_Diff_VegSeeds'
 				let
 				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
 				    "SELECT
-				    REGION                              AS Region,
-				    COUNTRY                             AS Country,
-				    CROP                                AS Crop,
-				    CROP_MAIN_GROUP                     AS Crop_Main_Group,
-				    PRODUCT                             AS Product,
-				    FISCAL_PERIOD_BASE                  AS Fiscal_Period_base,
-				    VALUE_TYPE_BASE                     AS Value_Type_base,
-				    VALUE_TYPE_TARGET                   AS Value_Type_trg,
-				    NETSALES_EUR_BASE                   AS Netsales_EUR_base,
-				    AVERAGE_BAYER_FARMER_SPEND_EUR_BASE AS Average_Bayer_Farmer_Spend_EUR_base,
-				    AVG_FARM_SIZE_HA_BASE               AS Avg_Farm_Size_ha_base,
-				    SH_SHARE_BASE                       AS SH_Share_base,
-				    NUMBER_OF_GROWERS_BASE              AS Number_of_growers_base,
-				    NUMBER_OF_FARMERS_BASE              AS Number_of_Farmers_base,
-				    NUMBER_OF_UNIQUE_SH_FARMERS_BASE    AS Number_of_Unique_SH_Farmers_base,
-				    SH_FARMER_BASE                      AS SH_Farmer_base,
-				    FISCAL_PERIOD_TRG                   AS Fiscal_Period_trg,
-				    NETSALES_EUR_TRG                    AS Netsales_EUR_trg,
-				    AVERAGE_BAYER_FARMER_SPEND_EUR_TRG  AS Average_Bayer_Farmer_Spend_EUR_trg,
-				    AVG_FARM_SIZE_HA_TRG                AS Avg_Farm_Size_ha_trg,
-				    SH_SHARE_TRG                        AS SH_Share_trg,
-				    NUMBER_OF_GROWERS_TRG               AS Number_of_growers_trg,
-				    NUMBER_OF_FARMERS_TRG               AS Number_of_Farmers_trg,
-				    NUMBER_OF_UNIQUE_SH_FARMERS_TRG     AS Number_of_Unique_SH_Farmers_trg,
-				    SH_FARMER_TRG                       AS SH_Farmer_trg,
-				    NETSALES_DIFF                       AS Netsales_Diff,
-				    NETSALES_DIFF_REL                   AS Netsales_Diff_Rel,
-				    AVERAGE_BAYER_FARMER_SPEND_DIFF     AS Average_Bayer_Farmer_Spend_Diff,
-				    AVERAGE_BAYER_FARMER_SPEND_DIFF_REL AS Average_Bayer_Farmer_Spend_Diff_Rel,
-				    NUMBER_OF_GROWERS_DIFF              AS Number_of_growers_Diff,
-				    NUMBER_OF_GROWERS_DIFF_REL          AS Number_of_growers_Diff_Rel,
-				    SHF_DIFF                            AS SHF_Diff,
-				    SHF_DIFF_REL                        AS SHF_Diff_Rel,
-				    OPTIME                              AS Optime,
-				    OPSYS                               AS Opsys,
-				    OPTYPE                              AS Optype,
-				    DBX_OPTIME                          AS Dbx_Optime,
-				    DIV_FLAG                            AS Div_Flag
-				FROM generaldiscovery_sustainability_r.skpic_cs_shf_dmt_yty_diff_vegseeds_act_view"
+				    region AS Region,
+				    country AS Country,
+				    crop AS Crop,
+				    crop_main_group AS Crop_Main_Group,
+				    product AS Product,
+				    fiscal_period_base AS Fiscal_Period_Base,
+				    value_type_base AS Value_Type_Base,
+				    value_type_target AS Value_Type_Target,
+				    netsales_eur_base AS Netsales_Eur_Base,
+				    average_bayer_farmer_spend_eur_base AS Average_Bayer_Farmer_Spend_Eur_Base,
+				    avg_farm_size_ha_base AS Avg_Farm_Size_Ha_Base,
+				    sh_share_base AS Sh_Share_Base,
+				    number_of_growers_base AS Number_Of_Growers_Base,
+				    number_of_farmers_base AS Number_Of_Farmers_Base,
+				    number_of_unique_sh_farmers_base AS Number_Of_Unique_Sh_Farmers_Base,
+				    sh_farmer_base AS Sh_Farmer_Base,
+				    fiscal_period_trg AS Fiscal_Period_Trg,
+				    netsales_eur_trg AS Netsales_Eur_Trg,
+				    average_bayer_farmer_spend_eur_trg AS Average_Bayer_Farmer_Spend_Eur_Trg,
+				    avg_farm_size_ha_trg AS Avg_Farm_Size_Ha_Trg,
+				    sh_share_trg AS Sh_Share_Trg,
+				    number_of_growers_trg AS Number_Of_Growers_Trg,
+				    number_of_farmers_trg AS Number_Of_Farmers_Trg,
+				    number_of_unique_sh_farmers_trg AS Number_Of_Unique_Sh_Farmers_Trg,
+				    sh_farmer_trg AS Sh_Farmer_Trg,
+				    netsales_diff AS Netsales_Diff,
+				    netsales_diff_rel AS Netsales_Diff_Rel,
+				    average_bayer_farmer_spend_diff AS Average_Bayer_Farmer_Spend_Diff,
+				    average_bayer_farmer_spend_diff_rel AS Average_Bayer_Farmer_Spend_Diff_Rel,
+				    number_of_growers_diff AS Number_Of_Growers_Diff,
+				    number_of_growers_diff_rel AS Number_Of_Growers_Diff_Rel,
+				    shf_diff AS Shf_Diff,
+				    shf_diff_rel AS Shf_Diff_Rel
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_yty_diff_vegseeds_act_intfc_view"
 				    , null, [EnableFolding=true])
 				in
 				    Source
 				```
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
 

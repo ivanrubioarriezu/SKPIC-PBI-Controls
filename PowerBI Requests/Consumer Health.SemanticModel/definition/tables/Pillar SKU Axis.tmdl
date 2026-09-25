@@ -1,0 +1,35 @@
+table 'Pillar SKU Axis'
+	lineageTag: b2a1ff9f-24fe-4ed1-a248-a66d54be2b50
+
+	column Pillar_SKU_Class
+		lineageTag: d4fc7217-4521-4261-9bfe-fbb4f678dfbc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Pillar_SKU_Class]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Pillar SKU Axis' = calculated
+		mode: import
+		source =
+				
+				VAR _AxisValues =
+				    DISTINCT (
+				        SELECTCOLUMNS (
+				            'CH_UP DMT_KPI',
+				            "Pillar_SKU_Class",
+				            'CH_UP DMT_KPI'[Pillar_SKU_Class]
+				        )
+				    )
+				
+				RETURN
+				    UNION (
+				        _AxisValues,
+				        ROW (
+				            "Pillar_SKU_Class",
+				            "Total"
+				        )
+				    )
+
+	annotation PBI_Id = 1fedafea672e4e9aa958c2d69d5da4a0
+

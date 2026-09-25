@@ -108,7 +108,7 @@ table 'CH_UP LTbl_ParameterChangeResults'
 				    Source
 				```
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

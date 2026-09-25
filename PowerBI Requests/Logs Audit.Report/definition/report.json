@@ -24,20 +24,22 @@
           }
         }
       }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "resourcePackages": [
-    {
-      "name": "SharedResources",
-      "type": "SharedResources",
-      "items": [
-        {
-          "name": "Fluent2-CY26SU08",
-          "path": "BaseThemes/Fluent2-CY26SU08.json",
-          "type": "BaseTheme"
-        }
-      ]
-    },
     {
       "name": "RegisteredResources",
       "type": "RegisteredResources",
@@ -46,6 +48,17 @@
           "name": "corp-logo_bg_bayer-cross_rev_o6812465363496549.png",
           "path": "corp-logo_bg_bayer-cross_rev_o6812465363496549.png",
           "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU08",
+          "path": "BaseThemes/Fluent2-CY26SU08.json",
+          "type": "BaseTheme"
         }
       ]
     }

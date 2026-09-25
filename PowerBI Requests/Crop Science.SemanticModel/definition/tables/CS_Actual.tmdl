@@ -37,6 +37,9 @@ table CS_Actual
 			        "Full Year", [CY_FY],
 			        BLANK()
 			    )
+			
+			    
+			
 			```
 		lineageTag: 706c4ef9-ab16-4101-9f92-01032003c082
 
@@ -4049,6 +4052,46 @@ table CS_Actual
 		formatString: 0
 		lineageTag: 8f481d08-f3ce-412d-989f-bbaf656920e7
 
+	measure 'CY Selection With Total' =
+			
+			
+			VAR _CurrentChannel =
+			    SELECTEDVALUE ( 'Channel Axis'[Channel] )
+			
+			VAR _SelectedChannels =
+			    VALUES ( 'Channel Slicer'[Channel] )
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    -- TOTAL
+			    _CurrentChannel = "Total",
+			        CALCULATE (
+			            [GMV_CY_Selection (HY/FY)],
+			            REMOVEFILTERS ( 'Channel Axis' ),
+			            REMOVEFILTERS ( 'CS_Actual'[Channel] ),
+			            TREATAS (
+			                _SelectedChannels,
+			                'CS_Actual'[Channel]
+			            )
+			        ),
+			
+			    -- COMMERCIAL / PARTNERSHIP / DIGITAL
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        REMOVEFILTERS ( 'Channel Axis' ),
+			        REMOVEFILTERS ( 'CS_Actual'[Channel] ),
+			        TREATAS (
+			            { _CurrentChannel },
+			            'CS_Actual'[Channel]
+			        )
+			    )
+			)
+		lineageTag: 99b8b354-cc73-4549-8911-f2f1e8631938
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Fiscal_Year
 		dataType: int64
 		formatString: 0
@@ -4315,13 +4358,36 @@ table CS_Actual
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Channel =
+	column Channel = ```
 			
-			IF (
+			/*IF (
 			    SEARCH("Partnership", [Sector], 1, 0) > 0,
 			    "Partnerships",
 			    [Sector]
+			)*/
+			
+			VAR _Sector =
+			    TRIM ( 'CS_Actual'[Sector] )
+			
+			RETURN
+			SWITCH (
+			    TRUE(),
+			
+			    ISBLANK ( 'CS_Actual'[Sector] ), "Partnership",
+			
+			    _Sector = "", "Partnership",
+			
+			    _Sector = "Not Assigned", "Partnership",
+			
+			    CONTAINSSTRING (
+			        UPPER ( _Sector ),
+			        "PARTNERSHIP"
+			    ), "Partnership",
+			
+			    _Sector
 			)
+			
+			```
 		lineageTag: b2d723b0-3b6b-4318-a0ca-4392af45ed8b
 		summarizeBy: none
 

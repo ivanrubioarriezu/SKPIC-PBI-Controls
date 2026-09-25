@@ -31,6 +31,8 @@ ref table 'Unique Country-Indication'
 ref table 'Unique Indication'
 ref table 'Sort by'
 ref table 'Ranking Option EV'
+ref table 'Channel Axis'
+ref table 'Channel Slicer'
 
 ref cultureInfo en-US
 

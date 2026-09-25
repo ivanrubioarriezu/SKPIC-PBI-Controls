@@ -3,10 +3,10 @@
   "name": "cfbffd253444039d0acd",
   "position": {
     "x": 0,
-    "y": 134.42003182351806,
-    "z": 8500,
-    "height": 916.25098858464537,
-    "width": 2954.0571428571429,
+    "y": 149.91001200480207,
+    "z": 4500,
+    "height": 895.72192513368987,
+    "width": 2962.566844919786,
     "tabOrder": 0
   },
   "visual": {
@@ -143,20 +143,6 @@
             },
             {
               "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
-                    }
-                  },
-                  "Property": "sbt_relevant"
-                }
-              },
-              "queryRef": "CORP_GHG DTbl_Scope3 (2).sbt_relevant",
-              "nativeQueryRef": "sbt_relevant"
-            },
-            {
-              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
@@ -169,21 +155,6 @@
               "queryRef": "CORP_GHG DTbl_Scope3 (2).Actuals scope3",
               "nativeQueryRef": "Actuals",
               "displayName": "Actuals"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope3 (2)"
-                    }
-                  },
-                  "Property": "Targets scope3"
-                }
-              },
-              "queryRef": "CORP_GHG DTbl_Scope3 (2).Targets scope3",
-              "nativeQueryRef": "Targets",
-              "displayName": "Targets"
             }
           ]
         }
@@ -251,6 +222,29 @@
                   "Value": "'Left'"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -271,27 +265,6 @@
       "columnFormatting": [
         {
           "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "CORP_GHG DTbl_Scope3 (2).Targets scope3"
-          }
-        },
-        {
-          "properties": {
             "styleTotal": {
               "expr": {
                 "Literal": {
@@ -309,6 +282,106 @@
           },
           "selector": {
             "metadata": "CORP_GHG DTbl_Scope3 (2).Actuals scope3"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "407.4665274751265D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).CO2 Scope 3 Category"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "270.8448483442464D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).Actuals scope3"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "655.4484666852352D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).pro_subcategory"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "238.73796723521153D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).business_unit"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "160.08555527931304D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).country"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "226.73796136916184D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).pro_area"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "362.7593591189029D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3 (2).pro_segment"
           }
         }
       ]

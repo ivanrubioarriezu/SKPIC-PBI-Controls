@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "6b1c7bb864297afca5c8",
   "position": {
-    "x": 509.47552696675234,
-    "y": 118.12588715523725,
+    "x": 509.23482849604221,
+    "y": 113.45646437994723,
     "z": 48000,
-    "height": 62.333982645652554,
-    "width": 189.83531078448732,
+    "height": 65.963060686015837,
+    "width": 189.97361477572559,
     "tabOrder": 48000
   },
   "visual": {
@@ -42,8 +42,7 @@
                       "verticalAlign": "baseline",
                       "scriptType": "sub",
                       "bottom": "-0.25em"
-                    },
-                    "url": "https://app.powerbi.com/Redirect?action=OpenReport&appId=01d55994-c5e7-4212-b884-c16cd448e796&reportObjectId=781998fd-2077-4621-ad60-c70518667461&ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&pbi_source=appShareLink&portalSessionId=534ae8d8-16b5-4008-83de-ca69f0fc793a"
+                    }
                   }
                 ]
               }

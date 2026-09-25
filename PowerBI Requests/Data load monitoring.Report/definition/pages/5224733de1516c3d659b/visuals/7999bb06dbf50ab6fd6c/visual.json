@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "7999bb06dbf50ab6fd6c",
   "position": {
     "x": 1381.3432835820895,
@@ -278,56 +278,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d973585df8ad56a036e6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)"
-              }
-            },
-            "Property": "Fiscal_Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "99faf47a36e4f8f98dae",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
-              }
-            },
-            "Property": "sT"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bbd4dd97e5af35c58b04",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail (2)"
-                  }
-                },
-                "Property": "Target"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "abdb59b1ef52386589a8",
   "position": {
-    "x": 22.95023906499026,
-    "y": 750,
-    "z": 15000,
-    "height": 1002.1604391712414,
-    "width": 2942.7306534443064,
-    "tabOrder": 13000
+    "x": 32.0855614973262,
+    "y": 751.336898395722,
+    "z": 13000,
+    "height": 1021.3903743315507,
+    "width": 2935.8288770053477
   },
   "visualGroup": {
     "displayName": "DM 12 Filters",

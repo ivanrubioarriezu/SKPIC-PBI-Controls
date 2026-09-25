@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "a4d9c33a71ebb5d65d54",
+  "position": {
+    "x": 2509.090909090909,
+    "y": 288.63636363636363,
+    "z": 12000,
+    "height": 88.63636363636364,
+    "width": 129.54545454545453,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": " /Data",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/c19cd3353cbb9bf0ba61?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Export",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/c19cd3353cbb9bf0ba61?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

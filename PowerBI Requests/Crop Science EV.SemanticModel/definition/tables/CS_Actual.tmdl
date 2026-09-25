@@ -1510,11 +1510,8 @@ table CS_Actual
 		formatString: 0
 		lineageTag: f0f75c84-97f9-4249-81d7-7bc7cd5df7d8
 
-	measure 'Dynamic BY Selection' = ```
+	measure 'Dynamic BY Selection' =
 			
-			
-			VAR TopBottomValue =
-			    SELECTEDVALUE ( 'Top/Bottom'[Value] )          /* "Top" or "Bottom" */
 			
 			VAR RankingLimit =
 			    VALUE ( SELECTEDVALUE ( 'Ranking Option EV'[Ranking Option EV], 10 ) )
@@ -1522,7 +1519,8 @@ table CS_Actual
 			VAR ViewBySelection =
 			    SELECTEDVALUE ( 'View by'[View by Fields] )
 			
-			/* Dimension flags (as in your measure) */
+			/* ==================== Dimension Flags ==================== */
+			
 			VAR IsCluster               = CONTAINSSTRING ( ViewBySelection, "Cluster" )
 			VAR IsCountry               = CONTAINSSTRING ( ViewBySelection, "Country" )
 			VAR IsCropGroup             = CONTAINSSTRING ( ViewBySelection, "Crop_Main_Group_Description" )
@@ -1530,208 +1528,260 @@ table CS_Actual
 			VAR IsCountryIndication     = CONTAINSSTRING ( ViewBySelection, "Country-Indication" )
 			VAR IsIndication            = CONTAINSSTRING ( ViewBySelection, "Indication" )
 			
-			/* -------------------- Country-Crop-Indication (Specialized) -------------------- */
+			/* ==================== Country-Crop-Indication ==================== */
+			
 			VAR RankTable_CCI =
 			    ALL ( 'Unique Country-Crop-Indication'[Country-Crop-Indication] )
 			
 			VAR RankDesc_CCI =
-			    RANKX ( RankTable_CCI, [GMV_BY_Selection (HY/FY)], , DESC )
-			VAR RankAsc_CCI  =
-			    RANKX ( RankTable_CCI, [GMV_BY_Selection (HY/FY)], , ASC )
+			    RANKX (
+			        RankTable_CCI,
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC
+			    )
 			
-			VAR CurrentRank_CCI =
-			    IF ( TopBottomValue = "Top", RankDesc_CCI, RankAsc_CCI )
-			
-			VAR OthersValue_CCI =
+			VAR Others_CCI =
 			    CALCULATE (
 			        [GMV_BY_Selection (HY/FY)],
 			        FILTER (
 			            RankTable_CCI,
-			            IF ( TopBottomValue = "Top", RankDesc_CCI > RankingLimit, RankAsc_CCI > RankingLimit )
+			            RANKX (
+			                RankTable_CCI,
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC
+			            ) > RankingLimit
 			        )
 			    )
-			
-			VAR IsOthers_CCI =
-			    SELECTEDVALUE ( 'Unique Country-Crop-Indication'[Country-Crop-Indication] ) = "Others"
 			
 			VAR Result_CCI =
 			    IF (
-			        IsOthers_CCI,
-			        OthersValue_CCI,
-			        IF ( CurrentRank_CCI <= RankingLimit, [GMV_BY_Selection (HY/FY)], BLANK () )
+			        RankDesc_CCI <= RankingLimit,
+			        [GMV_BY_Selection (HY/FY)],
+			        BLANK ()
 			    )
 			
-			/* -------------------- Other dimensions (unchanged logic) -------------------- */
-			VAR CurrentRank_Other =
-			    SWITCH (
-			        TRUE (),
-			        IsCluster,
-			            IF (
-			                TopBottomValue = "Top",
-			                RANKX ( ALL ( 'Unique Cluster'[Cluster] ), [GMV_BY_Selection (HY/FY)], , DESC ),
-			                RANKX ( ALL ( 'Unique Cluster'[Cluster] ), [GMV_BY_Selection (HY/FY)], , ASC )
-			            ),
-			        IsCountry,
-			            IF (
-			                TopBottomValue = "Top",
-			                RANKX ( ALL ( 'Unique Country'[Country] ), [GMV_BY_Selection (HY/FY)], , DESC ),
-			                RANKX ( ALL ( 'Unique Country'[Country] ), [GMV_BY_Selection (HY/FY)], , ASC )
-			            ),
-			        IsCropGroup,
-			            IF (
-			                TopBottomValue = "Top",
-			                RANKX (
-			                    ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
-			                    [GMV_BY_Selection (HY/FY)],
-			                    ,
-			                    DESC
-			                ),
-			                RANKX (
-			                    ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
-			                    [GMV_BY_Selection (HY/FY)],
-			                    ,
-			                    ASC
-			                )
-			            ),
-			        /* Country-Indication has specialized block below, so don’t rank it here */
-			        IsIndication,
-			            IF (
-			                TopBottomValue = "Top",
-			                RANKX ( ALL ( 'Unique Indication'[Indication] ), [GMV_BY_Selection (HY/FY)], , DESC ),
-			                RANKX ( ALL ( 'Unique Indication'[Indication] ), [GMV_BY_Selection (HY/FY)], , ASC )
-			            )
-			    )
+			/* ==================== Country-Indication ==================== */
 			
-			VAR OthersValue_Other =
-			    SWITCH (
-			        TRUE (),
-			        IsCluster,
-			            CALCULATE (
-			                [GMV_BY_Selection (HY/FY)],
-			                FILTER (
-			                    ALL ( 'Unique Cluster'[Cluster] ),
-			                    IF (
-			                        TopBottomValue = "Top",
-			                        RANKX ( ALL ( 'Unique Cluster'[Cluster] ), [GMV_BY_Selection (HY/FY)], , DESC ) > RankingLimit,
-			                        RANKX ( ALL ( 'Unique Cluster'[Cluster] ), [GMV_BY_Selection (HY/FY)], , ASC ) > RankingLimit
-			                    )
-			                )
-			            ),
-			        IsCountry,
-			            CALCULATE (
-			                [GMV_BY_Selection (HY/FY)],
-			                FILTER (
-			                    ALL ( 'Unique Country'[Country] ),
-			                    IF (
-			                        TopBottomValue = "Top",
-			                        RANKX ( ALL ( 'Unique Country'[Country] ), [GMV_BY_Selection (HY/FY)], , DESC ) > RankingLimit,
-			                        RANKX ( ALL ( 'Unique Country'[Country] ), [GMV_BY_Selection (HY/FY)], , ASC ) > RankingLimit
-			                    )
-			                )
-			            ),
-			        IsCropGroup,
-			            CALCULATE (
-			                [GMV_BY_Selection (HY/FY)],
-			                FILTER (
-			                    ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
-			                    IF (
-			                        TopBottomValue = "Top",
-			                        RANKX (
-			                            ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
-			                            [GMV_BY_Selection (HY/FY)],
-			                            ,
-			                            DESC
-			                        ) > RankingLimit,
-			                        RANKX (
-			                            ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
-			                            [GMV_BY_Selection (HY/FY)],
-			                            ,
-			                            ASC
-			                        ) > RankingLimit
-			                    )
-			                )
-			            ),
-			        /* Country-Indication handled in specialized block; excluded here */
-			        IsIndication,
-			            CALCULATE (
-			                [GMV_BY_Selection (HY/FY)],
-			                FILTER (
-			                    ALL ( 'Unique Indication'[Indication] ),
-			                    IF (
-			                        TopBottomValue = "Top",
-			                        RANKX ( ALL ( 'Unique Indication'[Indication] ), [GMV_BY_Selection (HY/FY)], , DESC ) > RankingLimit,
-			                        RANKX ( ALL ( 'Unique Indication'[Indication] ), [GMV_BY_Selection (HY/FY)], , ASC ) > RankingLimit
-			                    )
-			                )
-			            )
-			    )
-			
-			VAR IsOthers_Other =
-			    SWITCH (
-			        TRUE (),
-			        IsCluster,     SELECTEDVALUE ( 'Unique Cluster'[Cluster] ) = "Others",
-			        IsCountry,     SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
-			        IsCropGroup,   SELECTEDVALUE ( 'Unique Crop main group'[Crop_Main_Group_Description] ) = "Others",
-			        /* Country-Indication handled below */
-			        IsIndication,  SELECTEDVALUE ( 'Unique Indication'[Indication] ) = "Others",
-			        FALSE
-			    )
-			
-			VAR Result_Other =
-			    IF (
-			        IsOthers_Other,
-			        OthersValue_Other,
-			        IF (
-			            TopBottomValue = "Top",
-			            IF ( CurrentRank_Other <= RankingLimit, [GMV_BY_Selection (HY/FY)], BLANK () ),
-			            IF ( CurrentRank_Other <= RankingLimit + 1, [GMV_BY_Selection (HY/FY)], BLANK () )
-			        )
-			    )
-			
-			/* -------------------- Country-Indication (Specialized like CCI) -------------------- */
 			VAR RankTable_CInd =
 			    ALL ( 'Unique Country-Indication'[Country-Indication] )
 			
 			VAR RankDesc_CInd =
-			    RANKX ( RankTable_CInd, [GMV_BY_Selection (HY/FY)], , DESC )
-			VAR RankAsc_CInd  =
-			    RANKX ( RankTable_CInd, [GMV_BY_Selection (HY/FY)], , ASC )
+			    RANKX (
+			        RankTable_CInd,
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC
+			    )
 			
-			VAR CurrentRank_CInd =
-			    IF ( TopBottomValue = "Top", RankDesc_CInd, RankAsc_CInd )
-			
-			VAR OthersValue_CInd =
+			VAR Others_CInd =
 			    CALCULATE (
 			        [GMV_BY_Selection (HY/FY)],
 			        FILTER (
 			            RankTable_CInd,
-			            IF ( TopBottomValue = "Top", RankDesc_CInd > RankingLimit, RankAsc_CInd > RankingLimit )
+			            RANKX (
+			                RankTable_CInd,
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC
+			            ) > RankingLimit
 			        )
 			    )
-			
-			VAR IsOthers_CInd =
-			    SELECTEDVALUE ( 'Unique Country-Indication'[Country-Indication] ) = "Others"
 			
 			VAR Result_CInd =
 			    IF (
-			        IsOthers_CInd,
-			        OthersValue_CInd,
-			        IF ( CurrentRank_CInd <= RankingLimit, [GMV_BY_Selection (HY/FY)], BLANK () )
+			        RankDesc_CInd <= RankingLimit,
+			        [GMV_BY_Selection (HY/FY)],
+			        BLANK ()
 			    )
 			
-			/* -------------------- Final RETURN -------------------- */
-			RETURN
-			    IF (
-			        IsCountryCropIndication,
-			        IF ( ISFILTERED ( 'Unique Country-Crop-Indication'[Country-Crop-Indication] ), Result_CCI, BLANK () ),
-			        IF (
-			            IsCountryIndication,
-			            IF ( ISFILTERED ( 'Unique Country-Indication'[Country-Indication] ), Result_CInd, BLANK () ),
-			            IF ( ISFILTERED ( 'CS_Actual'[Channel] ), Result_Other, BLANK () )
+			/* ==================== Cluster ==================== */
+			
+			VAR CurrentRank_Cluster =
+			    RANKX (
+			        ALL ( 'Unique Cluster'[Cluster] ),
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC
+			    )
+			
+			VAR Others_Cluster =
+			    CALCULATE (
+			        [GMV_BY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ( 'Unique Cluster'[Cluster] ),
+			            RANKX (
+			                ALL ( 'Unique Cluster'[Cluster] ),
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC
+			            ) > RankingLimit
 			        )
 			    )
 			
-			```
+			/* ==================== Country ==================== */
+			
+			VAR CurrentRank_Country =
+			    RANKX (
+			        ALL ( 'Unique Country'[Country] ),
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC
+			    )
+			
+			VAR Others_Country =
+			    CALCULATE (
+			        [GMV_BY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ( 'Unique Country'[Country] ),
+			            RANKX (
+			                ALL ( 'Unique Country'[Country] ),
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC
+			            ) > RankingLimit
+			        )
+			    )
+			
+			/* ==================== Crop ==================== */
+			
+			VAR CurrentRank_Crop =
+			    RANKX (
+			        ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC
+			    )
+			
+			VAR Others_Crop =
+			    CALCULATE (
+			        [GMV_BY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
+			            RANKX (
+			                ALL ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC
+			            ) > RankingLimit
+			        )
+			    )
+			
+			/* ==================== Indication ==================== */
+			
+			VAR CurrentRank_Indication =
+			    RANKX (
+			        ALL ( 'Unique Indication'[Indication] ),
+			        [GMV_BY_Selection (HY/FY)],
+			        ,
+			        DESC
+			    )
+			
+			VAR Others_Indication =
+			    CALCULATE (
+			        [GMV_BY_Selection (HY/FY)],
+			        FILTER (
+			            ALL ( 'Unique Indication'[Indication] ),
+			            RANKX (
+			                ALL ( 'Unique Indication'[Indication] ),
+			                [GMV_BY_Selection (HY/FY)],
+			                ,
+			                DESC
+			            ) > RankingLimit
+			        )
+			    )
+			
+			/* ==================== Current Rank ==================== */
+			
+			VAR CurrentRank =
+			    SWITCH (
+			        TRUE (),
+			        IsCluster, CurrentRank_Cluster,
+			        IsCountry, CurrentRank_Country,
+			        IsCropGroup, CurrentRank_Crop,
+			        IsIndication, CurrentRank_Indication,
+			        IsCountryCropIndication, RankDesc_CCI,
+			        IsCountryIndication, RankDesc_CInd
+			    )
+			
+			/* ===================== IS OTHERS ===================== */
+			
+			VAR IsOthers =
+			    SWITCH (
+			        TRUE (),
+			
+			        ViewBySelection = NAMEOF ( 'Unique Cluster'[Cluster] ),
+			            SELECTEDVALUE ( 'Unique Cluster'[Cluster] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			            SELECTEDVALUE ( 'Unique Country'[Country] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
+			            SELECTEDVALUE ( 'Unique Crop main group'[Crop_Main_Group_Description] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country-Crop-Indication'[Country-Crop-Indication] ),
+			            SELECTEDVALUE ( 'Unique Country-Crop-Indication'[Country-Crop-Indication] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Country-Indication'[Country-Indication] ),
+			            SELECTEDVALUE ( 'Unique Country-Indication'[Country-Indication] ) = "Others",
+			
+			        ViewBySelection = NAMEOF ( 'Unique Indication'[Indication] ),
+			            SELECTEDVALUE ( 'Unique Indication'[Indication] ) = "Others",
+			
+			        FALSE
+			    )
+			
+			/* ===================== FINAL ===================== */
+			
+			RETURN
+			SWITCH (
+			    TRUE (),
+			
+			    /* ✅ Others */
+			
+			    IsOthers,
+			        SWITCH (
+			            TRUE (),
+			
+			            ViewBySelection = NAMEOF ( 'Unique Cluster'[Cluster] ),
+			                Others_Cluster,
+			
+			            ViewBySelection = NAMEOF ( 'Unique Country'[Country] ),
+			                Others_Country,
+			
+			            ViewBySelection = NAMEOF ( 'Unique Crop main group'[Crop_Main_Group_Description] ),
+			                Others_Crop,
+			
+			            ViewBySelection = NAMEOF ( 'Unique Country-Crop-Indication'[Country-Crop-Indication] ),
+			                Others_CCI,
+			
+			            ViewBySelection = NAMEOF ( 'Unique Country-Indication'[Country-Indication] ),
+			                Others_CInd,
+			
+			            ViewBySelection = NAMEOF ( 'Unique Indication'[Indication] ),
+			                Others_Indication
+			        ),
+			
+			    /* ✅ Top N */
+			
+			    CurrentRank <= RankingLimit,
+			        [GMV_BY_Selection (HY/FY)],
+			
+			    /* ✅ Totales */
+			
+			    NOT (
+			        ISINSCOPE ( 'Unique Cluster'[Cluster] ) ||
+			        ISINSCOPE ( 'Unique Country'[Country] ) ||
+			        ISINSCOPE ( 'Unique Crop main group'[Crop_Main_Group_Description] ) ||
+			        ISINSCOPE ( 'Unique Country-Crop-Indication'[Country-Crop-Indication] ) ||
+			        ISINSCOPE ( 'Unique Country-Indication'[Country-Indication] ) ||
+			        ISINSCOPE ( 'Unique Indication'[Indication] )
+			    ),
+			        [GMV_BY_Selection (HY/FY)],
+			
+			    BLANK ()
+			)
 		formatString: 0.00
 		lineageTag: dd451be7-dc45-453b-97dd-7f5c17db23bb
 

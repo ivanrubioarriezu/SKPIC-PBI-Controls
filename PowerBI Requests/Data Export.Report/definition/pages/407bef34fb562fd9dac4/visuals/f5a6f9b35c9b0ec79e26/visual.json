@@ -3,10 +3,10 @@
   "name": "f5a6f9b35c9b0ec79e26",
   "position": {
     "x": 0,
-    "y": 123.9960984066943,
+    "y": 152.32034766413108,
     "z": 0,
-    "height": 948.19641496228974,
-    "width": 2951.8716577540108,
+    "height": 895.52238805970148,
+    "width": 2952.2388059701489,
     "tabOrder": 0
   },
   "visual": {
@@ -310,6 +310,29 @@
                   "Value": "'Center'"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -341,6 +364,44 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
                 }
               }
             }

@@ -6,12 +6,11 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["CORP_GHG DMV_Diff_Scope1_And_2","CORP_GHG DMV_Diff_Scope3","CORP_GHG DTbl_RenewableElectricity","CORP_GHG DTbl_Scope1&2","CORP_GHG DTbl_Scope3 (2)","Catalogue","hostname","httpPath"]
+annotation PBI_QueryOrder = ["CORP_GHG DMV_Diff_Scope1_And_2","CORP_GHG DTbl_RenewableElectricity","CORP_GHG DTbl_Scope1&2","CORP_GHG DTbl_Scope3 (2)","Catalogue","hostname","httpPath"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 ref table 'CORP_GHG DMV_Diff_Scope1_And_2'
-ref table 'CORP_GHG DMV_Diff_Scope3'
 ref table 'CORP_GHG DTbl_RenewableElectricity'
 ref table 'CORP_GHG DTbl_Scope1&2'
 ref table 'CORP_GHG DTbl_Scope3 (2)'

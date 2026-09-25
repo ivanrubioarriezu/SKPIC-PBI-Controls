@@ -5,1974 +5,6 @@ cultureInfo en-US
 			  "Version": "4.1.0",
 			  "Language": "en-US",
 			  "Entities": {
-			    "commit": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "commit": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "commit.count": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "count"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "count": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_commitId": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.commitId"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.commitId": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_author_name": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.author.name"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value author name": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.author.name": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "author": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "value author": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "author name": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "value writer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "value creator": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "value journalist": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "value novelist": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "value poet": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "value author nickname": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "value author title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "value author label": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "value author tag": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "writer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "Name": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_author_email": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.author.email"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.author.email": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value. writer .email": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. creator .email": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. journalist .email": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. novelist .email": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. poet .email": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value.author. correspondence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        },
-			        {
-			          "value.author. message": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.479
-			          }
-			        },
-			        {
-			          "value.author. communication": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.479
-			          }
-			        },
-			        {
-			          "Email": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_author_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.author.date"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.author.date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date": {
-			            "State": "Generated",
-			            "Weight": 0.7
-			          }
-			        },
-			        {
-			          "value.author. moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "value.author. period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.757
-			          }
-			        },
-			        {
-			          "value. writer .date": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. creator .date": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. journalist .date": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. novelist .date": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value. poet .date": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_author_date.date_hierarchy": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.author.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . author . date hierarchy": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_author_date.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.author.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . author . year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.author.date year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value . author . yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "value . writer . year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . creator . year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . journalist . year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . novelist . year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . poet . year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_author_date.quarter": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.author.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Quarter"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . author . quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.author.date quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value . author . qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.867
-			          }
-			        },
-			        {
-			          "qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.818
-			          }
-			        },
-			        {
-			          "value . writer . quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . creator . quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . journalist . quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . novelist . quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . poet . quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_author_date.month": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.author.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Month"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . author . month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.author.date month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value . author . mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "value . writer . month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . creator . month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . journalist . month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . novelist . month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . poet . month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_author_date.day": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.author.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Day"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . author . day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.author.date day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value . writer . day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . creator . day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . journalist . day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . novelist . day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "value . poet . day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_committer_name": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.committer.name"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value committer name": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.committer.name": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "committer": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "value committer": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "committer name": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "value committer nickname": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "value committer title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "value committer label": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "value committer tag": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "committer nickname": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "committer title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "committer label": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "committer tag": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_committer_email": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.committer.email"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.committer.email": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.committer. correspondence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        },
-			        {
-			          "value.committer. message": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.479
-			          }
-			        },
-			        {
-			          "value.committer. communication": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.479
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_committer_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.committer.date"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.committer.date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date": {
-			            "State": "Generated",
-			            "Weight": 0.7
-			          }
-			        },
-			        {
-			          "value.committer. moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "value.committer. period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.757
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_committer_date.date_hierarchy": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.committer.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . committer . date hierarchy": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_committer_date.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.committer.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . committer . year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.committer.date year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value . committer . yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_committer_date.quarter": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.committer.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Quarter"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . committer . quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.committer.date quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value . committer . qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.867
-			          }
-			        },
-			        {
-			          "qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.818
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_committer_date.month": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.committer.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Month"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . committer . month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.committer.date month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value . committer . mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_committer_date.day": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "VariationSource": "value.committer.date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Day"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value . committer . day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.committer.date day": {
-			            "State": "Generated"
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "commit.value_comment": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.comment"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.comment": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value. clarification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "value. commentary": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "value. explanation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "value. feedback": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "value. observation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "value. note": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_changeCounts_add": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.changeCounts.Add"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.changeCounts.add": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_changeCounts_edit": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.changeCounts.Edit"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.changeCounts.edit": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.changeCount.edit": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_changeCounts_delete": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.changeCounts.Delete"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.changeCounts.delete": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.changeCount.delete": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_url": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.url"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value url": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "value.url": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "url": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "value website": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "website": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "value site": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "site": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "value web address": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.589
-			          }
-			        },
-			        {
-			          "web address": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.571
-			          }
-			        }
-			      ]
-			    },
-			    "commit.value_remoteUrl": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "value.remoteUrl"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value.remoteUrl": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changeCounts_delete": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changeCounts.Delete"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changeCounts.delete": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.changeCount.delete": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changeCounts_edit": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changeCounts.Edit"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changeCounts.edit": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.changeCount.edit": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changeCounts_add": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changeCounts.Add"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changeCounts.add": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changes_item_objectId": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.item.objectId"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changes.item.objectId": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.change.item.objectId": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changes_item_originalObjectId": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.item.originalObjectId"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changes.item.originalObjectId": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.change.item.originalObjectId": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changes_item_gitObjectType": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.item.gitObjectType"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changes.item.gitObjectType": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.change.item.gitObjectType": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changes_item_commitId": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.item.commitId"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changes.item.commitId": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.change.item.commitId": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changes_item_path": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.item.path"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changes.item.path": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.change.item.path": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changes_item_isFolder": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.item.isFolder"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changes.item.isFolder": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.change.item.isFolder": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fn_commit_changes_changes_item_url": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.item.url"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fn commit changes changes item url": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fn commit change change item url": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "fnCommitChanges.changes.item.url": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "commit.fnCommitChanges_changes_changeType": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "fnCommitChanges.changes.changeType"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fnCommitChanges.changes.changeType": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "fnCommitChange.change.changeType": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "Type": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "commit.file_name": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "FileName"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "file name": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "FileName": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "file": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "file nickname": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "file title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "file label": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "file tag": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "folder": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "dossier": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "organizer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "categorizer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "wallet": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "sleeve": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
-			    "commit.classification": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "commits",
-			          "ConceptualProperty": "Classification"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "classification": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "organization": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "arrangement": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "taxonomy": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "categorization": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "cataloguing": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "cataloging": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "sorting": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "ordering": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "grouping": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        }
-			      ]
-			    },
 			    "change": {
 			      "Definition": {
 			        "Binding": {
@@ -2110,6 +142,12 @@ cultureInfo en-US
 			          }
 			        },
 			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
 			          "value identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -2148,6 +186,66 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
 			        }
 			      ]
 			    },
@@ -2170,6 +268,12 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -2210,6 +314,66 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -3690,141 +1854,25 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "pullrequest": {
+			    "commit": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "pullrequests"
+			          "ConceptualEntity": "commits"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "pullrequest": {
+			          "commit": {
 			            "State": "Generated"
 			          }
 			        }
 			      ]
 			    },
-			    "pullrequest.value": {
+			    "commit.count": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "pullrequests",
-			          "ConceptualProperty": "value"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "value": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "assessment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "worth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "price": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "cost": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "charge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "rate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "importance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "significance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "usefulness": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "consequence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        }
-			      ]
-			    },
-			    "pullrequest.count": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "pullrequests",
+			          "ConceptualEntity": "commits",
 			          "ConceptualProperty": "count"
 			        }
 			      },
@@ -3836,122 +1884,1980 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "commit.value_commitId": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.commitId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.commitId": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_author_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.author.name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value author name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.author.name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "author": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "value author": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "author name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "value writer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "value creator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "value journalist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "value novelist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "value poet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "value author nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "value author title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "value author label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "value author tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "writer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_author_email": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.author.email"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.author.email": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value. writer .email": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. creator .email": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. journalist .email": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. novelist .email": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. poet .email": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value.author. correspondence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "value.author. message": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "value.author. communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "Email": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_author_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.author.date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.author.date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "value.author. moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "value.author. period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "value. writer .date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. creator .date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. journalist .date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. novelist .date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value. poet .date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_author_date.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.author.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . author . date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_author_date.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.author.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . author . year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.author.date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value . author . yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "value . writer . year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . creator . year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . journalist . year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . novelist . year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . poet . year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_author_date.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.author.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . author . quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.author.date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value . author . qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.867
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "value . writer . quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . creator . quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . journalist . quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . novelist . quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . poet . quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_author_date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.author.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . author . month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.author.date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value . author . mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "value . writer . month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . creator . month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . journalist . month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . novelist . month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . poet . month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_author_date.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.author.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . author . day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.author.date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value . writer . day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . creator . day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . journalist . day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . novelist . day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "value . poet . day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_committer_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.committer.name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value committer name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.committer.name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "committer": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "value committer": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "committer name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "value committer nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "value committer title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "value committer label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "value committer tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "committer nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "committer title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "committer label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "committer tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_committer_email": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.committer.email"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.committer.email": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.committer. correspondence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "value.committer. message": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "value.committer. communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_committer_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.committer.date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.committer.date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "value.committer. moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "value.committer. period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_committer_date.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.committer.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . committer . date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_committer_date.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.committer.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . committer . year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.committer.date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value . committer . yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_committer_date.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.committer.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . committer . quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.committer.date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value . committer . qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.867
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_committer_date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.committer.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . committer . month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.committer.date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value . committer . mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_committer_date.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "VariationSource": "value.committer.date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value . committer . day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.committer.date day": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "commit.value_comment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.comment"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.comment": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value. clarification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "value. commentary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "value. explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "value. feedback": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "value. observation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "value. note": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "Comment": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_changeCounts_add": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.changeCounts.Add"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.changeCounts.add": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_changeCounts_edit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.changeCounts.Edit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.changeCounts.edit": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.changeCount.edit": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_changeCounts_delete": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.changeCounts.Delete"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.changeCounts.delete": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.changeCount.delete": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.url"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value url": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value.url": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "url": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "value website": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "website": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "value site": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "site": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "value web address": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.589
+			          }
+			        },
+			        {
+			          "web address": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.571
+			          }
+			        }
+			      ]
+			    },
+			    "commit.value_remoteUrl": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "value.remoteUrl"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value.remoteUrl": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changeCounts_delete": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changeCounts.Delete"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changeCounts.delete": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.changeCount.delete": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changeCounts_edit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changeCounts.Edit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changeCounts.edit": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.changeCount.edit": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changeCounts_add": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changeCounts.Add"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changeCounts.add": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changes_item_objectId": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.item.objectId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changes.item.objectId": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.change.item.objectId": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changes_item_originalObjectId": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.item.originalObjectId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changes.item.originalObjectId": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.change.item.originalObjectId": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changes_item_gitObjectType": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.item.gitObjectType"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changes.item.gitObjectType": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.change.item.gitObjectType": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changes_item_commitId": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.item.commitId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changes.item.commitId": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.change.item.commitId": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changes_item_path": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.item.path"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changes.item.path": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.change.item.path": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "Path": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changes_item_isFolder": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.item.isFolder"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changes.item.isFolder": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.change.item.isFolder": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fn_commit_changes_changes_item_url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.item.url"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fn commit changes changes item url": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fn commit change change item url": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "fnCommitChanges.changes.item.url": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "commit.fnCommitChanges_changes_changeType": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "fnCommitChanges.changes.changeType"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fnCommitChanges.changes.changeType": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fnCommitChange.change.changeType": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "commit.file_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "FileName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "file name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FileName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "file": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "file nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "file title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "file label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "file tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "folder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dossier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "organizer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "categorizer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "wallet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "sleeve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "commit.classification": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "Classification"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "classification": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "arrangement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "taxonomy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "categorization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "cataloguing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cataloging": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "sorting": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ordering": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.quarter": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_quarters"
-			        }
-			      ]
-			    },
-			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_year": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.year": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_years"
-			        }
-			      ]
-			    },
-			    "change_value_project_lastUpdateTime_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_project_lastUpdateTimes_have_value___project___lastUpdateTime_date_hierarchies"
-			        }
-			      ]
-			    },
-			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_day": {
+			    "commit_has_value_author_name": {
 			      "Binding": {
 			        "ConceptualEntity": "commits"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "commit.value_committer_date.date_hierarchy": {
+			        "commit": {
 			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
+			            "Entity": "commit"
 			          }
 			        },
-			        "commit.value_committer_date.day": {
+			        "commit.value_author_name": {
 			          "Target": {
-			            "Entity": "commit.value_committer_date.day"
+			            "Entity": "commit.value_author_name"
 			          }
 			        }
 			      },
@@ -3959,32 +3865,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
+			              "Role": "commit"
 			            },
 			            "Object": {
-			              "Role": "commit.value_committer_date.day"
+			              "Role": "commit.value_author_name"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "value___committer___date_hierarchies_have_value___committer___days"
+			          "ID": "commits_have_value_author_names"
 			        }
 			      ]
 			    },
-			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_month": {
+			    "commit_has_value_commitId": {
 			      "Binding": {
 			        "ConceptualEntity": "commits"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "commit.value_committer_date.date_hierarchy": {
+			        "commit": {
 			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
+			            "Entity": "commit"
 			          }
 			        },
-			        "commit.value_committer_date.month": {
+			        "commit.value_commitId": {
 			          "Target": {
-			            "Entity": "commit.value_committer_date.month"
+			            "Entity": "commit.value_commitId"
 			          }
 			        }
 			      },
@@ -3992,32 +3898,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
+			              "Role": "commit"
 			            },
 			            "Object": {
-			              "Role": "commit.value_committer_date.month"
+			              "Role": "commit.value_commitId"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "value___committer___date_hierarchies_have_value___committer___months"
+			          "ID": "commits_have_value_commitIds"
 			        }
 			      ]
 			    },
-			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_quarter": {
+			    "commit_has_count": {
 			      "Binding": {
 			        "ConceptualEntity": "commits"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "commit.value_committer_date.date_hierarchy": {
+			        "commit": {
 			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
+			            "Entity": "commit"
 			          }
 			        },
-			        "commit.value_committer_date.quarter": {
+			        "commit.count": {
 			          "Target": {
-			            "Entity": "commit.value_committer_date.quarter"
+			            "Entity": "commit.count"
 			          }
 			        }
 			      },
@@ -4025,312 +3931,15 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
+			              "Role": "commit"
 			            },
 			            "Object": {
-			              "Role": "commit.value_committer_date.quarter"
+			              "Role": "commit.count"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "value___committer___date_hierarchies_have_value___committer___quarters"
-			        }
-			      ]
-			    },
-			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_committer_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_committer_date.year": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___committer___date_hierarchies_have_value___committer___years"
-			        }
-			      ]
-			    },
-			    "commit_value_committer_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_committer_date": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date"
-			          }
-			        },
-			        "commit.value_committer_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_committer_date"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_committer_dates_have_value___committer___date_hierarchies"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.day": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___days"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.month": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___months"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.quarter": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___quarters"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.year": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___years"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date": {
-			          "Target": {
-			            "Entity": "commit.value_author_date"
-			          }
-			        },
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_author_dates_have_value___author___date_hierarchies"
-			        }
-			      ]
-			    },
-			    "pullrequest_has_count": {
-			      "Binding": {
-			        "ConceptualEntity": "pullrequests"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "pullrequest": {
-			          "Target": {
-			            "Entity": "pullrequest"
-			          }
-			        },
-			        "pullrequest.count": {
-			          "Target": {
-			            "Entity": "pullrequest.count"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "pullrequest"
-			            },
-			            "Object": {
-			              "Role": "pullrequest.count"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "pullrequests_have_counts"
-			        }
-			      ]
-			    },
-			    "pullrequest_has_value": {
-			      "Binding": {
-			        "ConceptualEntity": "pullrequests"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "pullrequest": {
-			          "Target": {
-			            "Entity": "pullrequest"
-			          }
-			        },
-			        "pullrequest.value": {
-			          "Target": {
-			            "Entity": "pullrequest.value"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "pullrequest"
-			            },
-			            "Object": {
-			              "Role": "pullrequest.value"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "pullrequests_have_values"
+			          "ID": "commits_have_counts"
 			        }
 			      ]
 			    },
@@ -4961,943 +4570,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "commit_has_classification": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.classification": {
-			          "Target": {
-			            "Entity": "commit.classification"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.classification"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_classifications"
-			        }
-			      ]
-			    },
-			    "commit_has_file_name": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.file_name": {
-			          "Target": {
-			            "Entity": "commit.file_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.file_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_file_names"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_changeType": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_changeType": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_changeType"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_changeType"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_changeTypes"
-			        }
-			      ]
-			    },
-			    "commit_has_fn_commit_changes_changes_item_url": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fn_commit_changes_changes_item_url": {
-			          "Target": {
-			            "Entity": "commit.fn_commit_changes_changes_item_url"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fn_commit_changes_changes_item_url"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fn_commit_changes_changes_item_urls"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_isFolder": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_isFolder": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_isFolder"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_isFolders"
-			        },
-			        {
-			          "DynamicAdjective": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Adjective": {
-			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fnCommitChanges_changes_item_isFolders_describe_commits"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_path": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_path": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_path"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_path"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_paths"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_commitId": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_commitId": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_commitId"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_commitId"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_commitIds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_gitObjectType": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_gitObjectType": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_gitObjectType"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_gitObjectType"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_gitObjectTypes"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_originalObjectId": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_originalObjectId": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_originalObjectId"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_originalObjectId"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_originalObjectIds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_objectId": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_objectId": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_objectId"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_objectId"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_objectIds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changeCounts_add": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changeCounts_add": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changeCounts_add"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changeCounts_add"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changeCounts_adds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changeCounts_edit": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changeCounts_edit": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changeCounts_edit"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changeCounts_edit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changeCounts_edits"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changeCounts_delete": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changeCounts_delete": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changeCounts_delete"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changeCounts_delete"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changeCounts_deletes"
-			        }
-			      ]
-			    },
-			    "commit_has_value_remoteUrl": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_remoteUrl": {
-			          "Target": {
-			            "Entity": "commit.value_remoteUrl"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_remoteUrl"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_remoteUrls"
-			        }
-			      ]
-			    },
-			    "commit_has_value_url": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_url": {
-			          "Target": {
-			            "Entity": "commit.value_url"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_url"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_urls"
-			        }
-			      ]
-			    },
-			    "commit_has_value_changeCounts_delete": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_changeCounts_delete": {
-			          "Target": {
-			            "Entity": "commit.value_changeCounts_delete"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_changeCounts_delete"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_changeCounts_deletes"
-			        }
-			      ]
-			    },
-			    "commit_has_value_changeCounts_edit": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_changeCounts_edit": {
-			          "Target": {
-			            "Entity": "commit.value_changeCounts_edit"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_changeCounts_edit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_changeCounts_edits"
-			        }
-			      ]
-			    },
-			    "commit_has_value_changeCounts_add": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_changeCounts_add": {
-			          "Target": {
-			            "Entity": "commit.value_changeCounts_add"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_changeCounts_add"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_changeCounts_adds"
-			        }
-			      ]
-			    },
-			    "commit_has_value_comment": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_comment": {
-			          "Target": {
-			            "Entity": "commit.value_comment"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_comment"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_comments"
-			        }
-			      ]
-			    },
-			    "commit_has_value_committer_date": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_committer_date": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_committer_dates"
-			        }
-			      ]
-			    },
-			    "commit_has_value_committer_email": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_committer_email": {
-			          "Target": {
-			            "Entity": "commit.value_committer_email"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_email"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_committer_emails"
-			        }
-			      ]
-			    },
-			    "commit_has_value_committer_name": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_committer_name": {
-			          "Target": {
-			            "Entity": "commit.value_committer_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_committer_names"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "commit.value_committer_name"
-			            },
-			            "Verbs": [
-			              {
-			                "commit": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "commit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "value_committer_names_commit_commits"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_committer_name"
-			            },
-			            "Object": {
-			              "Role": "commit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_committer_names_have_commits"
-			        }
-			      ]
-			    },
-			    "commit_has_value_author_date": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_author_date": {
-			          "Target": {
-			            "Entity": "commit.value_author_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_author_dates"
-			        }
-			      ]
-			    },
-			    "commit_has_value_author_email": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_author_email": {
-			          "Target": {
-			            "Entity": "commit.value_author_email"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_email"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_author_emails"
-			        }
-			      ]
-			    },
-			    "commit_has_value_author_name": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_author_name": {
-			          "Target": {
-			            "Entity": "commit.value_author_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_author_names"
-			        }
-			      ]
-			    },
-			    "commit_has_value_commitId": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_commitId": {
-			          "Target": {
-			            "Entity": "commit.value_commitId"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_commitId"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_commitIds"
-			        }
-			      ]
-			    },
-			    "commit_has_count": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.count": {
-			          "Target": {
-			            "Entity": "commit.count"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.count"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_counts"
-			        }
-			      ]
-			    },
 			    "change_in_value_project_state": {
 			      "Binding": {
 			        "ConceptualEntity": "changes"
@@ -5940,6 +4612,943 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "changes_are_in_value_project_states"
+			        }
+			      ]
+			    },
+			    "commit_is_fnCommitChanges_changes_item_isFolder": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_isFolder": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_isFolder"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "DynamicAdjective": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Adjective": {
+			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fnCommitChanges_changes_item_isFolders_describe_commits"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_isFolders"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_name_commit_commit": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_name": {
+			          "Target": {
+			            "Entity": "commit.value_committer_name"
+			          }
+			        },
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "commit.value_committer_name"
+			            },
+			            "Verbs": [
+			              {
+			                "commit": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "commit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "value_committer_names_commit_commits"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_name"
+			            },
+			            "Object": {
+			              "Role": "commit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_committer_names_have_commits"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_committer_names"
+			        }
+			      ]
+			    },
+			    "commit_has_value_author_email": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_author_email": {
+			          "Target": {
+			            "Entity": "commit.value_author_email"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_email"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_author_emails"
+			        }
+			      ]
+			    },
+			    "commit_has_value_author_date": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_author_date": {
+			          "Target": {
+			            "Entity": "commit.value_author_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_author_dates"
+			        }
+			      ]
+			    },
+			    "commit_has_value_committer_email": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_committer_email": {
+			          "Target": {
+			            "Entity": "commit.value_committer_email"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_email"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_committer_emails"
+			        }
+			      ]
+			    },
+			    "commit_has_value_committer_date": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_committer_date": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_committer_dates"
+			        }
+			      ]
+			    },
+			    "commit_has_value_comment": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_comment": {
+			          "Target": {
+			            "Entity": "commit.value_comment"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_comment"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_comments"
+			        }
+			      ]
+			    },
+			    "commit_has_value_changeCounts_add": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_changeCounts_add": {
+			          "Target": {
+			            "Entity": "commit.value_changeCounts_add"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_changeCounts_add"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_changeCounts_adds"
+			        }
+			      ]
+			    },
+			    "commit_has_value_changeCounts_edit": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_changeCounts_edit": {
+			          "Target": {
+			            "Entity": "commit.value_changeCounts_edit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_changeCounts_edit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_changeCounts_edits"
+			        }
+			      ]
+			    },
+			    "commit_has_value_changeCounts_delete": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_changeCounts_delete": {
+			          "Target": {
+			            "Entity": "commit.value_changeCounts_delete"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_changeCounts_delete"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_changeCounts_deletes"
+			        }
+			      ]
+			    },
+			    "commit_has_value_url": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_url": {
+			          "Target": {
+			            "Entity": "commit.value_url"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_url"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_urls"
+			        }
+			      ]
+			    },
+			    "commit_has_value_remoteUrl": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_remoteUrl": {
+			          "Target": {
+			            "Entity": "commit.value_remoteUrl"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_remoteUrl"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_remoteUrls"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changeCounts_delete": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changeCounts_delete": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changeCounts_delete"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changeCounts_delete"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changeCounts_deletes"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changeCounts_edit": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changeCounts_edit": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changeCounts_edit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changeCounts_edit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changeCounts_edits"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changeCounts_add": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changeCounts_add": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changeCounts_add"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changeCounts_add"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changeCounts_adds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_objectId": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_objectId": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_objectId"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_objectId"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_objectIds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_originalObjectId": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_originalObjectId": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_originalObjectId"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_originalObjectId"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_originalObjectIds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_gitObjectType": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_gitObjectType": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_gitObjectType"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_gitObjectType"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_gitObjectTypes"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_commitId": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_commitId": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_commitId"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_commitId"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_commitIds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_path": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_path": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_path"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_path"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_paths"
+			        }
+			      ]
+			    },
+			    "commit_has_fn_commit_changes_changes_item_url": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fn_commit_changes_changes_item_url": {
+			          "Target": {
+			            "Entity": "commit.fn_commit_changes_changes_item_url"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fn_commit_changes_changes_item_url"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fn_commit_changes_changes_item_urls"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_changeType": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_changeType": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_changeType"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_changeType"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_changeTypes"
+			        }
+			      ]
+			    },
+			    "commit_has_file_name": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.file_name": {
+			          "Target": {
+			            "Entity": "commit.file_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.file_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_file_names"
+			        }
+			      ]
+			    },
+			    "commit_has_classification": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.classification": {
+			          "Target": {
+			            "Entity": "commit.classification"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.classification"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_classifications"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_project_lastUpdateTimes_have_value___project___lastUpdateTime_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_year": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.year": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_years"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.quarter": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_quarters"
 			        }
 			      ]
 			    },
@@ -6006,6 +5615,336 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_days"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date": {
+			          "Target": {
+			            "Entity": "commit.value_author_date"
+			          }
+			        },
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_author_dates_have_value___author___date_hierarchies"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.year": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___years"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.quarter": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___quarters"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.month": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___months"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.day": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___days"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date"
+			          }
+			        },
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_committer_dates_have_value___committer___date_hierarchies"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_committer_date.year": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___committer___date_hierarchies_have_value___committer___years"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_committer_date.quarter": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___committer___date_hierarchies_have_value___committer___quarters"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_committer_date.month": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___committer___date_hierarchies_have_value___committer___months"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_committer_date.day": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___committer___date_hierarchies_have_value___committer___days"
 			        }
 			      ]
 			    }

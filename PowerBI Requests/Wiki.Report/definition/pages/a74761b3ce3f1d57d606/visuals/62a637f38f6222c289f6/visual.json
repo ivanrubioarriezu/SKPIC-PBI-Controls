@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "62a637f38f6222c289f6",
   "position": {
-    "x": 375.91776798825259,
-    "y": 194.44022482150996,
+    "x": 375.62189054726366,
+    "y": 194.02985074626864,
     "z": 14000,
-    "height": 149.0708390298243,
-    "width": 479.61922122639123,
+    "height": 149.25373134328356,
+    "width": 656.71641791044772,
     "tabOrder": 14000
   },
   "visual": {
@@ -57,6 +57,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -103,5 +110,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cfd173563904c9350477",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Key terms"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

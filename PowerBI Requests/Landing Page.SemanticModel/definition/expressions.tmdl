@@ -3,7 +3,7 @@ expression hostname = "adb-4071335540424391.11.azuredatabricks.net" meta [IsPara
 
 	annotation PBI_ResultType = Text
 
-expression httpPath = "/sql/1.0/warehouses/916c447fdd11cd1e" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression httpPath = "/sql/1.0/warehouses/a4d70720d95e4e2a" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
 	lineageTag: ab0dab1b-a40e-4334-8b9c-22c7e7b5e2ff
 
 	annotation PBI_ResultType = Text

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "ccc8c9a591ec33c36ceb",
   "position": {
-    "x": 124.05286343612335,
-    "y": 18.044052863436125,
+    "x": 124.13793103448276,
+    "y": 17.733990147783253,
     "z": 7001,
-    "height": 43.982378854625551,
-    "width": 727.40088105726875,
+    "height": 44.334975369458128,
+    "width": 804.23645320197045,
     "tabOrder": 7001
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "SKPIC - Logs Monitoring for PROD Dashboards",
+                    "value": "SKPIC - User Activity Logs for PROD Dashboards",
                     "textStyle": {
                       "fontFamily": "Arial",
                       "fontSize": "24pt",

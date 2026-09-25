@@ -1913,6 +1913,52 @@ table 'CH_UP DMT_KPI'
 		formatString: 0
 		lineageTag: aec876da-8741-4aec-956b-45001564f1e1
 
+	measure 'GMV CY With Total' =
+			
+			VAR _AxisValue =
+			    SELECTEDVALUE (
+			        'Pillar SKU Axis'[Pillar_SKU_Class]
+			    )
+			
+			RETURN
+			IF (
+			    _AxisValue = "Total",
+			
+			    -- Total
+			    [GMV_CY_Selection (HY/FY)],
+			
+			    -- Normal Pillar/SKU bars
+			    CALCULATE (
+			        [GMV_CY_Selection (HY/FY)],
+			        TREATAS (
+			            { _AxisValue },
+			            'CH_UP DMT_KPI'[Pillar_SKU_Class]
+			        )
+			    )
+			)
+		lineageTag: 58add0c6-1aad-4a03-9364-04db63d7e1d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Test CH Pillar' =
+			
+			VAR _CurrentPillar =
+			    SELECTEDVALUE (
+			        'Pillar SKU Axis'[Pillar_SKU_Class]
+			    )
+			
+			RETURN
+			CALCULATE (
+			    [GMV_CY_Selection (HY/FY)],
+			    TREATAS (
+			        { _CurrentPillar },
+			        'CH_UP DMT_KPI'[Pillar_SKU_Class]
+			    )
+			)
+		lineageTag: dc00c419-b315-4f1b-a630-e1183ce88493
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Pillar =
 			
 			SWITCH(

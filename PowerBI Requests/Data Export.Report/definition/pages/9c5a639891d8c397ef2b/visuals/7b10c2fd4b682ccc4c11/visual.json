@@ -3,11 +3,11 @@
   "name": "7b10c2fd4b682ccc4c11",
   "position": {
     "x": 0,
-    "y": 134.87093775926377,
+    "y": 150.81886312747412,
     "z": 0,
     "height": 854.38488395974537,
     "width": 2934.4834668309718,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
@@ -220,6 +220,29 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
                 }
               }
             }

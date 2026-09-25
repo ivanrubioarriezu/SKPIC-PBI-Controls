@@ -304,37 +304,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4ed7ca6ef75640281c8f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
-              }
-            },
-            "Property": "Fiscal_Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c09a769009d871479fd1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
-              }
-            },
-            "Property": "sT"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

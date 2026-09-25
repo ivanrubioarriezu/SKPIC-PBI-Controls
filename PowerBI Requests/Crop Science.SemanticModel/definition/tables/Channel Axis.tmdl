@@ -1,0 +1,38 @@
+table 'Channel Axis'
+	lineageTag: 430e5eec-41ba-4577-bc57-c09f40cc34d3
+
+	column Channel
+		lineageTag: b22c7b3d-b65f-4a57-a38c-9a2246bd06a6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Channel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		formatString: 0
+		lineageTag: 26cb17d7-2c53-40af-ae88-ec3bd063ce79
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SortOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Channel Axis' = calculated
+		mode: import
+		source =
+				
+				
+				DATATABLE(
+				    "Channel", STRING,
+				    "SortOrder", INTEGER,
+				    {
+				        {"Commercial", 1},
+				        {"Partnership", 2},
+				        {"Digital", 3},
+				        {"Total", 4}
+				    }
+				)
+
+	annotation PBI_Id = dc64c36d3a104db8bab56153604534f5
+

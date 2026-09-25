@@ -397,16 +397,17 @@ table 'CORP_GHG DTbl_Scope1&2'
 			VAR _labelYear =
 			    VALUE ( _labelText )                    -- convert "2024" -> 2024; returns BLANK if text is blank
 			VAR _capYear =
-			    COALESCE ( MIN ( _labelYear, 2024 ), 2024 )   -- if label is blank, fallback to 2024
+			    COALESCE ( MIN ( _labelYear, 2025 ), 2025 )   -- if label is blank, fallback to 2024
 			
 			RETURN
 			CALCULATE (
 			    SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] ),
-			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1,
+			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0,
 			    'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 0,
 			    //'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",
 			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] <= _capYear )
 			)
+			
 			
 			
 			
@@ -483,7 +484,7 @@ table 'CORP_GHG DTbl_Scope1&2'
 			RETURN
 			CALCULATE (
 			    SUM ( 'CORP_GHG DTbl_Scope1&2'[Value] )*(-1),
-			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 1,
+			    'CORP_GHG DTbl_Scope1&2'[Is Target Filter] = 0,
 			    'CORP_GHG DTbl_Scope1&2'[FY (Year Filter)] = 0,
 			    //'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",
 			    KEEPFILTERS ( 'CORP_GHG DTbl_Scope1&2'[Year] <= _capYear )

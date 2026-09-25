@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "8dd04bb563d102ab357a",
+  "position": {
+    "x": 33.312588401697312,
+    "y": 110.07637906647808,
+    "z": 0,
+    "height": 279.53606789250352,
+    "width": 279.53606789250352,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                    }
+                  },
+                  "Property": "Act new measure"
+                }
+              },
+              "queryRef": "CORP_GHG DTbl_Scope1&2.Act new measure",
+              "nativeQueryRef": "Act new measure"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -3,11 +3,11 @@
   "name": "1f0918ce74109904d21a",
   "position": {
     "x": 0,
-    "y": 140.94763986648815,
+    "y": 153.43297974927691,
     "z": 0,
-    "height": 851.337798899182,
-    "width": 2950.8196721311479,
-    "tabOrder": 2000
+    "height": 820,
+    "width": 2950,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
@@ -208,6 +208,28 @@
               "expr": {
                 "Literal": {
                   "Value": "'Left'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
                 }
               }
             }

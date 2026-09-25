@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "e99d2068a4c31b3ac544",
   "position": {
     "x": 0,
-    "y": 131.025957287295,
-    "z": 2500,
-    "height": 869.55905790685313,
-    "width": 2950.3807331326366,
-    "tabOrder": 0
+    "y": 178.24358717721398,
+    "z": 2000,
+    "height": 815.50802139037432,
+    "width": 2949.1978609625667
   },
   "visual": {
     "visualType": "tableEx",
@@ -15,20 +14,6 @@
       "queryState": {
         "Values": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DMV_Diff_Scope1_And_2"
-                    }
-                  },
-                  "Property": "Year_select_CY"
-                }
-              },
-              "queryRef": "Sum(CORP_GHG DMV_Diff_Scope1_And_2.Year_select_CY)",
-              "nativeQueryRef": "Year_select_CY"
-            },
             {
               "field": {
                 "Column": {
@@ -56,20 +41,6 @@
               },
               "queryRef": "CORP_GHG DMV_Diff_Scope1_And_2.Scope",
               "nativeQueryRef": "Scope"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DMV_Diff_Scope1_And_2"
-                    }
-                  },
-                  "Property": "Preliminary / Final Data"
-                }
-              },
-              "queryRef": "CORP_GHG DMV_Diff_Scope1_And_2.Preliminary / Final Data",
-              "nativeQueryRef": "Preliminary / Final Data"
             },
             {
               "field": {
@@ -548,7 +519,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 1,
+                      "ColorId": 0,
                       "Percent": 0
                     }
                   }
@@ -566,6 +537,17 @@
               "expr": {
                 "Literal": {
                   "Value": "'Center'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#10384F'"
+                    }
+                  }
                 }
               }
             }
@@ -614,36 +596,6 @@
                 }
               }
             }
-          }
-        }
-      ],
-      "columnFormatting": [
-        {
-          "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(CORP_GHG DMV_Diff_Scope1_And_2.Year_select_CY)"
           }
         }
       ]

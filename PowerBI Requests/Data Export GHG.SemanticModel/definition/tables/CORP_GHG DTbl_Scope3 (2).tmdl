@@ -223,7 +223,7 @@ table 'CORP_GHG DTbl_Scope3 (2)'
 
 	column 'CO2 Scope 3 Category' = ```
 			
-			SUBSTITUTE('CORP_GHG DTbl_Scope3 (2)'[CO2_Scope_3_Category], "0", "")
+			SUBSTITUTE('CORP_GHG DTbl_Scope3 (2)'[CO2_Scope_3_Category], ".0", ".")
 			
 			```
 		lineageTag: e1ee6426-3a4e-41e5-8c06-b887e503feda

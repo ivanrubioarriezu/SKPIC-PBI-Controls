@@ -31,17 +31,5 @@
         }
       }
     ]
-  },
-  "visualInteractions": [
-    {
-      "source": "cd6910e0eb06412d3d61",
-      "target": "ef758d7750033900d456",
-      "type": "DataFilter"
-    },
-    {
-      "source": "cd6910e0eb06412d3d61",
-      "target": "30dab2357eb0ab8d82ab",
-      "type": "NoFilter"
-    }
-  ]
+  }
 }

@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "7359b818ef1489caa18a",
   "position": {
-    "x": 25.487151205444103,
-    "y": 750,
-    "z": 12000,
-    "height": 1000.5850151941481,
-    "width": 2950.3807331326366,
-    "tabOrder": 12000
+    "x": 23.892590580228205,
+    "y": 762.03208556149718,
+    "z": 10000,
+    "height": 993.75160856758828,
+    "width": 2949.1978609625667
   },
   "visualGroup": {
     "displayName": "Diff 12 Filters",

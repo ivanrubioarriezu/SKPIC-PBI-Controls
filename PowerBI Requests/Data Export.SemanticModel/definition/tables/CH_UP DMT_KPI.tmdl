@@ -284,6 +284,31 @@ table 'CH_UP DMT_KPI'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Pillar = ```
+			
+			SWITCH(
+			    'CH_UP DMT_KPI'[Impact],
+			    "Campaign", "Partnerships",
+			    "Commercial" 
+			)
+			```
+		lineageTag: 13b29dac-e3f1-4738-9547-68d62d551be6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar_SKU_Class =
+			
+			IF (
+			    'CH_UP DMT_KPI'[Pillar] = "Partnerships",
+			    "Partnerships",
+			    'CH_UP DMT_KPI'[Pillar] & " - " & 'CH_UP DMT_KPI'[SKU_Class]
+			)
+		lineageTag: 4ed3005d-b5d9-4503-bca8-42c4b3d75802
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'CH_UP DMT_KPI' = m
 		mode: import
 		source = ```

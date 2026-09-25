@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "33104dc6577815cc3737",
   "position": {
     "x": 2139.6406640891519,
     "y": 465.28693806383137,
-    "z": 33001,
+    "z": 28000,
     "height": 811.70495034493217,
     "width": 1334.7282237889469,
-    "tabOrder": 32001
+    "tabOrder": 28000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -728,20 +728,6 @@
         "howCreated": "User"
       },
       {
-        "name": "2c542a5486c20700c909",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PH_WH DTbl_AllUserAndCYPValues"
-              }
-            },
-            "Property": "CY Selection With Total"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "1d92c937992ac7edac38",
         "field": {
           "Column": {
@@ -816,7 +802,7 @@
         }
       },
       {
-        "name": "b657256bebc34d820128",
+        "name": "887db18f65e30d2822a5",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -830,6 +816,20 @@
               }
             },
             "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "76fc2448bbbb0225c41e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+              }
+            },
+            "Property": "CY Selection With Total"
           }
         },
         "type": "Advanced"
