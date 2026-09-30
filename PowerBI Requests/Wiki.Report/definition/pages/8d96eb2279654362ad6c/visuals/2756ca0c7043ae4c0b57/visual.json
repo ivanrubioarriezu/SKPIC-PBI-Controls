@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "2756ca0c7043ae4c0b57",
   "position": {
-    "x": 192.00972201124108,
-    "y": 92.359106790217226,
-    "z": 5000,
-    "height": 63.193073066990735,
-    "width": 153.12167704693908,
+    "x": 241.29353233830844,
+    "y": 92.039800995024876,
+    "z": 6000,
+    "height": 64.676616915422883,
+    "width": 355.72139303482584,
     "tabOrder": 5000
   },
   "visual": {
@@ -19,10 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "/Overview",
+                    "value": "Wiki Home",
                     "textStyle": {
                       "fontFamily": "Arial",
-                      "fontSize": "20pt",
+                      "fontSize": "32pt",
+                      "textDecoration": "underline",
                       "color": "#0091df"
                     }
                   }

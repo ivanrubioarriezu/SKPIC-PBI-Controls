@@ -54,9 +54,34 @@ table Dataset
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(Web.Contents("https://bayergroup.sharepoint.com/:x:/r/sites/SustainabilityKPICockpitIT-Stream/Shared%20Documents/General/111%20Production%20(Tableau%20-%20Wiki%20dataset)/SKPIC/WIKI%20Page%20Data%20Set.xlsx"), null, true),
-				    Custom1 = Source{[Item="Dataset",Kind="Sheet"]}[Data],
-				    #"Promoted Headers" = Table.PromoteHeaders(Custom1, [PromoteAllScalars=true])
+				    Source =
+				        SharePoint.Files(
+				            "https://bayergroup.sharepoint.com/sites/SustainabilityKPICockpitIT-Stream",
+				            [ApiVersion = 15]
+				        ),
+				
+				    FileRow =
+				        Table.SelectRows(
+				            Source,
+				            each
+				                [Name] = "WIKI Page Data Set.xlsx"
+				                and
+				                [Folder Path] =
+				                "https://bayergroup.sharepoint.com/sites/SustainabilityKPICockpitIT-Stream/Shared Documents/General/111 Production (Tableau - Wiki dataset)/SKPIC/"
+				        ),
+				
+				    FileContent = FileRow{0}[Content],
+				
+				    Workbook = Excel.Workbook(FileContent, null, true),
+				
+				    Dataset = Workbook{[Item="Dataset", Kind="Sheet"]}[Data],
+				
+				    #"Promoted Headers" =
+				        Table.PromoteHeaders(
+				            Dataset,
+				            [PromoteAllScalars=true]
+				        )
+				
 				in
 				    #"Promoted Headers"
 

@@ -4,10 +4,10 @@
   "position": {
     "x": 2611.9402985074626,
     "y": 191.54228855721391,
-    "z": 15000,
+    "z": 8000,
     "height": 65.06728420339175,
     "width": 197.91298945198324,
-    "tabOrder": 15000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "/ Tools Info",
+                    "value": "/Tools Info",
                     "textStyle": {
                       "fontFamily": "Arial",
                       "fontSize": "28pt",

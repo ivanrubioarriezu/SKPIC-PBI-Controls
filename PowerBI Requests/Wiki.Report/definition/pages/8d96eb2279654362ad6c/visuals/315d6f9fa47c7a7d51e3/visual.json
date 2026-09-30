@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "315d6f9fa47c7a7d51e3",
   "position": {
-    "x": 0,
-    "y": 391.0453891969604,
-    "z": 12000,
-    "height": 1574.039843910454,
-    "width": 2947.6278496611217,
-    "tabOrder": 12000
+    "x": 24.875621890547261,
+    "y": 425.37313432835816,
+    "z": 8000,
+    "height": 1574.6268656716418,
+    "width": 2957.7114427860693,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "tableEx",
@@ -243,7 +243,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
+                  "Value": "32D"
                 }
               }
             },
@@ -258,9 +258,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
+                    "Literal": {
+                      "Value": "'#10384F'"
                     }
                   }
                 }
@@ -347,7 +346,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "1806.1536641059506D"
+                  "Value": "1729.04524151993D"
                 }
               }
             }
@@ -421,65 +420,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4a64a1b221d0808d55a3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Dashboard"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e6a7414a8684468e8200",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Key terms"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1daf11cccd39524b4a65",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Definition"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "87fb9f409d7095991424",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Link available label"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

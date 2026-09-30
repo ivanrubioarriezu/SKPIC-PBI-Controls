@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "48e13e5c5cb8c20bc520",
+  "position": {
+    "x": 1317.5,
+    "y": 27.5,
+    "z": 8000,
+    "height": 65,
+    "width": 495,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Data Load Schedule ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "32pt",
+                      "textDecoration": "underline",
+                      "color": "#0091df"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

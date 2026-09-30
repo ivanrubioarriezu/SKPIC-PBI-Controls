@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "1483e06ced4cd080329a",
   "position": {
-    "x": 0,
-    "y": 391.0453891969604,
-    "z": 12000,
-    "height": 1574.039843910454,
-    "width": 2947.6278496611217,
-    "tabOrder": 12000
+    "x": 14.925373134328357,
+    "y": 405.4726368159204,
+    "z": 7000,
+    "height": 1559.7014925373132,
+    "width": 2965.1741293532336,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "tableEx",
@@ -214,9 +214,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
+                    "Literal": {
+                      "Value": "'#66b512'"
                     }
                   }
                 }
@@ -272,11 +271,17 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.5
+                    "Literal": {
+                      "Value": "'#66b512'"
                     }
                   }
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -380,48 +385,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "ab118cbe46cee899c901",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Key terms"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0b5a94616842498a502b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Definition"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "bbad8b563cbc075c6c7c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Link available label"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

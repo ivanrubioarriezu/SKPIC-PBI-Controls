@@ -1,29 +1,211 @@
 table 'Data Load Dates'
 	lineageTag: d7b32ccf-bad3-43f0-b698-1df021778e3f
 
-	column 'Value Type'
-		dataType: string
-		lineageTag: 38377992-d764-4633-9b82-1a53dac6b00e
-		summarizeBy: none
-		sourceColumn: Value Type
-
-		annotation SummarizationSetBy = Automatic
-
-	column Mode
-		dataType: string
-		lineageTag: 6699becf-776a-4fa7-9a1d-3bbb1b1de2af
-		summarizeBy: none
-		sourceColumn: Mode
-
-		annotation SummarizationSetBy = Automatic
-
-	column Event
-		dataType: string
-		lineageTag: cc37f851-9f45-4643-a8ed-c2bd9230578f
-		summarizeBy: none
-		sourceColumn: Event
-
-		annotation SummarizationSetBy = Automatic
+	measure 'HTML Card' =
+			
+			VAR CurrentAccess =
+			    SELECTEDVALUE ( 'Data Load Dates'[Access Rights] )
+			
+			VAR HeaderColor =
+			    SWITCH (
+			        CurrentAccess,
+			        "Bayer all", "#D9EAF7",
+			        "Expert", "#DDEEDC",
+			        "Export", "#F3DCE6",
+			        "#EEEEEE"
+			    )
+			
+			VAR BorderColor =
+			    SWITCH (
+			        CurrentAccess,
+			        "Bayer all", "#5B9BD5",
+			        "Expert", "#70AD47",
+			        "Export", "#C27BA0",
+			        "#CCCCCC"
+			    )
+			
+			VAR DashboardCount =
+			    CALCULATE (
+			        DISTINCTCOUNT ( 'Data Load Dates'[Dashboard] ),
+			        ALLEXCEPT (
+			            'Data Load Dates',
+			            'Data Load Dates'[Access Rights]
+			        )
+			    )
+			
+			VAR DashboardWidth =
+			    IF (
+			        DashboardCount = 1,
+			        "98%",
+			        "48%"
+			    )
+			
+			VAR DashboardHTML =
+			    CONCATENATEX (
+			        VALUES ( 'Data Load Dates'[Dashboard] ),
+			
+			        VAR CurrentDashboard =
+			            'Data Load Dates'[Dashboard]
+			
+			        VAR DashboardRows =
+			            CONCATENATEX (
+			                FILTER (
+			                    ALLSELECTED ( 'Data Load Dates' ),
+			                    'Data Load Dates'[Access Rights] = CurrentAccess
+			                        && 'Data Load Dates'[Dashboard] = CurrentDashboard
+			                ),
+			
+			                "
+			                <tr>
+			
+			                    <td style='
+			                        padding:10px 14px;
+			                        border-bottom:1px solid #ECECEC;
+			                        font-weight:600;
+			                        font-size:36px;
+			                        line-height:1.15;
+			                        color:#333333;
+			                    '>"
+			                        & 'Data Load Dates'[Value Types] &
+			                    "</td>
+			
+			                    <td style='
+			                        padding:10px 14px;
+			                        border-bottom:1px solid #ECECEC;
+			                        text-align:right;
+			                        font-size:26px;
+			                        line-height:1.15;
+			                    '>
+			
+			                        <span style='
+			                            background:#EEF2F7;
+			                            padding:6px 14px;
+			                            border-radius:14px;
+			                            font-weight:600;
+			                            font-size:34px;
+			                            color:#444444;
+			                            white-space:nowrap;
+			                        '>"
+			                            & 'Data Load Dates'[Dates Update] &
+			                        "</span>
+			
+			                    </td>
+			
+			                </tr>
+			                "
+			            )
+			
+			        RETURN
+			
+			        "
+			        <div style='
+			            display:inline-block;
+			            vertical-align:top;
+			            width:" & DashboardWidth & ";
+			            margin:0.5%;
+			            background:white;
+			            border:1px solid #E5E5E5;
+			            border-radius:10px;
+			            overflow:hidden;
+			            box-shadow:0px 2px 6px rgba(0,0,0,0.06);
+			        '>
+			
+			            <div style='
+			                background:linear-gradient(to right,#F8F9FA,#FFFFFF);
+			                padding:12px;
+			                text-align:center;
+			                font-size:42px;
+			                font-weight:700;
+			                color:#222222;
+			                border-bottom:1px solid #E5E5E5;
+			                line-height:1.15;
+			            '>
+			                "
+			                & CurrentDashboard &
+			            "
+			            </div>
+			
+			            <table style='
+			                width:100%;
+			                border-collapse:collapse;
+			            '>
+			
+			                <thead>
+			
+			                    <tr style='background:#FAFAFA;'>
+			
+			                        <th style='
+			                            text-align:left;
+			                            padding:10px 14px;
+			                            font-size:28px;
+			                            color:#333333;
+			                        '>
+			                            Value Types
+			                        </th>
+			
+			                        <th style='
+			                            text-align:right;
+			                            padding:10px 14px;
+			                            font-size:28px;
+			                            color:#333333;
+			                        '>
+			                            Dates Update
+			                        </th>
+			
+			                    </tr>
+			
+			                </thead>
+			
+			                <tbody>
+			                    "
+			                    & DashboardRows &
+			                "
+			                </tbody>
+			
+			            </table>
+			
+			        </div>
+			        "
+			    )
+			
+			RETURN
+			
+			"
+			<div style='
+			    font-family:Segoe UI;
+			    background:white;
+			    border:2px solid " & BorderColor & ";
+			    border-radius:12px;
+			    overflow:hidden;
+			    margin:4px;
+			    box-shadow:0px 3px 8px rgba(0,0,0,0.10);
+			'>
+			
+			    <div style='
+			        background:" & HeaderColor & ";
+			        padding:6px;
+			        text-align:center;
+			        font-weight:700;
+			        font-size:42px;
+			        color:#222222;
+			        border-bottom:1px solid #D0D0D0;
+			    '>
+			        "
+			        & CurrentAccess &
+			    "
+			    </div>
+			
+			    <div style='padding:10px;'>
+			
+			        "
+			        & DashboardHTML &
+			        "
+			
+			    </div>
+			
+			</div>
+			"
+		lineageTag: 4390c6c9-4b75-4cdd-80df-183b6e930c56
 
 	column Dashboard
 		dataType: string
@@ -33,19 +215,27 @@ table 'Data Load Dates'
 
 		annotation SummarizationSetBy = Automatic
 
-	column View
+	column 'Access Rights'
 		dataType: string
-		lineageTag: 38ff5185-2114-4b84-9f2d-faab941f9b4b
+		lineageTag: efd0bc26-e9ff-4c41-a4da-ad218ab3d93c
 		summarizeBy: none
-		sourceColumn: View
+		sourceColumn: Access Rights
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Load / Display Dates'
+	column 'Value Types'
 		dataType: string
-		lineageTag: 8345a29d-2162-484e-95ce-f6f764ff41b9
+		lineageTag: a1fd0304-e086-4cfe-a8ae-be410338559a
 		summarizeBy: none
-		sourceColumn: Load / Display Dates
+		sourceColumn: Value Types
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dates Update'
+		dataType: string
+		lineageTag: f6799074-c98a-483e-bd09-eeb0c66dc276
+		summarizeBy: none
+		sourceColumn: Dates Update
 
 		annotation SummarizationSetBy = Automatic
 
@@ -53,9 +243,34 @@ table 'Data Load Dates'
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(Web.Contents("https://bayergroup.sharepoint.com/:x:/r/sites/SustainabilityKPICockpitIT-Stream/Shared%20Documents/General/111%20Production%20(Tableau%20-%20Wiki%20dataset)/SKPIC/WIKI%20Page%20Data%20Set.xlsx"), null, true),
-				    Custom1 = Source{[Item="Data Load Dates",Kind="Sheet"]}[Data],
-				    #"Promoted Headers" = Table.PromoteHeaders(Custom1, [PromoteAllScalars=true])
+				    Source =
+				        SharePoint.Files(
+				            "https://bayergroup.sharepoint.com/sites/SustainabilityKPICockpitIT-Stream",
+				            [ApiVersion = 15]
+				        ),
+				
+				    FileRow =
+				        Table.SelectRows(
+				            Source,
+				            each
+				                [Name] = "WIKI Page Data Set.xlsx"
+				                and
+				                [Folder Path] =
+				                "https://bayergroup.sharepoint.com/sites/SustainabilityKPICockpitIT-Stream/Shared Documents/General/111 Production (Tableau - Wiki dataset)/SKPIC/"
+				        ),
+				
+				    FileContent = FileRow{0}[Content],
+				
+				    Workbook = Excel.Workbook(FileContent, null, true),
+				
+				    Dataset = Workbook{[Item="Data Load Dates", Kind="Sheet"]}[Data],
+				
+				    #"Promoted Headers" =
+				        Table.PromoteHeaders(
+				            Dataset,
+				            [PromoteAllScalars=true]
+				        )
+				
 				in
 				    #"Promoted Headers"
 
