@@ -48,14 +48,6 @@ relationship 26ee277b-ebcc-45b3-9096-bd8b35b8fad6
 	fromColumn: 'CH_UP DMV_SKU_Type'.Last_Updated
 	toColumn: LocalDateTable_e2159750-829d-4280-adcf-f65720909bef.Date
 
-relationship AutoDetected_152124e2-c5cb-4579-b365-5a4514b3d73a
-	fromColumn: 'CH_UP DMV_SalesData_Cleansed'.Brand
-	toColumn: 'CH_UP DMV_Scope_Brand'.Brand
-
-relationship AutoDetected_05b9d34e-1802-4446-b238-04896d5f06c1
-	fromColumn: 'CH_UP DMV_SKU_Type'.SKU_Type
-	toColumn: 'CH_UP DMV_Scope_SKU'.SKU_Type
-
 relationship 2bf9cd6e-096f-49c1-bd12-021774fe93d6
 	joinOnDateBehavior: datePartOnly
 	fromColumn: 'stored procedure CS_SHF DMTbl_SHF'.Valid_From
@@ -130,18 +122,6 @@ relationship 1699fab1-1eff-4534-bf43-c7ccc25b634e
 	joinOnDateBehavior: datePartOnly
 	fromColumn: 'PH_WH DMV_Whitelist'.Last_Updated
 	toColumn: LocalDateTable_b65bcb34-2c2c-41ad-b53b-336020bad319.Date
-
-relationship AutoDetected_aaaa24c0-147e-4c38-bc13-2206b49f09a1
-	fromColumn: 'PH_WH DMF_SalesDataAdapted_Extract'.material
-	toColumn: 'PH_WH DMV_Whitelist'.Material
-
-relationship AutoDetected_3dce63da-4fec-4b72-850e-e91511bc4296
-	fromColumn: 'PH_WH DMF_SalesDataDistributed_Extract'.material
-	toColumn: 'PH_WH DMV_Whitelist'.Material
-
-relationship AutoDetected_85304fff-9530-408a-867e-1e84e894aaaf
-	fromColumn: 'PH_WH DMF_SalesDataBlacklist_Extract (2)'.material
-	toColumn: 'PH_WH DMV_Whitelist'.Material
 
 relationship 883ef664-a84f-4e68-b25a-e517375da74c
 	joinOnDateBehavior: datePartOnly
