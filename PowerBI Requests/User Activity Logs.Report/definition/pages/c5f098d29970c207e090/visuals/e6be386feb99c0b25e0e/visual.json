@@ -4,10 +4,10 @@
   "position": {
     "x": 23.49869451697128,
     "y": 168.25065274151436,
-    "z": 7004,
+    "z": 6000,
     "height": 551.74934725848561,
     "width": 1242.6109660574411,
-    "tabOrder": 7004
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "tableEx",
@@ -38,11 +38,12 @@
                       "Entity": "commits"
                     }
                   },
-                  "Property": "Classification"
+                  "Property": "ArtifactName"
                 }
               },
-              "queryRef": "commits.Classification",
-              "nativeQueryRef": "Classification"
+              "queryRef": "commits.ArtifactName",
+              "nativeQueryRef": "Dashboard",
+              "displayName": "Dashboard"
             },
             {
               "field": {
@@ -52,11 +53,11 @@
                       "Entity": "commits"
                     }
                   },
-                  "Property": "FileName"
+                  "Property": "Classification"
                 }
               },
-              "queryRef": "commits.FileName",
-              "nativeQueryRef": "FileName"
+              "queryRef": "commits.Classification",
+              "nativeQueryRef": "Classification"
             },
             {
               "field": {
@@ -117,21 +118,6 @@
               "queryRef": "commits.value.comment",
               "nativeQueryRef": "Comment",
               "displayName": "Comment"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "commits"
-                    }
-                  },
-                  "Property": "fnCommitChanges.changes.item.path"
-                }
-              },
-              "queryRef": "commits.fnCommitChanges.changes.item.path",
-              "nativeQueryRef": "Path",
-              "displayName": "Path"
             },
             {
               "field": {
@@ -272,22 +258,6 @@
             }
           }
         }
-      ],
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "217.41134562858284D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "commits.FileName"
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -382,5 +352,179 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1fac1cb27b506060b200",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "value.author.date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d4015532322074bb0028",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "Classification"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "327326a71122edec1a06",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "fnCommitChanges.changes.changeType"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1ac99c5f0c95b40ddc73",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "value.author.name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "07edb1cbe644675bb1b9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "value.author.email"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3f5e7c0fba73b83606ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "value.comment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b4cca7c2c6c0ec20b380",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "value.url"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3d7ae25fa90c5b0918b6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "ArtifactName"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "commits",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "ArtifactName"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
 }

@@ -4,10 +4,10 @@
   "position": {
     "x": 267.22665466006305,
     "y": 85.479333633498428,
-    "z": 7003,
+    "z": 5000,
     "height": 66.391715443493922,
     "width": 161.82980639351644,
-    "tabOrder": 7003
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -28,7 +28,7 @@
                             }
                           },
                           "Name": "Variation",
-                          "Property": "value.author.date"
+                          "Property": "value.committer.date"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -37,8 +37,8 @@
                   "Level": "Year"
                 }
               },
-              "queryRef": "commits.value.author.date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "value.author.date Year",
+              "queryRef": "commits.value.committer.date.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "value.committer.date Year",
               "active": true
             },
             {
@@ -54,7 +54,7 @@
                             }
                           },
                           "Name": "Variation",
-                          "Property": "value.author.date"
+                          "Property": "value.committer.date"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -63,9 +63,9 @@
                   "Level": "Month"
                 }
               },
-              "queryRef": "commits.value.author.date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "value.author.date Month",
-              "active": false
+              "queryRef": "commits.value.committer.date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "value.committer.date Month",
+              "active": true
             }
           ]
         }
@@ -79,7 +79,7 @@
         "levels": [
           {
             "queryRefs": [
-              "commits.value.author.date.Variation.Date Hierarchy.Year"
+              "commits.value.committer.date.Variation.Date Hierarchy.Year"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -87,7 +87,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "LocalDateTable_7a620f8b-2dc6-42cb-ac84-7532ee617cb7"
+                      "Entity": "LocalDateTable_39e7cd33-776a-4bf2-b30f-a484a060d5b2"
                     }
                   },
                   "Property": "Year"
@@ -98,13 +98,26 @@
           },
           {
             "queryRefs": [
-              "commits.value.author.date.Variation.Date Hierarchy.Month"
+              "commits.value.committer.date.Variation.Date Hierarchy.Month"
             ],
             "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "2026L"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -293,5 +306,59 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "87164e40b9784c02a424",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "commits"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "value.committer.date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5de71b8a680b9706615e",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "commits"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "value.committer.date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

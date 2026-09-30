@@ -3841,9 +3841,1415 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "commit.artifact_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "ArtifactName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "artifact name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ArtifactName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "artifact": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "artifact nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "artifact title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "artifact label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "artifact tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "thing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "relic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "product": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "object": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "article": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Dashboard": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_committer_date.year": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___committer___date_hierarchies_have_value___committer___years"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date"
+			          }
+			        },
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_committer_dates_have_value___committer___date_hierarchies"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.day": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___days"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.month": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___months"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.quarter": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___quarters"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_author_date.year": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___author___date_hierarchies_have_value___author___years"
+			        }
+			      ]
+			    },
+			    "commit_value_author_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_author_date": {
+			          "Target": {
+			            "Entity": "commit.value_author_date"
+			          }
+			        },
+			        "commit.value_author_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_author_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_author_date"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_author_dates_have_value___author___date_hierarchies"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_day": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.day": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_days"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_month": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.month": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_months"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.quarter": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_quarters"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_year": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.year": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_years"
+			        }
+			      ]
+			    },
+			    "change_value_project_lastUpdateTime_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "changes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "change.value_project_lastUpdateTime": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime"
+			          }
+			        },
+			        "change.value_project_lastUpdateTime.date_hierarchy": {
+			          "Target": {
+			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "change.value_project_lastUpdateTime"
+			            },
+			            "Object": {
+			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_project_lastUpdateTimes_have_value___project___lastUpdateTime_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "commit_has_artifact_name": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.artifact_name": {
+			          "Target": {
+			            "Entity": "commit.artifact_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.artifact_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_artifact_names"
+			        }
+			      ]
+			    },
+			    "commit_has_classification": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.classification": {
+			          "Target": {
+			            "Entity": "commit.classification"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.classification"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_classifications"
+			        }
+			      ]
+			    },
+			    "commit_has_file_name": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.file_name": {
+			          "Target": {
+			            "Entity": "commit.file_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.file_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_file_names"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_changeType": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_changeType": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_changeType"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_changeType"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_changeTypes"
+			        }
+			      ]
+			    },
+			    "commit_has_fn_commit_changes_changes_item_url": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fn_commit_changes_changes_item_url": {
+			          "Target": {
+			            "Entity": "commit.fn_commit_changes_changes_item_url"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fn_commit_changes_changes_item_url"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fn_commit_changes_changes_item_urls"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_isFolder": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_isFolder": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_isFolder"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_isFolders"
+			        },
+			        {
+			          "DynamicAdjective": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Adjective": {
+			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fnCommitChanges_changes_item_isFolders_describe_commits"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_path": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_path": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_path"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_path"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_paths"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_commitId": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_commitId": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_commitId"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_commitId"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_commitIds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_gitObjectType": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_gitObjectType": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_gitObjectType"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_gitObjectType"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_gitObjectTypes"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_originalObjectId": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_originalObjectId": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_originalObjectId"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_originalObjectId"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_originalObjectIds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changes_item_objectId": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changes_item_objectId": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changes_item_objectId"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changes_item_objectId"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changes_item_objectIds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changeCounts_add": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changeCounts_add": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changeCounts_add"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changeCounts_add"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changeCounts_adds"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changeCounts_edit": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changeCounts_edit": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changeCounts_edit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changeCounts_edit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changeCounts_edits"
+			        }
+			      ]
+			    },
+			    "commit_has_fnCommitChanges_changeCounts_delete": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.fnCommitChanges_changeCounts_delete": {
+			          "Target": {
+			            "Entity": "commit.fnCommitChanges_changeCounts_delete"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.fnCommitChanges_changeCounts_delete"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_fnCommitChanges_changeCounts_deletes"
+			        }
+			      ]
+			    },
+			    "commit_has_value_remoteUrl": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_remoteUrl": {
+			          "Target": {
+			            "Entity": "commit.value_remoteUrl"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_remoteUrl"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_remoteUrls"
+			        }
+			      ]
+			    },
+			    "commit_has_value_url": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_url": {
+			          "Target": {
+			            "Entity": "commit.value_url"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_url"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_urls"
+			        }
+			      ]
+			    },
+			    "commit_has_value_changeCounts_delete": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_changeCounts_delete": {
+			          "Target": {
+			            "Entity": "commit.value_changeCounts_delete"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_changeCounts_delete"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_changeCounts_deletes"
+			        }
+			      ]
+			    },
+			    "commit_has_value_changeCounts_edit": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_changeCounts_edit": {
+			          "Target": {
+			            "Entity": "commit.value_changeCounts_edit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_changeCounts_edit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_changeCounts_edits"
+			        }
+			      ]
+			    },
+			    "commit_has_value_changeCounts_add": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_changeCounts_add": {
+			          "Target": {
+			            "Entity": "commit.value_changeCounts_add"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_changeCounts_add"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_changeCounts_adds"
+			        }
+			      ]
+			    },
+			    "commit_has_value_comment": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_comment": {
+			          "Target": {
+			            "Entity": "commit.value_comment"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_comment"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_comments"
+			        }
+			      ]
+			    },
+			    "commit_has_value_committer_date": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_committer_date": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_committer_dates"
+			        }
+			      ]
+			    },
+			    "commit_has_value_committer_email": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_committer_email": {
+			          "Target": {
+			            "Entity": "commit.value_committer_email"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_email"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_committer_emails"
+			        }
+			      ]
+			    },
+			    "commit_has_value_committer_name": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_committer_name": {
+			          "Target": {
+			            "Entity": "commit.value_committer_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_committer_names"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "commit.value_committer_name"
+			            },
+			            "Verbs": [
+			              {
+			                "commit": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "commit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "value_committer_names_commit_commits"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_name"
+			            },
+			            "Object": {
+			              "Role": "commit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value_committer_names_have_commits"
+			        }
+			      ]
+			    },
+			    "commit_has_value_author_date": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_author_date": {
+			          "Target": {
+			            "Entity": "commit.value_author_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_author_dates"
+			        }
+			      ]
+			    },
+			    "commit_has_value_author_email": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.value_author_email": {
+			          "Target": {
+			            "Entity": "commit.value_author_email"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.value_author_email"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_value_author_emails"
+			        }
+			      ]
+			    },
 			    "commit_has_value_author_name": {
 			      "Binding": {
 			        "ConceptualEntity": "commits"
@@ -4612,1240 +6018,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "changes_are_in_value_project_states"
-			        }
-			      ]
-			    },
-			    "commit_is_fnCommitChanges_changes_item_isFolder": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_isFolder": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_isFolder"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "DynamicAdjective": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Adjective": {
-			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fnCommitChanges_changes_item_isFolders_describe_commits"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_isFolder"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_isFolders"
-			        }
-			      ]
-			    },
-			    "commit_value_committer_name_commit_commit": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_committer_name": {
-			          "Target": {
-			            "Entity": "commit.value_committer_name"
-			          }
-			        },
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "commit.value_committer_name"
-			            },
-			            "Verbs": [
-			              {
-			                "commit": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "commit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "value_committer_names_commit_commits"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_committer_name"
-			            },
-			            "Object": {
-			              "Role": "commit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_committer_names_have_commits"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_committer_names"
-			        }
-			      ]
-			    },
-			    "commit_has_value_author_email": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_author_email": {
-			          "Target": {
-			            "Entity": "commit.value_author_email"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_email"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_author_emails"
-			        }
-			      ]
-			    },
-			    "commit_has_value_author_date": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_author_date": {
-			          "Target": {
-			            "Entity": "commit.value_author_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_author_dates"
-			        }
-			      ]
-			    },
-			    "commit_has_value_committer_email": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_committer_email": {
-			          "Target": {
-			            "Entity": "commit.value_committer_email"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_email"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_committer_emails"
-			        }
-			      ]
-			    },
-			    "commit_has_value_committer_date": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_committer_date": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_committer_dates"
-			        }
-			      ]
-			    },
-			    "commit_has_value_comment": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_comment": {
-			          "Target": {
-			            "Entity": "commit.value_comment"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_comment"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_comments"
-			        }
-			      ]
-			    },
-			    "commit_has_value_changeCounts_add": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_changeCounts_add": {
-			          "Target": {
-			            "Entity": "commit.value_changeCounts_add"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_changeCounts_add"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_changeCounts_adds"
-			        }
-			      ]
-			    },
-			    "commit_has_value_changeCounts_edit": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_changeCounts_edit": {
-			          "Target": {
-			            "Entity": "commit.value_changeCounts_edit"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_changeCounts_edit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_changeCounts_edits"
-			        }
-			      ]
-			    },
-			    "commit_has_value_changeCounts_delete": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_changeCounts_delete": {
-			          "Target": {
-			            "Entity": "commit.value_changeCounts_delete"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_changeCounts_delete"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_changeCounts_deletes"
-			        }
-			      ]
-			    },
-			    "commit_has_value_url": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_url": {
-			          "Target": {
-			            "Entity": "commit.value_url"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_url"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_urls"
-			        }
-			      ]
-			    },
-			    "commit_has_value_remoteUrl": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.value_remoteUrl": {
-			          "Target": {
-			            "Entity": "commit.value_remoteUrl"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.value_remoteUrl"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_value_remoteUrls"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changeCounts_delete": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changeCounts_delete": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changeCounts_delete"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changeCounts_delete"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changeCounts_deletes"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changeCounts_edit": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changeCounts_edit": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changeCounts_edit"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changeCounts_edit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changeCounts_edits"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changeCounts_add": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changeCounts_add": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changeCounts_add"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changeCounts_add"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changeCounts_adds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_objectId": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_objectId": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_objectId"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_objectId"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_objectIds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_originalObjectId": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_originalObjectId": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_originalObjectId"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_originalObjectId"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_originalObjectIds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_gitObjectType": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_gitObjectType": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_gitObjectType"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_gitObjectType"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_gitObjectTypes"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_commitId": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_commitId": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_commitId"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_commitId"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_commitIds"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_item_path": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_item_path": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_item_path"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_item_path"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_item_paths"
-			        }
-			      ]
-			    },
-			    "commit_has_fn_commit_changes_changes_item_url": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fn_commit_changes_changes_item_url": {
-			          "Target": {
-			            "Entity": "commit.fn_commit_changes_changes_item_url"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fn_commit_changes_changes_item_url"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fn_commit_changes_changes_item_urls"
-			        }
-			      ]
-			    },
-			    "commit_has_fnCommitChanges_changes_changeType": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.fnCommitChanges_changes_changeType": {
-			          "Target": {
-			            "Entity": "commit.fnCommitChanges_changes_changeType"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.fnCommitChanges_changes_changeType"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_fnCommitChanges_changes_changeTypes"
-			        }
-			      ]
-			    },
-			    "commit_has_file_name": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.file_name": {
-			          "Target": {
-			            "Entity": "commit.file_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.file_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_file_names"
-			        }
-			      ]
-			    },
-			    "commit_has_classification": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit": {
-			          "Target": {
-			            "Entity": "commit"
-			          }
-			        },
-			        "commit.classification": {
-			          "Target": {
-			            "Entity": "commit.classification"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit"
-			            },
-			            "Object": {
-			              "Role": "commit.classification"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "commits_have_classifications"
-			        }
-			      ]
-			    },
-			    "change_value_project_lastUpdateTime_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_project_lastUpdateTimes_have_value___project___lastUpdateTime_date_hierarchies"
-			        }
-			      ]
-			    },
-			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_year": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.year": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_years"
-			        }
-			      ]
-			    },
-			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.quarter": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_quarters"
-			        }
-			      ]
-			    },
-			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_month": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.month": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_months"
-			        }
-			      ]
-			    },
-			    "change_value_project_lastUpdateTime_date_hierarchy_has_change_value_project_lastUpdateTime_day": {
-			      "Binding": {
-			        "ConceptualEntity": "changes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "change.value_project_lastUpdateTime.date_hierarchy": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.date_hierarchy"
-			          }
-			        },
-			        "change.value_project_lastUpdateTime.day": {
-			          "Target": {
-			            "Entity": "change.value_project_lastUpdateTime.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "change.value_project_lastUpdateTime.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "change.value_project_lastUpdateTime.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___project___lastUpdateTime_date_hierarchies_have_value___project___lastUpdateTime_days"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date": {
-			          "Target": {
-			            "Entity": "commit.value_author_date"
-			          }
-			        },
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_author_dates_have_value___author___date_hierarchies"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.year": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___years"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.quarter": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___quarters"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.month": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___months"
-			        }
-			      ]
-			    },
-			    "commit_value_author_date_date_hierarchy_has_commit_value_author_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_author_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_author_date.day": {
-			          "Target": {
-			            "Entity": "commit.value_author_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_author_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_author_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___author___date_hierarchies_have_value___author___days"
-			        }
-			      ]
-			    },
-			    "commit_value_committer_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_committer_date": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date"
-			          }
-			        },
-			        "commit.value_committer_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_committer_date"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value_committer_dates_have_value___committer___date_hierarchies"
-			        }
-			      ]
-			    },
-			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_committer_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_committer_date.year": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "commit.value_committer_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___committer___date_hierarchies_have_value___committer___years"
 			        }
 			      ]
 			    },

@@ -4,10 +4,10 @@
   "position": {
     "x": 453.123457901846,
     "y": 85.479333633498428,
-    "z": 7005,
+    "z": 7000,
     "height": 65.556092714993241,
     "width": 190.87618190004503,
-    "tabOrder": 7005
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "slicer",
@@ -106,7 +106,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Name'"
+                  "Value": "'Author Name'"
                 }
               }
             }
@@ -220,5 +220,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "90b8bfb08e9879a03c19",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "value.author.name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
