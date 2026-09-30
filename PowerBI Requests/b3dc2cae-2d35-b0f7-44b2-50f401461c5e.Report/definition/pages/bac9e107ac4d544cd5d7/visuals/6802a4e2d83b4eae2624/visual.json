@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "6802a4e2d83b4eae2624",
   "position": {
     "x": 650,
     "y": 288,
-    "z": 11001,
+    "z": 0,
     "height": 88.0952380952381,
     "width": 230.95238095238096,
-    "tabOrder": 11001
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -152,5 +152,24 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7ede91e23a432b3822c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Pro_Area"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  },
+  "isHidden": true
 }

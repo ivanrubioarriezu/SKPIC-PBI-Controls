@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "6d738260ca26ae9dc544",
   "position": {
     "x": 364.28571428571422,
     "y": 288.09523809523813,
-    "z": 7002,
+    "z": 0,
     "height": 88.0952380952381,
     "width": 535.71428571428578,
-    "tabOrder": 7002
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -134,6 +134,24 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2f4289b6c8c12d88a0c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Unique scope3 EV PRO PRO Subcategory"
+              }
+            },
+            "Property": "Pro_Subcategory"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   },
   "isHidden": true
 }

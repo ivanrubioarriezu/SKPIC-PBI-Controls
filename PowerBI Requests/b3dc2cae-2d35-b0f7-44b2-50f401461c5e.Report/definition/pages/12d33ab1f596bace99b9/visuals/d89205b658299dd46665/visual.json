@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "d89205b658299dd46665",
   "position": {
     "x": 1814.5833333333335,
@@ -374,37 +374,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c8a9e45e5096b33ac4e3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope3"
-              }
-            },
-            "Property": "Actual Emission"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3faac69dae4778099e46",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope3"
-              }
-            },
-            "Property": "CO2 Scope 3 Category"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

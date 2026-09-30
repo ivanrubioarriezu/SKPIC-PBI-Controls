@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "188ee927050b92a7b6d9",
   "position": {
     "x": 0,
     "y": 0,
-    "z": 10000,
+    "z": 5000,
     "height": 87.768595041322314,
     "width": 481.98347107438013,
-    "tabOrder": 10000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -227,23 +227,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0f90be05cd3042596389",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope3"
-              }
-            },
-            "Property": "Viewby Tooltip PRO"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

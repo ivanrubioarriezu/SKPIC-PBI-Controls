@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "1b2b5d67f1c4f607fa72",
   "position": {
     "x": 0,
     "y": 1170.6900826446281,
-    "z": 59001,
+    "z": 59000,
     "height": 81.066115702479337,
     "width": 398.17768595041321,
-    "tabOrder": 59001
+    "tabOrder": 59000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -128,23 +128,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "afca97c737040e12f5ea",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "ViewBy Pro"
-              }
-            },
-            "Property": "CatPro"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

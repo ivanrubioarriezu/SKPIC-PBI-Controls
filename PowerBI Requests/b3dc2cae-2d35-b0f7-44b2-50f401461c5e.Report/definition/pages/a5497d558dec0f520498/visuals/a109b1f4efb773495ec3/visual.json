@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "a109b1f4efb773495ec3",
   "position": {
     "x": 0,
@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 44.154228855721392,
     "width": 786.69154228855712,
-    "tabOrder": 7000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -153,23 +153,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "22051bbadf2ff7e033c1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope3"
-              }
-            },
-            "Property": "Text Hover Over"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

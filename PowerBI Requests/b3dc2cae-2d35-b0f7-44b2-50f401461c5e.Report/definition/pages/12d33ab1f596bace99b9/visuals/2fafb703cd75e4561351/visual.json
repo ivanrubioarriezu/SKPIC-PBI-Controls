@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "2fafb703cd75e4561351",
   "position": {
     "x": 650.131926121372,
@@ -149,23 +149,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ad21d915d961c93e9a64",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope3"
-              }
-            },
-            "Property": "CO2 Scope 3 Category"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
