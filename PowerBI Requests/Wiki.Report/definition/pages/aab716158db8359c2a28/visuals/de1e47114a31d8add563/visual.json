@@ -247,23 +247,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "63fd2d00d9c5db954eec",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dataset"
-              }
-            },
-            "Property": "Dashboard"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

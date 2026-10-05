@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "37700903415c60a7aa8d",
+  "name": "ff7f7e3c517e3a592065",
   "position": {
-    "x": 712.5,
-    "y": 207.5,
-    "z": 11000,
-    "height": 127.5,
-    "width": 822.5,
-    "tabOrder": 11000
+    "x": 105.72687224669603,
+    "y": 192.95154185022025,
+    "z": 4,
+    "height": 129.51541850220264,
+    "width": 462.5550660792951,
+    "tabOrder": 10
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "Dataset"
                     }
                   },
-                  "Property": "Key terms"
+                  "Property": "Dashboard"
                 }
               },
-              "queryRef": "Dataset.Key terms",
-              "nativeQueryRef": "Key terms",
+              "queryRef": "Dataset.Dashboard",
+              "nativeQueryRef": "Dashboard",
               "active": true
             }
           ]
@@ -59,13 +59,6 @@
                       "Value": "'#ffffff'"
                     }
                   }
-                }
-              }
-            },
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }
@@ -106,7 +99,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Key Terms'"
+                  "Value": "'Dashboard'"
                 }
               }
             }
@@ -254,5 +247,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a5095a79cbd1309e6a20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Dashboard"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

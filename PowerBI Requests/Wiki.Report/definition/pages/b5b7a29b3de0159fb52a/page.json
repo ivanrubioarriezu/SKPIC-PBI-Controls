@@ -106,6 +106,13 @@
                           "Value": "'KPI Definition'"
                         }
                       }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Guiding Material'"
+                        }
+                      }
                     ]
                   ]
                 }

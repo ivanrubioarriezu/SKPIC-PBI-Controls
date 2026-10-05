@@ -6,7 +6,7 @@
     "y": 203.98009950248755,
     "z": 4000,
     "height": 159.20398009950247,
-    "width": 738.80597014925365,
+    "width": 445.273631840796,
     "tabOrder": 9000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "Dataset"
                     }
                   },
-                  "Property": "Key terms"
+                  "Property": "Section"
                 }
               },
-              "queryRef": "Dataset.Key terms",
-              "nativeQueryRef": "Key terms",
+              "queryRef": "Dataset.Section",
+              "nativeQueryRef": "Section",
               "active": true
             }
           ]
@@ -41,7 +41,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Basic'"
                 }
               }
             }
@@ -62,11 +62,52 @@
                 }
               }
             },
-            "selfFilterEnabled": {
+            "orientation": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "0D"
                 }
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "Dataset",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Section"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Guiding Material'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
@@ -106,7 +147,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Key Terms'"
+                  "Value": "'Dashboard Section'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -126,7 +174,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "22D"
+                  "Value": "26D"
                 }
               }
             },
@@ -179,7 +227,7 @@
             "strictSingleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -251,8 +299,39 @@
             }
           }
         }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3bf0ddc153017cc6c2e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Section"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

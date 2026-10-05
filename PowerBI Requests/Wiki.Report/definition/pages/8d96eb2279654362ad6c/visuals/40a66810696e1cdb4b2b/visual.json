@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "aff95f493930d3b45546",
+  "name": "40a66810696e1cdb4b2b",
   "position": {
-    "x": 2485.0746268656717,
-    "y": 191.54228855721391,
-    "z": 10000,
-    "height": 64.676616915422883,
-    "width": 323.3830845771144,
-    "tabOrder": 9000
+    "x": 2809.6118299445475,
+    "y": 190.59355103717397,
+    "z": 7,
+    "height": 65.72191415074964,
+    "width": 174.16307249948656,
+    "tabOrder": 6
   },
   "visual": {
     "visualType": "textbox",
@@ -19,18 +19,31 @@
               {
                 "textRuns": [
                   {
-                    "value": "/ Tools Info",
+                    "value": " / ",
                     "textStyle": {
                       "fontFamily": "Arial",
-                      "fontSize": "28pt",
-                      "color": "#808080",
+                      "fontSize": "24pt",
+                      "color": "#666666",
+                      "lineHeight": "0",
+                      "position": "relative",
+                      "verticalAlign": "baseline",
+                      "scriptType": "sub",
+                      "bottom": "-0.25em"
+                    }
+                  },
+                  {
+                    "value": "Contact",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "24pt",
+                      "color": "#666666",
                       "lineHeight": "0",
                       "position": "relative",
                       "verticalAlign": "baseline",
                       "scriptType": "sub",
                       "bottom": "-0.25em"
                     },
-                    "url": "https://bayergroup.sharepoint.com/:p:/r/sites/023572/_layouts/15/Doc.aspx?sourcedoc=%7B4CDE9DA4-FA8B-4CC8-B372-D59F76B448C9%7D&file=SKPIC%20Tools%20Overview.pptx&action=edit&mobileredirect=true"
+                    "url": "https://bayergroup.sharepoint.com/:p:/r/sites/SustainabilityKPICockpitIT-Stream/_layouts/15/Doc.aspx?sourcedoc=%7B97BF55A4-F204-4098-9D25-6C1D8973A145%7D&file=SKPIC_IT4U.pptx&action=edit&mobileredirect=true"
                   }
                 ],
                 "horizontalTextAlignment": "right"

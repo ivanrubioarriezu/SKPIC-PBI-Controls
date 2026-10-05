@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "a6844110ade10800d700",
+  "name": "fc0d482900ae1a949e70",
   "position": {
-    "x": 104.4776119402985,
-    "y": 206.46766169154228,
-    "z": 4000,
-    "height": 129.35323383084577,
-    "width": 462.68656716417905,
-    "tabOrder": 10000
+    "x": 713.65638766519817,
+    "y": 195.59471365638765,
+    "z": 11,
+    "height": 126.87224669603523,
+    "width": 822.02643171806164,
+    "tabOrder": 11
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "Dataset"
                     }
                   },
-                  "Property": "Dashboard"
+                  "Property": "Key terms"
                 }
               },
-              "queryRef": "Dataset.Dashboard",
-              "nativeQueryRef": "Dashboard",
+              "queryRef": "Dataset.Key terms",
+              "nativeQueryRef": "Key terms",
               "active": true
             }
           ]
@@ -59,6 +59,13 @@
                       "Value": "'#ffffff'"
                     }
                   }
+                }
+              }
+            },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -99,7 +106,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dashboard'"
+                  "Value": "'Key Terms'"
                 }
               }
             }
@@ -247,5 +254,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6b7eec07c05605ba52b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Key terms"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

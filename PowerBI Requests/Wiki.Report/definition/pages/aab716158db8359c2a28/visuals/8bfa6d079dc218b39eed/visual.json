@@ -51,7 +51,7 @@
                       "Entity": "Dataset"
                     }
                   },
-                  "Property": "Link available label"
+                  "Property": "URL"
                 }
               },
               "queryRef": "Dataset.Link available label",

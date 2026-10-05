@@ -1,6 +1,137 @@
 table Dataset
 	lineageTag: 67ee7cfa-8bc2-43d6-ad6b-020997c53b8e
 
+	measure 'HTML Cards 2' =
+			
+			
+			VAR Cards =
+			    CONCATENATEX(
+			        VALUES('Dataset'[Key terms]),
+			
+			        VAR vTitle =
+			            CALCULATE(MAX('Dataset'[Key terms]))
+			
+			        VAR vDesc =
+			            CALCULATE(MAX('Dataset'[Definition]))
+			
+			        VAR vLink =
+			            CALCULATE(MAX('Dataset'[Link]))
+			
+			        VAR vDashboard =
+			            CALCULATE(MAX('Dataset'[Dashboard]))
+			
+			        VAR vColor =
+			            SWITCH(
+			                vDashboard,
+			                "Crop Science", "#4CAF50",
+			                "Consumer Health", "#E91E63",
+			                "Pharmaceuticals", "#2196F3",
+			                "Climate Protection", "#FF9800",
+			                "#605E5C"
+			            )
+			
+			        RETURN
+			
+			        "
+			        <div style='
+			            display:inline-block;
+			            vertical-align:top;
+			            width:48%;
+			            margin:1%;
+			            box-sizing:border-box;'>
+			
+			            <a href='" & vLink & "'
+			               target='_blank'
+			               style='text-decoration:none;color:inherit;'>
+			
+			                <div style='
+			                    background               border-left:10px solid " & vColor & ";
+			                    border-radius:20px;
+			                    padding:28px;
+			                    box-shadow:0 8px 24px rgba(0,0,0,.08);
+			                    min-height:280px;
+			                    position:relative;
+			                    overflow:hidden;'>
+			
+			                    <div style='
+			                        position:absolute;
+			                        top:-30px;
+			                        right:-30px;
+			                        width:120px;
+			                        height:120px;
+			                        border-radius:60px;
+			                        background:" & vColor & "22;'>
+			                    </div>
+			
+			                    <div style='
+			                        position:absolute;
+			                        top:20px;
+			                        right:24px;
+			                        font-size:30px;
+			                        color:" & vColor & ";
+			                        font-weight:700;'>
+			                        ↗
+			                    </div>
+			
+			                    <div style='
+			                        display:inline-block;
+			                        background:" & vColor & ";
+			                        color:#FFFFFF;
+			                        border-radius:18px;
+			                        padding:6px 14px;
+			                        font-size:22px;
+			                        font-weight:600;
+			                        margin-bottom:18px;'>
+			
+			                        " & vDashboard & "
+			
+			                    </div>
+			
+			                    <div style='
+			                        font-size:28px;
+			                        font-weight:700;
+			                        color:#323130;
+			                        line-height:1.25;
+			                        margin-bottom:18px;'>
+			
+			                        " & vTitle & "
+			
+			                    </div>
+			
+			                    <div style='
+			                        font-size:26px;
+			                        color:#605E5C;
+			                        line-height:1.65;'>
+			
+			                        " & vDesc & "
+			
+			                    </div>
+			
+			                </div>
+			
+			            </a>
+			
+			        </div>
+			        ",
+			
+			        ""
+			    )
+			
+			RETURN
+			
+			"
+			<div style='
+			    width:100%;
+			    font-family:Segoe UI;
+			    font-size:0;
+			'>
+			
+			    " & Cards & "
+			
+			</div>
+			"
+		lineageTag: f56cf49e-bfb6-4b7e-bf33-730ebb7922e3
+
 	column 'Dashboard Section'
 		dataType: string
 		lineageTag: ee5aa83a-c289-4fb7-b79b-9a091670538b
@@ -41,11 +172,45 @@ table Dataset
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Link available label' =
+	column URL =
 			
 			VAR _url = TRIM([Link])
 			RETURN IF( ISBLANK(_url) || _url = "", BLANK(), " / Learn more" )
 		lineageTag: cbf3491c-525c-44a9-869f-d25ae5e3439a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Category' =
+			
+			SWITCH(
+			    TRUE(),
+			
+			    CONTAINSSTRING('Dataset'[Key terms], "Method Paper"), "Method Papers",
+			    CONTAINSSTRING('Dataset'[Key terms], "Intro"), "Introduction",
+			    CONTAINSSTRING('Dataset'[Key terms], "Procedure"), "Procedure",
+			    CONTAINSSTRING('Dataset'[Key terms], "Knowledge Document"), "Knowledge Document",
+			    "Others"
+			)
+		lineageTag: 3b29f79c-473e-4b75-bfc1-d0932b0ac565
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column URL_Clean = ```
+			
+			TRIM('Dataset'[Link])
+			
+			```
+		lineageTag: 064b09a5-4d67-4aa6-9b63-21d67fb39348
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Section =
+			
+			If('Dataset'[Dashboard Section] = "KPI Definition", "Key Terms", 'Dataset'[Dashboard Section])
+		lineageTag: acde6045-3e08-4679-a49c-66ad429ae2fd
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
@@ -87,5 +252,5 @@ table Dataset
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
