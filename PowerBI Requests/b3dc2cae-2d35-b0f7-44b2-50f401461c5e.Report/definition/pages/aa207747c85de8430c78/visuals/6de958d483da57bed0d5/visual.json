@@ -55,22 +55,17 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CORP_GHG DTbl_Scope3"
-                        }
-                      },
-                      "Property": "BY Label"
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3"
                     }
                   },
-                  "Function": 3
+                  "Property": "BY Label 2"
                 }
               },
-              "queryRef": "Min(CORP_GHG DTbl_Scope3.BY Label)",
-              "nativeQueryRef": "First BY Label"
+              "queryRef": "CORP_GHG DTbl_Scope3.BY Label 2",
+              "nativeQueryRef": "BY Label 2"
             }
           ]
         }
@@ -164,53 +159,6 @@
                 }
               }
             },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.4
-                    }
-                  }
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.BY Label)"
-          }
-        },
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'left'"
-                }
-              }
-            },
             "bold": {
               "expr": {
                 "Literal": {
@@ -280,6 +228,53 @@
           },
           "selector": {
             "metadata": "Min(CORP_GHG DTbl_Scope3.CY Year)"
+          }
+        },
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3.BY Label 2"
           }
         }
       ],
@@ -295,20 +290,6 @@
             }
           },
           "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.BY Label)"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
             "metadata": "Min(CORP_GHG DTbl_Scope3.PY Year)"
           }
         },
@@ -324,6 +305,20 @@
           },
           "selector": {
             "metadata": "Min(CORP_GHG DTbl_Scope3.CY Year)"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3.BY Label 2"
           }
         }
       ],
@@ -529,5 +524,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "34e5b5c1b50c29a1b1e8",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CORP_GHG DTbl_Scope3"
+                  }
+                },
+                "Property": "PY Year"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

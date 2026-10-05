@@ -13,7 +13,6 @@ table 'View by: S1&2'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View by: S1&2 Fields'
-		isHidden
 		lineageTag: 5462e6ee-68c7-45aa-b9bc-16f9659e0902
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'View by: S1&2'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View by: S1&2 Order'
-		isHidden
 		formatString: 0
 		lineageTag: 576ec39e-7085-4d70-8b68-c2f4cc23142a
 		summarizeBy: sum

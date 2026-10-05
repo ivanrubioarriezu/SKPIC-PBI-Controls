@@ -41,7 +41,7 @@
       "isDirectQuery": false,
       "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery=\\\"enabled\\\"]){[Name=Catalogue,Kind=\\\"Database\\\"]}[Data], \\n    \\\"SELECT\\n    year AS Year,\\n    co2_scope_3_category AS Co2_Scope_3_Category,\\n    business_unit AS Business_Unit,\\n    country AS Country,\\n    vendor_country AS Vendor_Country,\\n    pro_area AS Pro_Area,\\n    pro_segment_key AS Pro_Segment_Key,\\n    pro_segment AS Pro_Segment,\\n    pro_category_key AS Pro_Category_Key,\\n    pro_category AS Pro_Category,\\n    pro_subcategory_key AS Pro_Subcategory_Key,\\n    pro_subcategory AS Pro_Subcategory,\\n    sbt_relevant AS SBT_Relevant,\\n    co2e AS Co2e,\\n    co2e_baseline_year AS Co2e_Baseline_Year,\\n    is_target AS Is_Target,\\n    co2e_previous_year AS Co2e_Previous_Year,\\n    fiscal_date AS Fiscal_Date,\\n    valid_from AS Valid_From,\\n    valid_to AS Valid_To,\\n    is_preliminary AS Is_Preliminary\\nFROM generaldiscovery_intfc_sustainability_r.sus_skpic_corp_ghg_dmt_scope3_intfc_view\\nwhere is_preliminary = FALSE\\\"\\n    , null, [EnableFolding=true]),\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(Source,{{\\\"Is_Target\\\", Int64.Type}, {\\\"SBT_Relevant\\\", type text}})\\nin\\n    #\\\"Changed Type\\\"\",\"ReferencedQueriesFormulaText\":{}}",
       "loadAsTableDisabled": false,
-      "resultType": "Table",
+      "resultType": "Exception",
       "isHidden": false
     },
     {

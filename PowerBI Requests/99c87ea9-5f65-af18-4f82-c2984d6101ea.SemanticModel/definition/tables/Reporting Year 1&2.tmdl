@@ -13,7 +13,6 @@ table 'Reporting Year 1&2'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Reporting Year 1&2 Fields'
-		isHidden
 		lineageTag: 0f7683d2-09b5-4a18-b5ea-d86e704e7be5
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Reporting Year 1&2'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Reporting Year 1&2 Order'
-		isHidden
 		formatString: 0
 		lineageTag: 1d44ca17-bceb-409a-832b-f8d98d0e86d5
 		summarizeBy: sum

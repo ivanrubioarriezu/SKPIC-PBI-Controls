@@ -13,7 +13,6 @@ table 'View by Ren.energy'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View by Ren.energy Fields'
-		isHidden
 		lineageTag: f3cde43c-3c07-44d0-b9d6-7081c7053577
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'View by Ren.energy'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View by Ren.energy Order'
-		isHidden
 		formatString: 0
 		lineageTag: af110397-9b44-4850-b858-53f2613f8b73
 		summarizeBy: sum

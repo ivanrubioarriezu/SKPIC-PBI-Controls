@@ -12,6 +12,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			```
 		lineageTag: 84aa5bbb-cda8-4e27-b6be-6f21e25e224d
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total.Elec (abs)_CY' = ```
@@ -23,6 +25,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			
 			```
 		lineageTag: dfdcb70c-9d19-4d76-b39f-097935816097
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -37,6 +41,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: dcdce788-4853-433a-a978-c74fc33c36b4
+
+		changedProperty = IsHidden
 
 	measure 'Ranking by Actual Emission Ren.Energy' =
 			
@@ -57,6 +63,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			RETURN
 			IF(_rankVisible<='Ranking Option Ren Energy'[Ranking Option Ren Energy Value],SUM('CORP_GHG DTbl_RenewableElectricity'[Value]))
 		lineageTag: da00739e-e514-4b5e-bc79-68af2a4a2bf8
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -81,6 +89,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			IF( _rankVisible<='Ranking Option Ren Energy'[Ranking Option Ren Energy Value],SUM('CORP_GHG DTbl_RenewableElectricity'[Value_PY]))
 		lineageTag: 99df2d74-8f37-4a39-80f8-a79bf98e0e7d
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Test Ranking by BY Emission Ren.Energy' =
@@ -104,10 +114,14 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			IF( _rankVisible<='Ranking Option Ren Energy'[Ranking Option Ren Energy Value],SUM('CORP_GHG DTbl_RenewableElectricity'[Value_BY]))
 		lineageTag: 11f3926d-684e-4a44-b323-4d54aea9eec7
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Ranking by Actual emission ren energy format' = FORMAT([Ranking by Actual Emission Ren.Energy], "#,##0.00") & " TJ"
 		lineageTag: 32262816-37da-45d5-a8d2-e10e64b268f1
+
+		changedProperty = IsHidden
 
 	measure 'Test Ranking by Actual Emission Ren.Energy' =
 			
@@ -139,6 +153,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			    BLANK()
 			)
 		lineageTag: bf64096d-9509-4e66-b8cc-0e6bce6074cd
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -230,6 +246,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			    SUM('CORP_GHG DTbl_RenewableElectricity'[Value_PY])
 			)
 		lineageTag: 307e38f4-ce50-44a4-a038-9367d008c8b9
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -408,6 +426,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: 559f4748-830e-47dc-8cc0-9783ffd3a211
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Others Measure' =
@@ -463,6 +483,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			    BLANK()  // "Others" logic must be handled with a disconnected table or in Power Query
 			)
 		lineageTag: 4e7aab38-3415-406d-97e5-3b249d751c4a
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -555,6 +577,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: edea24b5-1731-4f92-8ca4-44f53a9b63bb
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'step1 PY Others RenEnergy Rank' =
@@ -640,6 +664,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		formatString: 0
 		lineageTag: 03a7e003-7f8b-4c60-abae-9c98b594bf13
 
+		changedProperty = IsHidden
+
 	measure 'Step2 RenEnergy Group Label' = ```
 			
 			VAR RankVal = [step1 PY Others RenEnergy Rank]
@@ -669,6 +695,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 			```
 		lineageTag: e2412c77-3ed0-4bc2-832d-41271882be83
+
+		changedProperty = IsHidden
 
 	measure 'other Update Ranking by Actual PY Emission Ren.Energy' =
 			
@@ -759,6 +787,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			    BLANK()  -- Will be grouped as "Others" in visual
 			)
 		lineageTag: c93c150f-848e-49c9-b4a8-35173c779062
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -853,6 +883,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: 34ecc76e-7c4e-41e0-8d99-4829f35a4782
 
+		changedProperty = IsHidden
+
 	measure 'Ranking by Actual CY Emission Ren.Energy' =
 			
 			VAR SelectedView = SELECTEDVALUE('View by Ren.energy'[View by Ren.energy Fields])
@@ -942,6 +974,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: 05b5bbab-a7a3-482c-96b7-a40c6803f756
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'ViewBy param text Ren Energy' =
@@ -975,8 +1009,12 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: e81ea5c0-e21b-4c6d-9708-8f645cf6aebe
 
+		changedProperty = IsHidden
+
 	measure 'TOP 10 Label ren energy' = "TOP 10 " & MAX('View By Ren Energy Hover Over'[View By Ren Energy Hover Over])  & " Per " &   MAX('View by Ren.energy'[View by Ren.energy])
 		lineageTag: 170630fc-61f1-47bb-a906-d50e75bbf50c
+
+		changedProperty = IsHidden
 
 	measure 'Country Tooltip Ren.Energy' =
 			
@@ -985,11 +1023,17 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			"Actual Value (%): " & FORMAT([Ren.Elec (%)_CY]* 100, "0.0") & "%"
 		lineageTag: 962ac126-fe52-4f8d-be0f-c11ad93c9b5b
 
+		changedProperty = IsHidden
+
 	measure 'ViewBy param text Ren En' = MAX('View by Ren.energy'[View by Ren.energy])
 		lineageTag: fc44cfbf-6412-482e-a2aa-0145399a5311
 
+		changedProperty = IsHidden
+
 	measure 'Ren Emission Text 1&2' = "Scope 2 Energy per "   & MAX('View by Ren.energy'[View by Ren.energy])
 		lineageTag: 982e8c76-d173-4249-b27a-49d004d4cbd7
+
+		changedProperty = IsHidden
 
 	measure '_Ranking by Actual PY Emission Ren.Energy' =
 			
@@ -1080,6 +1124,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: 4b4705c4-75bc-4f0f-b1df-36a0ffed5cf6
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Year
@@ -1089,6 +1135,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		summarizeBy: sum
 		sourceColumn: Year
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Division
@@ -1096,6 +1144,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: ea3a5ba5-fced-4e3b-8fad-d32667658b23
 		summarizeBy: none
 		sourceColumn: Division
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1105,6 +1155,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		summarizeBy: none
 		sourceColumn: Country
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Site
@@ -1113,6 +1165,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		summarizeBy: none
 		sourceColumn: Site
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Value
@@ -1120,6 +1174,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: 76fb6d64-e84e-464f-9f45-4df479ef1218
 		summarizeBy: sum
 		sourceColumn: Value
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1130,6 +1186,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: 56170f88-946d-4483-b1aa-130df882038d
 		summarizeBy: none
 		sourceColumn: Unit
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1144,6 +1202,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			isDefault
 			relationship: 0540269b-1e30-4d65-b4de-763e86b6a039
 			defaultHierarchy: LocalDateTable_9cc0d1d7-2fd2-4180-adf6-149307cff197.'Date Hierarchy'
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1161,6 +1221,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			relationship: 594e6aaf-c8d7-4766-b208-9893733ef085
 			defaultHierarchy: LocalDateTable_74e79b0e-9d80-42bf-a0a7-bd3d1cfb6515.'Date Hierarchy'
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Valid_To
@@ -1175,6 +1237,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			relationship: 940fb283-be0e-4e8a-ba37-ebb8ccbf3a2a
 			defaultHierarchy: LocalDateTable_99e32971-649e-482a-b82e-afd874d66b40.'Date Hierarchy'
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Is_Preliminary
@@ -1183,6 +1247,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: e3871287-6dd5-43a2-9547-907068bf4f6d
 		summarizeBy: none
 		sourceColumn: Is_Preliminary
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1231,6 +1297,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: 32cf53b3-e991-450f-9b8e-7dbc8126e2c9
 		summarizeBy: none
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column EnergyCategory =
@@ -1244,6 +1312,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: a6f12902-7ed8-4c12-a58c-7b9f55eb3b57
 		summarizeBy: none
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1268,6 +1338,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			relationship: f4e97668-7543-49b9-a91f-38afdfbdce1d
 			defaultHierarchy: LocalDateTable_3b977dad-babf-4fac-8fa8-7c5e2078aaec.'Date Hierarchy'
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
@@ -1275,6 +1347,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 	column 'Energy Type' = 'CORP_GHG DTbl_RenewableElectricity'[BaySIS_Description]
 		lineageTag: 737a3f35-dd9c-4eea-93af-8f9386029f1e
 		summarizeBy: none
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1332,6 +1406,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: 8573a2af-ec27-4c7b-b9c7-085cb3c068b3
 		summarizeBy: sum
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -1340,17 +1416,23 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: 7e21415f-f51c-40ef-b3f0-1c6b9795f987
 		summarizeBy: none
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'PY Year Ren' = FORMAT([Year] - 1, "0")
 		lineageTag: 560a43fa-95b9-4702-9321-52703e289df8
 		summarizeBy: none
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'BY Label Ren' = "2019"
 		lineageTag: 93c46772-88e9-4a2a-855c-5cd44f323b26
 		summarizeBy: none
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1363,6 +1445,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 			)
 		lineageTag: 8df4c97a-2c1d-42d6-9a60-9033ac3a7cba
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1415,6 +1499,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: df3e5236-8cb0-4570-8206-9faf5514b270
 		summarizeBy: none
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Value_Py
@@ -1422,6 +1508,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: 0823313e-6bdd-4e05-92d6-265ae06ec541
 		summarizeBy: sum
 		sourceColumn: Value_Py
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1433,6 +1521,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		summarizeBy: sum
 		sourceColumn: Value_By
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -1443,6 +1533,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		summarizeBy: none
 		sourceColumn: BaySIS_Number
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column BaySIS_Description
@@ -1450,6 +1542,8 @@ table 'CORP_GHG DTbl_RenewableElectricity'
 		lineageTag: 28da8b05-5901-486f-8545-bcf7f58a12f3
 		summarizeBy: none
 		sourceColumn: BaySIS_Description
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

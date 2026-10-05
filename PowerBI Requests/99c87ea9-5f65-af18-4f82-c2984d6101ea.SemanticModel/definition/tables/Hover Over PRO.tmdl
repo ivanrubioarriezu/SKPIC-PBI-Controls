@@ -13,7 +13,6 @@ table 'Hover Over PRO'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Hover Over PRO Fields'
-		isHidden
 		lineageTag: 84d2bb7c-7b45-4c5a-91dc-c06fb0238705
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Hover Over PRO'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Hover Over PRO Order'
-		isHidden
 		formatString: 0
 		lineageTag: bdcbebcc-c91a-4421-a6a3-cd3ee31f1d43
 		summarizeBy: sum

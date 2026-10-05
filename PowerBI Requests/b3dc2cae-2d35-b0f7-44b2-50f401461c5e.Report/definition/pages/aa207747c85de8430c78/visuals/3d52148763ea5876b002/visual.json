@@ -4,7 +4,7 @@
   "position": {
     "x": 176.59574468085108,
     "y": 1131.9148936170213,
-    "z": 45000,
+    "z": 59500,
     "height": 46.808510638297875,
     "width": 200,
     "tabOrder": 46000
@@ -88,7 +88,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''Unique scope3 EV PRO Segment''[Pro_Segment]'"
+                                "Value": "'''Unique scope3 EV PRO Area''[Pro_Area]'"
                               }
                             }
                           ]
@@ -116,7 +116,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''Unique scope3 EV PRO Segment''[Pro_Segment]'"
+                                      "Value": "'''Unique scope3 EV PRO Area''[Pro_Area]'"
                                     }
                                   }
                                 ]
@@ -140,7 +140,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "PRO Segment"
+                            "0": "PRO Area"
                           }
                         ]
                       }

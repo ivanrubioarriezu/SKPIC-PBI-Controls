@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "6d13b3f34c7bd2bf6e52",
   "position": {
     "x": 1101.7990331491712,
@@ -94,7 +94,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''CORP_GHG DTbl_Scope3''[Country]'"
+                                "Value": "'''CORP_GHG DTbl_Scope3''[Business_Unit]'"
                               }
                             }
                           ]
@@ -122,7 +122,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''CORP_GHG DTbl_Scope3''[Country]'"
+                                      "Value": "'''CORP_GHG DTbl_Scope3''[Business_Unit]'"
                                     }
                                   }
                                 ]
@@ -146,7 +146,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Country"
+                            "0": "Business unit"
                           }
                         ]
                       }

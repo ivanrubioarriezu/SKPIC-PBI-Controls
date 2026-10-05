@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "fed34cd30d9249200a31",
   "position": {
-    "x": 7.36842105263158,
-    "y": 188.42105263157896,
+    "x": 109.33940774487471,
+    "y": 188.61047835990888,
     "z": 4000,
-    "height": 25.263157894736842,
-    "width": 891.578947368421,
+    "height": 25.284738041002278,
+    "width": 761.27562642369014,
     "tabOrder": 3000
   },
   "visual": {
@@ -17,60 +17,45 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CORP_GHG DTbl_Scope3"
-                        }
-                      },
-                      "Property": "CY Year"
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3"
                     }
                   },
-                  "Function": 3
+                  "Property": "CY Year 2"
                 }
               },
-              "queryRef": "Min(CORP_GHG DTbl_Scope3.CY Year)",
-              "nativeQueryRef": "First CY Year"
+              "queryRef": "CORP_GHG DTbl_Scope3.CY Year 2",
+              "nativeQueryRef": "CY Year 2"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CORP_GHG DTbl_Scope3"
-                        }
-                      },
-                      "Property": "PY Year"
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3"
                     }
                   },
-                  "Function": 3
+                  "Property": "PY Year 2"
                 }
               },
-              "queryRef": "Min(CORP_GHG DTbl_Scope3.PY Year)",
-              "nativeQueryRef": "First PY Year"
+              "queryRef": "CORP_GHG DTbl_Scope3.PY Year 2",
+              "nativeQueryRef": "PY Year 2"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CORP_GHG DTbl_Scope3"
-                        }
-                      },
-                      "Property": "BY Label"
+                    "SourceRef": {
+                      "Entity": "CORP_GHG DTbl_Scope3"
                     }
                   },
-                  "Function": 3
+                  "Property": "BY Label 2"
                 }
               },
-              "queryRef": "Min(CORP_GHG DTbl_Scope3.BY Label)",
-              "nativeQueryRef": "First BY Label"
+              "queryRef": "CORP_GHG DTbl_Scope3.BY Label 2",
+              "nativeQueryRef": "BY Label 2"
             }
           ]
         }
@@ -78,90 +63,6 @@
     },
     "objects": {
       "value": [
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.BY Label)"
-          }
-        },
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "13D"
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'right'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.PY Year)"
-          }
-        },
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'right'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.CY Year)"
-          }
-        },
         {
           "properties": {
             "show": {
@@ -186,6 +87,69 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3.CY Year 2"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3.PY Year 2"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope3.BY Label 2"
+          }
         }
       ],
       "label": [
@@ -200,7 +164,7 @@
             }
           },
           "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.CY Year)"
+            "metadata": "CORP_GHG DTbl_Scope3.CY Year 2"
           }
         },
         {
@@ -214,7 +178,7 @@
             }
           },
           "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.PY Year)"
+            "metadata": "CORP_GHG DTbl_Scope3.BY Label 2"
           }
         },
         {
@@ -228,7 +192,7 @@
             }
           },
           "selector": {
-            "metadata": "Min(CORP_GHG DTbl_Scope3.BY Label)"
+            "metadata": "CORP_GHG DTbl_Scope3.PY Year 2"
           }
         }
       ],

@@ -6,6 +6,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 			DIVIDE(COALESCE(SUM([Aggregated Target Emission]), 0) - COALESCE(SUM([Aggregated Target Emission BY]), 0),COALESCE(SUM([Aggregated Target Emission BY]), 0))
 		lineageTag: dde4981e-fbf5-458b-baaa-74895d7fb2a4
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Actual Emission Reduction %' =
@@ -15,16 +17,24 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 999032ca-a1f7-447a-bd93-7a37f1b46dbf
 
+		changedProperty = IsHidden
+
 	measure 'Show Confirmed Targets' = IF(SELECTEDVALUE('Confirmed targets'[Value]) = "Show Confirmed Targets", 1, 0)
 		formatString: 0
 		lineageTag: b21d25cb-a90c-46b7-b7ac-d30c40731008
+
+		changedProperty = IsHidden
 
 	measure 'Hide Confirmed Targets' = IF(SELECTEDVALUE('Confirmed targets'[Value]) = "Hide Confirmed Targets", 1, 0)
 		formatString: 0
 		lineageTag: 403347ab-93f8-4ca5-9305-8ddce400c362
 
+		changedProperty = IsHidden
+
 	measure '_Actual Emission SBT' = SUM('CORP_GHG DMV_Scope3_Target_Overall'[CO2e_Actual])
 		lineageTag: f9fdc09c-841b-453f-869c-8358e3ec5325
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -42,6 +52,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 			)
 		lineageTag: 50284e5d-aedc-4724-b74d-5786cf3bca1a
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure '_Actual Emission Reduction % red' =
@@ -53,6 +65,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 			DIVIDE(ActualEmissionSBT - ActualEmissionBY, ActualEmissionBY)
 		lineageTag: a450c840-03ae-479e-b07a-c824b9b009b2
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure '_Aggregated Target Emission' =
@@ -62,6 +76,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 			    'CORP_GHG DMV_Scope3_Target_Overall'[SBT_relevant] = TRUE()
 			)
 		lineageTag: 930371f3-44a8-480d-8cbd-4cee8b9f45e8
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -79,6 +95,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 			)
 		lineageTag: 4c6628f5-3f25-476f-9841-6b3075afe1be
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure '_Aggregated Target Emission Reduction %' =
@@ -91,6 +109,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 4647b11a-350e-4596-a07d-2ad1ca4a31cd
 
+		changedProperty = IsHidden
+
 	measure '_Total Target Emission' =
 			
 			CALCULATE(
@@ -98,6 +118,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 			    'CORP_GHG DMV_Scope3_Target_Overall'[SBT_relevant] = TRUE()
 			)
 		lineageTag: 6a0f745b-fb92-4301-8011-8670ca4722d2
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -124,14 +146,22 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 7eb31f45-f8de-40ed-895b-97c11bfc672d
 
+		changedProperty = IsHidden
+
 	measure '1Actual Emission' = SUM('CORP_GHG DMV_Scope3_Target_Overall'[Actual Emission SBT]) & " " &"CO2e"
 		lineageTag: 2f941a74-be1c-47a6-9d65-4f750b92c92f
+
+		changedProperty = IsHidden
 
 	measure 'LTI Target Emissions' = SUM('CORP_GHG DMV_Scope3_Target_Overall'[Total Target Emissions]) & " " & "CO2e"
 		lineageTag: 538c7985-3d4d-453f-bb84-1f9f06f3a23f
 
+		changedProperty = IsHidden
+
 	measure 'SBTi Target Emissions' = SUM('CORP_GHG DMV_Scope3_Target_Overall'[Aggregated Target Emission]) & " " & "CO2e"
 		lineageTag: bf28e4b1-2357-40a1-a1e2-8f15f1eb635e
+
+		changedProperty = IsHidden
 
 	column Year
 		dataType: int64
@@ -140,11 +170,15 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		summarizeBy: sum
 		sourceColumn: Year
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Aggregated Target Emission' = IF([SBT_relevant], [CO2e_Target_Aggregated])
 		lineageTag: 2fea2594-ab34-4e87-94c7-af11404b68c6
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -162,6 +196,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		lineageTag: 0e63a72c-f356-4114-9591-9e8991794d67
 		summarizeBy: sum
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -169,6 +205,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 	column 'Actual Emission SBT' = 'CORP_GHG DMV_Scope3_Target_Overall'[CO2e_Actual]
 		lineageTag: 224eac8f-8a34-4b85-acdc-ad075780cc23
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -184,6 +222,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 			ALL('CORP_GHG DMV_Scope3_Target_Overall'),'CORP_GHG DMV_Scope3_Target_Overall'[Year] = 2019)))
 		lineageTag: 0c117083-7cb0-4a09-beb3-eb1a428b299e
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -203,6 +243,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		lineageTag: e7335c81-14c3-457d-aa17-d7e2a8c0e983
 		summarizeBy: sum
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -212,6 +254,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		lineageTag: 9746bf8f-589e-4a45-ae46-9a5202f48eed
 		summarizeBy: sum
 		sourceColumn: Co2e_Target_Aggregated
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -223,6 +267,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		summarizeBy: sum
 		sourceColumn: Co2e_Target_Total
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -232,6 +278,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		lineageTag: 85a3039f-011a-48eb-ae46-a0455b97600a
 		summarizeBy: sum
 		sourceColumn: Co2e_Actual
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -243,6 +291,8 @@ table 'CORP_GHG DMV_Scope3_Target_Overall'
 		lineageTag: d92088e1-bfbc-4897-9883-9dcb7a5e9489
 		summarizeBy: none
 		sourceColumn: SBT_Relevant
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

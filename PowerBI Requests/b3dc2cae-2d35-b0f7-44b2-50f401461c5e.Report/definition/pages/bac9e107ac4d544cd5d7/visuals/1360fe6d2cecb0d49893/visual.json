@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "1360fe6d2cecb0d49893",
   "position": {
-    "x": 623.39834360633154,
-    "y": 151.77566511233198,
+    "x": 623.1412639405205,
+    "y": 148.04832713754647,
     "z": 3000,
-    "height": 297.87234042553195,
-    "width": 275.53191489361706,
+    "height": 301.95167286245356,
+    "width": 276.02230483271376,
     "tabOrder": 2000
   },
   "visual": {
@@ -303,5 +303,107 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cf8183927851680b97ca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Country"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6656d3d900949b965c7a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Business_Unit"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "43dcea57ed80ba02093b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Pro_Area"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "09c2260b0ae427e5143a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Pro_Segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1eb2912c0c2747ca7567",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Pro_Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "138762227369528099b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Pro_Subcategory"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "82642bdd002737131563",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Top 10 by Actual BY Emission PRO"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -16,7 +16,6 @@ table 'ViewBy Pro'
 		annotation SummarizationSetBy = Automatic
 
 	column 'ViewBy Pro Fields'
-		isHidden
 		lineageTag: c0ae842e-4441-48ae-b3bb-aac29bfc3e05
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -31,7 +30,6 @@ table 'ViewBy Pro'
 		annotation SummarizationSetBy = Automatic
 
 	column 'ViewBy Pro Order'
-		isHidden
 		formatString: 0
 		lineageTag: 35778e8c-d62c-4b16-8df2-bf8369d13f99
 		summarizeBy: sum

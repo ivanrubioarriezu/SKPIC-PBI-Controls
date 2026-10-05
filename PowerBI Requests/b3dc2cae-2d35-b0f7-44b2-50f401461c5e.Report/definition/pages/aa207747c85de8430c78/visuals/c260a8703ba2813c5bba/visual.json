@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "c260a8703ba2813c5bba",
   "position": {
     "x": 5.88235294117647,
@@ -20,16 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Unique scope3 EV PRO Segment"
+                      "Entity": "Unique scope3 EV PRO Area"
                     }
                   },
-                  "Property": "Pro_Segment"
+                  "Property": "Pro_Area"
                 }
               },
-              "queryRef": "Unique scope3 EV PRO Segment.Pro_Segment",
-              "nativeQueryRef": "PRO Segment",
+              "queryRef": "Unique scope3 EV PRO Area.Pro_Area",
+              "nativeQueryRef": "PRO Area",
               "active": true,
-              "displayName": "PRO Segment"
+              "displayName": "PRO Area"
             }
           ],
           "fieldParameters": [

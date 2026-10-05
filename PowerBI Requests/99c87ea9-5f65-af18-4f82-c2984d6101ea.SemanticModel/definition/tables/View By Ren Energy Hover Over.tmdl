@@ -13,7 +13,6 @@ table 'View By Ren Energy Hover Over'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View By Ren Energy Hover Over Fields'
-		isHidden
 		lineageTag: 1e128e1d-2162-488d-9125-0d841bf49e6a
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'View By Ren Energy Hover Over'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View By Ren Energy Hover Over Order'
-		isHidden
 		formatString: 0
 		lineageTag: d8f4a9af-a7d7-40ec-8f51-0a72ce2b139f
 		summarizeBy: sum

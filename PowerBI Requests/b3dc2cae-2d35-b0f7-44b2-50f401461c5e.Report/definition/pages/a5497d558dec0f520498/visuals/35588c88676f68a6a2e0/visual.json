@@ -261,5 +261,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9ffa219e21c15478554d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Country"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "353939b71d1a070642e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Business_Unit"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "91c4a338ebb804a280a4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "CO2 Scope 3 Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f02f4de54b7b7a608b30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Top 10 by Actual PY Emission"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

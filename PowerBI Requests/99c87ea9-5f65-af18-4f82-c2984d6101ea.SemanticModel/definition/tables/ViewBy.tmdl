@@ -16,7 +16,6 @@ table ViewBy
 		annotation SummarizationSetBy = Automatic
 
 	column 'ViewBy Fields'
-		isHidden
 		lineageTag: 448f3898-daa1-4f9c-9d58-014e0e31a6ab
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -31,7 +30,6 @@ table ViewBy
 		annotation SummarizationSetBy = Automatic
 
 	column 'ViewBy Order'
-		isHidden
 		formatString: 0
 		lineageTag: 40c4bf4f-2aca-443f-b7c1-77dc9d3417cb
 		summarizeBy: sum

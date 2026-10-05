@@ -13,7 +13,6 @@ table 'Year Value Ren Energy'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Reporting Year Value Fields'
-		isHidden
 		lineageTag: f569df41-f648-4e9d-b3d9-b098379b2e88
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Year Value Ren Energy'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Reporting Year Value Order'
-		isHidden
 		formatString: 0
 		lineageTag: 95ff9a76-d721-4ddd-977c-48d1a24cc15c
 		summarizeBy: sum

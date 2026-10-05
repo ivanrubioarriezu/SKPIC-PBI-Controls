@@ -267,5 +267,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e1485f0de4156b88807d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Viewby Tooltip"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

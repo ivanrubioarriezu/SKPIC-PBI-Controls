@@ -4,15 +4,21 @@ table 'CORP_GHG DTbl_Scope3'
 	measure 'Actual Emission' = CALCULATE(SUM('CORP_GHG DTbl_Scope3'[CO2e]),FILTER( 'CORP_GHG DTbl_Scope3','CORP_GHG DTbl_Scope3'[Is_Target]=0))
 		lineageTag: 6214a65e-6c14-4547-8af7-fce410accbce
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Actual BY Emission' = CALCULATE(SUM('CORP_GHG DTbl_Scope3'[CO2e_Baseline_year]),FILTER( 'CORP_GHG DTbl_Scope3','CORP_GHG DTbl_Scope3'[Is_Target]=0))
 		lineageTag: c102f599-5edb-48c7-8db9-ba0655665f21
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Actual PY Emission' = CALCULATE(SUM('CORP_GHG DTbl_Scope3'[CO2e_Previous_year]),FILTER( 'CORP_GHG DTbl_Scope3','CORP_GHG DTbl_Scope3'[Is_Target]=0))
 		lineageTag: 10828eda-a3b8-421d-95a4-0c092485901b
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -42,6 +48,8 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: 638da2af-5f0a-4556-ae01-df5fab09331c
 
+		changedProperty = IsHidden
+
 	measure RankByViewBy =
 			
 			VAR SelectedViewBy = SELECTEDVALUE('ViewBy'[ViewBy Fields])
@@ -62,64 +70,424 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: 346cc927-52c9-4fef-9080-f9f814351a60
 
+		changedProperty = IsHidden
+
 	measure _rankiVisible1 = RANKX(ALL('CORP_GHG DTbl_Scope3'[Country],'CORP_GHG DTbl_Scope3'[Business_Unit],'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),[Actual Emission],,ASC)
 		formatString: 0
 		lineageTag: 5ea223ee-cf08-44cf-997f-40e027106dea
 
+		changedProperty = IsHidden
+
 	measure 'Ranking by Actual Emission' =
 			
-			VAR _topCategory =SWITCH(TRUE(),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),[Actual Emission],,DESC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Business_unit]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),[Actual Emission],,DESC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),[Actual Emission],,DESC))
-			VAR _bottomCategory=SWITCH(TRUE(),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),[Actual Emission],,ASC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Business_unit]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),[Actual Emission],,ASC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),[Actual Emission],,ASC))
-			VAR _rankVisible= IF(SELECTEDVALUE('Top/Bottom'[Value])="Top"
-			,_topCategory
-			,_bottomCategory
-			)
+			VAR TopBottomValue =
+			    SELECTEDVALUE('Top/Bottom'[Value])
+			
+			VAR RankingLimit =
+			    SELECTEDVALUE('Ranking Option'[Ranking Option])
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE(ViewBy[ViewBy Fields])
+			
+			--------------------------------------------------
+			-- Dimension detection
+			--------------------------------------------------
+			VAR IsCountry =
+			    CONTAINSSTRING(ViewBySelection, "Country")
+			
+			VAR IsBusinessUnit =
+			    CONTAINSSTRING(ViewBySelection, "Business")
+			
+			VAR IsCategory =
+			    CONTAINSSTRING(ViewBySelection, "Scope")
+			
+			--------------------------------------------------
+			-- Others detection
+			--------------------------------------------------
+			VAR IsOthers =
+			    (IsCountry &&
+			        SELECTEDVALUE('Unique Country scope3'[Country]) = "Others")
+			    ||
+			    (IsBusinessUnit &&
+			        SELECTEDVALUE('Unique Business unit scope3'[Business_unit]) = "Others")
+			    ||
+			    (IsCategory &&
+			        SELECTEDVALUE('Unique Categories scope3'[CO2 Scope 3 Category]) = "Others")
+			
+			--------------------------------------------------
+			-- Current Rank
+			--------------------------------------------------
+			VAR CurrentRank =
+			    IF(
+			        IsOthers,
+			        999999,
+			
+			        SWITCH(
+			            TRUE(),
+			
+			            IsCountry,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Country scope3'[Country]),
+			                        [Actual Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Country scope3'[Country]),
+			                        [Actual Emission],
+			                        ,
+			                        ASC
+			                    )
+			                ),
+			
+			            IsBusinessUnit,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                        [Actual Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                        [Actual Emission],
+			                        ,
+			                        ASC
+			                    )
+			                ),
+			
+			            IsCategory,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                        [Actual Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                        [Actual Emission],
+			                        ,
+			                        ASC
+			                    )
+			                )
+			        )
+			    )
+			
+			--------------------------------------------------
+			-- Others calculation
+			--------------------------------------------------
+			VAR OthersEmission =
+			    SWITCH(
+			        TRUE(),
+			
+			        IsCountry,
+			            CALCULATE(
+			                [Actual Emission],
+			                FILTER(
+			                    ALL('Unique Country scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Country scope3'[Country]),
+			                            [Actual Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Country scope3'[Country]),
+			                            [Actual Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            ),
+			
+			        IsBusinessUnit,
+			            CALCULATE(
+			                [Actual Emission],
+			                FILTER(
+			                    ALL('Unique Business unit scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                            [Actual Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                            [Actual Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            ),
+			
+			        IsCategory,
+			            CALCULATE(
+			                [Actual Emission],
+			                FILTER(
+			                    ALL('Unique Categories scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                            [Actual Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                            [Actual Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            )
+			    )
+			
+			--------------------------------------------------
+			-- Final output
+			--------------------------------------------------
 			RETURN
-			IF(_rankVisible<='Ranking Option'[Ranking Option Value],[Actual Emission])
+			    IF(
+			        IsOthers,
+			        OthersEmission,
+			        IF(
+			            CurrentRank <= RankingLimit,
+			            [Actual Emission],
+			            BLANK()
+			        )
+			    )
 		lineageTag: 3aef1117-a91e-4cf2-a9d5-01fa749c45ce
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Ranking by Actual PY Emission' =
 			
-			VAR _topCategory =SWITCH(TRUE(),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),[Actual PY Emission],,DESC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Business_unit]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),[Actual PY Emission],,DESC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),[Actual PY Emission],,DESC))
-			VAR _bottomCategory=SWITCH(TRUE(),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),[Actual PY Emission],,ASC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Business_unit]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),[Actual PY Emission],,ASC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),[Actual PY Emission],,ASC))
-			VAR _rankVisible= IF(SELECTEDVALUE('Top/Bottom'[Value])="Top"
-			,_topCategory
-			,_bottomCategory
-			)
+			VAR TopBottomValue =
+			    SELECTEDVALUE('Top/Bottom'[Value])
+			
+			VAR RankingLimit =
+			    SELECTEDVALUE('Ranking Option'[Ranking Option])
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE(ViewBy[ViewBy Fields])
+			
+			--------------------------------------------------
+			-- Dimension detection
+			--------------------------------------------------
+			VAR IsCountry =
+			    CONTAINSSTRING(ViewBySelection, "Country")
+			
+			VAR IsBusinessUnit =
+			    CONTAINSSTRING(ViewBySelection, "Business")
+			
+			VAR IsCategory =
+			    CONTAINSSTRING(ViewBySelection, "Scope")
+			
+			--------------------------------------------------
+			-- Others detection
+			--------------------------------------------------
+			VAR IsOthers =
+			    (IsCountry &&
+			        SELECTEDVALUE('Unique Country scope3'[Country]) = "Others")
+			    ||
+			    (IsBusinessUnit &&
+			        SELECTEDVALUE('Unique Business unit scope3'[Business_unit]) = "Others")
+			    ||
+			    (IsCategory &&
+			        SELECTEDVALUE('Unique Categories scope3'[CO2 Scope 3 Category]) = "Others")
+			
+			--------------------------------------------------
+			-- Current Rank
+			--------------------------------------------------
+			VAR CurrentRank =
+			    IF(
+			        IsOthers,
+			        999999,
+			
+			        SWITCH(
+			            TRUE(),
+			
+			            IsCountry,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Country scope3'[Country]),
+			                        [Actual PY Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Country scope3'[Country]),
+			                        [Actual PY Emission],
+			                        ,
+			                        ASC
+			                    )
+			                ),
+			
+			            IsBusinessUnit,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                        [Actual PY Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                        [Actual PY Emission],
+			                        ,
+			                        ASC
+			                    )
+			                ),
+			
+			            IsCategory,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                        [Actual PY Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                        [Actual PY Emission],
+			                        ,
+			                        ASC
+			                    )
+			                )
+			        )
+			    )
+			
+			--------------------------------------------------
+			-- Others calculation
+			--------------------------------------------------
+			VAR OthersEmission =
+			    SWITCH(
+			        TRUE(),
+			
+			        IsCountry,
+			            CALCULATE(
+			                [Actual PY Emission],
+			                FILTER(
+			                    ALL('Unique Country scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Country scope3'[Country]),
+			                            [Actual PY Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Country scope3'[Country]),
+			                            [Actual PY Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            ),
+			
+			        IsBusinessUnit,
+			            CALCULATE(
+			                [Actual PY Emission],
+			                FILTER(
+			                    ALL('Unique Business unit scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                            [Actual PY Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                            [Actual PY Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            ),
+			
+			        IsCategory,
+			            CALCULATE(
+			                [Actual PY Emission],
+			                FILTER(
+			                    ALL('Unique Categories scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                            [Actual BY Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                            [Actual PY Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            )
+			    )
+			
+			--------------------------------------------------
+			-- Final output
+			--------------------------------------------------
 			RETURN
-			IF(_rankVisible<='Ranking Option'[Ranking Option Value],[Actual PY Emission])
+			    IF(
+			        IsOthers,
+			        OthersEmission,
+			        IF(
+			            CurrentRank <= RankingLimit,
+			            [Actual PY Emission],
+			            BLANK()
+			        )
+			    )
 		lineageTag: 2e294546-3292-4171-b6de-d849f3966ddd
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Ranking by Actual BY Emission' =
-			
-			VAR _topCategory =SWITCH(TRUE(),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),[Actual BY Emission],,DESC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Business_unit]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),[Actual BY Emission],,DESC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),[Actual BY Emission],,DESC))
-			VAR _bottomCategory=SWITCH(TRUE(),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),[Actual BY Emission],,ASC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[Business_unit]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),[Actual BY Emission],,ASC),SELECTEDVALUE(ViewBy[ViewBy Fields])= "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),[Actual BY Emission],,ASC))
-			VAR _rankVisible= IF(SELECTEDVALUE('Top/Bottom'[Value])="Top"
-			,_topCategory
-			,_bottomCategory
-			)
-			RETURN
-			IF(_rankVisible<='Ranking Option'[Ranking Option Value],[Actual BY Emission])
-		lineageTag: bc78d5e6-0ced-4369-85e7-e52f59237978
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Measure SBT' = SUM('CORP_GHG DTbl_Scope3'[Target Emission SBT])
 		lineageTag: cb9010ae-be3f-4d46-bd9d-f55f03e8678f
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Measure BY SBT' = SUM('CORP_GHG DTbl_Scope3'[dax TargetEmissionBY])
 		lineageTag: d4191098-a357-4682-a6d4-e07680bb8810
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'target emission v1' = [Measure SBT]-[Measure BY SBT]
 		lineageTag: c93cf9c6-43a9-4051-9422-efe9f5f15b70
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -127,13 +495,19 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 591edfd8-9f90-479a-a596-65872bf9ade6
 
+		changedProperty = IsHidden
+
 	measure 'measure act' = SUM('CORP_GHG DTbl_Scope3'[test red])
 		lineageTag: 69a561b9-dbe0-4e5c-a1ad-1f3ba79ffdf6
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'measure act BY' = SUM('CORP_GHG DTbl_Scope3'[Actual BY Emission red])
 		lineageTag: dff6eac9-c61b-448f-9c1a-3139240ee8d6
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -141,23 +515,33 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: cd3e1713-5377-4e3b-af5e-c542d42f4963
 
+		changedProperty = IsHidden
+
 	measure 'v1 act red' = ([measure act]-[measure act BY])
 		lineageTag: 631c63a5-760d-4cfd-8efd-df40768df80f
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure Measure
 		lineageTag: ab02b707-66fa-4c24-ab11-38188039fc5c
 
+		changedProperty = IsHidden
+
 		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
 
 	measure 'Measure 2'
 		lineageTag: 365ff94c-5b96-4c62-b9a3-c3f7d66878a4
 
+		changedProperty = IsHidden
+
 		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
 
 	measure 'Measure 3'
 		lineageTag: 1631bd05-c3ea-429a-adbc-677edc56dfda
+
+		changedProperty = IsHidden
 
 		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
 
@@ -165,13 +549,19 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: 1d59af73-7fa3-461d-9c78-85331ccf5135
 
+		changedProperty = IsHidden
+
 	measure 'Show Emission' = IF(SELECTEDVALUE('Emissio/Reduction'[Value]) = "Emission (abc)", 1, 0)
 		formatString: 0
 		lineageTag: 3a7039e1-354e-4779-a33c-786aa100f4d0
 
+		changedProperty = IsHidden
+
 	measure 'Show Reduction' = IF(SELECTEDVALUE('Emissio/Reduction'[Value]) = "Reduction (%)", 1, 0)
 		formatString: 0
 		lineageTag: b9692fa3-c7b9-4146-a015-9de87dbdb420
+
+		changedProperty = IsHidden
 
 	measure 'ACT Vs Baseline %' = ```
 			
@@ -210,8 +600,12 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0%;-0%;0%
 		lineageTag: 7d29359f-3fe7-4431-80f6-3f5a2c2c90e8
 
+		changedProperty = IsHidden
+
 	measure 'Baseline Change _Legend' = IF([ACT Vs Baseline %] < 0,"Less","More")
 		lineageTag: 9cc26f87-086c-4fc8-9bf8-ae666860e80f
+
+		changedProperty = IsHidden
 
 	measure 'ACT Vs PY  %' = ```
 			
@@ -245,8 +639,12 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0%;-0%;0%
 		lineageTag: 006dbf38-2572-4348-bc02-855cc7598458
 
+		changedProperty = IsHidden
+
 	measure 'Previous Change _Legend' = IF([ACT Vs PY  %] < 0,"Less","More")
 		lineageTag: a43b77bc-03bb-4c0e-996d-e763f1915bd3
+
+		changedProperty = IsHidden
 
 	measure 'Ranking by Actual Emission PRO' =
 			
@@ -269,6 +667,8 @@ table 'CORP_GHG DTbl_Scope3'
 			RETURN
 			IF(_rankVisible<='Ranking Option'[Ranking Option Value],[Actual Emission])
 		lineageTag: 063fcec7-4326-47cb-9de4-fd728e77722a
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -453,6 +853,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: a5cff32b-a3df-408b-97a8-2840f1be7e3d
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Ranking by Actual BY Emission PRO' = ```
@@ -636,17 +1038,25 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: 2ee95112-100f-40d5-adca-e5ec1399887b
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Emission Text' = "Scope 3 Emissions per " & MAX('ViewBy'[ViewBy]) & " (Kt CO2e)"
 		lineageTag: 1490219b-1668-45d6-a943-4b690225bb41
 
+		changedProperty = IsHidden
+
 	measure 'ViewBy param text' = MAX('ViewBy'[ViewBy])
 		lineageTag: 3e64dab4-c88a-4f2b-a8bc-f6f780b0c410
+
+		changedProperty = IsHidden
 
 	measure Rank = RANKX(ALL('ViewBy'[ViewBy Order]), [Baseline Change _Legend], , DESC)
 		formatString: 0
 		lineageTag: bbeeb998-f56d-40e9-9440-86b616204b55
+
+		changedProperty = IsHidden
 
 	measure TopBottomViewby =
 			
@@ -661,8 +1071,12 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 		lineageTag: fc7a1be3-a59e-48bf-91f1-21a28e70ceb5
 
+		changedProperty = IsHidden
+
 	measure 'ViewBy param text tooltip' = MAX('ViewBy'[ViewBy])
 		lineageTag: d7ed48a1-5c42-4248-a591-c166a219f746
+
+		changedProperty = IsHidden
 
 	measure HighestEmissionText =
 			
@@ -685,6 +1099,8 @@ table 'CORP_GHG DTbl_Scope3'
 			ViewByName & " - " & FORMAT(MaxEmission, "#,##0.00") & " tCO2e"
 		lineageTag: e65c63b1-4552-420f-814f-4cb34581ce21
 
+		changedProperty = IsHidden
+
 	measure 'Baseline Change _Color' = ```
 			
 			SWITCH(
@@ -697,6 +1113,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: 57ac6f27-d2a2-4ee1-a2c9-fbb29a56c508
 
+		changedProperty = IsHidden
+
 	measure 'Previous Change _Color' = ```
 			
 			SWITCH(
@@ -708,6 +1126,8 @@ table 'CORP_GHG DTbl_Scope3'
 			
 			```
 		lineageTag: d8cbe880-e5d0-4f36-9432-b83c77e11460
+
+		changedProperty = IsHidden
 
 	measure 'TopBottomViewby scope3' =
 			
@@ -722,8 +1142,12 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 		lineageTag: 9a7fe1b2-e70c-488a-a985-c3077c10ef5d
 
+		changedProperty = IsHidden
+
 	measure 'Actual Emission Text' = "Scope 3 Actual Emission  " &[Actual Emission]& " tCO2e"
 		lineageTag: 27e0c53b-991f-429e-b630-6b96ccb471d2
+
+		changedProperty = IsHidden
 
 	measure 'Top 10 by Actual Emission' =
 			
@@ -732,29 +1156,31 @@ table 'CORP_GHG DTbl_Scope3'
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[Country]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),
-			            [Actual Emission],
+			            [Ranking by Actual Emission],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[Business_unit]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),
-			            [Actual Emission],
+			            [Ranking by Actual Emission],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),
-			            [Actual Emission],
+			            [Ranking by Actual Emission],
 			            ,
 			            DESC
 			        )
 			)
 			
 			RETURN
-			IF(_topCategory <= 10, [Actual Emission])
+			IF(_topCategory <= 10, [Ranking by Actual Emission])
 		lineageTag: f5e8be62-97d3-49f9-b2bb-a651e579614b
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -765,29 +1191,31 @@ table 'CORP_GHG DTbl_Scope3'
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[Country]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),
-			            [Actual PY Emission],
+			            [Ranking by Actual PY Emission],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[Business_unit]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),
-			            [Actual PY Emission],
+			            [Ranking by Actual PY Emission],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),
-			            [Actual PY Emission],
+			            [Ranking by Actual PY Emission],
 			            ,
 			            DESC
 			        )
 			)
 			
 			RETURN
-			IF(_topCategory <= 10, [Actual PY Emission])
+			IF(_topCategory <= 10, [Ranking by Actual PY Emission])
 		lineageTag: 6c54279c-4b53-4a59-97b5-048d805e6b7d
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -798,101 +1226,111 @@ table 'CORP_GHG DTbl_Scope3'
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[Country]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),
-			            [Actual BY Emission],
+			            [Ranking by Actual BY Emission 2],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[Business_unit]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),
-			            [Actual BY Emission],
+			            [Ranking by Actual BY Emission 2],
 			            ,
 			            DESC
 			        ),
-			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]",
+			    SELECTEDVALUE('Hover Over'[Hover Over Fields]) = "'CORP_GHG DTbl_Scope3'[CO2 Scope 3 Category]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]),
-			            [Actual BY Emission],
+			            [Ranking by Actual BY Emission 2],
 			            ,
 			            DESC
 			        )
 			)
 			
 			RETURN
-			IF(_topCategory <= 10, [Actual BY Emission])
+			IF(_topCategory <= 10, [Ranking by Actual BY Emission 2])
 		lineageTag: 59990f9e-2b34-42fb-a8c3-499686be13d8
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Text Hover Over' = "TOP 10 "  & MAX('Hover Over'[Hover Over])  & " Per " &   MAX('ViewBy'[ViewBy])
 		lineageTag: 005f0c31-485a-4cd2-adff-ace75027bc34
 
+		changedProperty = IsHidden
+
 	measure 'Viewby Tooltip' = ```
 			
 			 SWITCH (
 			    TRUE(),
-			    MAX('ViewBy'[ViewBy]) = "Country","Country: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[Country])& UNICHAR(10) &"Scope 3 Actual Emission: " & FORMAT([Actual Emission], "#,##0") & " tCO2e",
+			    MAX('ViewBy'[ViewBy]) = "Country","Country: " & SELECTEDVALUE('Unique Country scope3'[Country])& UNICHAR(10) &"Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission], "#,##0") & " tCO2e",
 			
-			    MAX('ViewBy'[ViewBy]) = "Business Unit","Business Unit: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[Business_unit])& UNICHAR(10) &"Scope 3 Actual Emission: " & FORMAT([Actual Emission], "#,##0") & " tCO2e",
+			    MAX('ViewBy'[ViewBy]) = "Business Unit","Business Unit: " & SELECTEDVALUE('Unique Business unit scope3'[Business_Unit])& UNICHAR(10) &"Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission], "#,##0") & " tCO2e",
 			
 			    -- ELSE (when it is neither Country nor Business Unit)
-			    "Scope 3 Category" & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category])
+			    "Scope 3 Category: " & SELECTEDVALUE('Unique Categories scope3'[CO2 Scope 3 Category])
 			        & UNICHAR(10) &
-			        "Scope 3 Actual Emission: " & FORMAT([Actual Emission], "#,##0") & " tCO2e"
+			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission], "#,##0") & " tCO2e"
 			)
 			
 			```
 		lineageTag: 54c3817d-fc11-4e8f-87ee-b75673190fb2
 
+		changedProperty = IsHidden
+
 	measure 'Emission Text PRO' = "Scope 3 Emissions per " & MAX('ViewBy Pro'[ViewBy Pro]) & " (Kt CO2e)"
 		lineageTag: f7eeb37a-cc0d-45de-9677-f0ed2234957d
+
+		changedProperty = IsHidden
 
 	measure 'ViewBy param text PRO' = MAX('ViewBy Pro'[ViewBy Pro])
 		lineageTag: 5f15b9ef-0075-471c-9d73-83655d350275
 
-	measure 'Top 10 by Actual Emission PRO' =
+		changedProperty = IsHidden
+
+	measure 'Top 10 by Actual Emission PRO' = ```
 			
 			VAR _topCategory = SWITCH(
 			    TRUE(),
 			    SELECTEDVALUE('Hover Over PRO'[Hover Over PRO Fields]) = "'CORP_GHG DTbl_Scope3'[Country]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Country]),
-			            [Ranking by Actual Emission PRO],
+			            [Ranking by Actual Emission PRO 2],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over PRO'[Hover Over PRO Fields]) = "'CORP_GHG DTbl_Scope3'[Business unit]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[Business_unit]),
-			            [Ranking by Actual Emission PRO],
+			            [Ranking by Actual Emission PRO 2],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over PRO'[Hover Over PRO Fields]) = "'CORP_GHG DTbl_Scope3'[PRO Area]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[PRO_Area]),
-			            [Ranking by Actual Emission PRO],
+			            [Ranking by Actual Emission PRO 2],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over PRO'[Hover Over PRO Fields]) = "'CORP_GHG DTbl_Scope3'[PRO Segment]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[PRO_Segment]),
-			            [Ranking by Actual Emission PRO],
+			            [Ranking by Actual Emission PRO 2],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over PRO'[Hover Over PRO Fields]) = "'CORP_GHG DTbl_Scope3'[PRO_Category]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[PRO_Category]),
-			            [Ranking by Actual Emission PRO],
+			            [Ranking by Actual Emission PRO 2],
 			            ,
 			            DESC
 			        ),
 			    SELECTEDVALUE('Hover Over PRO'[Hover Over PRO Fields]) = "'CORP_GHG DTbl_Scope3'[PRO Subcategory]",
 			        RANKX(
 			            ALLSELECTED('CORP_GHG DTbl_Scope3'[PRO_Subcategory]),
-			            [Ranking by Actual Emission PRO],
+			            [Ranking by Actual Emission PRO 2],
 			            ,
 			            DESC
 			        ),
@@ -900,8 +1338,13 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 			
 			RETURN
-			IF(_topCategory <= 10,([Ranking by Actual Emission PRO]))
+			IF(_topCategory <= 10,([Ranking by Actual Emission PRO 2]))
+			
+			
+			```
 		lineageTag: 4478a2c7-d35d-4919-b6dd-e502381fa7a4
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -958,6 +1401,8 @@ table 'CORP_GHG DTbl_Scope3'
 			IF(_topCategory <= 10,[Ranking by Actual PY Emission PRO])
 		lineageTag: bb4c9352-cad4-419c-b0c6-f33dd28d96b3
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Top 10 by Actual BY Emission PRO' =
@@ -1013,6 +1458,8 @@ table 'CORP_GHG DTbl_Scope3'
 			IF(_topCategory <= 10,[Ranking by Actual BY Emission PRO])
 		lineageTag: cae827e4-c270-46fa-b6c6-c909503c6746
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Viewby Tooltip PRO' =
@@ -1020,34 +1467,36 @@ table 'CORP_GHG DTbl_Scope3'
 			SWITCH (
 			    TRUE(),
 			    MAX('ViewBy Pro'[ViewBy Pro]) = "Country",
-			        "Country: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[Country]) & UNICHAR(10) &
-			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO], "#,##0") &" "& "t CO2e",
+			        "Country: " & SELECTEDVALUE('Unique Country scope3'[Country]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO 2], "#,##0") &" "& "t CO2e",
 			
 			    MAX('ViewBy Pro'[ViewBy Pro]) = "Business Unit",
-			        "Business Unit: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[Business_unit]) & UNICHAR(10) &
-			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO], "#,##0") &" "& "t CO2e",
+			        "Business Unit: " & SELECTEDVALUE('Unique Business unit scope3'[Business_Unit]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO 2], "#,##0") &" "& "t CO2e",
 			
 			    MAX('ViewBy Pro'[ViewBy Pro]) = "PRO Area",
-			        "PRO Area: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[PRO_Area]) & UNICHAR(10) &
-			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO], "#,##0") &" "& "t CO2e",
+			        "PRO Area: " & SELECTEDVALUE('Unique scope3 EV PRO Area'[Pro_Area]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO 2], "#,##0") &" "& "t CO2e",
 			
 			    MAX('ViewBy Pro'[ViewBy Pro]) = "PRO Segment",
-			        "PRO Segment: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[PRO_Segment]) & UNICHAR(10) &
-			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO], "#,##0") &" "& "t CO2e",
+			        "PRO Segment: " & SELECTEDVALUE('Unique scope3 EV PRO Segment'[Pro_Segment]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO 2], "#,##0") &" "& "t CO2e",
 			
 			    MAX('ViewBy Pro'[ViewBy Pro]) = "PRO Category",
-			        "PRO Category: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[PRO_Category]) & UNICHAR(10) &
-			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO], "#,##0") &" "& "t CO2e",
+			        "PRO Category: " & SELECTEDVALUE('Unique scope3 EV PRO Category'[Pro_Category]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO 2], "#,##0") &" "& "t CO2e",
 			
 			    MAX('ViewBy Pro'[ViewBy Pro]) = "PRO Subcategory",
-			        "PRO Subcategory: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[PRO_Subcategory]) & UNICHAR(10) &
-			        "Scope 3 Actual Emission: " & format([Ranking by Actual Emission PRO], "#,##0") &" "& "t CO2e",
+			        "PRO Subcategory: " & SELECTEDVALUE('Unique scope3 EV PRO PRO Subcategory'[Pro_Subcategory]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & format([Ranking by Actual Emission PRO 2], "#,##0") &" "& "t CO2e",
 			
 			    -- Default case
-			    "Scope 3 Category: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]) & UNICHAR(10) &
-			    "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO], "#,##0") &" "& "t CO2e"
+			    "Scope 3 Category: " & SELECTEDVALUE('Unique Categories scope3'[CO2 Scope 3 Category]) & UNICHAR(10) &
+			    "Scope 3 Actual Emission: " & FORMAT([Ranking by Actual Emission PRO 2], "#,##0") &" "& "t CO2e"
 			)
 		lineageTag: 6eed76b7-5c68-4e82-ab2f-fc43e946f058
+
+		changedProperty = IsHidden
 
 	measure 'TopBottomViewby PRO scope3' =
 			
@@ -1062,6 +1511,8 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 		lineageTag: f8a86748-e0b1-4082-a443-438ddd4e3f56
 
+		changedProperty = IsHidden
+
 	measure 'TopBottomViewby PRO' =
 			
 			
@@ -1075,22 +1526,34 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 		lineageTag: 3c8b5a7c-6630-4f08-a727-db763942eb7d
 
+		changedProperty = IsHidden
+
 	measure 'ACT Vs Baseline % PRO' = DIVIDE([Ranking by Actual Emission PRO] - [Ranking by Actual BY Emission PRO],[Ranking by Actual BY Emission PRO])
 		formatString: 0%;-0%;0%
 		lineageTag: 6e70d42b-8ef1-494b-a6cd-2c7ac90cba1d
 
+		changedProperty = IsHidden
+
 	measure 'Baseline Change _Legend PRO' = IF([ACT Vs Baseline % PRO] < 0,"Less","More")
 		lineageTag: eca72d39-e926-40a7-92e7-5786e37eabf8
+
+		changedProperty = IsHidden
 
 	measure 'ACT Vs PY  % PRO' = DIVIDE([Ranking by Actual Emission PRO] - [Ranking by Actual PY Emission PRO],[Ranking by Actual PY Emission PRO])
 		formatString: 0%;-0%;0%
 		lineageTag: 12e2e3e9-1c17-4726-9418-bfccb5a405cf
 
+		changedProperty = IsHidden
+
 	measure 'Previous Change _Legend PRO' = IF([ACT Vs PY  % PRO] < 0,"Less","More")
 		lineageTag: faeedba3-2eec-4ea8-85a9-68aba054d4e8
 
+		changedProperty = IsHidden
+
 	measure 'Text Hover Over PRO' = "TOP 10 " & MAX('Hover Over PRO'[Hover Over PRO])  & " Per " &   MAX('ViewBy Pro'[ViewBy Pro])
 		lineageTag: 67a0d4d3-4d9a-4134-8844-f3ba4ecd5c37
+
+		changedProperty = IsHidden
 
 	measure 'Emissions CY' = ```
 			
@@ -1199,6 +1662,8 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: 66f0cba1-551f-458a-bb1f-e515bacc1cdc
 
+		changedProperty = IsHidden
+
 	measure 'Actual Emission (Act vs Trg)' =
 			
 			IF(
@@ -1208,6 +1673,8 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 		formatString: 0
 		lineageTag: 300cba96-7998-411d-b020-a38451a51d5e
+
+		changedProperty = IsHidden
 
 	measure '_Actual Year Filter' =
 			
@@ -1234,6 +1701,8 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: General Date
 		lineageTag: 66026ec8-d6e4-428d-8338-0af425290f03
 
+		changedProperty = IsHidden
+
 	measure '_Actual Emission Reduction %' =
 			
 			VAR ActualEmission = COALESCE([Actual Emission (Act vs Trg)], 0)
@@ -1243,6 +1712,8 @@ table 'CORP_GHG DTbl_Scope3'
 			DIVIDE(ActualEmission - BaseYearEmission, BaseYearEmission)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 1868875e-deee-4b8f-b01f-b80e5e672ae4
+
+		changedProperty = IsHidden
 
 	measure '_Emissions CY' =
 			
@@ -1351,6 +1822,8 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 		lineageTag: 01442a52-e483-4dba-94b1-4a5da6397b51
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure '_Emissions CY2' = ```
@@ -1442,6 +1915,8 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 			```
 		lineageTag: ac46a8d0-de8c-491b-8a0d-75732c41922a
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -1551,6 +2026,8 @@ table 'CORP_GHG DTbl_Scope3'
 			    )
 			)
 		lineageTag: 756a0233-1125-443b-92a6-f3c1009a370a
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -1825,6 +2302,8 @@ table 'CORP_GHG DTbl_Scope3'
 			    )
 			)
 		lineageTag: 32ca8911-4e0b-4c34-929e-cbcca023bdb0
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -2136,6 +2615,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: 283ab999-e873-43d5-b625-1217d8505926
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure '_Emissions CY Sort' = ```
@@ -2203,6 +2684,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: 7253a7a1-c3b3-4092-852a-135e8bc2b8d8
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Selected Sort Value' =
@@ -2218,6 +2701,8 @@ table 'CORP_GHG DTbl_Scope3'
 			    [Actual Emission]   -- default
 			)
 		lineageTag: 39919843-9712-451b-a440-caf9dedb4433
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -2377,6 +2862,8 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: a533302b-26bc-4735-a206-3095872c7e2e
 
+		changedProperty = IsHidden
+
 	measure 'TopN Filter scope3 PY' =
 			
 			
@@ -2484,6 +2971,8 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: d984982b-7291-4920-a983-ed175372fdb4
 
+		changedProperty = IsHidden
+
 	measure 'Actual Emission (Tooltip)' = ```
 			"Actual Emission:"&" "&
 			FORMAT([Actual Emission], "#,##0") & " CO2e"
@@ -2491,10 +2980,14 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: 288f27f4-9f57-4cab-83fe-37f8a0ef2a71
 
+		changedProperty = IsHidden
+
 	measure 'Actual Emission PRO (Tooltip)' =
 			"Actual Emission:"&" "&
 			FORMAT([Actual Emission], "#,##0") &"t"& " CO2e"
 		lineageTag: 7d1dee99-e25f-4136-9bb0-0ab3fbb64e7b
+
+		changedProperty = IsHidden
 
 	measure 'TopN Filter scope3 PRO' = ```
 			
@@ -2611,6 +3104,8 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: 52ed5cce-651f-4387-af63-1c415b78023d
 
+		changedProperty = IsHidden
+
 	measure '_Emissions CY PRO Sort' = ```
 			
 			
@@ -2647,6 +3142,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: 069a12af-3bb6-47d9-96a3-451b27c9e33d
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'color ACT Vs PY Color' = ```
@@ -2671,6 +3168,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: a5bd0556-cb14-4f57-9f36-7f3d54050ce9
 
+		changedProperty = IsHidden
+
 	measure 'color ACT Vs PY Color baseline %' = ```
 			
 			/*IF(
@@ -2692,6 +3191,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: a0eb176b-21af-4343-bdfb-f18db1aba775
 
+		changedProperty = IsHidden
+
 	measure _Exist =
 			
 			IF(
@@ -2703,6 +3204,8 @@ table 'CORP_GHG DTbl_Scope3'
 			)
 		formatString: 0
 		lineageTag: 47607175-448f-4e22-8953-f2446c0bcbdc
+
+		changedProperty = IsHidden
 
 	measure _ExistBU =
 			
@@ -2716,6 +3219,8 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0
 		lineageTag: 7e55480c-2899-443d-8cf1-55ce3ec324e0
 
+		changedProperty = IsHidden
+
 	measure ButtonColorScope3 = ```
 			
 			IF(
@@ -2727,12 +3232,395 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: ae1823f1-b435-455d-97f5-c4d358dbfe06
 
+		changedProperty = IsHidden
+
+	measure 'Ranking by Actual Emission PRO 2' =
+			
+			VAR TopBottomValue = SELECTEDVALUE('Top/Bottom'[Value])
+			VAR RankingLimit = SELECTEDVALUE('Ranking Option'[Ranking Option])
+			VAR ViewBySelection = SELECTEDVALUE('ViewBy Pro'[ViewBy Pro Fields])
+			
+			VAR IsCategory = CONTAINSSTRING(ViewBySelection, "PRO Category")
+			VAR IsCountry = CONTAINSSTRING(ViewBySelection, "Country")
+			VAR IsBusinessUnit = CONTAINSSTRING(ViewBySelection, "Business unit")
+			VAR IsPROArea = CONTAINSSTRING(ViewBySelection, "PRO Area")
+			VAR IsPROSegment = CONTAINSSTRING(ViewBySelection, "PRO Segment")
+			VAR IsPROSubcategory = CONTAINSSTRING(ViewBySelection, "PRO Subcategory")
+			
+			VAR IsOthers =
+			    (IsCategory && SELECTEDVALUE('Unique scope3 EV PRO Category'[PRO_Category]) = "Others")
+			    || (IsCountry && SELECTEDVALUE('Unique Country scope3'[Country]) = "Others")
+			    || (IsBusinessUnit && SELECTEDVALUE('Unique Business unit scope3'[Business_unit]) = "Others")
+			    || (IsPROArea && SELECTEDVALUE('Unique scope3 EV PRO Area'[PRO_Area]) = "Others")
+			    || (IsPROSegment && SELECTEDVALUE('Unique scope3 EV PRO Segment'[PRO_Segment]) = "Others")
+			    || (IsPROSubcategory && SELECTEDVALUE('Unique scope3 EV PRO PRO Subcategory'[PRO_Subcategory]) = "Others")
+			
+			VAR CurrentRank =
+			    IF(
+			        IsOthers,
+			        999999999999999999,
+			        IF(
+			            IsCategory,
+			            IF(
+			                TopBottomValue = "Top",
+			                RANKX(ALLSELECTED('Unique scope3 EV PRO Category'[PRO_Category]), [Actual Emission], , DESC),
+			                RANKX(ALLSELECTED('Unique scope3 EV PRO Category'[PRO_Category]), [Actual Emission], , ASC)
+			            ),
+			            IF(
+			                IsCountry,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(ALLSELECTED('Unique Country scope3'[Country]), [Actual Emission], , DESC),
+			                    RANKX(ALLSELECTED('Unique Country scope3'[Country]), [Actual Emission], , ASC)
+			                ),
+			                IF(
+			                    IsBusinessUnit,
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(ALLSELECTED('Unique Business unit scope3'[Business_unit]), [Actual Emission], , DESC),
+			                        RANKX(ALLSELECTED('Unique Business unit scope3'[Business_unit]), [Actual Emission], , ASC)
+			                    ),
+			                    IF(
+			                        IsPROArea,
+			                        IF(
+			                            TopBottomValue = "Top",
+			                            RANKX(ALLSELECTED('Unique scope3 EV PRO Area'[PRO_Area]), [Actual Emission], , DESC),
+			                            RANKX(ALLSELECTED('Unique scope3 EV PRO Area'[PRO_Area]), [Actual Emission], , ASC)
+			                        ),
+			                        IF(
+			                            IsPROSegment,
+			                            IF(
+			                                TopBottomValue = "Top",
+			                                RANKX(ALLSELECTED('Unique scope3 EV PRO Segment'[PRO_Segment]), [Actual Emission], , DESC),
+			                                RANKX(ALLSELECTED('Unique scope3 EV PRO Segment'[PRO_Segment]), [Actual Emission], , ASC)
+			                            ),
+			                            IF(
+			                                TopBottomValue = "Top",
+			                                RANKX(ALLSELECTED('Unique scope3 EV PRO PRO Subcategory'[PRO_Subcategory]), [Actual Emission], , DESC),
+			                                RANKX(ALLSELECTED('Unique scope3 EV PRO PRO Subcategory'[PRO_Subcategory]), [Actual Emission], , ASC)
+			                            )
+			                        )
+			                    )
+			                )
+			            )
+			        )
+			    )
+			
+			VAR OthersEmission =
+			    IF(
+			        IsCategory,
+			        CALCULATE(
+			            [Actual Emission],
+			            FILTER(
+			                ALL('Unique scope3 EV PRO Category'),
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(ALLSELECTED('Unique scope3 EV PRO Category'[PRO_Category]), [Actual Emission], , DESC) > RankingLimit,
+			                    RANKX(ALLSELECTED('Unique scope3 EV PRO Category'[PRO_Category]), [Actual Emission], , ASC) > RankingLimit
+			                )
+			            )
+			        ),
+			        IF(
+			            IsCountry,
+			            CALCULATE(
+			                [Actual Emission],
+			                FILTER(
+			                    ALL('Unique Country scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(ALLSELECTED('Unique Country scope3'[Country]), [Actual Emission], , DESC) > RankingLimit,
+			                        RANKX(ALLSELECTED('Unique Country scope3'[Country]), [Actual Emission], , ASC) > RankingLimit
+			                    )
+			                )
+			            ),
+			            IF(
+			                IsBusinessUnit,
+			                CALCULATE(
+			                    [Actual Emission],
+			                    FILTER(
+			                        ALL('Unique Business unit scope3'),
+			                        IF(
+			                            TopBottomValue = "Top",
+			                            RANKX(ALLSELECTED('Unique Business unit scope3'[Business_unit]), [Actual Emission], , DESC) > RankingLimit,
+			                            RANKX(ALLSELECTED('Unique Business unit scope3'[Business_unit]), [Actual Emission], , ASC) > RankingLimit
+			                        )
+			                    )
+			                ),
+			                IF(
+			                    IsPROArea,
+			                    CALCULATE(
+			                        [Actual Emission],
+			                        FILTER(
+			                            ALL('Unique scope3 EV PRO Area'),
+			                            IF(
+			                                TopBottomValue = "Top",
+			                                RANKX(ALLSELECTED('Unique scope3 EV PRO Area'[PRO_Area]), [Actual Emission], , DESC) > RankingLimit,
+			                                RANKX(ALLSELECTED('Unique scope3 EV PRO Area'[PRO_Area]), [Actual Emission], , ASC) > RankingLimit
+			                            )
+			                        )
+			                    ),
+			                    IF(
+			                        IsPROSegment,
+			                        CALCULATE(
+			                            [Actual Emission],
+			                            FILTER(
+			                                ALL('Unique scope3 EV PRO Segment'),
+			                                IF(
+			                                    TopBottomValue = "Top",
+			                                    RANKX(ALLSELECTED('Unique scope3 EV PRO Segment'[PRO_Segment]), [Actual Emission], , DESC) > RankingLimit,
+			                                    RANKX(ALLSELECTED('Unique scope3 EV PRO Segment'[PRO_Segment]), [Actual Emission], , ASC) > RankingLimit
+			                                )
+			                            )
+			                        ),
+			                        CALCULATE(
+			                            [Actual Emission],
+			                            FILTER(
+			                                ALL('Unique scope3 EV PRO PRO Subcategory'),
+			                                IF(
+			                                    TopBottomValue = "Top",
+			                                    RANKX(ALLSELECTED('Unique scope3 EV PRO PRO Subcategory'[PRO_Subcategory]), [Actual Emission], , DESC) > RankingLimit,
+			                                    RANKX(ALLSELECTED('Unique scope3 EV PRO PRO Subcategory'[PRO_Subcategory]), [Actual Emission], , ASC) > RankingLimit
+			                                )
+			                            )
+			                        )
+			                    )
+			                )
+			            )
+			        )
+			    )
+			
+			RETURN
+			    IF(
+			        IsOthers,
+			        OthersEmission,
+			        IF(
+			            CurrentRank <= RankingLimit,
+			            [Actual Emission],
+			            BLANK()
+			        )
+			    )
+		lineageTag: 2331c5ff-ac1a-4d09-b97d-be2700d717e9
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ranking by Actual BY Emission 2' =
+			
+			VAR TopBottomValue =
+			    SELECTEDVALUE('Top/Bottom'[Value])
+			
+			VAR RankingLimit =
+			    SELECTEDVALUE('Ranking Option'[Ranking Option])
+			
+			VAR ViewBySelection =
+			    SELECTEDVALUE(ViewBy[ViewBy Fields])
+			
+			--------------------------------------------------
+			-- Dimension detection
+			--------------------------------------------------
+			VAR IsCountry =
+			    CONTAINSSTRING(ViewBySelection, "Country")
+			
+			VAR IsBusinessUnit =
+			    CONTAINSSTRING(ViewBySelection, "Business")
+			
+			VAR IsCategory =
+			    CONTAINSSTRING(ViewBySelection, "Scope")
+			
+			--------------------------------------------------
+			-- Others detection
+			--------------------------------------------------
+			VAR IsOthers =
+			    (IsCountry &&
+			        SELECTEDVALUE('Unique Country scope3'[Country]) = "Others")
+			    ||
+			    (IsBusinessUnit &&
+			        SELECTEDVALUE('Unique Business unit scope3'[Business_unit]) = "Others")
+			    ||
+			    (IsCategory &&
+			        SELECTEDVALUE('Unique Categories scope3'[CO2 Scope 3 Category]) = "Others")
+			
+			--------------------------------------------------
+			-- Current Rank
+			--------------------------------------------------
+			VAR CurrentRank =
+			    IF(
+			        IsOthers,
+			        999999,
+			
+			        SWITCH(
+			            TRUE(),
+			
+			            IsCountry,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Country scope3'[Country]),
+			                        [Actual BY Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Country scope3'[Country]),
+			                        [Actual BY Emission],
+			                        ,
+			                        ASC
+			                    )
+			                ),
+			
+			            IsBusinessUnit,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                        [Actual BY Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                        [Actual BY Emission],
+			                        ,
+			                        ASC
+			                    )
+			                ),
+			
+			            IsCategory,
+			                IF(
+			                    TopBottomValue = "Top",
+			                    RANKX(
+			                        ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                        [Actual BY Emission],
+			                        ,
+			                        DESC
+			                    ),
+			                    RANKX(
+			                        ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                        [Actual BY Emission],
+			                        ,
+			                        ASC
+			                    )
+			                )
+			        )
+			    )
+			
+			--------------------------------------------------
+			-- Others calculation
+			--------------------------------------------------
+			VAR OthersEmission =
+			    SWITCH(
+			        TRUE(),
+			
+			        IsCountry,
+			            CALCULATE(
+			                [Actual BY Emission],
+			                FILTER(
+			                    ALL('Unique Country scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Country scope3'[Country]),
+			                            [Actual BY Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Country scope3'[Country]),
+			                            [Actual BY Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            ),
+			
+			        IsBusinessUnit,
+			            CALCULATE(
+			                [Actual BY Emission],
+			                FILTER(
+			                    ALL('Unique Business unit scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                            [Actual BY Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Business unit scope3'[Business_unit]),
+			                            [Actual BY Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            ),
+			
+			        IsCategory,
+			            CALCULATE(
+			                [Actual BY Emission],
+			                FILTER(
+			                    ALL('Unique Categories scope3'),
+			                    IF(
+			                        TopBottomValue = "Top",
+			                        RANKX(
+			                            ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                            [Actual BY Emission],
+			                            ,
+			                            DESC
+			                        ) > RankingLimit,
+			                        RANKX(
+			                            ALLSELECTED('Unique Categories scope3'[CO2 Scope 3 Category]),
+			                            [Actual BY Emission],
+			                            ,
+			                            ASC
+			                        ) > RankingLimit
+			                    )
+			                )
+			            )
+			    )
+			
+			--------------------------------------------------
+			-- Final output
+			--------------------------------------------------
+			RETURN
+			    IF(
+			        IsOthers,
+			        OthersEmission,
+			        IF(
+			            CurrentRank <= RankingLimit,
+			            [Actual BY Emission],
+			            BLANK()
+			        )
+			    )
+		lineageTag: b8e10b28-d169-4ec1-97ab-c849a8791bd4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'BY Label 2' = ```
+			"BY 2019" 
+			```
+		lineageTag: 01b212f7-3c34-4a06-a58e-fae633da1185
+
+	measure 'PY Year 2' = ```
+			"PY " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[Actual Year Filter].[Year]) - 1
+			
+			```
+		lineageTag: a24f523b-9963-4635-b9b3-a377aa498804
+
+	measure 'CY Year 2' = FORMAT(SELECTEDVALUE('CORP_GHG DTbl_Scope3'[Actual Year Filter].[Year]), 0)
+		lineageTag: 5598c0be-db3a-4901-800e-e65341905290
+
 	column Year
 		dataType: int64
 		formatString: 0
 		lineageTag: 4abc55a5-c83a-4364-949f-f2a02377da64
 		summarizeBy: sum
 		sourceColumn: Year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2742,6 +3630,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: none
 		sourceColumn: Country
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Is_Target
@@ -2750,6 +3640,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 401ba1e1-900f-434d-be87-a2b7cd23967f
 		summarizeBy: sum
 		sourceColumn: Is_Target
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2764,6 +3656,8 @@ table 'CORP_GHG DTbl_Scope3'
 			isDefault
 			relationship: 7effc63b-f1d9-42ac-a4b6-d578f6857665
 			defaultHierarchy: LocalDateTable_367dd5f9-1016-4b68-86da-86a09ef12bfd.'Date Hierarchy'
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2783,6 +3677,8 @@ table 'CORP_GHG DTbl_Scope3'
 			relationship: 4dbc4e2f-1be5-4a7c-a003-f34ac83c4906
 			defaultHierarchy: LocalDateTable_2c41f13c-f074-4de8-be4e-110e8a3aecf3.'Date Hierarchy'
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Valid_To
@@ -2797,6 +3693,8 @@ table 'CORP_GHG DTbl_Scope3'
 			relationship: 152d7c8d-fc76-4a30-8022-8051882be95e
 			defaultHierarchy: LocalDateTable_4b8560e7-387a-43fd-8f9f-b7985e3ad2cb.'Date Hierarchy'
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Is_Preliminary
@@ -2806,6 +3704,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: none
 		sourceColumn: Is_Preliminary
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Is Target Filter' = IF([Is_Target], 1, 0)
@@ -2813,29 +3713,34 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 95325625-1695-4e02-a720-761417fc385a
 		summarizeBy: sum
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
-	column 'CY Year' = FORMAT([Year], "0")
+	column 'CY Year' = FORMAT('CORP_GHG DTbl_Scope3'[Year], "0")
 		lineageTag: 9dbaaf43-1306-4b4c-994d-3c2239eeb874
 		summarizeBy: none
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
-	column 'PY Year' = "PY " & FORMAT([Year] - 1, "0")
+	column 'PY Year' = ```
+			"PY " & [CY Year] -1
+			
+			```
 		lineageTag: 054d1233-9eab-4a2b-859b-f4c3ee91b512
 		summarizeBy: none
 
-		annotation SummarizationSetBy = Automatic
-
-	column 'BY Label' = "BY " & "2019"
-		lineageTag: a88ea504-a6ca-4e9f-b4f0-008524190c70
-		summarizeBy: none
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Target Emission SBT' = IF([Is Target Filter] = 1 && [SBT_Relevant]= "True", [CO2e], BLANK())
 		lineageTag: 681bd2f5-7959-4cb0-b63a-a5d77ecf6755
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2844,6 +3749,8 @@ table 'CORP_GHG DTbl_Scope3'
 	column 'Actual Emission (act vs target) dax' = IF([Actual Year Filter] = [Fiscal_Date],[Actual Emission],BLANK())
 		lineageTag: 4aa82014-70db-4cf9-bf2c-77da6ab08bce
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2864,11 +3771,15 @@ table 'CORP_GHG DTbl_Scope3'
 			relationship: 0f68d40b-cbe9-4032-8433-08c300d21a19
 			defaultHierarchy: LocalDateTable_24677133-417d-4371-b58c-df6ea44b5ba8.'Date Hierarchy'
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'dax TargetEmissionBY' = IF ([Is Target Filter] = 1&& [SBT_Relevant]= "True",[CO2e_Baseline_year],BLANK())
 		lineageTag: 2eaec0c1-e990-4980-bbbf-a60c987f26a4
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2877,6 +3788,8 @@ table 'CORP_GHG DTbl_Scope3'
 	column 'Actual emission red' = IF([Is Target Filter] = 0,[CO2e], BLANK())
 		lineageTag: 1ae9ba2a-c948-4347-babb-0587d70bc504
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2887,6 +3800,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 80c7aadc-2408-4b58-9739-b5031f1f4da8
 		summarizeBy: sum
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isCustom":true}
@@ -2894,6 +3809,8 @@ table 'CORP_GHG DTbl_Scope3'
 	column 'Actual Emission (Act vs Trg)red' = IF([Actual Year Filter] = [Fiscal_Date],[Actual emission red])
 		lineageTag: 80575cd3-61f8-4b0d-ac5e-48e17743a5a7
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2903,6 +3820,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 4309e913-d583-401f-8900-bc648f5d5b4f
 		summarizeBy: sum
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -2910,6 +3829,8 @@ table 'CORP_GHG DTbl_Scope3'
 	column 'Target Emission' = IF([Is Target Filter] = 1, [CO2e], BLANK())
 		lineageTag: 3851267f-d39f-44f2-930f-a5ab4ab7f16d
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2919,6 +3840,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 5494b316-7706-4917-bc72-7239d851a720
 		summarizeBy: sum
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -2926,6 +3849,8 @@ table 'CORP_GHG DTbl_Scope3'
 	column 'Actual Emission test' = IF([Is Target Filter] = 0, [CO2e])
 		lineageTag: cc7232dd-f015-4501-847e-69bc19c5ff9a
 		summarizeBy: sum
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2939,6 +3864,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: f8ff9af6-0cb0-47e0-8ad0-aa4df13926db
 		summarizeBy: none
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Co2_Scope_3_Category
@@ -2946,6 +3873,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 31a97b3c-4ed7-482f-8a3d-be12313d63f7
 		summarizeBy: none
 		sourceColumn: Co2_Scope_3_Category
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2955,6 +3884,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: none
 		sourceColumn: Business_Unit
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Vendor_Country
@@ -2962,6 +3893,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 71f1a8d4-ade0-4069-836d-43f60c9c375a
 		summarizeBy: none
 		sourceColumn: Vendor_Country
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2971,6 +3904,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: none
 		sourceColumn: Pro_Area
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Pro_Segment_Key
@@ -2978,6 +3913,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: c39f07f9-0278-4fc2-ac6e-dcf537c208d8
 		summarizeBy: none
 		sourceColumn: Pro_Segment_Key
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2987,6 +3924,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: none
 		sourceColumn: Pro_Segment
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Pro_Category_Key
@@ -2994,6 +3933,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 86cb38fb-3c32-4124-9695-21c471a55ece
 		summarizeBy: none
 		sourceColumn: Pro_Category_Key
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -3003,6 +3944,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: none
 		sourceColumn: Pro_Category
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Pro_Subcategory_Key
@@ -3010,6 +3953,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 68da2437-48e5-4f63-be2d-aea0b6408efe
 		summarizeBy: none
 		sourceColumn: Pro_Subcategory_Key
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -3019,6 +3964,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: none
 		sourceColumn: Pro_Subcategory
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Co2e
@@ -3026,6 +3973,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 18baf2a5-8dff-41e6-a5bb-1db794f0e06f
 		summarizeBy: sum
 		sourceColumn: Co2e
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -3037,6 +3986,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: sum
 		sourceColumn: Co2e_Baseline_Year
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -3047,6 +3998,8 @@ table 'CORP_GHG DTbl_Scope3'
 		summarizeBy: sum
 		sourceColumn: Co2e_Previous_Year
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -3056,6 +4009,8 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 7d906617-5722-4c2d-b2c4-b322a2e62398
 		summarizeBy: none
 		sourceColumn: SBT_Relevant
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

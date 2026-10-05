@@ -13,7 +13,6 @@ table 'View by: S1&2 Hover Hover'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View by: S1&2 Hover Hover Fields'
-		isHidden
 		lineageTag: 2daad3ee-699b-4d39-b61a-003b186b7f08
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'View by: S1&2 Hover Hover'
 		annotation SummarizationSetBy = Automatic
 
 	column 'View by: S1&2 Hover Hover Order'
-		isHidden
 		formatString: 0
 		lineageTag: acfb1114-2ba8-49b9-89f9-29394fdb9b0f
 		summarizeBy: sum

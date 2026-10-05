@@ -13,7 +13,6 @@ table 'Hover Over'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Hover Over Fields'
-		isHidden
 		lineageTag: c702d9c8-1129-47e2-86df-c3f27dc34981
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Hover Over'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Hover Over Order'
-		isHidden
 		formatString: 0
 		lineageTag: 7cd12c0b-04b9-45b5-857b-c052e4046178
 		summarizeBy: sum

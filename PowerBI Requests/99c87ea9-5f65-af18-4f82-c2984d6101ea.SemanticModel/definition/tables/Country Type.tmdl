@@ -13,7 +13,6 @@ table 'Country Type'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Country Type Fields'
-		isHidden
 		lineageTag: 3cf6b0fc-3099-4f74-8cd5-a3f0147a39ef
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Country Type'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Country Type Order'
-		isHidden
 		formatString: 0
 		lineageTag: 024dd106-08bc-4eff-9db7-5b05e63cc440
 		summarizeBy: sum

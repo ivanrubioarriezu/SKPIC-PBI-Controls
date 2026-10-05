@@ -20,16 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Unique Country scope3"
+                      "Entity": "Unique Categories scope3"
                     }
                   },
-                  "Property": "Country"
+                  "Property": "CO2 Scope 3 Category"
                 }
               },
-              "queryRef": "Unique Country scope3.Country",
-              "nativeQueryRef": "Country",
+              "queryRef": "Unique Categories scope3.CO2 Scope 3 Category",
+              "nativeQueryRef": "Scope 3 Category",
               "active": true,
-              "displayName": "Country"
+              "displayName": "Scope 3 Category"
             }
           ],
           "fieldParameters": [

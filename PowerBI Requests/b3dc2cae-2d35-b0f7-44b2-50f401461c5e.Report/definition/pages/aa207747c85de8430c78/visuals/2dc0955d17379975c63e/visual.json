@@ -356,5 +356,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "709c19802e70b2ea008a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Unique scope3 EV PRO Category"
+              }
+            },
+            "Property": "Pro_Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2fa3485a03c046bbcde6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "Actual Emission"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
