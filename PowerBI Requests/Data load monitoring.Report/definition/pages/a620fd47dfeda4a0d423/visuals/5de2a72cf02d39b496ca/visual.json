@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "ee9d53eac70996804cc0",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "5de2a72cf02d39b496ca",
   "position": {
-    "x": 11.389175844543406,
-    "y": 857.09876543209873,
+    "x": 0,
+    "y": 852.76153346328783,
     "z": 1000,
-    "height": 605.55555555555554,
-    "width": 1358.3333333333335,
-    "tabOrder": 3000
+    "height": 636.25730994152048,
+    "width": 1377.7777777777778,
+    "tabOrder": 14001
   },
   "visual": {
     "visualType": "pivotTable",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "PH_WH DTbl_Target.Year",
-              "nativeQueryRef": "Year",
+              "nativeQueryRef": "Sum of Year",
               "active": true
             }
           ]
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "PH_WH DTbl_Target.s ph target",
-              "nativeQueryRef": "s ph target"
+              "nativeQueryRef": "s",
+              "displayName": "s"
             },
             {
               "field": {
@@ -60,9 +61,8 @@
                 }
               },
               "queryRef": "PH_WH DTbl_Target.Target ph",
-              "nativeQueryRef": "Target ",
-              "displayName": "Target ",
-              "format": "0.0 M"
+              "nativeQueryRef": "Target",
+              "displayName": "Target"
             }
           ]
         }
@@ -71,13 +71,13 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
                     "Entity": "PH_WH DTbl_Target"
                   }
                 },
-                "Property": "Year"
+                "Property": "s ph target"
               }
             },
             "direction": "Ascending"
@@ -96,6 +96,19 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "PH_WH DTbl_Target.Target ph"
           }
         },
         {
@@ -208,21 +221,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "144.559143884665D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "PH_WH DTbl_Target.Year"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "1022.1187614299041D"
+                  "Value": "1112.6465153669988D"
                 }
               }
             }
@@ -235,6 +234,13 @@
       "columnFormatting": [
         {
           "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -247,7 +253,14 @@
                 }
               }
             },
-            "styleHeader": {
+            "styleSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -258,6 +271,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Right'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -271,7 +291,14 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
                 }
               }
             }

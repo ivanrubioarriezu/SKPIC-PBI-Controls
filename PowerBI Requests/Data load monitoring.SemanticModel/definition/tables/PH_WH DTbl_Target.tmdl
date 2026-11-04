@@ -1,13 +1,6 @@
 table 'PH_WH DTbl_Target'
 	lineageTag: c89b0bfc-5168-4b01-88a0-bc736fd0d92a
 
-	measure 'Target ph' =
-			
-			DIVIDE( SUM('PH_WH DTbl_Target'[Target]), 1000000 )
-		lineageTag: 197fc20b-7df3-4c3b-b263-44aebedb36cf
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 's ph target' = ```
 			
 			VAR anyValue =
@@ -38,6 +31,26 @@ table 'PH_WH DTbl_Target'
 			    )
 			```
 		lineageTag: ef6dff5a-80ff-4ab0-ad7e-69e6bd3e5a2f
+
+	measure 'Target ph' =
+			
+			VAR FinalTarget =
+			    CALCULATE(
+			        MAX('PH_WH DTbl_Target'[Target]),
+			        'PH_WH DTbl_Target'[Is_Preliminary] = FALSE()
+			    )
+			
+			VAR PreliminaryTarget =
+			    CALCULATE(
+			        MAX('PH_WH DTbl_Target'[Target]),
+			        'PH_WH DTbl_Target'[Is_Preliminary] = TRUE()
+			    )
+			
+			RETURN
+			    COALESCE(FinalTarget, PreliminaryTarget)
+		lineageTag: d9798c39-ee37-4d2e-a6aa-8719bc5fdb5a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Year
 		dataType: int64

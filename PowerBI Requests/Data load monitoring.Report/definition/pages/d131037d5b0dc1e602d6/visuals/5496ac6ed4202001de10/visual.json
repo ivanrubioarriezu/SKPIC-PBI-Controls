@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "5496ac6ed4202001de10",
   "position": {
     "x": 1385.8208955223881,
@@ -50,21 +50,16 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CH_UP DMT_Target (2)"
-                        }
-                      },
-                      "Property": "Target"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_Target (2)"
                     }
                   },
-                  "Function": 0
+                  "Property": "Target CH_QA"
                 }
               },
-              "queryRef": "Sum(CH_UP DMT_Target (2).Target)",
+              "queryRef": "CH_UP DMT_Target (2).Target CH_QA",
               "nativeQueryRef": "Target",
               "displayName": "Target"
             }
@@ -241,7 +236,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(CH_UP DMT_Target (2).Target)"
+            "metadata": "CH_UP DMT_Target (2).Target CH_QA"
           }
         }
       ],
@@ -251,7 +246,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "971.5554239164627D"
+                  "Value": "1025.3816763171328D"
                 }
               }
             }

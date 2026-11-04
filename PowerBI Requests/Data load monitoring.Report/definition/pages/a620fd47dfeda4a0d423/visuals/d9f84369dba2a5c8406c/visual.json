@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "d9f84369dba2a5c8406c",
   "position": {
     "x": 1.0160905607955653,
@@ -50,21 +50,16 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "PH_WH DTbl_Target (2)"
-                        }
-                      },
-                      "Property": "Target"
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_Target (2)"
                     }
                   },
-                  "Function": 0
+                  "Property": "Target ph2"
                 }
               },
-              "queryRef": "Sum(PH_WH DTbl_Target (2).Target)",
+              "queryRef": "PH_WH DTbl_Target (2).Target ph2",
               "nativeQueryRef": "Target",
               "displayName": "Target"
             }
@@ -239,27 +234,6 @@
       "columnFormatting": [
         {
           "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000000D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(PH_WH DTbl_Target (2).Target)"
-          }
-        },
-        {
-          "properties": {
             "fontColor": {
               "solid": {
                 "color": {
@@ -296,6 +270,27 @@
           },
           "selector": {
             "metadata": "PH_WH DTbl_Target (2).s ph 2"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PH_WH DTbl_Target (2).Target ph2"
           }
         }
       ]

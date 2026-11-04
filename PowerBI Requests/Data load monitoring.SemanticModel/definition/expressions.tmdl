@@ -5,7 +5,7 @@ expression hostname = "adb-4071335540424391.11.azuredatabricks.net" meta [IsPara
 
 	annotation PBI_NavigationStepName = Navigation
 
-expression httpPath = "/sql/1.0/warehouses/a4d70720d95e4e2a" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+expression httpPath = "/sql/1.0/warehouses/916c447fdd11cd1e" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 17f64234-608e-4ddb-9ae2-0269ae63bc61
 
 	annotation PBI_ResultType = Text
@@ -26,7 +26,7 @@ expression hostnameQAS = "adb-8164385335211286.6.azuredatabricks.net" meta [IsPa
 
 	annotation PBI_ResultType = Text
 
-expression httpPathQAS = "/sql/1.0/warehouses/9f62c9f4fc53fdb0" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+expression httpPathQAS = "/sql/1.0/warehouses/638730ddd6aa4c47" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 97a4bede-4920-4304-a5f1-915232df6370
 
 	annotation PBI_NavigationStepName = Navigation

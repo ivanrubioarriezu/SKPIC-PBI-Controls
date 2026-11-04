@@ -32,6 +32,26 @@ table 'CH_UP DMT_Target'
 			```
 		lineageTag: 588f55e2-b4ef-486d-af05-420b44beafc4
 
+	measure 'CH target' =
+			
+			VAR FinalTarget =
+			    CALCULATE(
+			        MAX('CH_UP DMT_Target'[Target]),
+			        'CH_UP DMT_Target'[Is_Preliminary] = FALSE()
+			    )
+			
+			VAR PreliminaryTarget =
+			    CALCULATE(
+			        MAX('CH_UP DMT_Target'[Target]),
+			        'CH_UP DMT_Target'[Is_Preliminary] = TRUE()
+			    )
+			
+			RETURN
+			    COALESCE(FinalTarget, PreliminaryTarget)
+		lineageTag: 081d650a-39eb-47ac-a33d-56915753a0c7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Division
 		dataType: string
 		lineageTag: 4a89e16c-1d8f-4900-acb5-ff43cba9d25b

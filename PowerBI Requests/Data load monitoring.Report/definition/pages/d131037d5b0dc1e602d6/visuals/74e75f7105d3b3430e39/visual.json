@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "74e75f7105d3b3430e39",
   "position": {
     "x": 2.1939865689866282,
@@ -50,21 +50,16 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CH_UP DMT_Target"
-                        }
-                      },
-                      "Property": "Target"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_Target"
                     }
                   },
-                  "Function": 0
+                  "Property": "CH target"
                 }
               },
-              "queryRef": "Sum(CH_UP DMT_Target.Target)",
+              "queryRef": "CH_UP DMT_Target.CH target",
               "nativeQueryRef": "Target",
               "displayName": "Target"
             }
@@ -192,27 +187,6 @@
       "columnFormatting": [
         {
           "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000000D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(CH_UP DMT_Target.Target)"
-          }
-        },
-        {
-          "properties": {
             "styleHeader": {
               "expr": {
                 "Literal": {
@@ -243,6 +217,27 @@
           "selector": {
             "metadata": "CH_UP DMT_Target.s ch target"
           }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMT_Target.CH target"
+          }
         }
       ],
       "columnWidth": [
@@ -265,7 +260,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "985.6019173349598D"
+                  "Value": "1032.4048221087498D"
                 }
               }
             }

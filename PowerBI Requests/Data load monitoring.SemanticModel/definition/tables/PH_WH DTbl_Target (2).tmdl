@@ -32,6 +32,26 @@ table 'PH_WH DTbl_Target (2)'
 			```
 		lineageTag: fe76d806-b7bd-4211-92af-59a7dcd34369
 
+	measure 'Target ph2' =
+			
+			VAR FinalTarget =
+			    CALCULATE(
+			        MAX('PH_WH DTbl_Target (2)'[Target]),
+			        'PH_WH DTbl_Target (2)'[Is_Preliminary] = FALSE()
+			    )
+			
+			VAR PreliminaryTarget =
+			    CALCULATE(
+			        MAX('PH_WH DTbl_Target (2)'[Target]),
+			        'PH_WH DTbl_Target (2)'[Is_Preliminary] = TRUE()
+			    )
+			
+			RETURN
+			    COALESCE(FinalTarget, PreliminaryTarget)
+		lineageTag: 4177302a-168e-4a00-a46a-bbff1373730f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Year
 		dataType: int64
 		formatString: 0

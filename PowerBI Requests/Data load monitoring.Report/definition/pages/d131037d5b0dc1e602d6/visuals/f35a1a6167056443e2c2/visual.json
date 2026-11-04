@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "f35a1a6167056443e2c2",
   "position": {
     "x": 13.888888888888889,
@@ -68,10 +68,9 @@
                 "Level": "Year"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
@@ -134,7 +133,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2025L"
+                                "Value": "2026L"
                               }
                             }
                           ]
@@ -173,7 +172,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "2025L"
+                                      "Value": "2026L"
                                     }
                                   }
                                 ]
@@ -197,7 +196,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "2025"
+                            "0": "2026"
                           }
                         ]
                       }
