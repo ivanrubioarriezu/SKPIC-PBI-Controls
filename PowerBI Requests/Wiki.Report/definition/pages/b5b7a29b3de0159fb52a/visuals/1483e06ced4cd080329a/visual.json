@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "1483e06ced4cd080329a",
   "position": {
     "x": 14.925373134328357,
@@ -237,7 +237,7 @@
             "gridHorizontalWeight": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "2D"
                 }
               }
             },
@@ -385,6 +385,48 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "86c2c9e9903b565487bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Key terms"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "51ff49429b968b74b8b9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "Definition"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1525884decf0e6514d41",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset"
+              }
+            },
+            "Property": "URL"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

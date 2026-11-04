@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "9fb742424a78e4c3b3bc",
   "position": {
     "x": 42.288557213930346,
@@ -99,7 +99,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Guiding Material'"
+                                "Value": "'Key Terms'"
                               }
                             }
                           ]
