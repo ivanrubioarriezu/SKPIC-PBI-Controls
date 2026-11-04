@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "832684fc88d8114407ae",
   "position": {
     "x": 17.00017708517797,
@@ -217,6 +217,34 @@
           },
           "selector": {
             "metadata": "CH_UP DMT_KPI.ACT PY Label"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "23D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMT_KPI.ACT CY Label"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "23D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMT_KPI.ACT BY Label"
           }
         }
       ],

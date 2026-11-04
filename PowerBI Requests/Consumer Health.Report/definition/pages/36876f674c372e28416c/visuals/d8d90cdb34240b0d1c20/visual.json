@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d8d90cdb34240b0d1c20",
   "position": {
-    "x": 17.00017708517797,
-    "y": 1490.348857800602,
+    "x": 15.715162676488644,
+    "y": 1490.3212604870064,
     "z": 32000,
-    "height": 280.50292190543649,
-    "width": 376.837258721445,
+    "height": 280.25373439738081,
+    "width": 343.11438510333539,
     "tabOrder": 31000
   },
   "visual": {
@@ -217,6 +217,34 @@
           },
           "selector": {
             "metadata": "CH_UP DMT_KPI.ACT PY Label"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "23D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMT_KPI.ACT CY Label"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "23D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMT_KPI.ACT BY Label"
           }
         }
       ],

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "bc7aa64ea2b9f1d3d727",
   "position": {
     "x": 9.7220112410754975,
@@ -105,7 +105,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Full Year'"
+                                "Value": "'Half Year'"
                               }
                             }
                           ]
