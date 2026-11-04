@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "8387908d16d0d49c4fea",
+  "position": {
+    "x": 2467.4056090414397,
+    "y": 285.96400167434069,
+    "z": 11000,
+    "height": 88,
+    "width": 180,
+    "tabOrder": 16000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/Data ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/c19cd3353cbb9bf0ba61?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  },
+                  {
+                    "value": "                                       ",
+                    "textStyle": {},
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/c19cd3353cbb9bf0ba61?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt"
+                    },
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/c19cd3353cbb9bf0ba61?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  },
+                  {
+                    "value": "Export",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/c0be656f-9b98-40af-88b7-38c060e7e8f2/c19cd3353cbb9bf0ba61?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

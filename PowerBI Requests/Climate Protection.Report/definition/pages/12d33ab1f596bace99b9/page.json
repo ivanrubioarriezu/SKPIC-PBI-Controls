@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "12d33ab1f596bace99b9",
+  "displayName": "EV_Scope 3_BU",
+  "displayOption": "FitToPage",
+  "height": 1600,
+  "width": 2885,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "85a0488a1e40d19e2b0d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
+              }
+            },
+            "Property": "SBT_Relevant"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#B3B3B3'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "70D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "201L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "f2f5dba0a3b3d0381d9f",
+      "target": "e99e04f265209ef271fa",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e99e04f265209ef271fa",
+      "target": "f2f5dba0a3b3d0381d9f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e99e04f265209ef271fa",
+      "target": "f54315b34714058558c4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8721479edc78650359b2",
+      "target": "e99e04f265209ef271fa",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7cded996b65c78be0076",
+      "target": "e99e04f265209ef271fa",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e99e04f265209ef271fa",
+      "target": "7cded996b65c78be0076",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e99e04f265209ef271fa",
+      "target": "8721479edc78650359b2",
+      "type": "DataFilter"
+    }
+  ]
+}

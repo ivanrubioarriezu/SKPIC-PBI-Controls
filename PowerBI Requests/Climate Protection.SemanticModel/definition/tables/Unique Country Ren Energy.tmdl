@@ -1,0 +1,23 @@
+table 'Unique Country Ren Energy'
+	lineageTag: 4c0e3ca5-05ee-4231-be9e-2750111b94d8
+
+	column Country
+		lineageTag: e8acc10c-9771-401d-bd89-79ead75dbe8d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: CORP_GHG DTbl_RenewableElectricity[Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique Country Ren Energy' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('CORP_GHG DTbl_RenewableElectricity'[Country]), 
+				    DATATABLE("Country", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = 4f6436acebf84f268dfa0db91247d0ea
+

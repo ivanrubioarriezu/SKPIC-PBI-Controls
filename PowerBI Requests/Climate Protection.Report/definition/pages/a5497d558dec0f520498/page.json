@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a5497d558dec0f520498",
+  "displayName": "Tooltip Scope3 EV",
+  "displayOption": "FitToPage",
+  "height": 500,
+  "width": 900,
+  "pageBinding": {
+    "name": "3867616db464a3a00c5a",
+    "type": "Default",
+    "parameters": []
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

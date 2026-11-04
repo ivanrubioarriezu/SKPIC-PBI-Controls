@@ -1,0 +1,875 @@
+table 'CORP_GHG DTbl_Scope1&2'
+	lineageTag: 6352f6e0-3091-49b2-a971-4fd62afaf41a
+
+	measure Offsetting =
+			
+			CALCULATE(SUM('CORP_GHG DTbl_Scope1&2'[Actual Emission 1&2]),'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting")
+		lineageTag: de079f6e-921d-41c8-80f0-003eba311c31
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Offsetting BY' = CALCULATE(SUM('CORP_GHG DTbl_Scope1&2'[Actual BY Emission]),'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting")
+		lineageTag: a94f0b4b-8aa5-405e-810d-d31330ee3c37
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scope 1&2 Emission' = ```
+			CALCULATE(SUM('CORP_GHG DTbl_Scope1&2'[Actual Emission 1&2]),'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2")              
+			```
+		lineageTag: ce8a9073-12ee-4283-8f25-8732fa14f338
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scope 1&2 + Offsetting' = ```
+			
+			COALESCE(('CORP_GHG DTbl_Scope1&2'[Scope 1&2 Emission]), 0) + 
+			COALESCE(('CORP_GHG DTbl_Scope1&2'[Offsetting]), 0)
+			```
+		lineageTag: 375c5319-4212-4565-9b06-1e4b430d0659
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scope 1&2 Reduction' = ```
+			
+			(
+			    COALESCE(('CORP_GHG DTbl_Scope1&2'[Scope 1&2 Emission]), 0) - 
+			    COALESCE(('CORP_GHG DTbl_Scope1&2'[Scope1&2 Emission BY Measure]), 0)
+			) * -1
+			```
+		lineageTag: f53d9126-b898-4034-be6b-f2d0ca122bf8
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scope1&2 Emission BY Measure' =
+			
+			CALCULATE(
+			    SUM('CORP_GHG DTbl_Scope1&2'[Actual BY Emission]),
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2"
+			)
+		lineageTag: 831a5582-8e3b-4480-b7e2-c58891e936ff
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'scope 1&2 Target Emission Reduction %' = ```
+			
+			DIVIDE(
+			    SUM('CORP_GHG DTbl_Scope1&2'[Target Emission (Exact)]) - SUM('CORP_GHG DTbl_Scope1&2'[Target Emission BY (Exact)]),
+			    SUM('CORP_GHG DTbl_Scope1&2'[Target Emission BY (Exact)]),0
+			    
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 436adb7f-0034-4af4-8e55-7f7f6272c41a
+
+		changedProperty = IsHidden
+
+	measure 'scope 1&2 Actual Emission Reduction %' = ```
+			
+			DIVIDE(
+			    SUM('CORP_GHG DTbl_Scope1&2'[Actual Emission (Act vs Trg)]) - SUM('CORP_GHG DTbl_Scope1&2'[Actual BY Emission]),
+			    SUM('CORP_GHG DTbl_Scope1&2'[Actual BY Emission]),
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d5896d13-25ac-41ea-b0be-f5b9692f7898
+
+		changedProperty = IsHidden
+
+	measure BusinessUnitMatch =
+			
+			VAR SelectedBU = SELECTEDVALUE('Table'[Business Unit Parameter], "All")
+			RETURN
+			    IF(
+			        SelectedBU = "All" || SelectedBU = "Null" || SelectedBU = SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Division]),
+			        1,
+			        0
+			    )
+		formatString: 0
+		lineageTag: c888763b-27b1-4477-b9d7-23dda380bc09
+
+		changedProperty = IsHidden
+
+	measure Scope1&2Reduction% =
+			
+			VAR CurrentEmission = COALESCE(('CORP_GHG DTbl_Scope1&2'[Scope 1&2 Emission]), 0)
+			VAR BaselineEmission = COALESCE(SUM('CORP_GHG DTbl_Scope1&2'[Scope1&2 Emission BY]), 0)
+			RETURN
+			DIVIDE(CurrentEmission - BaselineEmission, BaselineEmission, 0)
+		lineageTag: 622ca0a1-8f2f-4e37-bd7e-7d04ebf3b681
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Offsetting %' =
+			
+			VAR Offsetting = COALESCE(('CORP_GHG DTbl_Scope1&2'[Offsetting]), 0)
+			VAR Emission = COALESCE(('CORP_GHG DTbl_Scope1&2'[Scope 1&2 Emission]), 0)
+			RETURN
+			DIVIDE(Offsetting, Emission, 0)
+		lineageTag: a6345c2c-094e-46cc-9505-53e2ded6eb1e
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ClimateNeutrality% =
+			
+			COALESCE([Scope1&2Reduction%], 0) + COALESCE([Offsetting %], 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8638513b-d812-46f3-85da-0753dc22c92b
+
+		changedProperty = IsHidden
+
+	measure 'Ranking by Actual Emission 1&2' =
+			
+			VAR _topCategory =SWITCH(TRUE(),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Country]),[Actual Emission 1&2 measure],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Division]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Division]),[Actual Emission 1&2 measure],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Site]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Site]),[Actual Emission 1&2 measure],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Emission Driver]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Emission Driver]),[Actual Emission 1&2 measure],,DESC))
+			
+			VAR _bottomCategory=SWITCH(TRUE(),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Country]),[Actual Emission 1&2 measure],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Division]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Division]),[Actual Emission 1&2 measure],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Site]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Site]),[Actual Emission 1&2 measure],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Emission Driver]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Emission Driver]),[Actual Emission 1&2 measure],,ASC))
+			VAR _rankVisible= IF(SELECTEDVALUE('Top/Bottom'[Value])="Top"
+			,_topCategory
+			,_bottomCategory
+			)
+			RETURN
+			IF(_rankVisible<='Ranking Option'[Ranking Option Value],[Actual Emission 1&2 measure])
+		lineageTag: 7a5bd732-4fe9-44c8-ada2-b74d81ef6ee2
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Actual Emission 1&2 measure' =
+			
+			CALCULATE(
+			    SUMX(
+			        'CORP_GHG DTbl_Scope1&2',
+			        SWITCH(
+			            TRUE(),
+			            'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE() && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting", 'CORP_GHG DTbl_Scope1&2'[Value] * -1,
+			            'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE(), 'CORP_GHG DTbl_Scope1&2'[Value],
+			            BLANK()
+			        )
+			    )
+			)
+		lineageTag: 37c89f58-a878-4d87-b47f-ef709ae8be6a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Actual PY Emission 1&2' = ```
+			
+			CALCULATE(
+			    SUMX(
+			        'CORP_GHG DTbl_Scope1&2',
+			        SWITCH(
+			            TRUE(),
+			            'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE() && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting", 'CORP_GHG DTbl_Scope1&2'[Value_PY] * -1,
+			            'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE(), 'CORP_GHG DTbl_Scope1&2'[Value_PY],
+			            BLANK()
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: c1df8c58-8cf3-4ea3-a665-8a5f2a866e08
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Actual BY Emission 1&2 measure' = ```
+			
+			CALCULATE(
+			    SUMX(
+			        'CORP_GHG DTbl_Scope1&2',
+			        SWITCH(
+			            TRUE(),
+			            'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE() && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting", 'CORP_GHG DTbl_Scope1&2'[Value_BY] * -1,
+			            'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE(), 'CORP_GHG DTbl_Scope1&2'[Value_BY],
+			            BLANK()
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: 94a52f10-b0b4-4cfb-8563-efc5223c6a8f
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ranking by Actual PY Emission 1&2' =
+			
+			VAR _topCategory =SWITCH(TRUE(),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Country]),[Actual PY Emission 1&2],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Division]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Division]),[Actual PY Emission 1&2],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Site]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Site]),[Actual PY Emission 1&2],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Emission Driver]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Emission Driver]),[Actual PY Emission 1&2],,DESC))
+			VAR _bottomCategory=SWITCH(TRUE(),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Country]),[Actual PY Emission 1&2],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Division]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Division]),[Actual PY Emission 1&2],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Site]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Site]),[Actual PY Emission 1&2],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Emission Driver]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Emission Driver]),[Actual PY Emission 1&2],,ASC))
+			VAR _rankVisible= IF(SELECTEDVALUE('Top/Bottom'[Value])="Top"
+			,_topCategory
+			,_bottomCategory
+			)
+			RETURN
+			IF(_rankVisible<='Ranking Option'[Ranking Option Value],[Actual PY Emission 1&2])
+		lineageTag: 666880f9-a5c6-4220-a1b5-272753dfc043
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ranking by Actual BY Emission 1&2' =
+			
+			VAR _topCategory =SWITCH(TRUE(),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Country]),[Actual BY Emission 1&2 measure],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Division]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Division]),[Actual BY Emission 1&2 measure],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Site]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Site]),[Actual BY Emission 1&2 measure],,DESC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Emission Driver]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Emission Driver]),[Actual BY Emission 1&2 measure],,DESC))
+			VAR _bottomCategory=SWITCH(TRUE(),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Country]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Country]),[Actual BY Emission 1&2 measure],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope1&2'[Division]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Division]),[Actual BY Emission 1&2 measure],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Site]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Site]),[Actual BY Emission 1&2 measure],,ASC),SELECTEDVALUE('View by: S1&2'[View by: S1&2 Fields])= "'CORP_GHG DTbl_Scope3'[Emission Driver]",RANKX(ALLSELECTED('CORP_GHG DTbl_Scope1&2'[Emission Driver]),[Actual BY Emission 1&2 measure],,ASC))
+			VAR _rankVisible= IF(SELECTEDVALUE('Top/Bottom'[Value])="Top"
+			,_topCategory
+			,_bottomCategory
+			)
+			RETURN
+			IF(_rankVisible<='Ranking Option'[Ranking Option Value],[Actual BY Emission 1&2 measure])
+		lineageTag: 296851de-6c94-4f1d-be83-19dbfdd63a62
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Offset Reduction measure' = (COALESCE([Offsetting], 0) - COALESCE([Offsetting BY], 0)) * -1
+		lineageTag: 3652445d-fdae-45bb-a259-b92bf5731ba0
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ViewBy param text 1&2' = MAX('View by: S1&2'[View by: S1&2])
+		lineageTag: ebc744e8-3b83-41f4-9e22-8841e1fc627b
+
+		changedProperty = IsHidden
+
+	measure 'Emission Text 1&2' = "Scope 1&2 Emissions per " & MAX('View by: S1&2'[View by: S1&2]) & " (Kt CO2e)"
+		lineageTag: 4a24a50a-0cf8-457f-bb46-b33b7cf85105
+
+		changedProperty = IsHidden
+
+	measure 'Viewby Tooltip (1&2)' =
+			
+			SWITCH (
+			    TRUE(),
+			    MAX('View by: S1&2'[View by: S1&2]) = "Country",
+			        "Country: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[Country]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & ROUND([Ranking by Actual Emission 1&2], 2) & " tCO2e",
+			
+			    MAX('View by: S1&2'[View by: S1&2]) = "Emission Driver",
+			        "Emission Driver: " & SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Emission Driver]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & ROUND([Ranking by Actual Emission 1&2], 2) & " tCO2e",
+			
+			    MAX('View by: S1&2'[View by: S1&2]) = "Site",
+			        "Site: " & SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Site]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & ROUND([Ranking by Actual Emission 1&2], 2) & " tCO2e",
+			
+			    MAX('View by: S1&2'[View by: S1&2]) = "Division",
+			        "Division: " & SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Division]) & UNICHAR(10) &
+			        "Scope 3 Actual Emission: " & ROUND([Ranking by Actual Emission 1&2], 2) & " tCO2e",
+			
+			    -- Default case
+			    "Scope 3 Category: " & SELECTEDVALUE('CORP_GHG DTbl_Scope3'[CO2_Scope_3_Category]) & UNICHAR(10) &
+			    "Scope 3 Actual Emission: " & ROUND([Ranking by Actual Emission 1&2], 2) & " tCO2e"
+			)
+		lineageTag: dad0ec8c-82cd-48e0-83ed-f2296a9a13c0
+
+		changedProperty = IsHidden
+
+	measure 'Text Hover Over 1&2' = "TOP 10 " & MAX('View by: S1&2 Hover Hover'[View by: S1&2 Hover Hover])  & " Per " &   MAX('View by: S1&2'[View by: S1&2])
+		lineageTag: 9a0f7258-3cfd-4c77-b9dc-6551716b6782
+
+		changedProperty = IsHidden
+
+	measure 'TooltipText 1&2' = "Scope 1&2 Actual Emission: " & FORMAT([Actual Emission 1&2 measure], "#,##0") & " tons CO₂e"
+		lineageTag: fbff899c-3a8f-4c78-a226-93e8f2194383
+
+		changedProperty = IsHidden
+
+	measure 'Target Emission BY (Exact) 1' =
+			
+			CALCULATE(
+			    MAX('CORP_GHG DTbl_Scope1&2'[Value]),
+			    FILTER(ALL('CORP_GHG DTbl_Scope1&2'[Year]), 'CORP_GHG DTbl_Scope1&2'[Year] = 2019)
+			)
+		lineageTag: 485682d3-f918-407d-8f75-352deb4dd100
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Target Emission (Exact)1' =
+			
+			
+			SUMX(
+			    'CORP_GHG DTbl_Scope1&2',
+			    IF(
+			        'CORP_GHG DTbl_Scope1&2'[Is_Target] = TRUE(),
+			        IF(
+			            'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",
+			            'CORP_GHG DTbl_Scope1&2'[Value] * -1,
+			            'CORP_GHG DTbl_Scope1&2'[Value]
+			        ),
+			        BLANK()
+			    )
+			)
+		lineageTag: 59b22401-fbd5-4a33-af9e-b793665992f8
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Target Emission Reduction %1' =
+			
+			DIVIDE(
+			    COALESCE([Target Emission (Exact)1], 0) - COALESCE([Target Emission BY (Exact) 1], 0),
+			    COALESCE([Target Emission BY (Exact) 1], 0),
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: abc65d34-c30d-46cd-bec0-ff4a92956087
+
+		changedProperty = IsHidden
+
+	measure 'PY Year' = FORMAT(SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Year]) - 1, "0")
+		lineageTag: e5fd1947-d4f3-48e6-bbc3-a5c477b0f53f
+
+		changedProperty = IsHidden
+
+	measure 'CY Year' = FORMAT(SELECTEDVALUE('CORP_GHG DTbl_Scope1&2'[Year]), "0")
+		lineageTag: c4385b94-73f4-4b33-95cf-1b3fb3e8f9f8
+
+		changedProperty = IsHidden
+
+	measure 'BY Label' = "2019"
+		lineageTag: 816e9df9-4fa8-46e7-8959-b8dc89d32c29
+
+		changedProperty = IsHidden
+
+	measure 'Scope 1&2 Reduction (Display)' = ABS([Scope 1&2 Reduction])
+		lineageTag: 10f260dc-f369-42e7-89d7-55865ddc2ddd
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 9256b65a-7e6b-45da-8ae9-57446c311bd5
+		summarizeBy: sum
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scope
+		dataType: string
+		lineageTag: 8554e210-3eca-4b7c-bd00-a6b5c433d48a
+		summarizeBy: none
+		sourceColumn: Scope
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: 1c535ced-5dbe-4c42-a8ac-2e5736f108ce
+		summarizeBy: none
+		sourceColumn: Division
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: d4f1fe09-5085-438e-83a4-3b70d45bbdae
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 2cede0a8-6d9c-4907-a21d-14e5057fb988
+		summarizeBy: none
+		sourceColumn: Site
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 55eeeafb-e9b2-44ee-a4cb-f72bb44e4298
+		summarizeBy: sum
+		sourceColumn: Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Unit
+		dataType: string
+		lineageTag: eda57c46-0346-413d-88b4-75aa057ec8b4
+		summarizeBy: none
+		sourceColumn: Unit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Target
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0643bb09-6691-412c-8eb7-a211d20a9027
+		summarizeBy: none
+		sourceColumn: Is_Target
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 43e06d74-7196-4aa7-888f-00b6aa61f73f
+		summarizeBy: none
+		sourceColumn: Fiscal_Date
+
+		variation Variation
+			isDefault
+			relationship: 8772bf0d-0913-4929-84c7-f5a2bec282c9
+			defaultHierarchy: LocalDateTable_b3c6241e-424e-4ed0-8434-b9e785168625.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Valid_From
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 28bef81d-7a6b-499f-b0c7-1a2ea5db3ed6
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		variation Variation
+			isDefault
+			relationship: f5e32d1b-f7d7-4b18-94e3-ddfc491fd4ae
+			defaultHierarchy: LocalDateTable_d954d9bd-8105-4293-9ee3-71b5a568fabf.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7c981462-ac0b-48fd-bd6c-9bcf819962ec
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		variation Variation
+			isDefault
+			relationship: d73c68f0-1e4c-4d5c-a44f-272b0ace3efc
+			defaultHierarchy: LocalDateTable_4b2afe96-791d-4001-af40-3dca27fb3969.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Preliminary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8c260096-e092-4f6e-8906-7d07f1ecae40
+		summarizeBy: none
+		sourceColumn: Is_Preliminary
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Emission 1&2' =
+			
+			IF('CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",'CORP_GHG DTbl_Scope1&2'[Value] * -1,
+			IF('CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE,'CORP_GHG DTbl_Scope1&2'[Value],BLANK()))
+		lineageTag: b8464424-aed3-406f-b5f9-165138827806
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual BY Emission' =
+			
+			IF('CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",'CORP_GHG DTbl_Scope1&2'[Value_BY] * -1,
+			IF('CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE,'CORP_GHG DTbl_Scope1&2'[Value_BY],BLANK()))
+		lineageTag: 70a812c9-53e4-4613-9f12-59bc8593f893
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Offset Reduction' = (COALESCE([Offsetting], 0) - COALESCE([Offsetting BY], 0)) * -1
+		lineageTag: 9564cef7-9e25-4b8c-88dd-00c105694413
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual BY Emission 1&2' = ```
+			
+			IF (
+			    'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE() && 'CORP_GHG DTbl_Scope1&2'[Scope] = "Offsetting",
+			    'CORP_GHG DTbl_Scope1&2'[Value_BY] * -1,
+			    IF (
+			        'CORP_GHG DTbl_Scope1&2'[Is_Target] = FALSE(),
+			        'CORP_GHG DTbl_Scope1&2'[Value_BY],
+			        BLANK()
+			    )
+			)
+			
+			```
+		lineageTag: 423f5df0-d16d-4e8c-a5c0-23e4e54b58b8
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Scope1&2 Emission BY' = ```
+			
+			IF (
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "Scope 1+2",
+			    'CORP_GHG DTbl_Scope1&2'[Actual BY Emission],
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 89b2d425-5c47-4789-bec4-deaeeb4ad099
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual Emission Tooltip' = [Actual Emission 1&2]
+		lineageTag: 338d812e-2915-4e43-afc8-c3e508a82d57
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual Year Filter' = ```
+			
+			IF (
+			    (
+			        (
+			            (DAY(TODAY()) >= 29 && MONTH(TODAY()) = 1) 
+			            || MONTH(TODAY()) > 1
+			        ) 
+			        && [Year] + 1 = YEAR(TODAY()) 
+			        && [Is_Target] = FALSE
+			    ) 
+			    || [Year] < YEAR(TODAY()),
+			    [Fiscal_Date],
+			    BLANK()
+			)
+			
+			/*VAR _TodayYear  = YEAR ( TODAY() )
+			VAR _TodayMonth = MONTH ( TODAY() )
+			VAR _TodayDay   = DAY ( TODAY() )
+			
+			VAR _CutoffReached =
+			    ( _TodayMonth > 1 )
+			        || ( _TodayMonth = 1 && _TodayDay >= 29 )
+			
+			VAR _ShowPrevYearActual =
+			    _CutoffReached
+			        && [Year] + 1 = _TodayYear
+			        && [Is_Target] = FALSE
+			
+			VAR _ShowOlderYears =
+			    [Year] < _TodayYear - 1
+			
+			RETURN
+			IF (
+			    _ShowPrevYearActual || _ShowOlderYears,
+			    [Fiscal_Date],
+			    BLANK()
+			)*/
+			
+			```
+		formatString: General Date
+		lineageTag: b6dd63b5-791f-45e0-9a03-540cd73d37cf
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: c2b4c578-9e60-40e8-b784-2724172baded
+			defaultHierarchy: LocalDateTable_dbbf00b8-a3d4-4e35-af11-e174a1591262.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target Emission (Rounded)' =
+			
+			IF (
+			    [Is_Target] = TRUE(),
+			    IF (
+			        [Scope] = "Offsetting",
+			        [Value_Rounded_by_50k] * -1,
+			        [Value_Rounded_by_50k]
+			    ))
+		lineageTag: e0082c83-ff9d-4a8a-82ee-3c619098f728
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Target Emission (Exact)' =
+			
+			IF (
+			    [Is_Target]= TRUE(),
+			    IF (
+			        [Scope] = "Offsetting",
+			        [Value] * -1,
+			        [Value]
+			    )
+			)
+		lineageTag: b1475005-875c-44cc-9158-4f7fe1bb1d77
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Target Emission' =
+			
+			IF (
+			    [Year] <= 2025,
+			    [Target Emission (Rounded)],
+			    [Target Emission (Exact)]
+			)
+		lineageTag: 6f1ddeb9-a836-45ac-87ab-a9a7a95be667
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual Emission (Act vs Trg)' = ```
+			
+			IF (
+			    [Actual Year Filter] = [Fiscal_Date],
+			    [Actual Emission 1&2]
+			)
+			
+			```
+		lineageTag: 2a56be4c-76d7-435a-b697-2b8302db9b8e
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Exclude Scope1+2 Actuals Filter' = ```
+			
+			IF (
+			    [Scope] = "Scope 1+2" && [Is_Target] = FALSE(),
+			    0,
+			    1
+			)
+			
+			```
+		formatString: 0
+		lineageTag: d6e3a9d6-3995-4237-a121-aaa56d070d3c
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target Emission BY (Exact)' = ```
+			
+			CALCULATE(
+			    MAX('CORP_GHG DTbl_Scope1&2'[Value]),
+			    FILTER(
+			        ALL('CORP_GHG DTbl_Scope1&2'),
+			        'CORP_GHG DTbl_Scope1&2'[Year] = 2019
+			    )
+			)
+			
+			```
+		lineageTag: 250582c0-a5df-44f2-ab08-bbb451747654
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Emission Driver' =
+			
+			SWITCH(
+			    TRUE(),
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "Cooling Energy (S2)", "Cooling Energy (Scope 2)",
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "Electricity (S2)", "Electricity (Scope 2)",
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "On-site emissions (S1)", "Direct emissions (Scope 1)",
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "Steam (S2)", "Heat/Steam (Scope 2)",
+			    'CORP_GHG DTbl_Scope1&2'[Scope] = "Third Party Energy Services (S2)", "Third Party Energy Services (Scope 2)",
+			    BLANK()
+			)
+		lineageTag: ca415d2f-3215-4243-b691-bd9b4745210e
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RefLine_Scope1_2_Column =
+			
+			IF('CORP_GHG DTbl_Scope1&2'[Year] = 2029 && 'CORP_GHG DTbl_Scope1&2'[Scope]= "Scope 1+2",'CORP_GHG DTbl_Scope1&2'[Target Emission (Exact)],BLANK())
+		lineageTag: c7ccd975-e0b2-4883-9464-f0a0a514ebbb
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ScopeSortOrder =
+			
+			SWITCH(
+			    [Scope],
+			    "Scope 1+2", 1,
+			    "Scope 1", 2,
+			    "Scope 2", 3
+			)
+		formatString: 0
+		lineageTag: 020c55b7-b7c2-488f-b26f-87bf24284952
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_Py
+		dataType: double
+		lineageTag: 6d03900a-8050-4d46-9c09-a5daa666b886
+		summarizeBy: sum
+		sourceColumn: Value_Py
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_By
+		dataType: double
+		lineageTag: 439a42d4-d262-4370-be32-70737aed6cfe
+		summarizeBy: sum
+		sourceColumn: Value_By
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value_Rounded_By_50k
+		dataType: double
+		lineageTag: de55d6c1-fb0a-4307-8465-cc8c3fef9318
+		summarizeBy: sum
+		sourceColumn: Value_Rounded_By_50k
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CORP_GHG DTbl_Scope1&2' = m
+		mode: import
+		source = ```
+				let
+				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    scope AS Scope,
+				    division AS Division,
+				    country AS Country,
+				    site AS Site,
+				    value AS Value,
+				    value_py AS Value_Py,
+				    value_by AS Value_By,
+				    unit AS Unit,
+				    is_target AS Is_Target,
+				    fiscal_date AS Fiscal_Date,
+				    valid_from AS Valid_From,
+				    valid_to AS Valid_To,
+				    is_preliminary AS Is_Preliminary,
+				    value_rounded_by_50k AS Value_Rounded_By_50k
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_corp_ghg_dmt_scope1_and_2_intfc_view
+				where is_preliminary = FALSE"
+				    , null, [EnableFolding=true])
+				in
+				    Source
+				```
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

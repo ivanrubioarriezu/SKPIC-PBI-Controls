@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "4f4456082bb0e00ea887",
+  "position": {
+    "x": 2628.5714285714289,
+    "y": 285.71428571428572,
+    "z": 11000,
+    "height": 88.571428571428584,
+    "width": 101.42857142857143,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "     "
+                  },
+                  {
+                    "value": "/Wiki",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/2d0dfcbe-2eca-45cc-93f9-b49d4ed8336f/b5b7a29b3de0159fb52a?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

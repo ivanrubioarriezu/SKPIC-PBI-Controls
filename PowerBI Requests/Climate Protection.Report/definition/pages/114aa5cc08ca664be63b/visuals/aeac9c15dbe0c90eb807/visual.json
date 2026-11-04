@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "aeac9c15dbe0c90eb807",
+  "position": {
+    "x": 1890.8749527428884,
+    "y": 287,
+    "z": 8000,
+    "height": 88,
+    "width": 500,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/Data Load",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/6f6bf644-33d2-4217-adb5-44dfe40e5e31/reports/0d72549e-64b8-4521-87f1-075075d848a1/0a9ecbe266acd1376d10?experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Monitor",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/6f6bf644-33d2-4217-adb5-44dfe40e5e31/reports/0d72549e-64b8-4521-87f1-075075d848a1/0a9ecbe266acd1376d10?experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

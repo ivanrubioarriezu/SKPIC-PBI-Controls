@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "cd55eb4b7b800108a827",
+  "position": {
+    "x": 2646.9397671106644,
+    "y": 286.1556504984502,
+    "z": 10000,
+    "height": 88.940269749518308,
+    "width": 224.2841584987853,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/Wiki",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#666666"
+                    },
+                    "url": "https://app.powerbi.com/groups/me/apps/01d55994-c5e7-4212-b884-c16cd448e796/reports/2d0dfcbe-2eca-45cc-93f9-b49d4ed8336f/b5b7a29b3de0159fb52a?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78&experience=power-bi"
+                  },
+                  {
+                    "value": "       "
+                  },
+                  {
+                    "value": "/Contact",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "20pt",
+                      "color": "#666666"
+                    },
+                    "url": "mailto:S3_Decarbonization@bayer.com"
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

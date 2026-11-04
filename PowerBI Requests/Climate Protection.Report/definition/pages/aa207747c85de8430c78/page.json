@@ -1,0 +1,157 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "aa207747c85de8430c78",
+  "displayName": "EV_Scope 3_PRO",
+  "displayOption": "FitToPage",
+  "height": 1600,
+  "width": 2885,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f02c26fbed067401e75a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
+              }
+            },
+            "Property": "SBT_Relevant"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "c3f8780125b437c9d8d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CORP_GHG DTbl_Scope3"
+              }
+            },
+            "Property": "CO2 Scope 3 Category"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "CORP_GHG DTbl_Scope3",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "CO2 Scope 3 Category"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'3.1. Purchased goods & services'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'3.2. Capital goods'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": -0.3
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "70D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "7a9eb0b6000612d84a56",
+      "target": "a07e0787730634ab4b0a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a07e0787730634ab4b0a",
+      "target": "7a9eb0b6000612d84a56",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a07e0787730634ab4b0a",
+      "target": "107c685c458dc92e0c56",
+      "type": "NoFilter"
+    },
+    {
+      "source": "17f24aca07274206dda4",
+      "target": "a07e0787730634ab4b0a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "dff8a5bf5537cc24b402",
+      "target": "a07e0787730634ab4b0a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "a07e0787730634ab4b0a",
+      "target": "dff8a5bf5537cc24b402",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3d52148763ea5876b002",
+      "target": "9a51e52eb0c35db04c7b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3d52148763ea5876b002",
+      "target": "993ac7ae8de9d14d4940",
+      "type": "DataFilter"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["CORP_GHG DTbl_Scope3","CORP_GHG DMV_Scope3_Target_Overall","CORP_GHG DTbl_Scope1&2","Table","CORP_GHG DTbl_RenewableElectricity","hostname","httpPath","Catalogue"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'CORP_GHG DTbl_Scope3'
+ref table DateTableTemplate_047e46cf-63f9-45c0-8647-10e62e3428f7
+ref table LocalDateTable_367dd5f9-1016-4b68-86da-86a09ef12bfd
+ref table LocalDateTable_2c41f13c-f074-4de8-be4e-110e8a3aecf3
+ref table LocalDateTable_4b8560e7-387a-43fd-8f9f-b7985e3ad2cb
+ref table ViewBy
+ref table 'Ranking Option'
+ref table Top/Bottom
+ref table 'Year Value Ren Energy'
+ref table 'Hover Over'
+ref table LocalDateTable_24677133-417d-4371-b58c-df6ea44b5ba8
+ref table 'Country Type'
+ref table Emission
+ref table 'CORP_GHG DMV_Scope3_Target_Overall'
+ref table Emissio/Reduction
+ref table 'Confirmed targets'
+ref table 'ViewBy Pro'
+ref table 'CORP_GHG DTbl_Scope1&2'
+ref table LocalDateTable_b3c6241e-424e-4ed0-8434-b9e785168625
+ref table LocalDateTable_d954d9bd-8105-4293-9ee3-71b5a568fabf
+ref table LocalDateTable_4b2afe96-791d-4001-af40-3dca27fb3969
+ref table LocalDateTable_dbbf00b8-a3d4-4e35-af11-e174a1591262
+ref table 'View by: S1&2'
+ref table Table
+ref table 'View by: S1&2 Hover Hover'
+ref table 'Reporting Year 1&2'
+ref table 'CORP_GHG DTbl_RenewableElectricity'
+ref table LocalDateTable_9cc0d1d7-2fd2-4180-adf6-149307cff197
+ref table LocalDateTable_74e79b0e-9d80-42bf-a0a7-bd3d1cfb6515
+ref table LocalDateTable_99e32971-649e-482a-b82e-afd874d66b40
+ref table LocalDateTable_3b977dad-babf-4fac-8fa8-7c5e2078aaec
+ref table 'View by Ren.energy'
+ref table 'Top/Bottom Ren Energy'
+ref table 'Ranking Option Ren Energy'
+ref table 'View By Ren Energy Hover Over'
+ref table 'Hover Over PRO'
+ref table 'Unique Categories scope3'
+ref table 'Unique Country scope3'
+ref table 'Unique Business unit scope3'
+ref table 'Unique scope3 EV PRO Area'
+ref table 'Unique scope3 EV PRO Category'
+ref table 'Unique scope3 EV PRO Segment'
+ref table 'Unique scope3 EV PRO PRO Subcategory'
+ref table 'Unique Country Ren Energy'
+ref table 'Unique Business Unit Ren Energy'
+ref table 'Unique Energy Type Ren Energy'
+ref table 'Unique Site Ren Energy'
+ref table 'Unique Renewable energy Ren Energy'
+ref table 'sort scope 3'
+ref table 'scope 3 Sorting Table'
+
+ref cultureInfo en-US
+

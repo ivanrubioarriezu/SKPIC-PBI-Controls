@@ -1,0 +1,53 @@
+table 'ViewBy Pro'
+	lineageTag: 00d52b8e-a642-4784-b8e6-fb112877018f
+
+	measure CatPro = Max('ViewBy Pro'[ViewBy Pro])
+		lineageTag: df225d33-b498-4d2a-a70a-5772afb5aeee
+
+	column 'ViewBy Pro'
+		lineageTag: dfcbb020-af6a-483e-8a51-644b0a75bb32
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'ViewBy Pro Order'
+
+		relatedColumnDetails
+			groupByColumn: 'ViewBy Pro Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ViewBy Pro Fields'
+		lineageTag: c0ae842e-4441-48ae-b3bb-aac29bfc3e05
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'ViewBy Pro Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ViewBy Pro Order'
+		formatString: 0
+		lineageTag: 35778e8c-d62c-4b16-8df2-bf8369d13f99
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ViewBy Pro' = calculated
+		mode: import
+		source =
+				{
+				    ("Country", NAMEOF('Unique Country scope3'[Country]), 0),
+				    ("Business unit", NAMEOF('Unique Business unit scope3'[Business_unit]), 1),
+				    ("PRO Area", NAMEOF('Unique scope3 EV PRO Area'[PRO_Area]), 2),
+				    ("PRO Category", NAMEOF('Unique scope3 EV PRO Category'[PRO_Category]), 3),
+				    ("PRO Segment", NAMEOF('Unique scope3 EV PRO Segment'[PRO_Segment]), 4),
+				    ("PRO Subcategory", NAMEOF('Unique scope3 EV PRO PRO Subcategory'[PRO_Subcategory]), 5)
+				}
+
+	annotation PBI_Id = 901a2e186e874d1e93927cc78c381f7c
+

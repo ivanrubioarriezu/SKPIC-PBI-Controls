@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "f0f867ef7343c6550106",
+  "position": {
+    "x": 2351.2195121951222,
+    "y": 95.1219512195122,
+    "z": 14000,
+    "height": 90.2439024390244,
+    "width": 168.29268292682929,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "/Mid-Year",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "32px",
+                      "color": "#666666",
+                      "lineHeight": "0",
+                      "position": "relative",
+                      "verticalAlign": "baseline",
+                      "scriptType": "sub",
+                      "bottom": "-0.25em"
+                    },
+                    "url": "https://bayergroup.sharepoint.com/sites/SSHE-PM/SitePages/Tools.aspx"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

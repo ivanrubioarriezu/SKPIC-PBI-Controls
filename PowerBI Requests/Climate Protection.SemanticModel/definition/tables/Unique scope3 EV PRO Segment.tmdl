@@ -1,0 +1,23 @@
+table 'Unique scope3 EV PRO Segment'
+	lineageTag: 41d55ef9-8420-4cfb-9a6b-bdcc91c61957
+
+	column Pro_Segment
+		lineageTag: 0e980be1-4526-4ccd-96fb-c9921cef5faf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: CORP_GHG DTbl_Scope3[PRO_Segment]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unique scope3 EV PRO Segment' = calculated
+		mode: import
+		source = ```
+				
+				UNION (
+				    DISTINCT('CORP_GHG DTbl_Scope3'[PRO_Segment]), 
+				    DATATABLE("PRO Segment", STRING, {{"Others"}})
+				)
+				```
+
+	annotation PBI_Id = b2c53bbe66a548548517c789baacca7a
+
