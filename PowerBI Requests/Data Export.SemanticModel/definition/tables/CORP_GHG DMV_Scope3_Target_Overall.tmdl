@@ -1,0 +1,71 @@
+table 'CORP_GHG DMV_Scope3_Target_Overall'
+	lineageTag: 779781fc-a224-49e1-9cae-bdd99f60856c
+
+	column Year
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 56591d53-d17a-467e-9054-7701c81ef5ad
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column SBT_relevant
+		dataType: boolean
+		isNullable: false
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e28661c2-cccb-410f-ac2d-ceb0b067460c
+		summarizeBy: none
+		sourceColumn: SBT_relevant
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_Target_Aggregated
+		dataType: double
+		sourceProviderType: decimal(38, 20)
+		lineageTag: 4eb5bf02-c4de-4e60-ad7c-48bb03bf7382
+		summarizeBy: sum
+		sourceColumn: CO2e_Target_Aggregated
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CO2e_Target_Total
+		dataType: double
+		sourceProviderType: decimal(30, 10)
+		lineageTag: 218b7137-3f6f-4eb0-a98b-2e362980fb3d
+		summarizeBy: sum
+		sourceColumn: CO2e_Target_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CO2e_Actual
+		dataType: double
+		sourceProviderType: decimal(38, 20)
+		lineageTag: 855618bb-bc95-4035-abf7-9edc980ce491
+		summarizeBy: sum
+		sourceColumn: CO2e_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CORP_GHG DMV_Scope3_Target_Overall' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CORP_GHG_DMV_Scope3_Target_Overall = Source{[Schema="CORP_GHG",Item="DMV_Scope3_Target_Overall"]}[Data]
+				in
+				    CORP_GHG_DMV_Scope3_Target_Overall
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,9 +1,11 @@
 table 'PH_WH DMF_SalesDataDistributed_Extract'
-	lineageTag: 2acdbef4-41e9-4d03-826c-a39db86abe74
+	lineageTag: bc0f8c46-5efe-4a33-a8ce-85bb2a056367
 
 	column Type
 		dataType: string
-		lineageTag: 6376843d-1b0e-4952-ad81-714c8f341c37
+		isNullable: false
+		sourceProviderType: varchar(6)
+		lineageTag: 2434537d-e7f2-4e13-99ba-f4dc0525c0ed
 		summarizeBy: none
 		sourceColumn: Type
 
@@ -11,8 +13,10 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column fiscal_year
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: 7d319fde-c02e-4970-b9c8-4d9f0606c916
+		sourceProviderType: smallint
+		lineageTag: 12d83212-c138-417e-bf8e-598d8116c25a
 		summarizeBy: sum
 		sourceColumn: fiscal_year
 
@@ -20,8 +24,10 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column fiscal_period
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: 7e70c355-b693-4518-8ca4-904cf23ac2b6
+		sourceProviderType: int
+		lineageTag: 3838e68e-4b26-4ae2-ab47-668170961fa2
 		summarizeBy: sum
 		sourceColumn: fiscal_period
 
@@ -29,7 +35,9 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column geographical_location
 		dataType: string
-		lineageTag: 4582b6e3-43c4-4dc7-91d7-8e9b5bb213ae
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 0c2c80b7-da28-43e8-b5bc-a12dcad2c6ab
 		summarizeBy: none
 		sourceColumn: geographical_location
 
@@ -37,7 +45,9 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column material
 		dataType: string
-		lineageTag: 7ecdd215-4442-4ffa-8c56-299ae6919a42
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 5777c23d-5ee0-478d-8cfb-8ad94ab10cab
 		summarizeBy: none
 		sourceColumn: material
 
@@ -45,7 +55,8 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column Material_Description
 		dataType: string
-		lineageTag: 98f8db02-dd45-4147-8647-afd1a5792d45
+		sourceProviderType: nvarchar(255)
+		lineageTag: 3e115d10-1d7f-4360-bb31-64bed206e2a9
 		summarizeBy: none
 		sourceColumn: Material_Description
 
@@ -53,7 +64,9 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column sector
 		dataType: string
-		lineageTag: e43853a1-c690-4db5-a8a5-f33829718dfd
+		isNullable: false
+		sourceProviderType: varchar(10)
+		lineageTag: ef1c8e5e-b9af-4ba3-a6d5-23aabdcfbc81
 		summarizeBy: none
 		sourceColumn: sector
 
@@ -61,7 +74,8 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column product_description
 		dataType: string
-		lineageTag: 3cd5687b-1576-46bb-bdc1-c102677073ef
+		sourceProviderType: nvarchar(255)
+		lineageTag: 1bde9f3f-f56f-4ace-9f86-57a6ba83f94e
 		summarizeBy: none
 		sourceColumn: product_description
 
@@ -69,7 +83,8 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column Product_Category_Description
 		dataType: string
-		lineageTag: d48eb627-0e19-4d76-a013-af6bee805246
+		sourceProviderType: nvarchar(255)
+		lineageTag: 957c01d8-1f86-44d4-a9b0-337acbeeb582
 		summarizeBy: none
 		sourceColumn: Product_Category_Description
 
@@ -77,7 +92,8 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 
 	column quantity
 		dataType: double
-		lineageTag: 45e4e173-7cc3-432c-b916-f6798a72de58
+		sourceProviderType: decimal(20, 5)
+		lineageTag: 73b54092-2fcf-45eb-b3c0-c480eded86b1
 		summarizeBy: sum
 		sourceColumn: quantity
 
@@ -86,28 +102,16 @@ table 'PH_WH DMF_SalesDataDistributed_Extract'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition 'PH_WH DMF_SalesDataDistributed_Extract' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    type                          AS Type,
-				    fiscal_year                   AS fiscal_year,
-				    fiscal_period                 AS fiscal_period,
-				    geographical_location         AS geographical_location,
-				    material                      AS material,
-				    material_description          AS Material_Description,
-				    sector                        AS sector,
-				    product_description           AS product_description,
-				    product_category_description  AS Product_Category_Description,
-				    quantity                      AS quantity
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_salesdata_distributed_extract_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    PH_WH_DMF_SalesDataDistributed_Extract = Source{[Schema="PH_WH",Item="DMF_SalesDataDistributed_Extract"]}[Data],
+				    #"Invoked FunctionPH_WH_DMF_SalesDataDistributed_Extract1" = PH_WH_DMF_SalesDataDistributed_Extract(2026)
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Exception
+				    #"Invoked FunctionPH_WH_DMF_SalesDataDistributed_Extract1"
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "b5bc8331b1dd92b3dabe",
   "position": {
     "x": 370,
@@ -27,28 +27,11 @@
                 }
               },
               "queryRef": "PH_WH DMF_SalesDataBlacklist_Extract (2).fiscal_period",
-              "nativeQueryRef": "fiscal_period",
+              "nativeQueryRef": "fiscal_period1",
               "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
-                  }
-                },
-                "Property": "fiscal_period"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {

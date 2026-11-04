@@ -1,9 +1,11 @@
 table 'CH_UP DMV_SalesData'
-	lineageTag: 282551fa-f753-4b82-92f4-c1c005663bf9
+	lineageTag: 544ee2f6-cf0e-43d2-aea9-9cb1e3273c29
 
 	column 0VTYPE
 		dataType: string
-		lineageTag: ef758147-ca86-42ef-89f2-1c40e0b005cf
+		isNullable: false
+		sourceProviderType: char
+		lineageTag: 9d5eb80a-ec6f-465e-8de4-d4480aa66316
 		summarizeBy: none
 		sourceColumn: 0VTYPE
 
@@ -11,7 +13,9 @@ table 'CH_UP DMV_SalesData'
 
 	column 0VERSION
 		dataType: string
-		lineageTag: c676884d-09a3-4a1f-82dd-e8e853f201e3
+		isNullable: false
+		sourceProviderType: char
+		lineageTag: 4ad5df43-e84b-4209-8d25-37f5950ed782
 		summarizeBy: none
 		sourceColumn: 0VERSION
 
@@ -19,7 +23,8 @@ table 'CH_UP DMV_SalesData'
 
 	column FISCYEAR
 		dataType: string
-		lineageTag: fd640b60-aea7-42b2-b725-3e0e7cbd4c96
+		sourceProviderType: nvarchar(255)
+		lineageTag: 9d4a690f-6458-4fe1-aecc-845a0e453f9a
 		summarizeBy: none
 		sourceColumn: FISCYEAR
 
@@ -27,7 +32,8 @@ table 'CH_UP DMV_SalesData'
 
 	column PERIOD
 		dataType: string
-		lineageTag: 0a13747a-4373-442a-8044-610ea5f18f58
+		sourceProviderType: nvarchar(255)
+		lineageTag: d6a49ba9-40d7-4262-95bb-1f127c1caa61
 		summarizeBy: none
 		sourceColumn: PERIOD
 
@@ -35,7 +41,9 @@ table 'CH_UP DMV_SalesData'
 
 	column 0FISCPER
 		dataType: string
-		lineageTag: 26299c28-6806-453d-9b1f-bef7f20bef2c
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		lineageTag: 64cfd5d8-f0a3-4c10-9d0a-6ee26ead8c98
 		summarizeBy: none
 		sourceColumn: 0FISCPER
 
@@ -43,7 +51,9 @@ table 'CH_UP DMV_SalesData'
 
 	column DCTRY_FD
 		dataType: string
-		lineageTag: 61bfe8a2-1085-4621-96c7-c2396314bece
+		isNullable: false
+		sourceProviderType: nvarchar(5)
+		lineageTag: 3c396609-60ac-472e-9c3b-9414960606cb
 		summarizeBy: none
 		sourceColumn: DCTRY_FD
 
@@ -51,7 +61,8 @@ table 'CH_UP DMV_SalesData'
 
 	column DCTRY_FD___T
 		dataType: string
-		lineageTag: 7c341f82-71c0-484b-8e02-3ca99d73c00d
+		sourceProviderType: nvarchar(255)
+		lineageTag: 6d437713-4a5a-4c0d-9980-5644bcabd2e7
 		summarizeBy: none
 		sourceColumn: DCTRY_FD___T
 
@@ -59,7 +70,9 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DIMKKA2
 		dataType: string
-		lineageTag: f835a8ba-9532-418a-a64e-c28b5c73623b
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 1f18475e-fd8f-485f-b6fe-201e8b391423
 		summarizeBy: none
 		sourceColumn: DRESPO__DIMKKA2
 
@@ -67,7 +80,8 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DIMKKA2___T
 		dataType: string
-		lineageTag: e4983173-2231-46c1-8ba5-c27ea94b281e
+		sourceProviderType: nvarchar(255)
+		lineageTag: 2871707a-c9d3-49db-b53a-13c5bf7c9e34
 		summarizeBy: none
 		sourceColumn: DRESPO__DIMKKA2___T
 
@@ -75,7 +89,9 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DIMKKA6
 		dataType: string
-		lineageTag: 9507e3bc-7164-4417-937e-cc40ebb8cfb3
+		isNullable: false
+		sourceProviderType: nvarchar(35)
+		lineageTag: 4a9ed904-4f9e-42b2-bfac-9c5bc6db4fa5
 		summarizeBy: none
 		sourceColumn: DRESPO__DIMKKA6
 
@@ -83,7 +99,8 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DIMKKA6___T
 		dataType: string
-		lineageTag: e0112bd0-77b6-4b25-bdf3-73c5260e092c
+		sourceProviderType: nvarchar(255)
+		lineageTag: 54a0e854-05e1-4b49-abb7-5003580d9829
 		summarizeBy: none
 		sourceColumn: DRESPO__DIMKKA6___T
 
@@ -91,7 +108,9 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DPC_CV
 		dataType: string
-		lineageTag: 25ec5b27-96aa-4b87-b416-930e913f40b4
+		isNullable: false
+		sourceProviderType: nvarchar(35)
+		lineageTag: 5be1c9ae-ed3f-44de-a37c-c737d95069b9
 		summarizeBy: none
 		sourceColumn: DRESPO__DPC_CV
 
@@ -99,7 +118,8 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DPC_CV___T
 		dataType: string
-		lineageTag: 153b2466-07ea-4984-bca6-0c30c1ac6408
+		sourceProviderType: nvarchar(255)
+		lineageTag: 44f1f7e3-3c35-4b17-8cdc-ea1576633bda
 		summarizeBy: none
 		sourceColumn: DRESPO__DPC_CV___T
 
@@ -107,7 +127,9 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DBRAND
 		dataType: string
-		lineageTag: 66898575-0f5c-4c2b-a32b-b55f60a1b5cc
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: fce40f77-90b8-45e0-9f79-aaa1988517e5
 		summarizeBy: none
 		sourceColumn: DRESPO__DBRAND
 
@@ -115,7 +137,8 @@ table 'CH_UP DMV_SalesData'
 
 	column DRESPO__DBRAND___T
 		dataType: string
-		lineageTag: 74c5fce5-252b-4ff2-af14-75edff144da1
+		sourceProviderType: nvarchar(255)
+		lineageTag: ed9e25e1-489b-4c6d-91bb-a66e261ea804
 		summarizeBy: none
 		sourceColumn: DRESPO__DBRAND___T
 
@@ -123,7 +146,9 @@ table 'CH_UP DMV_SalesData'
 
 	column 0MATERIAL__DPRODH1
 		dataType: string
-		lineageTag: 56ef6a67-8dd8-4789-91a9-343309c89a02
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 9d91d8bd-3b8b-44cc-900d-abe8a9391171
 		summarizeBy: none
 		sourceColumn: 0MATERIAL__DPRODH1
 
@@ -131,7 +156,8 @@ table 'CH_UP DMV_SalesData'
 
 	column 0MATERIAL__DPRODH1___T
 		dataType: string
-		lineageTag: 3ad1e66c-50ad-4b7a-a2b0-b91e232babb2
+		sourceProviderType: nvarchar(255)
+		lineageTag: 755523af-3c76-4e2e-98bc-0de575fa1be9
 		summarizeBy: none
 		sourceColumn: 0MATERIAL__DPRODH1___T
 
@@ -139,7 +165,9 @@ table 'CH_UP DMV_SalesData'
 
 	column 0MATERIAL
 		dataType: string
-		lineageTag: bf980ea1-867b-48f1-b755-8cdef89ecb63
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: b38c1e20-69a5-4aee-8513-e2e2d7e302f5
 		summarizeBy: none
 		sourceColumn: 0MATERIAL
 
@@ -147,7 +175,8 @@ table 'CH_UP DMV_SalesData'
 
 	column 0MATERIAL___T
 		dataType: string
-		lineageTag: e590ef14-a153-4f27-add0-c1c25a2fc2d8
+		sourceProviderType: nvarchar(255)
+		lineageTag: 401338c1-bda8-48a8-91b3-5be77018b328
 		summarizeBy: none
 		sourceColumn: 0MATERIAL___T
 
@@ -155,7 +184,9 @@ table 'CH_UP DMV_SalesData'
 
 	column 0LOC_CURRCY
 		dataType: string
-		lineageTag: 639ce3f6-8476-4e5c-b424-a3e6d0fbe8ce
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: b1d8322b-9a8b-439d-8db4-a8c446fbe23b
 		summarizeBy: none
 		sourceColumn: 0LOC_CURRCY
 
@@ -163,7 +194,9 @@ table 'CH_UP DMV_SalesData'
 
 	column 0BASE_UOM
 		dataType: string
-		lineageTag: ac8bcbf2-bd24-4a33-b7e9-c7f14d1622a5
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: a86e31b2-8304-438c-9a3f-2e81fba0ea13
 		summarizeBy: none
 		sourceColumn: 0BASE_UOM
 
@@ -171,7 +204,8 @@ table 'CH_UP DMV_SalesData'
 
 	column FPER_QTD_CU
 		dataType: double
-		lineageTag: a675ac67-c3c8-4713-b26d-f2470945d61f
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 916c96c1-57cc-4b75-a9f9-c92de4546c2a
 		summarizeBy: sum
 		sourceColumn: FPER_QTD_CU
 
@@ -179,56 +213,23 @@ table 'CH_UP DMV_SalesData'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column LAST_UPDATED
+	column Last_Updated
 		dataType: dateTime
+		isNullable: false
 		formatString: General Date
-		lineageTag: 305f0fdd-01fb-4126-bf6c-00e45760e877
+		sourceProviderType: datetime
+		lineageTag: 88f96513-6b00-40b8-a5c5-9be8af20d10b
 		summarizeBy: none
-		sourceColumn: LAST_UPDATED
-
-		variation Variation
-			isDefault
-			relationship: 883ef664-a84f-4e68-b25a-e517375da74c
-			defaultHierarchy: LocalDateTable_27a4feb6-ec2e-4b64-873a-6f878f3c82e6.'Date Hierarchy'
+		sourceColumn: Last_Updated
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'CH_UP DMV_SalesData' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    `0vtype`                  AS `0VTYPE`,
-				    `0version`                AS `0VERSION`,
-				    fiscyear                  AS FISCYEAR,
-				    period                    AS PERIOD,
-				    `0fiscper`                AS `0FISCPER`,
-				    dctry_fd                  AS DCTRY_FD,
-				    dctry_fd___t              AS DCTRY_FD___T,
-				    drespo__dimkka2           AS DRESPO__DIMKKA2,
-				    drespo__dimkka2___t       AS DRESPO__DIMKKA2___T,
-				    drespo__dimkka6           AS DRESPO__DIMKKA6,
-				    drespo__dimkka6___t       AS DRESPO__DIMKKA6___T,
-				    drespo__dpc_cv            AS DRESPO__DPC_CV,
-				    drespo__dpc_cv___t        AS DRESPO__DPC_CV___T,
-				    drespo__dbrand            AS DRESPO__DBRAND,
-				    drespo__dbrand___t        AS DRESPO__DBRAND___T,
-				    `0material__dprodh1`      AS `0MATERIAL__DPRODH1`,
-				    `0material__dprodh1___t`  AS `0MATERIAL__DPRODH1___T`,
-				    `0material`               AS `0MATERIAL`,
-				    `0material___t`           AS `0MATERIAL___T`,
-				    `0loc_currcy`             AS `0LOC_CURRCY`,
-				    `0base_uom`               AS `0BASE_UOM`,
-				    fper_qtd_cu               AS FPER_QTD_CU,
-				    last_updated              AS LAST_UPDATED
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_salesdata_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CH_UP_DMV_SalesData = Source{[Schema="CH_UP",Item="DMV_SalesData"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_NavigationStepName = Navigation
-
-	annotation PBI_ResultType = Exception
+				    CH_UP_DMV_SalesData
 

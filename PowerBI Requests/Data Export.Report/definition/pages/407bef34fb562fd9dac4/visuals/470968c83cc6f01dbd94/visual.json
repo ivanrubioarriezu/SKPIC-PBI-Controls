@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "470968c83cc6f01dbd94",
   "position": {
     "x": 0,
@@ -93,11 +93,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Fiscal_Period_Base"
+                  "Property": "Fiscal_Period_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Fiscal_Period_Base)",
-              "nativeQueryRef": "Fiscal_Period_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Fiscal_Period_base)",
+              "nativeQueryRef": "Fiscal_Period_base"
             },
             {
               "field": {
@@ -107,11 +107,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Fiscal_Period_Trg"
+                  "Property": "Fiscal_Period_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Fiscal_Period_Trg)",
-              "nativeQueryRef": "Fiscal_Period_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Fiscal_Period_trg)",
+              "nativeQueryRef": "Fiscal_Period_trg"
             },
             {
               "field": {
@@ -161,11 +161,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Netsales_Eur_Base"
+                  "Property": "Netsales_EUR_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Netsales_Eur_Base)",
-              "nativeQueryRef": "Netsales_Eur_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Netsales_EUR_base)",
+              "nativeQueryRef": "Netsales_EUR_base"
             },
             {
               "field": {
@@ -175,11 +175,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Netsales_Eur_Trg"
+                  "Property": "Netsales_EUR_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Netsales_Eur_Trg)",
-              "nativeQueryRef": "Netsales_Eur_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Netsales_EUR_trg)",
+              "nativeQueryRef": "Netsales_EUR_trg"
             },
             {
               "field": {
@@ -189,11 +189,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Farmers_Base"
+                  "Property": "Number_of_Farmers_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Farmers_Base)",
-              "nativeQueryRef": "Number_Of_Farmers_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_Farmers_base)",
+              "nativeQueryRef": "Number_of_Farmers_base"
             },
             {
               "field": {
@@ -203,11 +203,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Farmers_Trg"
+                  "Property": "Number_of_Farmers_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Farmers_Trg)",
-              "nativeQueryRef": "Number_Of_Farmers_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_Farmers_trg)",
+              "nativeQueryRef": "Number_of_Farmers_trg"
             },
             {
               "field": {
@@ -217,11 +217,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Growers_Base"
+                  "Property": "Number_of_growers_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Growers_Base)",
-              "nativeQueryRef": "Number_Of_Growers_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_growers_base)",
+              "nativeQueryRef": "Number_of_growers_base"
             },
             {
               "field": {
@@ -231,11 +231,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Avg_Farm_Size_Ha_Base"
+                  "Property": "Number_of_growers_Diff"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Avg_Farm_Size_Ha_Base)",
-              "nativeQueryRef": "Avg_Farm_Size_Ha_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_growers_Diff)",
+              "nativeQueryRef": "Number_of_growers_Diff"
             },
             {
               "field": {
@@ -245,11 +245,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Avg_Farm_Size_Ha_Trg"
+                  "Property": "Number_of_growers_Diff_Rel"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Avg_Farm_Size_Ha_Trg)",
-              "nativeQueryRef": "Avg_Farm_Size_Ha_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_growers_Diff_Rel)",
+              "nativeQueryRef": "Number_of_growers_Diff_Rel"
             },
             {
               "field": {
@@ -259,11 +259,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Average_Bayer_Farmer_Spend_Eur_Base"
+                  "Property": "Number_of_growers_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Average_Bayer_Farmer_Spend_Eur_Base)",
-              "nativeQueryRef": "Average_Bayer_Farmer_Spend_Eur_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_growers_trg)",
+              "nativeQueryRef": "Number_of_growers_trg"
             },
             {
               "field": {
@@ -273,31 +273,25 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Average_Bayer_Farmer_Spend_Eur_Trg"
+                  "Property": "Number_of_Unique_SH_Farmers_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Average_Bayer_Farmer_Spend_Eur_Trg)",
-              "nativeQueryRef": "Average_Bayer_Farmer_Spend_Eur_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_Unique_SH_Farmers_base)",
+              "nativeQueryRef": "Number_of_Unique_SH_Farmers_base"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
-                        }
-                      },
-                      "Property": "Average_Bayer_Farmer_Spend_Diff_Rel"
+                    "SourceRef": {
+                      "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Function": 0
+                  "Property": "Number_of_Unique_SH_Farmers_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Average_Bayer_Farmer_Spend_Diff_Rel)",
-              "nativeQueryRef": "Average_Bayer_Farmer_Spend_Diff_Rel",
-              "displayName": "Average_Bayer_Farmer_Spend_Diff_Rel"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_of_Unique_SH_Farmers_trg)",
+              "nativeQueryRef": "Number_of_Unique_SH_Farmers_trg"
             },
             {
               "field": {
@@ -327,11 +321,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Growers_Diff"
+                  "Property": "Average_Bayer_Farmer_Spend_Diff_Rel"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Growers_Diff)",
-              "nativeQueryRef": "Number_Of_Growers_Diff"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Average_Bayer_Farmer_Spend_Diff_Rel)",
+              "nativeQueryRef": "Average_Bayer_Farmer_Spend_Diff_Rel"
             },
             {
               "field": {
@@ -341,11 +335,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Growers_Diff_Rel"
+                  "Property": "Average_Bayer_Farmer_Spend_EUR_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Growers_Diff_Rel)",
-              "nativeQueryRef": "Number_Of_Growers_Diff_Rel"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Average_Bayer_Farmer_Spend_EUR_base)",
+              "nativeQueryRef": "Average_Bayer_Farmer_Spend_EUR_base"
             },
             {
               "field": {
@@ -355,11 +349,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Growers_Trg"
+                  "Property": "Average_Bayer_Farmer_Spend_EUR_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Growers_Trg)",
-              "nativeQueryRef": "Number_Of_Growers_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Average_Bayer_Farmer_Spend_EUR_trg)",
+              "nativeQueryRef": "Average_Bayer_Farmer_Spend_EUR_trg"
             },
             {
               "field": {
@@ -369,11 +363,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Unique_Sh_Farmers_Base"
+                  "Property": "Avg_Farm_Size_ha_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Unique_Sh_Farmers_Base)",
-              "nativeQueryRef": "Number_Of_Unique_Sh_Farmers_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Avg_Farm_Size_ha_base)",
+              "nativeQueryRef": "Avg_Farm_Size_ha_base"
             },
             {
               "field": {
@@ -383,11 +377,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Number_Of_Unique_Sh_Farmers_Trg"
+                  "Property": "Avg_Farm_Size_ha_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Number_Of_Unique_Sh_Farmers_Trg)",
-              "nativeQueryRef": "Number_Of_Unique_Sh_Farmers_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Avg_Farm_Size_ha_trg)",
+              "nativeQueryRef": "Avg_Farm_Size_ha_trg"
             },
             {
               "field": {
@@ -397,11 +391,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Sh_Farmer_Base"
+                  "Property": "SH_Farmer_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Sh_Farmer_Base)",
-              "nativeQueryRef": "Sh_Farmer_Base"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.SH_Farmer_base)",
+              "nativeQueryRef": "SH_Farmer_base"
             },
             {
               "field": {
@@ -411,11 +405,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Sh_Farmer_Trg"
+                  "Property": "SH_Farmer_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Sh_Farmer_Trg)",
-              "nativeQueryRef": "Sh_Farmer_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.SH_Farmer_trg)",
+              "nativeQueryRef": "SH_Farmer_trg"
             },
             {
               "field": {
@@ -425,11 +419,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Sh_Share_Base"
+                  "Property": "SH_Share_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Sh_Share_Base)",
-              "nativeQueryRef": "Sh_Share_Base"
+              "queryRef": "stored procedureCS_SHF DMF_Diff_VegSeeds.SH_Share_base",
+              "nativeQueryRef": "SH_Share_base1"
             },
             {
               "field": {
@@ -439,11 +433,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Sh_Share_Trg"
+                  "Property": "SH_Share_trg"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Sh_Share_Trg)",
-              "nativeQueryRef": "Sh_Share_Trg"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.SH_Share_trg)",
+              "nativeQueryRef": "SH_Share_trg"
             },
             {
               "field": {
@@ -453,11 +447,11 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Shf_Diff"
+                  "Property": "SH_Share_base"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Shf_Diff)",
-              "nativeQueryRef": "Shf_Diff"
+              "queryRef": "stored procedureCS_SHF DMF_Diff_VegSeeds.SH_Share_base",
+              "nativeQueryRef": "SH_Share_base1"
             },
             {
               "field": {
@@ -467,11 +461,25 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Shf_Diff_Rel"
+                  "Property": "SHF_Diff"
                 }
               },
-              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.Shf_Diff_Rel)",
-              "nativeQueryRef": "Shf_Diff_Rel"
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.SHF_Diff)",
+              "nativeQueryRef": "SHF_Diff"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
+                    }
+                  },
+                  "Property": "SHF_Diff_Rel"
+                }
+              },
+              "queryRef": "Sum(stored procedureCS_SHF DMF_Diff_VegSeeds.SHF_Diff_Rel)",
+              "nativeQueryRef": "SHF_Diff_Rel"
             },
             {
               "field": {

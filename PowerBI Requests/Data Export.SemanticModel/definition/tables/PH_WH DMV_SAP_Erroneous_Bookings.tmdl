@@ -1,9 +1,10 @@
 table 'PH_WH DMV_SAP_Erroneous_Bookings'
-	lineageTag: 71c28ea2-8fe4-4420-914c-a811537bcac5
+	lineageTag: 6a77af3d-dfb1-45e3-ae06-207780bd1a65
 
 	column Fiscal_Year
 		dataType: string
-		lineageTag: ac6339cf-a449-4170-8ffd-23717a9cbf9d
+		sourceProviderType: nvarchar(255)
+		lineageTag: 344d67ad-1936-4665-910c-53139ddfb584
 		summarizeBy: none
 		sourceColumn: Fiscal_Year
 
@@ -11,7 +12,8 @@ table 'PH_WH DMV_SAP_Erroneous_Bookings'
 
 	column Country
 		dataType: string
-		lineageTag: 7a4fe238-5b0f-4328-863f-54bf27c5858c
+		sourceProviderType: nvarchar(255)
+		lineageTag: 21e45b1a-f022-4ff4-96bf-95feaecc78ef
 		summarizeBy: none
 		sourceColumn: Country
 
@@ -20,7 +22,8 @@ table 'PH_WH DMV_SAP_Erroneous_Bookings'
 	column Material
 		dataType: int64
 		formatString: 0
-		lineageTag: 3a9c1828-9cb0-4041-915d-f47c52d52a82
+		sourceProviderType: int
+		lineageTag: f14ce07f-47e7-4dc5-afd3-d5941f1fb868
 		summarizeBy: sum
 		sourceColumn: Material
 
@@ -29,7 +32,8 @@ table 'PH_WH DMV_SAP_Erroneous_Bookings'
 	column Number_of_Profitcenters
 		dataType: int64
 		formatString: 0
-		lineageTag: 8ed60444-e006-45c9-b88d-fda7862f450e
+		sourceProviderType: int
+		lineageTag: 61f7f9ac-75bd-415a-9c36-eec8c54579e5
 		summarizeBy: sum
 		sourceColumn: Number_of_Profitcenters
 
@@ -37,7 +41,8 @@ table 'PH_WH DMV_SAP_Erroneous_Bookings'
 
 	column Affected_profitcenters
 		dataType: string
-		lineageTag: 5158fe08-3632-48eb-aa55-b9032a67a263
+		sourceProviderType: nvarchar(4000)
+		lineageTag: 47b7c470-6838-400d-8eae-91ead2a65c49
 		summarizeBy: none
 		sourceColumn: Affected_profitcenters
 
@@ -45,31 +50,24 @@ table 'PH_WH DMV_SAP_Erroneous_Bookings'
 
 	column Information
 		dataType: string
-		lineageTag: b4908453-67c4-4ba0-b4ca-f58b86283ad9
+		isNullable: false
+		sourceProviderType: varchar(83)
+		lineageTag: cd3fab85-0a5e-491c-a986-54d313462fb3
 		summarizeBy: none
 		sourceColumn: Information
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'PH_WH DMV_SAP_Erroneous_Bookings' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    fiscal_year              AS Fiscal_Year,
-				    country                  AS Country,
-				    material                 AS Material,
-				    number_of_profitcenters  AS Number_of_Profitcenters,
-				    affected_profitcenters   AS Affected_profitcenters,
-				    information              AS Information
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_sap_erroneous_bookings_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    PH_WH_DMV_SAP_Erroneous_Bookings = Source{[Schema="PH_WH",Item="DMV_SAP_Erroneous_Bookings"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Table
+				    PH_WH_DMV_SAP_Erroneous_Bookings
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

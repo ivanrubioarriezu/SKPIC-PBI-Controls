@@ -182,24 +182,13 @@
                   "name": "3b4fc422aeae3a2944fa",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Fiscal_Date"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
                         }
                       },
-                      "Level": "Year"
+                      "Property": "Fiscal_Date"
                     }
                   },
                   "howCreated": 0
@@ -208,24 +197,13 @@
                   "name": "ded00af35b52e199a96a",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Fiscal_Date"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
                         }
                       },
-                      "Level": "Month"
+                      "Property": "Fiscal_Date"
                     }
                   },
                   "howCreated": 0

@@ -480,24 +480,13 @@
                   "name": "fc5ec169a7508900cf4c",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CH_UP DMT_KPI"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Fiscal_Date"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CH_UP DMT_KPI"
                         }
                       },
-                      "Level": "Month"
+                      "Property": "Fiscal_Date"
                     }
                   },
                   "howCreated": 0

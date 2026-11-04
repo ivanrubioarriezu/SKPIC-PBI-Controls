@@ -1,9 +1,11 @@
 table 'PH_WH DMV_SalesData_Cleansed'
-	lineageTag: fdf31df8-6412-4a4c-8d76-c3e0335282a5
+	lineageTag: 54bb03d9-08f4-4f9e-b661-9a74306bd187
 
 	column 0VTYPE
 		dataType: string
-		lineageTag: 2cc21c59-8363-4eb7-a017-c6208fe24f6b
+		isNullable: false
+		sourceProviderType: char
+		lineageTag: 7e5d1a8d-18eb-4304-8614-600d81e8ff52
 		summarizeBy: none
 		sourceColumn: 0VTYPE
 
@@ -11,7 +13,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column 0VERSION
 		dataType: string
-		lineageTag: a3f53543-a80b-4914-89fc-b322661c57aa
+		isNullable: false
+		sourceProviderType: char
+		lineageTag: c54333dc-ab6b-4966-9e9c-4d0e1380cdfa
 		summarizeBy: none
 		sourceColumn: 0VERSION
 
@@ -19,7 +23,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column FISCYEAR
 		dataType: string
-		lineageTag: 5bdcea57-c5fd-47bd-a490-3bf8c38e4845
+		sourceProviderType: nvarchar(255)
+		lineageTag: ce009799-760a-4258-bd9d-cd8df328bfff
 		summarizeBy: none
 		sourceColumn: FISCYEAR
 
@@ -27,7 +32,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column 0FISCPER
 		dataType: string
-		lineageTag: 913d9c8a-73e9-4c06-8d52-74f4368299ef
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 00bcccdd-0cb6-47a0-b32f-e18e8d0a0a35
 		summarizeBy: none
 		sourceColumn: 0FISCPER
 
@@ -35,7 +42,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DCTRY_FD
 		dataType: string
-		lineageTag: 06c5913b-9528-47b7-8793-15dad1b5ce6c
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 8630ba97-bd53-4fe7-8e52-d2ccca2b81a7
 		summarizeBy: none
 		sourceColumn: DCTRY_FD
 
@@ -43,7 +52,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DCTRY_FD___T
 		dataType: string
-		lineageTag: 1cdcffbc-0adb-4503-babb-0b235f7c13f8
+		sourceProviderType: nvarchar(255)
+		lineageTag: d804bacf-de5c-4d59-94af-3733ca5e1746
 		summarizeBy: none
 		sourceColumn: DCTRY_FD___T
 
@@ -51,7 +61,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DPC
 		dataType: string
-		lineageTag: 341b5181-0010-425e-b534-db379f9e6946
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: a9725394-ad0a-4fdd-b435-7e94d328b1f8
 		summarizeBy: none
 		sourceColumn: DPC
 
@@ -59,7 +71,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DPC___T
 		dataType: string
-		lineageTag: 301602dd-f7e5-49f5-919b-a64a05d6fd6b
+		sourceProviderType: nvarchar(255)
+		lineageTag: c833989a-f98d-452f-838a-aa77bbdf3816
 		summarizeBy: none
 		sourceColumn: DPC___T
 
@@ -67,7 +80,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DRESPO__DPC_CV
 		dataType: string
-		lineageTag: a94b84d2-a5ca-4980-8f5c-835d2b69678b
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 0fb25cb6-6c7e-476f-b288-6e9342a95d5e
 		summarizeBy: none
 		sourceColumn: DRESPO__DPC_CV
 
@@ -75,7 +90,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DRESPO__DPC_CV___T
 		dataType: string
-		lineageTag: 5e81994f-5b01-403c-be9c-470d6dbfd31e
+		sourceProviderType: nvarchar(255)
+		lineageTag: 37eafdbf-b725-4200-8f55-dcc73f5c47a0
 		summarizeBy: none
 		sourceColumn: DRESPO__DPC_CV___T
 
@@ -83,7 +99,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DRESPO__DBRAND
 		dataType: string
-		lineageTag: 085ae67c-067f-413f-913d-600b0335f12e
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: adaa5b29-947a-4d1b-9765-74bd3e55cc1b
 		summarizeBy: none
 		sourceColumn: DRESPO__DBRAND
 
@@ -91,7 +109,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column DRESPO__DBRAND___T
 		dataType: string
-		lineageTag: 329d7321-fe8c-4ae7-b219-1129d26869ca
+		sourceProviderType: nvarchar(255)
+		lineageTag: c4152a3f-ecf2-4b7b-8f31-214adf17e3b0
 		summarizeBy: none
 		sourceColumn: DRESPO__DBRAND___T
 
@@ -99,7 +118,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column 0MATERIAL__DPRODH1
 		dataType: string
-		lineageTag: ca733201-9f43-48ab-aee2-a91858bfdffb
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: bf80000d-3815-4b0c-b955-758b959290eb
 		summarizeBy: none
 		sourceColumn: 0MATERIAL__DPRODH1
 
@@ -107,7 +128,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column 0MATERIAL
 		dataType: string
-		lineageTag: 7b72554b-368d-4ea4-be40-4261e89ea932
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 2eb5541e-25d5-4cf1-a6eb-42bc23798623
 		summarizeBy: none
 		sourceColumn: 0MATERIAL
 
@@ -115,7 +138,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column 0MATERIAL___T
 		dataType: string
-		lineageTag: 79e3d7ba-450d-4afd-b2d1-9e55a8fba72a
+		sourceProviderType: nvarchar(255)
+		lineageTag: 3925dfcc-7440-46b3-8068-106323de65b7
 		summarizeBy: none
 		sourceColumn: 0MATERIAL___T
 
@@ -123,7 +147,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column 0UNIT
 		dataType: string
-		lineageTag: a3013cd9-5961-4040-8708-46af2c01fc52
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: baf89685-1d65-4ba7-9f2c-34e4325a6777
 		summarizeBy: none
 		sourceColumn: 0UNIT
 
@@ -131,7 +157,9 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column 0BASE_UOM
 		dataType: string
-		lineageTag: 98fe8caf-2903-49b5-99c6-a29156c1fa6a
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: fb723b12-a7ad-457a-ac2f-9581b4d0bf70
 		summarizeBy: none
 		sourceColumn: 0BASE_UOM
 
@@ -139,7 +167,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column FPER_CO_QTY_TU
 		dataType: double
-		lineageTag: b608a7ca-eac4-48d4-9239-039b99bca460
+		sourceProviderType: decimal(20, 5)
+		lineageTag: 4515d333-1aba-487c-a66a-5271ccd3b102
 		summarizeBy: sum
 		sourceColumn: FPER_CO_QTY_TU
 
@@ -149,7 +178,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column FPER_CO_QTY_CU
 		dataType: double
-		lineageTag: cc6e522e-8ac4-46be-a74e-2a452e6cc2a5
+		sourceProviderType: decimal(20, 5)
+		lineageTag: 89bfff65-af81-43e0-beb5-b0570a39ea63
 		summarizeBy: sum
 		sourceColumn: FPER_CO_QTY_CU
 
@@ -159,7 +189,8 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column FPER_SD_QTY_SU
 		dataType: double
-		lineageTag: f7c0fd30-ce4f-4296-8e70-73f30c7994dc
+		sourceProviderType: decimal(20, 5)
+		lineageTag: 2b9a1ce5-631f-4149-8148-2ae8988f977f
 		summarizeBy: sum
 		sourceColumn: FPER_SD_QTY_SU
 
@@ -169,52 +200,25 @@ table 'PH_WH DMV_SalesData_Cleansed'
 
 	column Last_Updated
 		dataType: dateTime
+		isNullable: false
 		formatString: General Date
-		lineageTag: 608ea05e-3b3a-4fbe-8186-a52c3c12ce38
+		sourceProviderType: datetime2
+		lineageTag: c22bed75-da30-4155-be14-8c548ebc0bc5
 		summarizeBy: none
 		sourceColumn: Last_Updated
-
-		variation Variation
-			isDefault
-			relationship: f935bf22-e30f-4971-b053-e1cdc6446149
-			defaultHierarchy: LocalDateTable_0404df9c-9601-42df-9649-31fdc0304cbb.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'PH_WH DMV_SalesData_Cleansed' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    `0vtype`                AS `0VTYPE`,
-				    `0version`              AS `0VERSION`,
-				    fiscyear                AS FISCYEAR,
-				    `0fiscper`              AS `0FISCPER`,
-				    dctry_fd                AS DCTRY_FD,
-				    dctry_fd___t            AS DCTRY_FD___T,
-				    dpc                     AS DPC,
-				    dpc___t                 AS DPC___T,
-				    drespo__dpc_cv          AS DRESPO__DPC_CV,
-				    drespo__dpc_cv___t      AS DRESPO__DPC_CV___T,
-				    drespo__dbrand          AS DRESPO__DBRAND,
-				    drespo__dbrand___t      AS DRESPO__DBRAND___T,
-				    `0material__dprodh1`    AS `0MATERIAL__DPRODH1`,
-				    `0material`             AS `0MATERIAL`,
-				    `0material___t`         AS `0MATERIAL___T`,
-				    `0unit`                 AS `0UNIT`,
-				    `0base_uom`             AS `0BASE_UOM`,
-				    fper_co_qty_tu          AS FPER_CO_QTY_TU,
-				    fper_co_qty_cu          AS FPER_CO_QTY_CU,
-				    fper_sd_qty_su          AS FPER_SD_QTY_SU,
-				    last_updated            AS Last_Updated
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_salesdata_cleansed_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    PH_WH_DMV_SalesData_Cleansed = Source{[Schema="PH_WH",Item="DMV_SalesData_Cleansed"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Table
+				    PH_WH_DMV_SalesData_Cleansed
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
 

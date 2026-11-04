@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "a2b1ec91275879c49d2e",
   "position": {
     "x": 0,
@@ -317,11 +317,11 @@
                       "Entity": "CH_UP DMV_SalesData"
                     }
                   },
-                  "Property": "LAST_UPDATED"
+                  "Property": "Last_Updated"
                 }
               },
-              "queryRef": "CH_UP DMV_SalesData.LAST_UPDATED",
-              "nativeQueryRef": "LAST_UPDATED"
+              "queryRef": "CH_UP DMV_SalesData.Last_Updated",
+              "nativeQueryRef": "Last_Updated"
             },
             {
               "field": {

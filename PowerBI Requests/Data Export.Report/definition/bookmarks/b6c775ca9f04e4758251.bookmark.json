@@ -183,24 +183,13 @@
                   "name": "d2481441b7ff3f5a3a03",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Fiscal_Date"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
                         }
                       },
-                      "Level": "Year"
+                      "Property": "Fiscal_Date"
                     }
                   },
                   "howCreated": 0
@@ -209,24 +198,13 @@
                   "name": "de0443c5cce3574e3e2e",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Fiscal_Date"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
                         }
                       },
-                      "Level": "Month"
+                      "Property": "Fiscal_Date"
                     }
                   },
                   "howCreated": 0
@@ -1090,24 +1068,13 @@
                   "name": "17220b2f6106418034a4",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_current"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Year"
+                      "Property": "valid_from_current"
                     }
                   },
                   "howCreated": 0
@@ -1116,24 +1083,13 @@
                   "name": "18144b47d38898dcba20",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_current"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Quarter"
+                      "Property": "valid_from_current"
                     }
                   },
                   "howCreated": 0
@@ -1142,24 +1098,13 @@
                   "name": "680ed726415856b2d79d",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_current"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Month"
+                      "Property": "valid_from_current"
                     }
                   },
                   "howCreated": 0
@@ -1168,24 +1113,13 @@
                   "name": "8588fe3c5c9bc4e5ca3c",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_current"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Day"
+                      "Property": "valid_from_current"
                     }
                   },
                   "howCreated": 0
@@ -1194,24 +1128,13 @@
                   "name": "a55d624012ea5f2e20a3",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_previous_version"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Year"
+                      "Property": "valid_from_previous_version"
                     }
                   },
                   "howCreated": 0
@@ -1220,24 +1143,13 @@
                   "name": "337c4ee67d2fbbb1aaa6",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_previous_version"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Quarter"
+                      "Property": "valid_from_previous_version"
                     }
                   },
                   "howCreated": 0
@@ -1246,24 +1158,13 @@
                   "name": "e857d87eca74f9356043",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_previous_version"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Month"
+                      "Property": "valid_from_previous_version"
                     }
                   },
                   "howCreated": 0
@@ -1272,24 +1173,13 @@
                   "name": "a6d5aca70ad82840323a",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "CS_SHF LTbl_ParameterChangeResults"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "valid_from_previous_version"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "CS_SHF LTbl_ParameterChangeResults"
                         }
                       },
-                      "Level": "Day"
+                      "Property": "valid_from_previous_version"
                     }
                   },
                   "howCreated": 0

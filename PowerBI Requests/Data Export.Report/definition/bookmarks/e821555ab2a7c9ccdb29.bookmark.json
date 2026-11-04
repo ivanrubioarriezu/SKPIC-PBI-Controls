@@ -1882,24 +1882,13 @@
                   "name": "1d05fc737115d294d3f4",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_SalesData_Cleansed"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
                         }
                       },
-                      "Level": "Year"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0
@@ -1908,24 +1897,13 @@
                   "name": "bbabee9ec9c570118d08",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_SalesData_Cleansed"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
                         }
                       },
-                      "Level": "Quarter"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0
@@ -1934,24 +1912,13 @@
                   "name": "1902376289930828fd55",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_SalesData_Cleansed"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
                         }
                       },
-                      "Level": "Month"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0
@@ -1960,24 +1927,13 @@
                   "name": "a89cf8c8cd3c2337bf41",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_SalesData_Cleansed"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_SalesData_Cleansed"
                         }
                       },
-                      "Level": "Day"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0
@@ -2041,24 +1997,13 @@
                   "name": "974d6172409ea2ea9ef4",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_Blacklist"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
                         }
                       },
-                      "Level": "Year"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0
@@ -2067,24 +2012,13 @@
                   "name": "a1ecc65f5f5805e1663e",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_Blacklist"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
                         }
                       },
-                      "Level": "Quarter"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0
@@ -2093,24 +2027,13 @@
                   "name": "adf9b9ef8d1154b1286a",
                   "type": "Categorical",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_Blacklist"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
                         }
                       },
-                      "Level": "Month"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0
@@ -2119,24 +2042,13 @@
                   "name": "326615752cecacfd14e0",
                   "type": "Advanced",
                   "expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "PH_WH DMV_Blacklist"
-                                }
-                              },
-                              "Name": "Variation",
-                              "Property": "Last_Updated"
-                            }
-                          },
-                          "Hierarchy": "Date Hierarchy"
+                        "SourceRef": {
+                          "Entity": "PH_WH DMV_Blacklist"
                         }
                       },
-                      "Level": "Day"
+                      "Property": "Last_Updated"
                     }
                   },
                   "howCreated": 0

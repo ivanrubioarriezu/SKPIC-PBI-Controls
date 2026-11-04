@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "264cb39a2006057a35e3",
   "position": {
     "x": 0,
@@ -335,6 +335,22 @@
           },
           "selector": {
             "metadata": "Sum(PH_WH DMF_SalesDataDistributed_Extract.fiscal_period)"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(PH_WH DMF_SalesDataDistributed_Extract.quantity)"
           }
         }
       ]

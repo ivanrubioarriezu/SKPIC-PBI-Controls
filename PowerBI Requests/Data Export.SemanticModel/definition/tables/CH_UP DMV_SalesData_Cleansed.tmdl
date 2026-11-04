@@ -1,9 +1,11 @@
 table 'CH_UP DMV_SalesData_Cleansed'
-	lineageTag: 30939f37-4921-42d5-adea-303d7930ab26
+	lineageTag: 55751ad2-6a17-4ca2-bfa4-56af7aa966d3
 
 	column Type
 		dataType: string
-		lineageTag: ac7a7598-baeb-43c9-b8f4-be84f1a8e408
+		isNullable: false
+		sourceProviderType: char
+		lineageTag: 3e7c78b0-6e70-4a91-b1dd-913fc87d2164
 		summarizeBy: none
 		sourceColumn: Type
 
@@ -11,7 +13,9 @@ table 'CH_UP DMV_SalesData_Cleansed'
 
 	column Version
 		dataType: string
-		lineageTag: 0bb0ea46-bc63-43a1-9cf2-1cf7e2ab5752
+		isNullable: false
+		sourceProviderType: char
+		lineageTag: 7169c0de-08d2-4e49-a4be-02cad30f8430
 		summarizeBy: none
 		sourceColumn: Version
 
@@ -19,7 +23,8 @@ table 'CH_UP DMV_SalesData_Cleansed'
 
 	column Year
 		dataType: string
-		lineageTag: 2102f91a-89d6-498f-bad0-e4bda27b12d2
+		sourceProviderType: nvarchar(255)
+		lineageTag: 465c69c4-5263-4bfe-95d8-6f1c7e4bef67
 		summarizeBy: none
 		sourceColumn: Year
 
@@ -27,7 +32,8 @@ table 'CH_UP DMV_SalesData_Cleansed'
 
 	column Country
 		dataType: string
-		lineageTag: 30681a08-90f0-4ac9-b520-2a85cc362ed2
+		sourceProviderType: nvarchar(255)
+		lineageTag: 5ee4c691-b532-44d1-9fd7-88670e291134
 		summarizeBy: none
 		sourceColumn: Country
 
@@ -35,7 +41,8 @@ table 'CH_UP DMV_SalesData_Cleansed'
 
 	column Brand
 		dataType: string
-		lineageTag: 6670d41c-f142-4230-b9d4-dec0dd9bbbfb
+		sourceProviderType: nvarchar(255)
+		lineageTag: dc013a26-2563-486d-80bd-bf879aead366
 		summarizeBy: none
 		sourceColumn: Brand
 
@@ -43,7 +50,9 @@ table 'CH_UP DMV_SalesData_Cleansed'
 
 	column Material
 		dataType: string
-		lineageTag: 5d03320f-31d0-4f2c-9f93-ea8867679919
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5abc6da8-d781-4e7c-847b-a49849380b59
 		summarizeBy: none
 		sourceColumn: Material
 
@@ -51,7 +60,8 @@ table 'CH_UP DMV_SalesData_Cleansed'
 
 	column Material_Description
 		dataType: string
-		lineageTag: 3cbbda81-3d62-4b1a-a47c-186e7315be47
+		sourceProviderType: nvarchar(255)
+		lineageTag: 987d458f-9654-47cf-bde0-34de7b55973b
 		summarizeBy: none
 		sourceColumn: Material_Description
 
@@ -59,7 +69,8 @@ table 'CH_UP DMV_SalesData_Cleansed'
 
 	column Quantity
 		dataType: double
-		lineageTag: 0173ac28-26ae-476c-ad95-70271c3daa48
+		sourceProviderType: decimal(38, 15)
+		lineageTag: 606d41de-b672-4c23-8801-e92d772461f7
 		summarizeBy: sum
 		sourceColumn: Quantity
 
@@ -70,39 +81,19 @@ table 'CH_UP DMV_SalesData_Cleansed'
 	column Last_Updated
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 94f37522-7acc-40d2-bcc9-a001b3887714
+		sourceProviderType: datetime
+		lineageTag: 280ac335-7254-4a0d-9c32-1c7b3cfcdb01
 		summarizeBy: none
 		sourceColumn: Last_Updated
-
-		variation Variation
-			isDefault
-			relationship: 2aa7f438-ee90-4989-8456-f93fe584cdd4
-			defaultHierarchy: LocalDateTable_9995564a-f980-42d0-89c7-ada8f97e8e89.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'CH_UP DMV_SalesData_Cleansed' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    type                    AS Type,
-				    version                 AS Version,
-				    year                    AS Year,
-				    country                 AS Country,
-				    brand                   AS Brand,
-				    material                AS Material,
-				    material_description    AS Material_Description,
-				    quantity                AS Quantity,
-				    last_updated            AS Last_Updated
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_salesdata_cleansed_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CH_UP_DMV_SalesData_Cleansed = Source{[Schema="CH_UP",Item="DMV_SalesData_Cleansed"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_NavigationStepName = Navigation
-
-	annotation PBI_ResultType = Exception
+				    CH_UP_DMV_SalesData_Cleansed
 

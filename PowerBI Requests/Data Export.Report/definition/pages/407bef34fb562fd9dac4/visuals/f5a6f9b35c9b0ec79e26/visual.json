@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "f5a6f9b35c9b0ec79e26",
   "position": {
     "x": 0,
@@ -17,53 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Fiscal_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Fiscal_Date"
                 }
               },
               "queryRef": "stored procedure CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Year",
               "nativeQueryRef": "Fiscal_Date Year"
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Fiscal_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Month"
-                }
-              },
-              "queryRef": "stored procedure CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Fiscal_Date Month"
             },
             {
               "field": {
@@ -151,62 +115,47 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                        }
-                      },
-                      "Property": "Farmer_FC1_Full_Year"
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
                     }
                   },
-                  "Function": 0
+                  "Property": "Farmer_FC1_Full_Year"
                 }
               },
               "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC1_Full_Year)",
-              "nativeQueryRef": "Farmer_FC1_Full_Year",
+              "nativeQueryRef": "Farmer_FC1_Full_Year1",
               "displayName": "Farmer_FC1_Full_Year"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                        }
-                      },
-                      "Property": "Farmer_FC2_Full_Year"
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
                     }
                   },
-                  "Function": 0
+                  "Property": "Farmer_FC2_Full_Year"
                 }
               },
               "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC2_Full_Year)",
-              "nativeQueryRef": "Farmer_FC2_Full_Year",
+              "nativeQueryRef": "Farmer_FC2_Full_Year1",
               "displayName": "Farmer_FC2_Full_Year"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                        }
-                      },
-                      "Property": "Farmer_FC3_Full_Year"
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
                     }
                   },
-                  "Function": 0
+                  "Property": "Farmer_FC3_Full_Year"
                 }
               },
               "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC3_Full_Year)",
-              "nativeQueryRef": "Farmer_FC3_Full_Year",
+              "nativeQueryRef": "Farmer_FC3_Full_Year1",
               "displayName": "Farmer_FC3_Full_Year"
             },
             {
@@ -221,26 +170,21 @@
                 }
               },
               "queryRef": "stored procedure CS_SHF DMTbl_SHF.SHF_ACT YTD",
-              "nativeQueryRef": "SHF_ACT YTD"
+              "nativeQueryRef": "SHF_ACT YTD1"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                        }
-                      },
-                      "Property": "Farmer_Actual_Previous_Full_Year"
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
                     }
                   },
-                  "Function": 0
+                  "Property": "Farmer_Actual_Previous_Full_Year"
                 }
               },
               "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_Actual_Previous_Full_Year)",
-              "nativeQueryRef": "Farmer_Actual_Previous_Full_Year",
+              "nativeQueryRef": "Farmer_Actual_Previous_Full_Year1",
               "displayName": "Farmer_Actual_Previous_Full_Year"
             },
             {
@@ -255,10 +199,32 @@
                 }
               },
               "queryRef": "stored procedure CS_SHF DMTbl_SHF.SFY_PLAN",
-              "nativeQueryRef": "SFY_PLAN"
+              "nativeQueryRef": "SFY_PLAN1"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                      }
+                    },
+                    "Property": "Farmer_FC2_Full_Year"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "48ffc1094ea001e8addb",
   "position": {
     "x": 0,
@@ -31,28 +31,17 @@
             },
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "CH_UP DMT_KPI"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Fiscal_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Level": "Month"
+                  "Property": "Fiscal_Month"
                 }
               },
-              "queryRef": "CH_UP DMT_KPI.Fiscal_Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Fiscal_Date Month"
+              "queryRef": "Sum(CH_UP DMT_KPI.Fiscal_Month)",
+              "nativeQueryRef": "Fiscal_Month"
             },
             {
               "field": {
@@ -154,7 +143,7 @@
             },
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
                       "Entity": "CH_UP DMT_KPI"
@@ -163,108 +152,78 @@
                   "Property": "Pillar_SKU_Class"
                 }
               },
-              "queryRef": "CH_UP DMT_KPI.Pillar_SKU_Class",
+              "queryRef": "CH_UP DMT_KPI.Pillar_SKU_Class_Display",
               "nativeQueryRef": "Pillar_SKU_Class"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CH_UP DMT_KPI"
-                        }
-                      },
-                      "Property": "Actual_Ytd"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Function": 0
+                  "Property": "Actual_YtD"
                 }
               },
-              "queryRef": "Sum(CH_UP DMT_KPI.Actual_Ytd)",
-              "nativeQueryRef": "Actual_YTD",
-              "displayName": "Actual_YTD"
+              "queryRef": "Sum(CH_UP DMT_KPI.Actual_YtD)",
+              "nativeQueryRef": "Actual_YtD"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CH_UP DMT_KPI"
-                        }
-                      },
-                      "Property": "Forecast_Ytd"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Function": 0
+                  "Property": "Forecast_YtD"
                 }
               },
-              "queryRef": "Sum(CH_UP DMT_KPI.Forecast_Ytd)",
-              "nativeQueryRef": "Forecast_YTD",
-              "displayName": "Forecast_YTD"
+              "queryRef": "Sum(CH_UP DMT_KPI.Forecast_YtD)",
+              "nativeQueryRef": "Forecast_YtD"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CH_UP DMT_KPI"
-                        }
-                      },
-                      "Property": "Forecast_Ye"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Function": 0
+                  "Property": "Forecast_YE"
                 }
               },
-              "queryRef": "Sum(CH_UP DMT_KPI.Forecast_Ye)",
-              "nativeQueryRef": "Forecast_YE",
-              "displayName": "Forecast_YE"
+              "queryRef": "Sum(CH_UP DMT_KPI.Forecast_YE)",
+              "nativeQueryRef": "Forecast_YE"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CH_UP DMT_KPI"
-                        }
-                      },
-                      "Property": "Plan_Ytd"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Function": 0
+                  "Property": "Plan_YtD"
                 }
               },
-              "queryRef": "Sum(CH_UP DMT_KPI.Plan_Ytd)",
-              "nativeQueryRef": "Plan_YTD",
-              "displayName": "Plan_YTD"
+              "queryRef": "Sum(CH_UP DMT_KPI.Plan_YtD)",
+              "nativeQueryRef": "Plan_YtD"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CH_UP DMT_KPI"
-                        }
-                      },
-                      "Property": "Plan_Ye"
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Function": 0
+                  "Property": "Plan_YE"
                 }
               },
-              "queryRef": "Sum(CH_UP DMT_KPI.Plan_Ye)",
-              "nativeQueryRef": "Plan_YE",
-              "displayName": "Plan_YE"
+              "queryRef": "Sum(CH_UP DMT_KPI.Plan_YE)",
+              "nativeQueryRef": "Plan_YE"
             }
           ]
         }
@@ -352,6 +311,19 @@
               "expr": {
                 "Literal": {
                   "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

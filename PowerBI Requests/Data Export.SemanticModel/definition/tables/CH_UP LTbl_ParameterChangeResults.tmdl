@@ -1,9 +1,11 @@
 table 'CH_UP LTbl_ParameterChangeResults'
-	lineageTag: 634f3483-a064-447e-b837-062e4ec2308c
+	lineageTag: f53e2acc-c5ef-49f2-807e-c63aab175396
 
 	column Affected_Table
 		dataType: string
-		lineageTag: 4789984a-f741-4fb5-b33f-9d1c717bff50
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 0c351b61-c7c3-4a8c-ac6d-88aec9b4f80c
 		summarizeBy: none
 		sourceColumn: Affected_Table
 
@@ -11,7 +13,9 @@ table 'CH_UP LTbl_ParameterChangeResults'
 
 	column Info
 		dataType: string
-		lineageTag: 541daab3-4c57-4251-a049-7f21ee0ce864
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 4b8738ef-b02c-471e-9ebd-df2ee1f343d7
 		summarizeBy: none
 		sourceColumn: Info
 
@@ -19,7 +23,9 @@ table 'CH_UP LTbl_ParameterChangeResults'
 
 	column Affected_Parameter
 		dataType: string
-		lineageTag: 0e650a50-5d9c-4bba-9d36-ea07df1f54a9
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: c45fa3fe-97cf-408c-9438-5f34916d2cbe
 		summarizeBy: none
 		sourceColumn: Affected_Parameter
 
@@ -27,7 +33,8 @@ table 'CH_UP LTbl_ParameterChangeResults'
 
 	column Current_Version
 		dataType: string
-		lineageTag: 9c8b2922-7353-4534-bf05-130afceb59f3
+		sourceProviderType: nvarchar(255)
+		lineageTag: e11dfa74-ab62-41c2-9b5c-0ef45472f7ee
 		summarizeBy: none
 		sourceColumn: Current_Version
 
@@ -35,15 +42,26 @@ table 'CH_UP LTbl_ParameterChangeResults'
 
 	column Previous_Version
 		dataType: string
-		lineageTag: 1673f5ff-d4de-4b71-9694-1db4f9365a07
+		sourceProviderType: nvarchar(255)
+		lineageTag: ff4c0173-0f89-4562-931b-0d8387c174a7
 		summarizeBy: none
 		sourceColumn: Previous_Version
 
 		annotation SummarizationSetBy = Automatic
 
+	column parameter_dimensions
+		dataType: string
+		sourceProviderType: nvarchar(550)
+		lineageTag: 83c7797a-c969-4cd2-ab9a-4f83c0ac384a
+		summarizeBy: none
+		sourceColumn: parameter_dimensions
+
+		annotation SummarizationSetBy = Automatic
+
 	column diff
 		dataType: double
-		lineageTag: 870e7c05-2783-4754-a29b-31ead1bd1cb0
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 65b1821d-0eee-499d-bf1e-687f5e48d9c7
 		summarizeBy: sum
 		sourceColumn: diff
 
@@ -54,61 +72,29 @@ table 'CH_UP LTbl_ParameterChangeResults'
 	column valid_from_current
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 2cb6bb4c-923d-493b-9eea-d1401ed3da83
+		sourceProviderType: datetime
+		lineageTag: abbf21e8-fc2a-4854-8fd0-51b4c86f77e3
 		summarizeBy: none
 		sourceColumn: valid_from_current
-
-		variation Variation
-			isDefault
-			relationship: d40d65de-6aff-4adf-81bb-6d362d5cf820
-			defaultHierarchy: LocalDateTable_2d01965a-1895-4bd0-8388-b744d1ced4f1.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	column valid_from_previous_version
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 3ace60de-bee6-48f2-b735-ea3b8845ed63
+		sourceProviderType: datetime
+		lineageTag: d39b74aa-5114-4dc3-85d2-2201771022a0
 		summarizeBy: none
 		sourceColumn: valid_from_previous_version
-
-		variation Variation
-			isDefault
-			relationship: a97704bf-d24b-40ce-8dff-a00c03f5b777
-			defaultHierarchy: LocalDateTable_6babd355-4333-40fb-8984-ea817b39e1cd.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
-	column Parameter_Dimensions
-		dataType: string
-		lineageTag: 813bc1a7-5607-4556-b5d7-27188469d2d6
-		summarizeBy: none
-		sourceColumn: Parameter_Dimensions
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'CH_UP LTbl_ParameterChangeResults' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT 
-				    affected_parameter           AS Affected_Parameter,
-				    affected_table               AS Affected_Table,
-				    current_version              AS Current_Version,
-				    diff                         AS diff,
-				    info                         AS Info,
-				    previous_version             AS Previous_Version,
-				    parameter_dimensions        AS Parameter_Dimensions,
-				    valid_from_current           AS valid_from_current,
-				    valid_from_previous_version  AS valid_from_previous_version
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_parameter_change_results_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CH_UP_LTbl_ParameterChangeResults = Source{[Schema="CH_UP",Item="LTbl_ParameterChangeResults"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Exception
-
-	annotation PBI_NavigationStepName = Navigation
+				    CH_UP_LTbl_ParameterChangeResults
 

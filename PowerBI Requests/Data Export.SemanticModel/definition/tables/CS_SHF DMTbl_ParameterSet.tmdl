@@ -1,0 +1,363 @@
+table 'CS_SHF DMTbl_ParameterSet'
+	lineageTag: 28e3935a-19ab-4313-a2fd-c4de2fcec5ea
+
+	column Year
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: c761ce6a-bd26-4fc3-8925-eb2b0443e079
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fiscal_Period
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 566ba217-7a96-4b2a-a0a0-cf8d3d714ce3
+		summarizeBy: sum
+		sourceColumn: Fiscal_Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4743eb60-7fe7-4e84-9ebd-010ab9714447
+		summarizeBy: sum
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Crop_Main_Group
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9838076f-ecf6-43d2-bcbe-3cf13a561b93
+		summarizeBy: sum
+		sourceColumn: Crop_Main_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b8a095b3-a789-4c78-a492-fc571ba47955
+		summarizeBy: sum
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Net_Sales_Dimension
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		lineageTag: 4cc0ebe3-1090-417f-85d9-e8cba92a1119
+		summarizeBy: none
+		sourceColumn: Net_Sales_Dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column Net_Sales_Actual_YtD
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: f7d5762f-842a-476d-b866-9df78ba70860
+		summarizeBy: sum
+		sourceColumn: Net_Sales_Actual_YtD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_Sales_Budget_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: f14851be-c32b-46da-95b0-2594fc39728b
+		summarizeBy: sum
+		sourceColumn: Net_Sales_Budget_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_Sales_FC1_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 901ec07d-4bc1-4a27-aa50-a56cd9461d50
+		summarizeBy: sum
+		sourceColumn: Net_Sales_FC1_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_Sales_FC2_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: b674a117-d67c-4a83-b5c8-8577e8973652
+		summarizeBy: sum
+		sourceColumn: Net_Sales_FC2_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_Sales_FC3_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 10096c0e-083e-4546-8226-bb9018be371d
+		summarizeBy: sum
+		sourceColumn: Net_Sales_FC3_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_Actual
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 87d4f41e-6e18-4fac-a91c-a48b1da3f9b0
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_Budget
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: b310eeff-6c71-4280-8b93-576fee4e5ab6
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_FC1
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 116175b7-12d7-47fd-9dea-2f4a5319f2bc
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_FC1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_FC2
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 9894eb3b-d9bf-46c4-ae8c-9805e9e481df
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_FC2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Bayer_Farmer_Spend_FC3
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 4f0d7f00-f953-45ea-9639-550067ab1882
+		summarizeBy: sum
+		sourceColumn: Average_Bayer_Farmer_Spend_FC3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Avg_Farm_Size_ha
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 7eab65bf-cb8e-47a2-80c9-4a768a71c21e
+		summarizeBy: sum
+		sourceColumn: Avg_Farm_Size_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Share
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: c3daa1d4-60bf-48cc-8d86-f218743a393b
+		summarizeBy: sum
+		sourceColumn: SH_Share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Farmer_Actual_YtD
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 4267a963-e06b-4181-bb39-b8852aef08af
+		summarizeBy: sum
+		sourceColumn: SH_Farmer_Actual_YtD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Unique_SH_Farmers_Actual_YtD
+		dataType: double
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 74bd6f0f-32bd-4d3b-a982-4f2ecf1ab85e
+		summarizeBy: sum
+		sourceColumn: Number_of_Unique_SH_Farmers_Actual_YtD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Farmer_Budget_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: f25d2bb9-e55e-48d2-ba9a-87e1ab2d04d9
+		summarizeBy: sum
+		sourceColumn: SH_Farmer_Budget_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Unique_SH_Farmers_Budget_Full_Year
+		dataType: double
+		sourceProviderType: decimal(38, 7)
+		lineageTag: c641d01b-a4f6-4356-916c-ad9439eac062
+		summarizeBy: sum
+		sourceColumn: Number_of_Unique_SH_Farmers_Budget_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Farmer_FC1_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: ea2693a6-bd8b-4783-ab3d-5b4869d3013e
+		summarizeBy: sum
+		sourceColumn: SH_Farmer_FC1_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Unique_SH_Farmers_FC1_Full_Year
+		dataType: double
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 535a6e18-fd5b-4e31-a61f-e41ee99b4e0e
+		summarizeBy: sum
+		sourceColumn: Number_of_Unique_SH_Farmers_FC1_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Farmer_FC2_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: e8496fa7-6111-4a19-a497-dff9e409e179
+		summarizeBy: sum
+		sourceColumn: SH_Farmer_FC2_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Unique_SH_Farmers_FC2_Full_Year
+		dataType: double
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 1bc3b833-f889-43f5-8aef-46ab1f7fdbea
+		summarizeBy: sum
+		sourceColumn: Number_of_Unique_SH_Farmers_FC2_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SH_Farmer_FC3_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 197a3ad9-c9f1-4fcf-862e-8218070bb0e7
+		summarizeBy: sum
+		sourceColumn: SH_Farmer_FC3_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Unique_SH_Farmers_FC3_Full_Year
+		dataType: double
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 9b76c4b2-1b2f-49a9-8cf2-40e79177b2ba
+		summarizeBy: sum
+		sourceColumn: Number_of_Unique_SH_Farmers_FC3_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valid_From
+		dataType: dateTime
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 60d2478a-4f09-49a3-8c5e-21090f34df73
+		summarizeBy: none
+		sourceColumn: Valid_From
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valid_To
+		dataType: dateTime
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ea9d8852-6694-4f8c-98f5-b4950dc7495e
+		summarizeBy: none
+		sourceColumn: Valid_To
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seeding_Rate_kg_ha
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 1d027932-0f77-4750-93d5-6a18f4102a08
+		summarizeBy: sum
+		sourceColumn: Seeding_Rate_kg_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Seasons
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 1a9c6e6f-e7e5-4443-8456-6ca833de0363
+		summarizeBy: sum
+		sourceColumn: Number_of_Seasons
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CS_SHF DMTbl_ParameterSet' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CS_SHF_DMTbl_ParameterSet = Source{[Schema="CS_SHF",Item="DMTbl_ParameterSet"]}[Data]
+				in
+				    CS_SHF_DMTbl_ParameterSet
+

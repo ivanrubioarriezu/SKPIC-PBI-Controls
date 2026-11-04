@@ -1,9 +1,11 @@
 table 'CH_UP DMV_Scope_Brand'
-	lineageTag: d53012b4-333d-4fa5-b8b1-4f080b1ed297
+	lineageTag: 71999b1a-c12a-4c53-b5b7-f005c53a625d
 
 	column Brand
 		dataType: string
-		lineageTag: 4d7ef276-585f-4ebd-9081-1789a814e3dc
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: f0aa2f0e-2a57-49cc-987e-d51e89a41db7
 		summarizeBy: none
 		sourceColumn: Brand
 
@@ -12,7 +14,8 @@ table 'CH_UP DMV_Scope_Brand'
 	column In_Scope
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: f5e26020-bfac-4d00-bf82-bab2c1adfbcf
+		sourceProviderType: bit
+		lineageTag: 0e07c544-38fb-49cf-8827-0bc68bb61b1e
 		summarizeBy: none
 		sourceColumn: In_Scope
 
@@ -20,7 +23,8 @@ table 'CH_UP DMV_Scope_Brand'
 
 	column Comment
 		dataType: string
-		lineageTag: 6c4c5a63-37bc-495c-b8e6-020533bd6e76
+		sourceProviderType: nvarchar(255)
+		lineageTag: a8d6581e-130a-496e-b54a-d4e4867adc71
 		summarizeBy: none
 		sourceColumn: Comment
 
@@ -28,35 +32,21 @@ table 'CH_UP DMV_Scope_Brand'
 
 	column Last_Updated
 		dataType: dateTime
+		isNullable: false
 		formatString: General Date
-		lineageTag: 87e89e15-5f2f-446f-be42-253ad08408ef
+		sourceProviderType: datetime2
+		lineageTag: 2e135555-f736-4d6e-b70c-98b9e6ae5f80
 		summarizeBy: none
 		sourceColumn: Last_Updated
-
-		variation Variation
-			isDefault
-			relationship: 874ce558-48c9-4b80-853a-28dc8725c222
-			defaultHierarchy: LocalDateTable_2dfe1656-580d-4d43-ad25-b42dc2563c5a.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'CH_UP DMV_Scope_Brand' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    brand AS Brand,
-				    comment            AS Comment,
-				    in_scope        AS In_Scope,
-				    last_updated       AS Last_Updated
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_scope_brand_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CH_UP_DMV_Scope_Brand = Source{[Schema="CH_UP",Item="DMV_Scope_Brand"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Exception
-
-	annotation PBI_NavigationStepName = Navigation
+				    CH_UP_DMV_Scope_Brand
 

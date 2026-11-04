@@ -1,9 +1,11 @@
 table 'CS_SHF LTbl_ParameterChangeResults'
-	lineageTag: 1b6ff0bb-abed-42b8-a7be-dbd6eeb88e20
+	lineageTag: 6cedc685-96c5-48be-bc3b-20ea92e47266
 
 	column Affected_Table
 		dataType: string
-		lineageTag: 1e566cb4-2701-4fbf-af61-512486b89853
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 4ce187b4-8342-486f-b562-2e9d2cfea99c
 		summarizeBy: none
 		sourceColumn: Affected_Table
 
@@ -11,7 +13,9 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Info
 		dataType: string
-		lineageTag: cbe75baa-61d2-4294-ae25-284b2dc7d2c5
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 9778073c-5567-4929-b5a5-5f671c4da41d
 		summarizeBy: none
 		sourceColumn: Info
 
@@ -19,7 +23,9 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Affected_Parameter
 		dataType: string
-		lineageTag: 84cc55ef-2c73-4b41-802e-2cb2933a2a83
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: ca25680f-02d0-4794-a5da-1313866176a3
 		summarizeBy: none
 		sourceColumn: Affected_Parameter
 
@@ -28,7 +34,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 	column Year
 		dataType: int64
 		formatString: 0
-		lineageTag: 30d6d423-f2b3-4ac8-b3b0-b5254cdf2cbe
+		sourceProviderType: int
+		lineageTag: eb0cc23f-5e2b-4756-aed7-314c3055cddb
 		summarizeBy: sum
 		sourceColumn: Year
 
@@ -36,7 +43,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Country
 		dataType: string
-		lineageTag: c3b7d9fd-2df0-4f3f-ae05-b23b4bd38020
+		sourceProviderType: nvarchar(255)
+		lineageTag: 6f44154e-2eac-4ddd-b23a-563bb9a5a4a6
 		summarizeBy: none
 		sourceColumn: Country
 
@@ -44,7 +52,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Region
 		dataType: string
-		lineageTag: 2d7c9e1a-cffc-43fe-9b78-5da0f28e501f
+		sourceProviderType: nvarchar(255)
+		lineageTag: dc3f8181-3777-4e71-a969-48fab79b61a1
 		summarizeBy: none
 		sourceColumn: Region
 
@@ -52,7 +61,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Crop_Main_Group
 		dataType: string
-		lineageTag: b68e30fb-f7ca-4398-a990-ceb7d1a44eaa
+		sourceProviderType: nvarchar(255)
+		lineageTag: c2f14782-9bd0-4e87-837b-9669bc5e4dd1
 		summarizeBy: none
 		sourceColumn: Crop_Main_Group
 
@@ -60,7 +70,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Product
 		dataType: string
-		lineageTag: 60e6df3d-c199-4978-828d-7017c2e25004
+		sourceProviderType: nvarchar(255)
+		lineageTag: 92b9a388-a602-41ff-b3cf-e6e0de68bd9f
 		summarizeBy: none
 		sourceColumn: Product
 
@@ -68,7 +79,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Other_Parameters
 		dataType: string
-		lineageTag: a8fb7e95-9f44-4eb3-bad7-53505bc88b9c
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 4df37993-cf7c-4134-837c-59b919a9adb3
 		summarizeBy: none
 		sourceColumn: Other_Parameters
 
@@ -76,7 +88,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Current_Version
 		dataType: string
-		lineageTag: dfdaf858-4b12-4aaf-9246-d769d6e52e2c
+		sourceProviderType: nvarchar(255)
+		lineageTag: 898f9e29-7a82-43b5-81cf-24b6797d7ddb
 		summarizeBy: none
 		sourceColumn: Current_Version
 
@@ -84,7 +97,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column Previous_Version
 		dataType: string
-		lineageTag: 1d4b013c-eff6-4322-84b3-16f0e5d0b974
+		sourceProviderType: nvarchar(255)
+		lineageTag: 3e95ee79-03f9-42fa-a65d-3346e2213ab7
 		summarizeBy: none
 		sourceColumn: Previous_Version
 
@@ -92,7 +106,8 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 
 	column diff
 		dataType: double
-		lineageTag: 75fa8f30-7a9e-4d9b-bf91-ee023ecdc0a7
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 2c752d75-acf2-44e9-9abe-a78ed7b5de77
 		summarizeBy: sum
 		sourceColumn: diff
 
@@ -103,58 +118,29 @@ table 'CS_SHF LTbl_ParameterChangeResults'
 	column valid_from_current
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 3af3de9e-3ef6-41e1-94c6-d7623dd10654
+		sourceProviderType: datetime
+		lineageTag: 55d6a446-61de-44f4-b610-98e58b789f6b
 		summarizeBy: none
 		sourceColumn: valid_from_current
-
-		variation Variation
-			isDefault
-			relationship: dd31f35b-9392-4f0a-908d-fdbdb5fe2d14
-			defaultHierarchy: LocalDateTable_045038a1-f7f9-4f66-b524-ad29990fe713.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	column valid_from_previous_version
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 14029263-7480-43a9-9816-db83d26605e5
+		sourceProviderType: datetime
+		lineageTag: aeabe2a2-e951-4408-9b70-4233e3d96573
 		summarizeBy: none
 		sourceColumn: valid_from_previous_version
-
-		variation Variation
-			isDefault
-			relationship: b2ea6cee-1d22-4704-9128-5680cb756183
-			defaultHierarchy: LocalDateTable_69647749-7bb7-4aa3-9bc0-86c7d019da2e.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'CS_SHF LTbl_ParameterChangeResults' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    affected_table                AS Affected_Table,
-				    info                          AS Info,
-				    affected_parameter            AS Affected_Parameter,
-				    year                          AS Year,
-				    country                       AS Country,
-				    region                        AS Region,
-				    crop_main_group               AS Crop_Main_Group,
-				    product                       AS Product,
-				    other_parameters              AS Other_Parameters,
-				    current_version               AS Current_Version,
-				    previous_version              AS Previous_Version,
-				    diff                          AS diff,
-				    valid_from_current            AS valid_from_current,
-				    valid_from_previous_version   AS valid_from_previous_version
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_parameter_change_results_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CS_SHF_LTbl_ParameterChangeResults = Source{[Schema="CS_SHF",Item="LTbl_ParameterChangeResults"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
+				    CS_SHF_LTbl_ParameterChangeResults
 

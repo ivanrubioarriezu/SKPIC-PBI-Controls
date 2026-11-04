@@ -1,20 +1,22 @@
 table 'stored procedure CS_SHF DMTbl_SHF'
-	lineageTag: f7c711fe-0a12-4ddf-bf55-261d2afe919f
+	lineageTag: e7c1e830-917e-4bae-89f1-387d33c829de
 
 	measure SFY_PLAN = SUM('stored procedure CS_SHF DMTbl_SHF'[Farmer_Budget_Full_Year])
-		lineageTag: f9a6ee8d-9fb7-4a43-8612-f5ebf21ae868
+		lineageTag: 2f23d72a-8942-489f-960f-4705bb038f48
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'SHF_ACT YTD' = SUM('stored procedure CS_SHF DMTbl_SHF'[Farmer_Actual])
-		lineageTag: cd7cc8f9-ab8d-40fe-a751-91cbaf073798
+		lineageTag: de2999f9-152a-4f8b-b794-9bf29a1dd542
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Fiscal_Year
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: cfa33815-eaf5-4691-8322-699d54f3ac97
+		sourceProviderType: smallint
+		lineageTag: 3b49dca4-812a-464b-b2bb-8a6f98502c92
 		summarizeBy: sum
 		sourceColumn: Fiscal_Year
 
@@ -22,8 +24,10 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Fiscal_Period
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: 82d2a41e-33b0-47a3-81f7-3063186130a2
+		sourceProviderType: int
+		lineageTag: 0bdb0011-c285-4f56-bca9-2faef2a450a8
 		summarizeBy: sum
 		sourceColumn: Fiscal_Period
 
@@ -31,7 +35,9 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Sector
 		dataType: string
-		lineageTag: f9b90bf7-8a60-4db2-a1e7-eb30c1f42323
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 2ffb7df7-b297-4c2f-8d53-b25e3e2eaf2c
 		summarizeBy: none
 		sourceColumn: Sector
 
@@ -39,7 +45,9 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Crop_Main_Group_Description
 		dataType: string
-		lineageTag: 41a7d4ac-176c-429d-9c6b-5fb72aa6eaf3
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: b5126868-413d-407d-8299-bff7c9f8cea2
 		summarizeBy: none
 		sourceColumn: Crop_Main_Group_Description
 
@@ -47,7 +55,9 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Geographical_Location
 		dataType: string
-		lineageTag: 7cb334a6-14bf-4270-b55b-e823c3f88f24
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: b18db0a3-9f54-4fb2-a695-87f800bc9f89
 		summarizeBy: none
 		sourceColumn: Geographical_Location
 
@@ -55,7 +65,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Country
 		dataType: string
-		lineageTag: c5f07144-6308-49ad-87c1-6049e56706c8
+		sourceProviderType: nvarchar(255)
+		lineageTag: 57335173-b752-4d85-8be9-7305ecd98778
 		summarizeBy: none
 		sourceColumn: Country
 
@@ -63,7 +74,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Cluster
 		dataType: string
-		lineageTag: 4909bfb8-5412-45a6-a461-385f077397c3
+		sourceProviderType: nvarchar(255)
+		lineageTag: 2e3a9a84-b285-4539-ad33-e85cea08e183
 		summarizeBy: none
 		sourceColumn: Cluster
 
@@ -71,7 +83,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Region
 		dataType: string
-		lineageTag: 7371b05a-d10c-4a5f-8fa8-0c1f675ab476
+		sourceProviderType: nvarchar(255)
+		lineageTag: 43e5701f-bcb7-410b-bf31-a435b07242d2
 		summarizeBy: none
 		sourceColumn: Region
 
@@ -79,7 +92,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_Actual
 		dataType: double
-		lineageTag: ea77b768-39eb-47a3-8eab-d13e1b86911c
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 3b91c19d-fbb3-421c-ac50-79b79e6bb494
 		summarizeBy: sum
 		sourceColumn: Farmer_Actual
 
@@ -89,7 +103,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_Budget
 		dataType: double
-		lineageTag: d144123b-d6dc-44bf-a01f-2f2ec35c4fe3
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 436b4213-3cd7-4ecf-9b16-ebd1e36e0357
 		summarizeBy: sum
 		sourceColumn: Farmer_Budget
 
@@ -99,7 +114,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_FC1
 		dataType: double
-		lineageTag: 0ab05b7f-d039-44d2-986b-f03ff44493df
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 4bcdb24b-1219-41d4-896c-f29b0326451c
 		summarizeBy: sum
 		sourceColumn: Farmer_FC1
 
@@ -109,7 +125,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_FC2
 		dataType: double
-		lineageTag: 4e75e3c4-587f-4ef8-ac4d-8a09d67b2c1f
+		sourceProviderType: decimal(30, 15)
+		lineageTag: f9cc2e22-7348-4bce-b459-3da468def36c
 		summarizeBy: sum
 		sourceColumn: Farmer_FC2
 
@@ -119,7 +136,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_FC3
 		dataType: double
-		lineageTag: 0cc33911-c469-4720-a881-1bbc46726efc
+		sourceProviderType: decimal(30, 15)
+		lineageTag: acd9da9b-7eb3-47e0-af91-b3a3157b5362
 		summarizeBy: sum
 		sourceColumn: Farmer_FC3
 
@@ -129,65 +147,30 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Valid_From
 		dataType: dateTime
+		isNullable: false
 		formatString: General Date
-		lineageTag: 24847595-294a-4a7d-84ab-a69f160379a0
+		sourceProviderType: datetime2
+		lineageTag: f41f0fc7-48d7-463c-bf68-a13fcb36aedf
 		summarizeBy: none
 		sourceColumn: Valid_From
-
-		variation Variation
-			isDefault
-			relationship: 2bf9cd6e-096f-49c1-bd12-021774fe93d6
-			defaultHierarchy: LocalDateTable_797302ec-a47f-4673-a3cf-b591fdc30015.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	column Valid_To
 		dataType: dateTime
+		isNullable: false
 		formatString: General Date
-		lineageTag: 4a756e8e-f6a5-4680-aee7-8b31b6952bd7
+		sourceProviderType: datetime2
+		lineageTag: 0102fcc9-bae3-4c9f-8bb6-3920a12cd61f
 		summarizeBy: none
 		sourceColumn: Valid_To
 
-		variation Variation
-			isDefault
-			relationship: 98b2ec76-11a9-4ee1-9628-acf76518c1a2
-			defaultHierarchy: LocalDateTable_d5c65de6-bf51-497e-89dc-af989a775439.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
-
-	column Farmer_Actual_Previous_Not_Used
-		dataType: double
-		lineageTag: 7829f3f4-8c9d-4680-b531-4e7bffc84013
-		summarizeBy: sum
-		sourceColumn: Farmer_Actual_Previous_Not_Used
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Farmer_Actual_Previous_Half_Year
-		dataType: double
-		lineageTag: 72350ae4-d83c-4aac-b671-9db3359900cb
-		summarizeBy: sum
-		sourceColumn: Farmer_Actual_Previous_Half_Year
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Farmer_Actual_Previous_Full_Year
-		dataType: double
-		lineageTag: 53bb044f-e0f0-497c-a0f1-383cd40bf12b
-		summarizeBy: sum
-		sourceColumn: Farmer_Actual_Previous_Full_Year
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Farmer_Actual_Baseline_Not_Used
 		dataType: double
-		lineageTag: e24cb1de-c69c-4a4d-bc9c-f4b591022ebe
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 406ade61-053f-4f64-a99f-5f19db33c1e8
 		summarizeBy: sum
 		sourceColumn: Farmer_Actual_Baseline_Not_Used
 
@@ -195,19 +178,10 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Farmer_Actual_Baseline_Half_Year
-		dataType: double
-		lineageTag: bcbe949f-40ac-412c-bb4e-874035b7bfbe
-		summarizeBy: sum
-		sourceColumn: Farmer_Actual_Baseline_Half_Year
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Farmer_Actual_Baseline_Full_Year
 		dataType: double
-		lineageTag: af20b3fc-9005-4a62-9e8d-d72117895c88
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 4c68789b-1246-45cb-867c-af27329495c4
 		summarizeBy: sum
 		sourceColumn: Farmer_Actual_Baseline_Full_Year
 
@@ -215,11 +189,45 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Farmer_Budget_Half_Year_Not_Used
+	column Farmer_Actual_Baseline_Half_Year
 		dataType: double
-		lineageTag: 11e82442-05c2-4aa2-9ccc-153a74086740
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 6929243d-c0b2-4c31-a3d0-629fa5b5e3e4
 		summarizeBy: sum
-		sourceColumn: Farmer_Budget_Half_Year_Not_Used
+		sourceColumn: Farmer_Actual_Baseline_Half_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Farmer_Actual_Previous_Not_Used
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 3453c167-d1db-4b07-b63a-9f00549d8be6
+		summarizeBy: sum
+		sourceColumn: Farmer_Actual_Previous_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Farmer_Actual_Previous_Full_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: bc25f15d-d210-4e34-8b73-c0cb9009a096
+		summarizeBy: sum
+		sourceColumn: Farmer_Actual_Previous_Full_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Farmer_Actual_Previous_Half_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 7e6c8760-a011-4b9f-a091-a6fc9655507e
+		summarizeBy: sum
+		sourceColumn: Farmer_Actual_Previous_Half_Year
 
 		annotation SummarizationSetBy = Automatic
 
@@ -227,7 +235,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_Budget_Full_Year
 		dataType: double
-		lineageTag: 3aa08024-9cbb-4a5b-8ffe-75214e4e24de
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 316e7d43-a0da-4afc-a642-3091b4b04b66
 		summarizeBy: sum
 		sourceColumn: Farmer_Budget_Full_Year
 
@@ -235,11 +244,12 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Farmer_FC1_Half_Year
+	column Farmer_Budget_Half_Year_Not_Used
 		dataType: double
-		lineageTag: 3b54bafe-cf27-43d4-a836-8d6c315da99a
+		sourceProviderType: decimal(30, 15)
+		lineageTag: f4a25f2e-a7d5-45a7-95a5-11d70b1a279b
 		summarizeBy: sum
-		sourceColumn: Farmer_FC1_Half_Year
+		sourceColumn: Farmer_Budget_Half_Year_Not_Used
 
 		annotation SummarizationSetBy = Automatic
 
@@ -247,7 +257,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_FC1_Full_Year
 		dataType: double
-		lineageTag: 7e9cdde7-0b2a-4b0d-bbd1-210da68d4173
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 661520cc-7834-4854-a301-61cac76d7e12
 		summarizeBy: sum
 		sourceColumn: Farmer_FC1_Full_Year
 
@@ -255,11 +266,12 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Farmer_FC2_Half_Year
+	column Farmer_FC1_Half_Year
 		dataType: double
-		lineageTag: f5475efe-e3f0-43ba-8412-221f5a666ee2
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 086b7927-754d-4e71-b390-132af38317ed
 		summarizeBy: sum
-		sourceColumn: Farmer_FC2_Half_Year
+		sourceColumn: Farmer_FC1_Half_Year
 
 		annotation SummarizationSetBy = Automatic
 
@@ -267,7 +279,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_FC2_Full_Year
 		dataType: double
-		lineageTag: cda8d8ec-c54c-4f3a-8c0c-56b7da75fd1e
+		sourceProviderType: decimal(30, 15)
+		lineageTag: e6b23c55-0703-42b2-ae55-6615829eabc8
 		summarizeBy: sum
 		sourceColumn: Farmer_FC2_Full_Year
 
@@ -275,11 +288,12 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Farmer_FC3_Half_Year
+	column Farmer_FC2_Half_Year
 		dataType: double
-		lineageTag: a91977b9-83df-4ebd-8866-1d82cc1340f0
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 4a150c28-2432-4ae8-89e4-f3528d35d9c2
 		summarizeBy: sum
-		sourceColumn: Farmer_FC3_Half_Year
+		sourceColumn: Farmer_FC2_Half_Year
 
 		annotation SummarizationSetBy = Automatic
 
@@ -287,7 +301,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_FC3_Full_Year
 		dataType: double
-		lineageTag: 9e79eee3-14ad-4156-9f91-b961b5b4f589
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 68092ec2-5ffc-4e97-9671-5c14cded00d6
 		summarizeBy: sum
 		sourceColumn: Farmer_FC3_Full_Year
 
@@ -295,17 +310,24 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column Farmer_FC3_Half_Year
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: e3273254-bc81-455a-be06-2a27371e95f7
+		summarizeBy: sum
+		sourceColumn: Farmer_FC3_Half_Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Fiscal_Date
 		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 417bdded-194e-4565-88ec-db29ea392454
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 6ac51959-bea4-486c-bd2c-db0b98636cff
 		summarizeBy: none
 		sourceColumn: Fiscal_Date
-
-		variation Variation
-			isDefault
-			relationship: 25e495bc-c77f-499c-89ea-2d2081a2ad5c
-			defaultHierarchy: LocalDateTable_a5ed1b83-fb81-4192-9bd0-0596fe8ec542.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -314,7 +336,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 	column Fiscal_Month
 		dataType: int64
 		formatString: 0
-		lineageTag: 46961a5a-6b39-4e9a-8521-48b39d4ec290
+		sourceProviderType: smallint
+		lineageTag: 7553d86e-dfe1-4ec3-98f0-fa27d761ec9f
 		summarizeBy: sum
 		sourceColumn: Fiscal_Month
 
@@ -322,7 +345,9 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Indication
 		dataType: string
-		lineageTag: 7613b393-10cd-4d14-8b93-78a8ae7876bb
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: dc261688-105d-4b83-a68e-d3a3a32a11e8
 		summarizeBy: none
 		sourceColumn: Indication
 
@@ -331,7 +356,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 	column Is_Preliminary
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 8f3a7610-9810-4dea-a736-8119900ec7c9
+		sourceProviderType: bit
+		lineageTag: 955e89d5-c82b-47a7-839e-2e663a3681be
 		summarizeBy: none
 		sourceColumn: Is_Preliminary
 
@@ -339,7 +365,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_Budget_Next_Not_Used
 		dataType: double
-		lineageTag: 9ca94361-2316-4e53-8f7f-b1a485cb3cf6
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 10d84f97-6886-4a3a-902f-1c848e7ae6c9
 		summarizeBy: sum
 		sourceColumn: Farmer_Budget_Next_Not_Used
 
@@ -349,7 +376,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_Budget_Next_Half_Year_Not_Used
 		dataType: double
-		lineageTag: 72ec75c4-6e07-45e4-919d-fc2a3acdacad
+		sourceProviderType: decimal(30, 15)
+		lineageTag: f9de688e-dd7c-4bef-8c6c-42b4424afe10
 		summarizeBy: sum
 		sourceColumn: Farmer_Budget_Next_Half_Year_Not_Used
 
@@ -359,7 +387,8 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 	column Farmer_Budget_Next_Full_Year
 		dataType: double
-		lineageTag: 61248142-8506-463f-8c28-9303b75a3903
+		sourceProviderType: decimal(30, 15)
+		lineageTag: da547ff8-a752-42a2-a516-205665759389
 		summarizeBy: sum
 		sourceColumn: Farmer_Budget_Next_Full_Year
 
@@ -367,75 +396,16 @@ table 'stored procedure CS_SHF DMTbl_SHF'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Preliminary / Final Data' =
-			
-			IF ( 'stored procedure CS_SHF DMTbl_SHF'[Is_Preliminary] = TRUE(), "Preliminary Data", "Final Data" )
-		lineageTag: 85535836-abb9-4e2f-a98e-c1033be6796e
-		summarizeBy: none
-
-		annotation SummarizationSetBy = Automatic
-
 	partition 'stored procedure CS_SHF DMTbl_SHF' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    fiscal_year                           AS Fiscal_Year,
-				    fiscal_period                         AS Fiscal_Period,
-				    sector                                AS Sector,
-				    crop_main_group_description           AS Crop_Main_Group_Description,
-				    geographical_location                 AS Geographical_Location,
-				    country                               AS Country,
-				    cluster                               AS Cluster,
-				    region                                AS Region,
-				
-				    farmer_actual                         AS Farmer_Actual,
-				    farmer_budget                         AS Farmer_Budget,
-				    farmer_fc1                            AS Farmer_FC1,
-				    farmer_fc2                            AS Farmer_FC2,
-				    farmer_fc3                            AS Farmer_FC3,
-				
-				    valid_from                            AS Valid_From,
-				    valid_to                              AS Valid_To,
-				
-				    farmer_actual_previous_not_used       AS Farmer_Actual_Previous_Not_Used,
-				    farmer_actual_previous_half_year      AS Farmer_Actual_Previous_Half_Year,
-				    farmer_actual_previous_full_year      AS Farmer_Actual_Previous_Full_Year,
-				
-				    farmer_actual_baseline_not_used       AS Farmer_Actual_Baseline_Not_Used,
-				    farmer_actual_baseline_half_year      AS Farmer_Actual_Baseline_Half_Year,
-				    farmer_actual_baseline_full_year      AS Farmer_Actual_Baseline_Full_Year,
-				
-				    farmer_budget_half_year_not_used      AS Farmer_Budget_Half_Year_Not_Used,
-				    farmer_budget_full_year               AS Farmer_Budget_Full_Year,
-				
-				    farmer_fc1_half_year                  AS Farmer_FC1_Half_Year,
-				    farmer_fc1_full_year                  AS Farmer_FC1_Full_Year,
-				
-				    farmer_fc2_half_year                  AS Farmer_FC2_Half_Year,
-				    farmer_fc2_full_year                  AS Farmer_FC2_Full_Year,
-				
-				    farmer_fc3_half_year                  AS Farmer_FC3_Half_Year,
-				    farmer_fc3_full_year                  AS Farmer_FC3_Full_Year,
-				
-				    fiscal_date                           AS Fiscal_Date,
-				    fiscal_month                          AS Fiscal_Month,
-				
-				    indication                            AS Indication,
-				    is_preliminary                        AS Is_Preliminary,
-				
-				    farmer_budget_next_not_used           AS Farmer_Budget_Next_Not_Used,
-				    farmer_budget_next_half_year_not_used AS Farmer_Budget_Next_Half_Year_Not_Used,
-				    farmer_budget_next_full_year          AS Farmer_Budget_Next_Full_Year
-				
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_shf_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CS_SHF_DMTbl_SHF = Source{[Schema="CS_SHF",Item="DMTbl_SHF"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Exception
+				    CS_SHF_DMTbl_SHF
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "f671e61446d556369438",
   "position": {
     "x": 20.895522388059703,
@@ -17,28 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Fiscal_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "PH_WH DTbl_AllUserAndCYPValues"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Fiscal_Year"
                 }
               },
-              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Fiscal_Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Fiscal_Date Year",
+              "queryRef": "PH_WH DTbl_AllUserAndCYPValues.Fiscal_Year",
+              "nativeQueryRef": "Fiscal_Year",
               "active": true
             }
           ]
@@ -48,24 +37,13 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Column": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "PH_WH DTbl_AllUserAndCYPValues"
-                          }
-                        },
-                        "Name": "Variation",
-                        "Property": "Fiscal_Date"
-                      }
-                    },
-                    "Hierarchy": "Date Hierarchy"
+                  "SourceRef": {
+                    "Entity": "PH_WH DTbl_AllUserAndCYPValues"
                   }
                 },
-                "Level": "Year"
+                "Property": "Fiscal_Year"
               }
             },
             "direction": "Descending"

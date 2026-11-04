@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "5e8815e11ac92980cc67",
   "position": {
     "x": 0,
@@ -121,6 +121,20 @@
                       "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
                     }
                   },
+                  "Property": "material"
+                }
+              },
+              "queryRef": "PH_WH DMF_SalesDataBlacklist_Extract (2).material",
+              "nativeQueryRef": "material"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
+                    }
+                  },
                   "Property": "Material_Description"
                 }
               },
@@ -129,23 +143,17 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
-                        }
-                      },
-                      "Property": "quantity"
+                    "SourceRef": {
+                      "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
                     }
                   },
-                  "Function": 0
+                  "Property": "quantity"
                 }
               },
               "queryRef": "Sum(PH_WH DMF_SalesDataBlacklist_Extract (2).quantity)",
-              "nativeQueryRef": "Quantity",
-              "displayName": "Quantity"
+              "nativeQueryRef": "quantity"
             },
             {
               "field": {
@@ -246,95 +254,19 @@
           }
         }
       ],
-      "columnWidth": [
+      "columnFormatting": [
         {
           "properties": {
-            "value": {
+            "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "218.0732900026506D"
+                  "Value": "0L"
                 }
               }
             }
           },
-          "selector": {
-            "metadata": "Sum(PH_WH DMF_SalesDataBlacklist_Extract (2).fiscal_year)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "362.2507228428139D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "PH_WH DMF_SalesDataBlacklist_Extract (2).geographical_location"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "241.90018904214116D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "PH_WH DMF_SalesDataBlacklist_Extract (2).material"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "452.95092705412054D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "PH_WH DMF_SalesDataBlacklist_Extract (2).Material_Description"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "233.52371370251979D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "PH_WH DMF_SalesDataBlacklist_Extract (2).Type"
-          }
-        },
-        {
-          "properties": {},
           "selector": {
             "metadata": "Sum(PH_WH DMF_SalesDataBlacklist_Extract (2).quantity)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "194.39439692974764D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "PH_WH DMF_SalesDataBlacklist_Extract (2).sector"
           }
         }
       ]

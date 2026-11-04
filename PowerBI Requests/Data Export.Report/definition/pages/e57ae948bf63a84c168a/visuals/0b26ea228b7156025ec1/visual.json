@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "0b26ea228b7156025ec1",
   "position": {
     "x": 25.500265627766954,
@@ -93,11 +93,11 @@
                       "Entity": "CH_UP LTbl_ParameterChangeResults"
                     }
                   },
-                  "Property": "Parameter_Dimensions"
+                  "Property": "parameter_dimensions"
                 }
               },
-              "queryRef": "CH_UP LTbl_ParameterChangeResults.Parameter_Dimensions",
-              "nativeQueryRef": "Parameter_Dimensions"
+              "queryRef": "CH_UP LTbl_ParameterChangeResults.parameter_dimensions",
+              "nativeQueryRef": "parameter_dimensions"
             },
             {
               "field": {

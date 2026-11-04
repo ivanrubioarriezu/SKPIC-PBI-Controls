@@ -1,10 +1,12 @@
 table 'CS_SHF DMV_Parameter_Set'
-	lineageTag: 9aa6f737-f06e-4051-ace2-6a76259f42f0
+	lineageTag: f9307d44-c4b6-4f90-baeb-1072ec35928f
 
 	column Year
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: 6e515166-7ab4-4268-9799-bbb10c7b4e12
+		sourceProviderType: smallint
+		lineageTag: 4b7f7066-f456-4c57-920f-3603312cb239
 		summarizeBy: sum
 		sourceColumn: Year
 
@@ -12,8 +14,10 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Fiscal_Period
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: ddf8fbdb-87f6-4296-bdcd-b59ab54d12d2
+		sourceProviderType: int
+		lineageTag: 6751e421-92ad-47e4-8853-43d336acfc34
 		summarizeBy: sum
 		sourceColumn: Fiscal_Period
 
@@ -21,7 +25,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Region
 		dataType: string
-		lineageTag: e23b4c74-544d-43d7-ace2-17c394561377
+		sourceProviderType: nvarchar(255)
+		lineageTag: 3b37e850-2aca-44cf-b1c5-288463485783
 		summarizeBy: none
 		sourceColumn: Region
 
@@ -29,7 +34,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Country
 		dataType: string
-		lineageTag: e1288eed-a262-439f-8642-a7ea51bd4935
+		sourceProviderType: nvarchar(255)
+		lineageTag: a7d40764-812c-4d71-b496-e75837a126a9
 		summarizeBy: none
 		sourceColumn: Country
 
@@ -37,7 +43,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Crop_Main_Group
 		dataType: string
-		lineageTag: 9281c5f3-2c7c-4896-b684-4228ea02edd7
+		sourceProviderType: nvarchar(255)
+		lineageTag: a80f7cf0-75f2-437a-a2e9-3d9612b6ac0d
 		summarizeBy: none
 		sourceColumn: Crop_Main_Group
 
@@ -45,7 +52,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Product
 		dataType: string
-		lineageTag: dad8a9d8-8444-4f4d-bd38-f00448e195e7
+		sourceProviderType: nvarchar(255)
+		lineageTag: c08be479-720a-4e4f-b01b-9a67307351ee
 		summarizeBy: none
 		sourceColumn: Product
 
@@ -53,7 +61,9 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Net_Sales_Dimension
 		dataType: string
-		lineageTag: c3975f23-83c8-418c-acf5-61b63729da8a
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		lineageTag: 00f58138-cfe4-417e-9bc2-9523f9409974
 		summarizeBy: none
 		sourceColumn: Net_Sales_Dimension
 
@@ -61,7 +71,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Net_Sales_Actual_YtD
 		dataType: double
-		lineageTag: 57da8f7c-db3c-4b83-b537-77dc59ff599c
+		sourceProviderType: decimal(30, 15)
+		lineageTag: de0d333e-88d4-40b2-81bb-0cc28a1c1ac1
 		summarizeBy: sum
 		sourceColumn: Net_Sales_Actual_YtD
 
@@ -71,7 +82,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Net_Sales_Budget_Full_Year
 		dataType: double
-		lineageTag: ec136745-c634-40f3-ab99-2accaf6e766d
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 5778c8ed-6ee0-46b6-91ad-c3a8778df571
 		summarizeBy: sum
 		sourceColumn: Net_Sales_Budget_Full_Year
 
@@ -81,7 +93,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Net_Sales_FC1_Full_Year
 		dataType: double
-		lineageTag: 82875260-70d4-45d3-b41e-00c29f829ea2
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 7499811d-6174-4170-baeb-7ded7e6a069d
 		summarizeBy: sum
 		sourceColumn: Net_Sales_FC1_Full_Year
 
@@ -91,7 +104,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Net_Sales_FC2_Full_Year
 		dataType: double
-		lineageTag: 12a90768-2dc9-4a35-bd3c-355a9393c51d
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 539b5769-9284-464e-9443-3ff168f3e433
 		summarizeBy: sum
 		sourceColumn: Net_Sales_FC2_Full_Year
 
@@ -101,7 +115,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Net_Sales_FC3_Full_Year
 		dataType: double
-		lineageTag: 21d164e6-2b1e-4acc-b28e-9fdf66267a2b
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 56a83e49-7cc9-408c-bda8-c37a19713cb3
 		summarizeBy: sum
 		sourceColumn: Net_Sales_FC3_Full_Year
 
@@ -111,7 +126,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Average_Bayer_Farmer_Spend_Actual
 		dataType: double
-		lineageTag: c54d9127-fa02-4600-b1cd-321543eba37b
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 35c1c986-1b25-4f59-af04-f015a24a0e81
 		summarizeBy: sum
 		sourceColumn: Average_Bayer_Farmer_Spend_Actual
 
@@ -121,7 +137,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Average_Bayer_Farmer_Spend_Budget
 		dataType: double
-		lineageTag: 0580615d-6157-46d4-83fc-519c3d4201ab
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 84000416-0961-442f-886d-b27eaee3b4cb
 		summarizeBy: sum
 		sourceColumn: Average_Bayer_Farmer_Spend_Budget
 
@@ -131,7 +148,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Average_Bayer_Farmer_Spend_FC1
 		dataType: double
-		lineageTag: 337b4f4e-b76d-4183-97c2-7b2e909a9b33
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 22e41156-6ddf-440d-825e-1c9a2e87f416
 		summarizeBy: sum
 		sourceColumn: Average_Bayer_Farmer_Spend_FC1
 
@@ -141,7 +159,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Average_Bayer_Farmer_Spend_FC2
 		dataType: double
-		lineageTag: ae04baf7-a120-4a6c-ab21-778f9d2832b4
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 806beb4c-84e8-48f4-a0f9-c052406e5cf5
 		summarizeBy: sum
 		sourceColumn: Average_Bayer_Farmer_Spend_FC2
 
@@ -151,7 +170,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Average_Bayer_Farmer_Spend_FC3
 		dataType: double
-		lineageTag: 0760bc78-db2c-4008-912e-b6698c75f86b
+		sourceProviderType: decimal(30, 15)
+		lineageTag: e7a6e9d6-3411-4b9c-bcdc-0da5dde5a271
 		summarizeBy: sum
 		sourceColumn: Average_Bayer_Farmer_Spend_FC3
 
@@ -161,7 +181,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Avg_Farm_Size_ha
 		dataType: double
-		lineageTag: 1853edbf-c68e-4590-98c6-a50c08522f58
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 3dcc05f3-c091-449f-970c-860a6501e431
 		summarizeBy: sum
 		sourceColumn: Avg_Farm_Size_ha
 
@@ -171,7 +192,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column SH_Share
 		dataType: double
-		lineageTag: 6aed8e14-ebf1-4516-ba82-57c26ca974f8
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 8bc595fb-96ae-411f-bc5d-cdac7277d2d6
 		summarizeBy: sum
 		sourceColumn: SH_Share
 
@@ -181,7 +203,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Seeding_Rate_kg_ha
 		dataType: double
-		lineageTag: 98a05f4b-2952-4e60-a94e-5e44b17bde13
+		sourceProviderType: decimal(30, 15)
+		lineageTag: d92ad61d-25c1-47b8-bcba-a02bc00d2ab5
 		summarizeBy: sum
 		sourceColumn: Seeding_Rate_kg_ha
 
@@ -191,7 +214,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Number_of_Seasons
 		dataType: double
-		lineageTag: 6524099f-3641-4d7f-baab-c6d8e3648c1a
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 7c484540-eedd-4a1c-9555-1f013c824a55
 		summarizeBy: sum
 		sourceColumn: Number_of_Seasons
 
@@ -201,7 +225,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column SH_Farmer_Actual_YtD
 		dataType: double
-		lineageTag: 2249a2a3-1dbb-4569-bd95-0845c839e021
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 433c58a6-7df3-4b1d-9cf2-94281db78563
 		summarizeBy: sum
 		sourceColumn: SH_Farmer_Actual_YtD
 
@@ -211,7 +236,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Number_of_Unique_SH_Farmers_Actual_YtD
 		dataType: double
-		lineageTag: 17421596-e086-4a7b-9f1a-eca6512edb6f
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 559d01ba-c403-46ab-bb47-deeeb98a71bd
 		summarizeBy: sum
 		sourceColumn: Number_of_Unique_SH_Farmers_Actual_YtD
 
@@ -221,7 +247,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column SH_Farmer_Budget_Full_Year
 		dataType: double
-		lineageTag: 98c6cd09-1f99-4f4e-9a40-bf38eeb40b25
+		sourceProviderType: decimal(30, 15)
+		lineageTag: fdf87a15-ceb0-4a5b-af03-9ff85474155c
 		summarizeBy: sum
 		sourceColumn: SH_Farmer_Budget_Full_Year
 
@@ -231,7 +258,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Number_of_Unique_SH_Farmers_Budget_Full_Year
 		dataType: double
-		lineageTag: 5ad6f6a8-719d-47fe-baf3-89c7d8ddccff
+		sourceProviderType: decimal(38, 7)
+		lineageTag: f639149e-c1ec-437a-abac-1c9fcb6ecd81
 		summarizeBy: sum
 		sourceColumn: Number_of_Unique_SH_Farmers_Budget_Full_Year
 
@@ -241,7 +269,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column SH_Farmer_FC1_Full_Year
 		dataType: double
-		lineageTag: 80032a96-acd6-44a8-b2ce-9c4fa333d9df
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 2e51bb05-f663-4c87-ab54-7c74469ab6a4
 		summarizeBy: sum
 		sourceColumn: SH_Farmer_FC1_Full_Year
 
@@ -251,7 +280,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Number_of_Unique_SH_Farmers_FC1_Full_Year
 		dataType: double
-		lineageTag: 8127b55b-6a55-4bcb-8e9b-e78767a0528b
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 1476a283-fa5b-4f57-ba85-5daba7aa0a63
 		summarizeBy: sum
 		sourceColumn: Number_of_Unique_SH_Farmers_FC1_Full_Year
 
@@ -261,7 +291,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column SH_Farmer_FC2_Full_Year
 		dataType: double
-		lineageTag: 836a65a3-e17a-4437-bd39-0b100d676125
+		sourceProviderType: decimal(30, 15)
+		lineageTag: e8e11ae5-078e-4997-8017-7108d5d42fea
 		summarizeBy: sum
 		sourceColumn: SH_Farmer_FC2_Full_Year
 
@@ -271,7 +302,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Number_of_Unique_SH_Farmers_FC2_Full_Year
 		dataType: double
-		lineageTag: 42fb1fcd-5a2b-45d3-b77c-8dde070d4964
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 3990a90e-a0f5-48ed-8821-a4d1acac1ccc
 		summarizeBy: sum
 		sourceColumn: Number_of_Unique_SH_Farmers_FC2_Full_Year
 
@@ -281,7 +313,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column SH_Farmer_FC3_Full_Year
 		dataType: double
-		lineageTag: cddd1eee-7d54-4fdc-b451-f4b3fcce1583
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 880fda48-bfe7-4e81-bb98-8854877c9e2a
 		summarizeBy: sum
 		sourceColumn: SH_Farmer_FC3_Full_Year
 
@@ -291,7 +324,8 @@ table 'CS_SHF DMV_Parameter_Set'
 
 	column Number_of_Unique_SH_Farmers_FC3_Full_Year
 		dataType: double
-		lineageTag: a1460059-993f-4bf6-bf20-0b602099473f
+		sourceProviderType: decimal(38, 7)
+		lineageTag: ae0c05f6-8cd9-4e15-9435-1c8a4eeef1a1
 		summarizeBy: sum
 		sourceColumn: Number_of_Unique_SH_Farmers_FC3_Full_Year
 
@@ -300,49 +334,11 @@ table 'CS_SHF DMV_Parameter_Set'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition 'CS_SHF DMV_Parameter_Set' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    year                                         AS Year,
-				    fiscal_period                                AS Fiscal_Period,
-				    region                                       AS Region,
-				    country                                      AS Country,
-				    crop_main_group                              AS Crop_Main_Group,
-				    product                                      AS Product,
-				    net_sales_dimension                          AS Net_Sales_Dimension,
-				    net_sales_actual_ytd                         AS Net_Sales_Actual_YtD,
-				    net_sales_budget_full_year                   AS Net_Sales_Budget_Full_Year,
-				    net_sales_fc1_full_year                      AS Net_Sales_FC1_Full_Year,
-				    net_sales_fc2_full_year                      AS Net_Sales_FC2_Full_Year,
-				    net_sales_fc3_full_year                      AS Net_Sales_FC3_Full_Year,
-				    average_bayer_farmer_spend_actual            AS Average_Bayer_Farmer_Spend_Actual,
-				    average_bayer_farmer_spend_budget            AS Average_Bayer_Farmer_Spend_Budget,
-				    average_bayer_farmer_spend_fc1               AS Average_Bayer_Farmer_Spend_FC1,
-				    average_bayer_farmer_spend_fc2               AS Average_Bayer_Farmer_Spend_FC2,
-				    average_bayer_farmer_spend_fc3               AS Average_Bayer_Farmer_Spend_FC3,
-				    avg_farm_size_ha                             AS Avg_Farm_Size_ha,
-				    sh_share                                     AS SH_Share,
-				    seeding_rate_kg_ha                           AS Seeding_Rate_kg_ha,
-				    number_of_seasons                            AS Number_of_Seasons,
-				    sh_farmer_actual_ytd                         AS SH_Farmer_Actual_YtD,
-				    number_of_unique_sh_farmers_actual_ytd       AS Number_of_Unique_SH_Farmers_Actual_YtD,
-				    sh_farmer_budget_full_year                   AS SH_Farmer_Budget_Full_Year,
-				    number_of_unique_sh_farmers_budget_full_year AS Number_of_Unique_SH_Farmers_Budget_Full_Year,
-				    sh_farmer_fc1_full_year                      AS SH_Farmer_FC1_Full_Year,
-				    number_of_unique_sh_farmers_fc1_full_year    AS Number_of_Unique_SH_Farmers_FC1_Full_Year,
-				    sh_farmer_fc2_full_year                      AS SH_Farmer_FC2_Full_Year,
-				    number_of_unique_sh_farmers_fc2_full_year    AS Number_of_Unique_SH_Farmers_FC2_Full_Year,
-				    sh_farmer_fc3_full_year                      AS SH_Farmer_FC3_Full_Year,
-				    number_of_unique_sh_farmers_fc3_full_year    AS Number_of_Unique_SH_Farmers_FC3_Full_Year
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_cs_shf_dmt_parameter_set_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CS_SHF_DMV_Parameter_Set = Source{[Schema="CS_SHF",Item="DMV_Parameter_Set"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
+				    CS_SHF_DMV_Parameter_Set
 

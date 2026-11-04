@@ -1,10 +1,30 @@
 table 'CH_UP DMT_KPI'
-	lineageTag: a160511d-595b-4c81-ba51-9d9abe5c5293
+	lineageTag: 9c7564c2-1acc-42c8-8e7f-fe12dd0f77ee
+
+	measure Pillar_SKU_Class =
+			
+			VAR Pillar =
+			    SWITCH(
+			        SELECTEDVALUE('CH_UP DMT_KPI'[Impact]),
+			        "Campaign", "Partnerships",
+			        "Commercial"
+			    )
+			VAR SKUClass =
+			    SELECTEDVALUE('CH_UP DMT_KPI'[SKU_Class])
+			RETURN
+			    IF(
+			        Pillar = "Partnerships",
+			        "Partnerships",
+			        Pillar & " - " & SKUClass
+			    )
+		lineageTag: 9bb5bf05-fb5e-4691-9992-0dcadb55d2eb
 
 	column Fiscal_Year
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: 6d84ca92-0c88-4d7f-bd05-e691223e57c0
+		sourceProviderType: smallint
+		lineageTag: 6bc4a683-ad3d-43de-a12b-eee7a9d78b43
 		summarizeBy: sum
 		sourceColumn: Fiscal_Year
 
@@ -12,8 +32,10 @@ table 'CH_UP DMT_KPI'
 
 	column Fiscal_Month
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: d0a88243-f103-4c2a-9a3a-3b2db310315c
+		sourceProviderType: smallint
+		lineageTag: 5daad3c1-7f4d-41b1-be82-a2637b04a7bd
 		summarizeBy: sum
 		sourceColumn: Fiscal_Month
 
@@ -21,8 +43,10 @@ table 'CH_UP DMT_KPI'
 
 	column Fiscal_Period
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		lineageTag: d0a1ec2f-1ff5-4b27-b3fc-2ee98d46c25d
+		sourceProviderType: int
+		lineageTag: d27fe13e-800d-477b-ac3e-244cb16f7612
 		summarizeBy: sum
 		sourceColumn: Fiscal_Period
 
@@ -30,8 +54,10 @@ table 'CH_UP DMT_KPI'
 
 	column Is_Current
 		dataType: boolean
+		isNullable: false
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 1c1775ef-3da4-4238-9f6f-e8d4f209a63c
+		sourceProviderType: bit
+		lineageTag: ea63bdc9-af24-4e22-8ea9-e367e23e0b33
 		summarizeBy: none
 		sourceColumn: Is_Current
 
@@ -39,7 +65,9 @@ table 'CH_UP DMT_KPI'
 
 	column Geographical_Location
 		dataType: string
-		lineageTag: 443846c4-300e-4204-9d5e-a1eee0b89e04
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 4e7b7293-870e-4cc4-971d-fe142ce9cfb4
 		summarizeBy: none
 		sourceColumn: Geographical_Location
 
@@ -47,7 +75,8 @@ table 'CH_UP DMT_KPI'
 
 	column Region
 		dataType: string
-		lineageTag: c7725cdb-eddb-4e86-bcc9-eddc5a2cec8a
+		sourceProviderType: nvarchar(255)
+		lineageTag: 2e57c7b9-157b-4d72-a585-ea5100b4f416
 		summarizeBy: none
 		sourceColumn: Region
 
@@ -55,7 +84,8 @@ table 'CH_UP DMT_KPI'
 
 	column Subregion
 		dataType: string
-		lineageTag: b96fa06b-456a-4622-b065-3dcc6706f9ea
+		sourceProviderType: nvarchar(255)
+		lineageTag: 13fcbe7a-83af-44da-b5ff-c38762d38f9f
 		summarizeBy: none
 		sourceColumn: Subregion
 
@@ -63,7 +93,8 @@ table 'CH_UP DMT_KPI'
 
 	column Impact
 		dataType: string
-		lineageTag: 5f526de8-c37f-43b3-a658-62ccc390b358
+		sourceProviderType: nvarchar(10)
+		lineageTag: d98cdc17-99f2-4407-ba79-3bd6f0aa440e
 		summarizeBy: none
 		sourceColumn: Impact
 
@@ -71,7 +102,8 @@ table 'CH_UP DMT_KPI'
 
 	column Income_Group
 		dataType: string
-		lineageTag: 7fa87e9e-edc2-4dcd-9243-868076174444
+		sourceProviderType: nvarchar(255)
+		lineageTag: e38646ea-babe-4e28-90d7-e736816fe805
 		summarizeBy: none
 		sourceColumn: Income_Group
 
@@ -79,7 +111,9 @@ table 'CH_UP DMT_KPI'
 
 	column Product_Description
 		dataType: string
-		lineageTag: e2be5f6f-ffa1-46b8-a0f8-332028af3e12
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 732c4442-cf45-4cc7-a152-eca5bb0b7ff6
 		summarizeBy: none
 		sourceColumn: Product_Description
 
@@ -87,51 +121,164 @@ table 'CH_UP DMT_KPI'
 
 	column Product_Category
 		dataType: string
-		lineageTag: 9f0b7b4a-cf09-4c5c-8979-21c5c4492e4b
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: b2874964-00af-48e8-9211-9dde495301fd
 		summarizeBy: none
 		sourceColumn: Product_Category
 
 		annotation SummarizationSetBy = Automatic
 
+	column Actual_CM
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 98b4d2b0-7141-46a0-b91d-0604910e170b
+		summarizeBy: sum
+		sourceColumn: Actual_CM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_PM_Not_Used
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 10f4de55-52c8-46b7-913b-d0d34182980c
+		summarizeBy: sum
+		sourceColumn: Actual_PM_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_YtD
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 8e4f416c-2d76-4e2b-a333-a2a8e666d0ee
+		summarizeBy: sum
+		sourceColumn: Actual_YtD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_PYtD_Not_Used
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 236d7c65-346d-4785-92a4-88e2d9a9cd81
+		summarizeBy: sum
+		sourceColumn: Actual_PYtD_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_BYtD_Not_Used
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 0e69974d-27de-45d0-bbcb-d6c9f60d6608
+		summarizeBy: sum
+		sourceColumn: Actual_BYtD_Not_Used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Plan_YtD
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 09922771-f6b7-4259-a272-f77a0564cbec
+		summarizeBy: sum
+		sourceColumn: Plan_YtD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Forecast_YtD
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 56aa5648-ef0e-4e4f-a7d0-a330bcef2fd1
+		summarizeBy: sum
+		sourceColumn: Forecast_YtD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Valid_From
 		dataType: dateTime
+		isNullable: false
 		formatString: General Date
-		lineageTag: 46f78eff-fb8a-4fd5-a63a-244d5c968ebe
+		sourceProviderType: datetime2
+		lineageTag: 01c0f4cd-b7dd-4fe6-8e10-4f962dfa1b65
 		summarizeBy: none
 		sourceColumn: Valid_From
-
-		variation Variation
-			isDefault
-			relationship: f3a9f4ad-fe13-4b49-bc0a-a6aad6be36c6
-			defaultHierarchy: LocalDateTable_bcae9e0d-076c-4c57-8d45-28fc90fde0cb.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	column Valid_To
 		dataType: dateTime
+		isNullable: false
 		formatString: General Date
-		lineageTag: 8477a1ed-33c2-46f7-8b11-0d022fd3b5dc
+		sourceProviderType: datetime2
+		lineageTag: 2406ae3f-4c3a-4f5e-9d00-f0b8071b7395
 		summarizeBy: none
 		sourceColumn: Valid_To
 
-		variation Variation
-			isDefault
-			relationship: 462a9b09-a1e9-4d8d-baf8-841b80989e23
-			defaultHierarchy: LocalDateTable_cac93a84-4bd7-48a1-b6d3-5a7f9e16a771.'Date Hierarchy'
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_BFY
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 54e899ab-cd8b-442a-b742-83d8d91e1680
+		summarizeBy: sum
+		sourceColumn: Actual_BFY
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_BHY
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 33dcc1c3-62ee-41cb-a6cb-5219e0ef9fca
+		summarizeBy: sum
+		sourceColumn: Actual_BHY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_PFY
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: b248d573-2329-4b98-992e-c680d594072a
+		summarizeBy: sum
+		sourceColumn: Actual_PFY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Actual_PHY
+		dataType: double
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 484139e1-ebab-442d-b36d-b00cbb0ba059
+		summarizeBy: sum
+		sourceColumn: Actual_PHY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Fiscal_Date
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: c7748be8-9e40-43f1-b338-4b74bcafb6f4
+		sourceProviderType: date
+		lineageTag: 7d77ffdd-7035-49d5-b2e8-5a012a50c2ff
 		summarizeBy: none
 		sourceColumn: Fiscal_Date
-
-		variation Variation
-			isDefault
-			relationship: f154c533-dcac-4918-a03d-87cbce000035
-			defaultHierarchy: LocalDateTable_a33b7b45-80c3-4b23-b979-e840a981c9bd.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -140,218 +287,51 @@ table 'CH_UP DMT_KPI'
 	column Is_Preliminary
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 127211ee-17c2-4d34-a842-c43086719b76
+		sourceProviderType: bit
+		lineageTag: 3d48e693-2f35-49f1-be04-447e922e62cb
 		summarizeBy: none
 		sourceColumn: Is_Preliminary
 
 		annotation SummarizationSetBy = Automatic
 
-	column Actual_Cm
+	column Plan_YE
 		dataType: double
-		lineageTag: 0800fdc6-b8d0-45f5-8c72-d0230015b683
+		sourceProviderType: decimal(30, 15)
+		lineageTag: 3a28270f-dd73-49b5-83b2-a10125b340a3
 		summarizeBy: sum
-		sourceColumn: Actual_Cm
+		sourceColumn: Plan_YE
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Actual_Pm_Not_Used
+	column Forecast_YE
 		dataType: double
-		lineageTag: 608f2bee-fb1b-4e5b-aaf9-d924b3a7fe40
+		sourceProviderType: decimal(30, 15)
+		lineageTag: ebf66223-610c-45d5-90b6-a90327555747
 		summarizeBy: sum
-		sourceColumn: Actual_Pm_Not_Used
+		sourceColumn: Forecast_YE
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Actual_Ytd
-		dataType: double
-		lineageTag: 012f0422-54c0-4797-a2e7-200ca973700a
-		summarizeBy: sum
-		sourceColumn: Actual_Ytd
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Actual_Pytd_Not_Used
-		dataType: double
-		lineageTag: e6977e24-8739-4e09-8330-e2ae8836b5d5
-		summarizeBy: sum
-		sourceColumn: Actual_Pytd_Not_Used
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Actual_Bytd_Not_Used
-		dataType: double
-		lineageTag: d40deea9-d9b1-49e2-878c-597439775f52
-		summarizeBy: sum
-		sourceColumn: Actual_Bytd_Not_Used
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Plan_Ytd
-		dataType: double
-		lineageTag: 359d9ed7-89a6-4465-9a2a-711ff2c273fe
-		summarizeBy: sum
-		sourceColumn: Plan_Ytd
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Forecast_Ytd
-		dataType: double
-		lineageTag: d8ad42da-edb9-44fe-8e4e-8fb04849c4c9
-		summarizeBy: sum
-		sourceColumn: Forecast_Ytd
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Actual_Bfy
-		dataType: double
-		lineageTag: ceadb3cb-fb0b-426d-a06b-20770c074a4f
-		summarizeBy: sum
-		sourceColumn: Actual_Bfy
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Actual_Bhy
-		dataType: double
-		lineageTag: a861c388-951b-4559-a642-b88f0574effc
-		summarizeBy: sum
-		sourceColumn: Actual_Bhy
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Actual_Pfy
-		dataType: double
-		lineageTag: 30a1f591-72a1-4fed-98dd-5d9229308c1a
-		summarizeBy: sum
-		sourceColumn: Actual_Pfy
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Actual_Phy
-		dataType: double
-		lineageTag: 49f0b6cc-dd38-4d70-bc15-ebc9782a5f41
-		summarizeBy: sum
-		sourceColumn: Actual_Phy
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Plan_Ye
-		dataType: double
-		lineageTag: 61733ab7-e1e2-474e-9c88-f0880f126813
-		summarizeBy: sum
-		sourceColumn: Plan_Ye
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Forecast_Ye
-		dataType: double
-		lineageTag: 590d9364-d175-4c80-8048-ea37a7d2d399
-		summarizeBy: sum
-		sourceColumn: Forecast_Ye
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Sku_Class
+	column SKU_Class
 		dataType: string
-		lineageTag: 056a354f-9f01-463a-b25f-ec4e0b8d8476
+		isNullable: false
+		sourceProviderType: nvarchar(30)
+		lineageTag: a91decce-d37b-4a93-99b3-e25f6eb3a68e
 		summarizeBy: none
-		sourceColumn: Sku_Class
-
-		annotation SummarizationSetBy = Automatic
-
-	column Pillar = ```
-			
-			SWITCH(
-			    'CH_UP DMT_KPI'[Impact],
-			    "Campaign", "Partnerships",
-			    "Commercial" 
-			)
-			```
-		lineageTag: 13b29dac-e3f1-4738-9547-68d62d551be6
-		summarizeBy: none
-
-		annotation SummarizationSetBy = Automatic
-
-	column Pillar_SKU_Class =
-			
-			IF (
-			    'CH_UP DMT_KPI'[Pillar] = "Partnerships",
-			    "Partnerships",
-			    'CH_UP DMT_KPI'[Pillar] & " - " & 'CH_UP DMT_KPI'[SKU_Class]
-			)
-		lineageTag: 4ed3005d-b5d9-4503-bca8-42c4b3d75802
-		summarizeBy: none
+		sourceColumn: SKU_Class
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'CH_UP DMT_KPI' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    fiscal_year AS Fiscal_Year,
-				    fiscal_month AS Fiscal_Month,
-				    fiscal_period AS Fiscal_Period,
-				    is_current AS Is_Current,
-				    geographical_location AS Geographical_Location,
-				    region AS Region,
-				    subregion AS Subregion,
-				    impact AS Impact,
-				    income_group AS Income_Group,
-				    product_description AS Product_Description,
-				    product_category AS Product_Category,
-				    actual_cm AS Actual_Cm,
-				    actual_pm_not_used AS Actual_Pm_Not_Used,
-				    actual_ytd AS Actual_Ytd,
-				    actual_pytd_not_used AS Actual_Pytd_Not_Used,
-				    actual_bytd_not_used AS Actual_Bytd_Not_Used,
-				    plan_ytd AS Plan_Ytd,
-				    forecast_ytd AS Forecast_Ytd,
-				    valid_from AS Valid_From,
-				    valid_to AS Valid_To,
-				    actual_bfy AS Actual_Bfy,
-				    actual_bhy AS Actual_Bhy,
-				    actual_pfy AS Actual_Pfy,
-				    actual_phy AS Actual_Phy,
-				    fiscal_date AS Fiscal_Date,
-				    is_preliminary AS Is_Preliminary,
-				    plan_ye AS Plan_Ye,
-				    forecast_ye AS Forecast_Ye,
-				    sku_class AS Sku_Class
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ch_up_dmt_kpi_intfc_view
-				where is_preliminary = FALSE"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    CH_UP_DMT_KPI = Source{[Schema="CH_UP",Item="DMT_KPI"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Exception
-
-	annotation PBI_NavigationStepName = Navigation
+				    CH_UP_DMT_KPI
 

@@ -1,9 +1,11 @@
 table 'PH_WH DMV_Missing_Sectors'
-	lineageTag: ba1a514e-a994-4620-86f4-413e0593549b
+	lineageTag: b74e361f-a33a-489f-886f-87e2463370a4
 
 	column Material
 		dataType: string
-		lineageTag: 0254cf45-291d-4a68-8f36-f950d30e27b5
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 50e6bc17-59e3-4901-860a-cd26263dc5e9
 		summarizeBy: none
 		sourceColumn: Material
 
@@ -11,7 +13,8 @@ table 'PH_WH DMV_Missing_Sectors'
 
 	column Material_Description
 		dataType: string
-		lineageTag: 635bae8a-1bc9-4912-92e9-32b829eeb368
+		sourceProviderType: nvarchar(255)
+		lineageTag: 0f40b0bc-fb2e-4ea4-910d-1f49d51693d4
 		summarizeBy: none
 		sourceColumn: Material_Description
 
@@ -19,7 +22,8 @@ table 'PH_WH DMV_Missing_Sectors'
 
 	column First_occurrence
 		dataType: string
-		lineageTag: 9f23b3f5-f4e8-46e6-9775-53cbf621fe86
+		sourceProviderType: nvarchar(255)
+		lineageTag: 47a0d8a4-f903-4848-ac42-8207bcaf8e29
 		summarizeBy: none
 		sourceColumn: First_occurrence
 
@@ -28,34 +32,19 @@ table 'PH_WH DMV_Missing_Sectors'
 	column Last_Updated
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 478c1ad4-96b3-421c-81c1-b61cec7aa2d5
+		sourceProviderType: datetime2
+		lineageTag: 0aa34cee-2935-4308-a996-38bcce9cda83
 		summarizeBy: none
 		sourceColumn: Last_Updated
-
-		variation Variation
-			isDefault
-			relationship: 927aaf65-8e41-42d7-9b6e-4c698b26324a
-			defaultHierarchy: LocalDateTable_920cd70f-8ca2-43eb-8d71-51924eed363d.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'PH_WH DMV_Missing_Sectors' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    material                AS Material,
-				    material_description    AS Material_Description,
-				    first_occurrence        AS First_occurrence,
-				    last_updated            AS Last_Updated
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_missing_sectors_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    PH_WH_DMV_Missing_Sectors = Source{[Schema="PH_WH",Item="DMV_Missing_Sectors"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
+				    PH_WH_DMV_Missing_Sectors
 

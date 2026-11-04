@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "9b7d84256861b0b05088",
   "position": {
     "x": 10.26444317632291,
@@ -17,28 +17,32 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Fiscal_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Fiscal_Year"
                 }
               },
-              "queryRef": "stored procedure CS_SHF DMTbl_SHF.Fiscal_Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Fiscal_Date Year",
+              "queryRef": "stored procedure CS_SHF DMTbl_SHF.Fiscal_Year",
+              "nativeQueryRef": "Fiscal_Year",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "Fiscal_Year"
+                }
+              },
+              "queryRef": "stored procedure CS_SHF DMTbl_SHF.Fiscal_Year",
+              "nativeQueryRef": "Fiscal_Year",
               "active": true
             }
           ]
@@ -48,24 +52,13 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Column": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                          }
-                        },
-                        "Name": "Variation",
-                        "Property": "Fiscal_Date"
-                      }
-                    },
-                    "Hierarchy": "Date Hierarchy"
+                  "SourceRef": {
+                    "Entity": "stored procedure CS_SHF DMTbl_SHF"
                   }
                 },
-                "Level": "Year"
+                "Property": "Fiscal_Year"
               }
             },
             "direction": "Descending"

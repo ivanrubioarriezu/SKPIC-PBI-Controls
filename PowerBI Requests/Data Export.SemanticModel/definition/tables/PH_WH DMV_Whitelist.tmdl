@@ -1,9 +1,11 @@
 table 'PH_WH DMV_Whitelist'
-	lineageTag: b1bb2433-e56a-4f65-994f-e6496928db7d
+	lineageTag: 73f33313-cd16-44b4-9027-551f0c2b7a32
 
 	column Material
 		dataType: string
-		lineageTag: 93b8064b-61f3-46f6-a475-8546f8291dfb
+		isNullable: false
+		sourceProviderType: nvarchar(255)
+		lineageTag: 86790f99-5ec3-4cb0-b73c-87d73bebfc85
 		summarizeBy: none
 		sourceColumn: Material
 
@@ -11,7 +13,8 @@ table 'PH_WH DMV_Whitelist'
 
 	column Material_Description
 		dataType: string
-		lineageTag: 58f43d17-fbb0-4f42-9761-bf6f4324c2c6
+		sourceProviderType: nvarchar(255)
+		lineageTag: 1d3c39d8-197e-4129-8308-31fab308572d
 		summarizeBy: none
 		sourceColumn: Material_Description
 
@@ -20,33 +23,23 @@ table 'PH_WH DMV_Whitelist'
 	column Last_Updated
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 2e929adf-4d55-497b-adb1-c77b6afdf37f
+		sourceProviderType: datetime2
+		lineageTag: 3cf371af-edf1-456c-8ca2-17fcf08979f4
 		summarizeBy: none
 		sourceColumn: Last_Updated
-
-		variation Variation
-			isDefault
-			relationship: 1699fab1-1eff-4534-bf43-c7ccc25b634e
-			defaultHierarchy: LocalDateTable_b65bcb34-2c2c-41ad-b53b-336020bad319.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	partition 'PH_WH DMV_Whitelist' = m
-		mode: import
-		source = ```
+		mode: directQuery
+		source =
 				let
-				    Source = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
-				    "SELECT
-				    material               AS Material,
-				    material_description   AS Material_Description,
-				    last_updated           AS Last_Updated
-				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_ph_wh_dmt_whitelist_intfc_view"
-				    , null, [EnableFolding=true])
+				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
+				    PH_WH_DMV_Whitelist = Source{[Schema="PH_WH",Item="DMV_Whitelist"]}[Data]
 				in
-				    Source
-				```
-
-	annotation PBI_ResultType = Table
+				    PH_WH_DMV_Whitelist
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "1b7e51a16e3c8e3b58b0",
   "position": {
     "x": 760.85987970594783,
@@ -23,32 +23,15 @@
                       "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
                     }
                   },
-                  "Property": "Fiscal_Period_Trg"
+                  "Property": "Fiscal_Period_trg"
                 }
               },
-              "queryRef": "stored procedureCS_SHF DMF_Diff_VegSeeds.Fiscal_Period_Trg",
-              "nativeQueryRef": "Fiscal_Period_Trg",
+              "queryRef": "stored procedureCS_SHF DMF_Diff_VegSeeds.Fiscal_Period_trg",
+              "nativeQueryRef": "Fiscal_Period_trg",
               "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "stored procedureCS_SHF DMF_Diff_VegSeeds"
-                  }
-                },
-                "Property": "Fiscal_Period_Trg"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {

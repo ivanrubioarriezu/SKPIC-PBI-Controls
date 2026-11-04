@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "f6efbec8c984c601c86e",
   "position": {
     "x": 3.3333333333333712,
@@ -32,23 +32,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "PH_WH DMF_SalesDataBlacklist_Extract (2)"
-                  }
-                },
-                "Property": "fiscal_year"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {
