@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "ea2da0f7c94a4fa405c1",
   "position": {
-    "x": 427.86069651741292,
-    "y": 885.57213930348257,
-    "z": 23000,
-    "height": 470.14925373134326,
-    "width": 3072.1393034825869,
-    "tabOrder": 23000
+    "x": 428.21158690176321,
+    "y": 886.64987405541558,
+    "z": 21000,
+    "height": 468.51385390428209,
+    "width": 3050.3778337531485,
+    "tabOrder": 22000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -108,6 +108,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                  }
+                },
+                "Property": "E_Plan_Full_Year"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {

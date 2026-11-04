@@ -41,7 +41,8 @@ table 'View by'
 		source =
 				{
 				    ("Region", NAMEOF('PH_WH DTbl_AllUserAndCYPValues'[Region]), 0),
-				    ("Product Category", NAMEOF('PH_WH DTbl_AllUserAndCYPValues'[Product Category]), 1)
+				    ("Product Category", NAMEOF('PH_WH DTbl_AllUserAndCYPValues'[Product Category]), 1),
+				    ("Channel Partnership", NAMEOF('PH_WH DTbl_AllUserAndCYPValues'[Product_Description]), 2)
 				}
 
 	annotation PBI_Id = 27346ecd72b94725a875aa82168b8bbd

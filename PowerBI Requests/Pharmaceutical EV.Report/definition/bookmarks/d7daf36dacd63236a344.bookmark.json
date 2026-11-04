@@ -1,0 +1,2455 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Region",
+  "name": "d7daf36dacd63236a344",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "b227b26482e50f229b6f",
+      "23f769be59b0adce54bb",
+      "fd167521734680278902",
+      "7912fcb38a403038cd62",
+      "c2a9291568ed6c509319",
+      "2f61589227563b39a8e5",
+      "d4a5a15454206a2d4c09",
+      "006c180cc0a00a792a96",
+      "6ed1f1e9d0cbda5d3a40"
+    ],
+    "preserveNewVisualVisibility": true
+  },
+  "explorationState": {
+    "version": "1.40",
+    "activeSection": "9ee3517edba33b3bcd29",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "4195534e466be53d3625",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "p",
+                "Entity": "PH_WH DTbl_AllUserAndCYPValues",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "p"
+                            }
+                          },
+                          "Property": "Income_Group"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Low income'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Lower middle income'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Not assigned (Partnership)'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Upper middle income'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                }
+              },
+              "Property": "Income_Group"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "fc5ca0c96032b7d84bb2",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "p",
+                "Entity": "PH_WH DTbl_Target",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "p"
+                            }
+                          },
+                          "Property": "Is_Preliminary"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "false"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "PH_WH DTbl_Target"
+                }
+              },
+              "Property": "Is_Preliminary"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "9ee3517edba33b3bcd29": {
+        "visualContainers": {
+          "0616107d16c84c72dffd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3daa5e5607e08e0407e2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Income_Group"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Income_Group"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "08b4a5a103308357926a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2c12ef7861a073834a7a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "text message"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "0b00d001718eeb059830": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "df5895c910c47864e106",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Ranking Option"
+                        }
+                      },
+                      "Property": "Ranking Option"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "r",
+                                "Entity": "Ranking Option",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "Comparison": {
+                                    "ComparisonKind": 0,
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "r"
+                                          }
+                                        },
+                                        "Property": "Ranking Option"
+                                      }
+                                    },
+                                    "Right": {
+                                      "Literal": {
+                                        "Value": "5D"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "numericStart": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "5D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Ranking Option"
+                        }
+                      },
+                      "Property": "Ranking Option"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "1ecd61bb0eb6f6e9c437": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "23f769be59b0adce54bb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4bcfbcb50ec9688e3862",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "View by"
+                        }
+                      },
+                      "Property": "View by"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "v",
+                                "Entity": "View by",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "v"
+                                            }
+                                          },
+                                          "Property": "View by Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''PH_WH DTbl_AllUserAndCYPValues''[Region]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "View by"
+                        }
+                      },
+                      "Property": "View by"
+                    }
+                  }
+                ]
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "View by"
+                              }
+                            },
+                            "Property": "View by Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''PH_WH DTbl_AllUserAndCYPValues''[Region]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Region"
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "27e8bec595b1b5c382bd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9fad92cbc72b9cd8e510",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "2e2ff062bd8d1242c7d6": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "2e318b3c49d0d850a514": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "2e3b0f1551e923644087": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "352ef09a1f8a61b73007": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3816fc1408cd23f2dba3": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3a031dfd69fcf7b2b8f9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c3f8a164e414b73073cb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_Target"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fe7b42f830340cc4773c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_Target"
+                        }
+                      },
+                      "Property": "Target in Millions"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0d4537922c805bd02a06",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_Target"
+                        }
+                      },
+                      "Property": "YearFilter YTD"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredColumnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_Target"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_Target"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "3a6712eb4d571a47fca8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d703e2477e17e4d0513a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "View by channel"
+                        }
+                      },
+                      "Property": "View by channel"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "v",
+                                "Entity": "View by channel",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "v"
+                                            }
+                                          },
+                                          "Property": "View by channel Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''Unique Country''[Geographical_Location]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "View by channel"
+                        }
+                      },
+                      "Property": "View by channel"
+                    }
+                  }
+                ]
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "View by channel"
+                              }
+                            },
+                            "Property": "View by channel Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''Unique Country''[Geographical_Location]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Country"
+                }
+              ]
+            }
+          },
+          "462754c3bef634a5dcac": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3a822e6351c11600d046",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c0e4f9f861e4009ee98d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Unique Country"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "59526d2811a14928e692",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Dynamic ACTUAL"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Unique Country"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Unique Country"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Unique Country"
+                        }
+                      },
+                      "Property": "Geographical_Location"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  }
+                ],
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Dynamic ACTUAL"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Rows": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "View by channel"
+                          }
+                        },
+                        "Property": "View by channel"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1,
+                    "sortDirection": 1
+                  }
+                ]
+              }
+            }
+          },
+          "47cc070a4f17c62b4f3e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "49254cd4cf8eb2aa1001": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "5f24bb24f23c8a77db58": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7574bc6c8d9a54e3675d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7aecc4c231ef72e157f6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6ef1e43d0de845ca083a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Top/Bottom"
+                        }
+                      },
+                      "Property": "Value"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "t",
+                                "Entity": "Top/Bottom",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "t"
+                                            }
+                                          },
+                                          "Property": "Value"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Top'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Top/Bottom"
+                        }
+                      },
+                      "Property": "Value"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "9258ee4577f14cf15f73": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e4757f3b9d4abc088c35",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure_Names_Table"
+                        }
+                      },
+                      "Property": "Measure Name"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure_Names_Table"
+                        }
+                      },
+                      "Property": "Measure Name"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "950d65208096c0747c07": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5c49277004080810eced",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product Category"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product Category"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "9a57787a4ed504935e0d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "9aa7a1e35a58f04966b7": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5404a39d90925b5ad754",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product_Description"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product_Description"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a16095954e5afa9fe93f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "caba032f9bd36cb1a872",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Viewby label"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Viewby label"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "b13a4b5e988596758390": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "b227b26482e50f229b6f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "28490f75808200d20ca1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Channel"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Channel"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b36075a12b2b059fb456": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "b38db109489a80eed058": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "47770acd008d66817064",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Viewby channel label"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                            }
+                          },
+                          "Property": "Viewby label"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "b7930ccb3a10b56edf17": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "bd9993429e7612de8db2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9b0d1d5c53ce9010a8d3",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c36d616ffd74be230e5e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c5cad50b13be591ac335": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c6985769a4649a3a0ae8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d659bbd74a9b833d5609",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calcualtion Method"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "Calcualtion Method",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "Selection"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'User'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calcualtion Method"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c7d1b6694599b93f9a7e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c905704615c497cc8fc9": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "c9ab6296d4639dfe1d95": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d0e52270f0943a8f4ec2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2e0865b394cb090a6057",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e75557b57904f36e5d9c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "da07cad25a8b90a27305",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "e821e7f23097159fadd1",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "PH_WH DTbl_AllUserAndCYPValues",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "p"
+                                    }
+                                  },
+                                  "Property": "Income_Group"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Low income'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Lower middle income'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Upper middle income'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Not assigned (Partnership)'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Income_Group"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "3c3dfa9709272449e463",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "d99f5921dc8ed970c64c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Channel"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7eab6507d09002994313",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "ACT_YTD"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "waterfallChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Channel"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Channel"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ea2da0f7c94a4fa405c1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2328ccf01eed409a3212",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "E_Plan_Full_Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "09e2d833d47eeaa8d322",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "E_Latest FY  Forecast Selection"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1e44a86d05cea67ee595",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "ACT_YTD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "736b79848002a0e7aa73",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "ACT_PY_YTD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "626949a040c072e6ade7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "E_Plan_Full_Year"
+                    }
+                  }
+                }
+              ],
+              "projections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Region"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "E_Plan_Full_Year"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "E_Latest FY  Forecast Selection"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "ACT_YTD"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "ACT_PY_YTD"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Rows": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "View by"
+                          }
+                        },
+                        "Property": "View by"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "ea4bfcdfc52d042002ab": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "f57b53c8d18c83e91396": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a17e63bb0632a901ebba",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "l",
+                                "Entity": "LocalDateTable_ca385c71-c4fa-423a-a5aa-5da4b6c5a95f",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "l"
+                                            }
+                                          },
+                                          "Property": "Year"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "2025L"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Fiscal_Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  }
+                ]
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "LocalDateTable_ca385c71-c4fa-423a-a5aa-5da4b6c5a95f"
+                              }
+                            },
+                            "Property": "Year"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "2025L"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "2025"
+                }
+              ]
+            }
+          },
+          "fcf28de6c16701e4ceee": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "6ed1f1e9d0cbda5d3a40": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e2e9808e1c330e789071",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product_Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7039b35331102a03dde9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "ACT_YTD"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "ACT_YTD"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PH_WH DTbl_AllUserAndCYPValues"
+                        }
+                      },
+                      "Property": "Product_Description"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7912fcb38a403038cd62": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "c2a9291568ed6c509319": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "d4a5a15454206a2d4c09": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "fd167521734680278902": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "2f61589227563b39a8e5": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "006c180cc0a00a792a96": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
