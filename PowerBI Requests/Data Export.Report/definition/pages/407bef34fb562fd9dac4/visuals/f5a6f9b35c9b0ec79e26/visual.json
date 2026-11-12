@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "f5a6f9b35c9b0ec79e26",
   "position": {
     "x": 0,
@@ -115,51 +115,6 @@
             },
             {
               "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                    }
-                  },
-                  "Property": "Farmer_FC1_Full_Year"
-                }
-              },
-              "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC1_Full_Year)",
-              "nativeQueryRef": "Farmer_FC1_Full_Year1",
-              "displayName": "Farmer_FC1_Full_Year"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                    }
-                  },
-                  "Property": "Farmer_FC2_Full_Year"
-                }
-              },
-              "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC2_Full_Year)",
-              "nativeQueryRef": "Farmer_FC2_Full_Year1",
-              "displayName": "Farmer_FC2_Full_Year"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
-                    }
-                  },
-                  "Property": "Farmer_FC3_Full_Year"
-                }
-              },
-              "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC3_Full_Year)",
-              "nativeQueryRef": "Farmer_FC3_Full_Year1",
-              "displayName": "Farmer_FC3_Full_Year"
-            },
-            {
-              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
@@ -170,7 +125,50 @@
                 }
               },
               "queryRef": "stored procedure CS_SHF DMTbl_SHF.SHF_ACT YTD",
-              "nativeQueryRef": "SHF_ACT YTD1"
+              "nativeQueryRef": "Farmer Actual",
+              "displayName": "Farmer Actual"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "Farmer_FC1"
+                }
+              },
+              "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC1)",
+              "nativeQueryRef": "Farmer_FC1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "Farmer_FC2"
+                }
+              },
+              "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC2)",
+              "nativeQueryRef": "Farmer_FC2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stored procedure CS_SHF DMTbl_SHF"
+                    }
+                  },
+                  "Property": "Farmer_FC3"
+                }
+              },
+              "queryRef": "Sum(stored procedure CS_SHF DMTbl_SHF.Farmer_FC3)",
+              "nativeQueryRef": "Farmer_FC3"
             },
             {
               "field": {
@@ -315,6 +313,19 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
