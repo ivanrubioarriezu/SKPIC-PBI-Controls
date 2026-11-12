@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "ba19593b840168b99226",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "56b8c5a4d020be2010bb",
   "position": {
-    "x": 113.14728917953008,
-    "y": 1675.3098623678809,
-    "z": 31000,
-    "height": 222.64466580488175,
-    "width": 948.9772640863813,
-    "tabOrder": 31000
+    "x": 2157.42397137746,
+    "y": 1526.8336314847943,
+    "z": 30000,
+    "height": 471.03274559193954,
+    "width": 841.30982367758179,
+    "tabOrder": 47000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,28 +20,28 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                      "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
                     }
                   },
-                  "Property": "_Target"
+                  "Property": "Scope3Target"
                 }
               },
-              "queryRef": "CORP_GHG DTbl_Scope1&2._Target",
-              "nativeQueryRef": "_Target"
+              "queryRef": "CORP_GHG DMV_Scope3_Target_Overall.Scope3Target",
+              "nativeQueryRef": "Scope3Target1"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope1&2"
+                      "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
                     }
                   },
-                  "Property": "_test Scope 1&2 % (Own Operations)"
+                  "Property": "Percentage Red"
                 }
               },
-              "queryRef": "CORP_GHG DTbl_Scope1&2._test Scope 1&2 % (Own Operations)",
-              "nativeQueryRef": "_test Scope 1&2 % (Own Operations)"
+              "queryRef": "CORP_GHG DMV_Scope3_Target_Overall.Percentage Red",
+              "nativeQueryRef": "Percentage Red1"
             }
           ]
         }
@@ -53,10 +53,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CORP_GHG DTbl_Scope1&2"
+                    "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
                   }
                 },
-                "Property": "_Target"
+                "Property": "Scope3Target"
               }
             },
             "direction": "Descending"
@@ -66,33 +66,6 @@
       }
     },
     "objects": {
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "legend": [
         {
           "properties": {
@@ -109,45 +82,119 @@
                   "Value": "false"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'LeftCenter'"
+                }
+              }
             }
           }
         }
       ],
-      "categoryAxis": [
+      "labels": [
         {
           "properties": {
-            "maxMarginFactor": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "30L"
-                }
-              }
-            },
-            "preferredCategoryWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "180D"
-                }
-              }
-            },
-            "innerPadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "10L"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
+                  "Value": "true"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "32D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "showSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DMV_Scope3_Target_Overall.Scope3Target"
+          }
+        },
+        {
+          "properties": {
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DMV_Scope3_Target_Overall.Percentage Red"
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "outerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "50L"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "20L"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
                 }
               }
             },
@@ -171,10 +218,17 @@
                 }
               }
             },
+            "clusteredGapOverlapReverse": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "clusteredGapSize": {
               "expr": {
                 "Literal": {
-                  "Value": "30D"
+                  "Value": "20D"
                 }
               }
             }
@@ -209,7 +263,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#66B512'"
+                      "Value": "'#E5E5E5'"
                     }
                   }
                 }
@@ -217,7 +271,7 @@
             }
           },
           "selector": {
-            "metadata": "CORP_GHG DTbl_Scope1&2._test Scope 1&2 % (Own Operations)"
+            "metadata": "CORP_GHG DMV_Scope3_Target_Overall.Scope3Target"
           }
         },
         {
@@ -226,9 +280,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                    "Literal": {
+                      "Value": "'#66B512'"
                     }
                   }
                 }
@@ -236,108 +289,7 @@
             }
           },
           "selector": {
-            "metadata": "CORP_GHG DTbl_Scope1&2._Target"
-          }
-        }
-      ],
-      "y1AxisReferenceLine": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "displayName": {
-              "expr": {
-                "Literal": {
-                  "Value": "'2029'"
-                }
-              }
-            },
-            "autoScale": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            },
-            "style": {
-              "expr": {
-                "Literal": {
-                  "Value": "'solid'"
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "6D"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "40D"
-                }
-              }
-            },
-            "dataLabelShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "dataLabelText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Name'"
-                }
-              }
-            },
-            "dataLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope1&2"
-                    }
-                  },
-                  "Property": "_Target"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "1"
+            "metadata": "CORP_GHG DMV_Scope3_Target_Overall.Percentage Red"
           }
         }
       ]
@@ -356,19 +308,6 @@
           }
         }
       ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "section": {
-              "expr": {
-                "Literal": {
-                  "Value": "'608af7ad5e0ca8d46769'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "visualHeader": [
         {
           "properties": {
@@ -376,6 +315,60 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'09952a7fd97455aae21b'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

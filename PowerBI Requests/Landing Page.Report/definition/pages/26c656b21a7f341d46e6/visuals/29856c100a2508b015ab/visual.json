@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "f6093bb967ae059903d7",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "29856c100a2508b015ab",
   "position": {
-    "x": 2187.019867549669,
-    "y": 646.23295675886254,
-    "z": 29000,
-    "height": 182.50097389949357,
-    "width": 768.89754577327619,
-    "tabOrder": 29000
+    "x": 148.61460957178841,
+    "y": 1528.9672544080604,
+    "z": 500,
+    "height": 471.03274559193954,
+    "width": 841.30982367758179,
+    "tabOrder": 45000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,28 +20,28 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CH_UP DMT_Target"
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
                     }
                   },
-                  "Property": "Target 2030 CH"
+                  "Property": "_Target"
                 }
               },
-              "queryRef": "CH_UP DMT_Target.Target 2030 CH",
-              "nativeQueryRef": "Target 2030 CH"
+              "queryRef": "CORP_GHG DTbl_Scope1&2._Target",
+              "nativeQueryRef": "_Target"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CH_UP DMT_Target"
+                      "Entity": "CORP_GHG DTbl_Scope1&2"
                     }
                   },
-                  "Property": "ACT Reporting Year CH"
+                  "Property": "_test Scope 1&2 % (Own Operations)"
                 }
               },
-              "queryRef": "CH_UP DMT_Target.ACT Reporting Year CH",
-              "nativeQueryRef": "ACT Reporting Year CH"
+              "queryRef": "CORP_GHG DTbl_Scope1&2._test Scope 1&2 % (Own Operations)",
+              "nativeQueryRef": "_test Scope 1&2 % (Own Operations)"
             }
           ]
         }
@@ -53,10 +53,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CH_UP DMT_Target"
+                    "Entity": "CORP_GHG DTbl_Scope1&2"
                   }
                 },
-                "Property": "Target 2030 CH"
+                "Property": "_Target"
               }
             },
             "direction": "Descending"
@@ -82,6 +82,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'LeftCenter'"
+                }
+              }
             }
           }
         }
@@ -92,55 +99,74 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "32D"
                 }
               }
             },
-            "fontFamily": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "'Arial'"
+                  "Value": "0L"
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "showSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CORP_GHG DTbl_Scope1&2._Target"
           }
         }
       ],
       "categoryAxis": [
         {
           "properties": {
+            "outerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "56L"
+                }
+              }
+            },
             "innerPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "10L"
+                  "Value": "20L"
                 }
               }
             },
-            "preferredCategoryWidth": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "180D"
-                }
-              }
-            },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "31L"
-                }
-              }
-            },
-            "switchAxisPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -151,41 +177,14 @@
                 }
               }
             },
-            "fontSize": {
+            "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
+                  "Value": "''"
                 }
               }
             },
             "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -198,114 +197,47 @@
       "layout": [
         {
           "properties": {
-            "clusteredGapSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "48D"
-                }
-              }
-            },
             "clusteredGapOverlaps": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "y1AxisReferenceLine": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             },
-            "displayName": {
-              "expr": {
-                "Literal": {
-                  "Value": "'2030'"
-                }
-              }
-            },
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
-                    }
-                  },
-                  "Property": "Target 2030"
-                }
-              }
-            },
-            "style": {
-              "expr": {
-                "Literal": {
-                  "Value": "'solid'"
-                }
-              }
-            },
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "6D"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "40D"
-                }
-              }
-            },
-            "dataLabelShow": {
+            "clusteredGapOverlapReverse": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "dataLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "dataLabelText": {
+            "clusteredGapSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'Name'"
+                  "Value": "20D"
                 }
               }
             }
-          },
-          "selector": {
-            "id": "2"
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ],
@@ -325,7 +257,7 @@
             }
           },
           "selector": {
-            "metadata": "CH_UP DMT_Target.Target 2030 CH"
+            "metadata": "CORP_GHG DTbl_Scope1&2._Target"
           }
         },
         {
@@ -335,7 +267,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#00BCFF'"
+                      "Value": "'#66B512'"
                     }
                   }
                 }
@@ -343,7 +275,7 @@
             }
           },
           "selector": {
-            "metadata": "CH_UP DMT_Target.ACT Reporting Year CH"
+            "metadata": "CORP_GHG DTbl_Scope1&2._test Scope 1&2 % (Own Operations)"
           }
         }
       ]
@@ -362,10 +294,57 @@
           }
         }
       ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'608af7ad5e0ca8d46769'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "padding": [
         {
           "properties": {
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
             "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
@@ -376,32 +355,6 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "section": {
-              "expr": {
-                "Literal": {
-                  "Value": "'4ff4e87bd508962ec127'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }

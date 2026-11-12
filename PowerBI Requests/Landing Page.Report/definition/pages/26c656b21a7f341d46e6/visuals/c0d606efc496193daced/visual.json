@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "bf2272b9598cfd97c13a",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "c0d606efc496193daced",
   "position": {
-    "x": 139.8857142857143,
-    "y": 833.82857142857142,
-    "z": 27000,
-    "height": 211.20000000000002,
-    "width": 839.3142857142858,
-    "tabOrder": 26000
+    "x": 156.1712846347607,
+    "y": 622.16624685138538,
+    "z": 35000,
+    "height": 471.03274559193954,
+    "width": 841.30982367758179,
+    "tabOrder": 42000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -31,6 +31,20 @@
             },
             {
               "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
+                    }
+                  },
+                  "Property": "ACT Reporting Year"
+                }
+              },
+              "queryRef": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.ACT Reporting Year",
+              "nativeQueryRef": "ACT Reporting Year"
+            },
+            {
+              "field": {
                 "Aggregation": {
                   "Expression": {
                     "Column": {
@@ -46,7 +60,8 @@
                 }
               },
               "queryRef": "Sum(CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.ACT Baseline Year)",
-              "nativeQueryRef": "Sum of ACT Baseline Year"
+              "nativeQueryRef": "ACT Baseline Year",
+              "displayName": "ACT Baseline Year"
             }
           ]
         }
@@ -87,6 +102,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'LeftCenter'"
+                }
+              }
             }
           }
         }
@@ -97,60 +119,37 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "28D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
-                }
-              }
-            },
-            "enableValueDataLabel": {
-              "expr": {
-                "Literal": {
                   "Value": "true"
                 }
               }
             },
-            "labelOverflow": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "32D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "showSeries": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "35D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.ACT Baseline Year)"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "35D"
                 }
               }
             }
@@ -158,11 +157,88 @@
           "selector": {
             "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.Target 2030"
           }
+        },
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.ACT Reporting Year"
+          }
+        },
+        {
+          "properties": {
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.ACT Baseline Year)"
+          }
         }
       ],
       "categoryAxis": [
         {
           "properties": {
+            "outerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "30L"
+                }
+              }
+            },
             "innerPadding": {
               "expr": {
                 "Literal": {
@@ -170,24 +246,10 @@
                 }
               }
             },
-            "preferredCategoryWidth": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "180D"
-                }
-              }
-            },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "30L"
-                }
-              }
-            },
-            "switchAxisPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -198,48 +260,14 @@
                 }
               }
             },
-            "fontSize": {
+            "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
+                  "Value": "''"
                 }
               }
             },
             "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -252,121 +280,47 @@
       "layout": [
         {
           "properties": {
-            "clusteredGapSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "48D"
-                }
-              }
-            },
             "clusteredGapOverlaps": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "y1AxisReferenceLine": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             },
-            "displayName": {
-              "expr": {
-                "Literal": {
-                  "Value": "'2030'"
-                }
-              }
-            },
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
-                    }
-                  },
-                  "Property": "Target 2030"
-                }
-              }
-            },
-            "style": {
-              "expr": {
-                "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            },
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "6D"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "40D"
-                }
-              }
-            },
-            "dataLabelShow": {
+            "clusteredGapOverlapReverse": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "dataLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "dataLabelText": {
+            "clusteredGapSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'Name'"
-                }
-              }
-            },
-            "dashArray": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
+                  "Value": "10D"
                 }
               }
             }
-          },
-          "selector": {
-            "id": "2"
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ],
@@ -404,6 +358,24 @@
             }
           },
           "selector": {
+            "metadata": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.ACT Reporting Year"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#788EB9'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
             "metadata": "Sum(CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail.ACT Baseline Year)"
           }
         }
@@ -423,20 +395,13 @@
           }
         }
       ],
-      "padding": [
+      "visualHeader": [
         {
           "properties": {
-            "top": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
+                  "Value": "false"
                 }
               }
             }
@@ -449,20 +414,48 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'58088c52e60758a50d91'"
                 }
               }
             }
           }
         }
       ],
-      "visualHeader": [
+      "padding": [
         {
           "properties": {
-            "show": {
+            "right": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "0D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

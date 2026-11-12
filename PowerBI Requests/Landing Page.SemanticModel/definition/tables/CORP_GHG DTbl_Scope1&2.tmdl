@@ -917,7 +917,7 @@ table 'CORP_GHG DTbl_Scope1&2'
 				    Source
 				```
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

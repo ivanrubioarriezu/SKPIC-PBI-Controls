@@ -78,6 +78,8 @@ table 'CORP_GHG DTbl_Scope3'
 			```
 		lineageTag: 4968dcba-2457-43de-9536-3c7379f4817e
 
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	measure '_Up- and downstream (Scope 3) %' = ```
 			
 			VAR _reportingTotal=
@@ -102,16 +104,18 @@ table 'CORP_GHG DTbl_Scope3'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 2685264a-e332-40b9-9a8f-ad8d41de6c6f
 
-	measure ACT = ```
+	measure ACT =
 			
 			CALCULATE (
 			    SUM ( 'CORP_GHG DTbl_Scope3'[CO2e] ),
-			    'CORP_GHG DTbl_Scope3'[Is Target Filter] = 0,
-			    'CORP_GHG DTbl_Scope3'[SBT_Relevant] = TRUE(),
-			    KEEPFILTERS ('CORP_GHG DTbl_Scope3' [FY (Year Filter)] = 1 )
-			)
+			    FILTER (
+			        'CORP_GHG DTbl_Scope3',
+			        'CORP_GHG DTbl_Scope3'[Year] = [Reporting Year (Target Year) Scope 3]
+			        && 'CORP_GHG DTbl_Scope3'[Sbt_Relevant] = TRUE
+			        && 'CORP_GHG DTbl_Scope3'[Is_Target] = TRUE
 			
-			```
+			    )
+			)
 		lineageTag: e1f6f00b-6cb9-4e1f-a1fd-a1ca1e85bd9f
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -232,6 +236,31 @@ table 'CORP_GHG DTbl_Scope3'
 		lineageTag: 97fdb6dc-a143-497a-9a12-e09ce92cdec6
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _TargetScope3 = (0.25)
+		lineageTag: 31f6bcf6-112d-43bb-bba2-2a12e1cd409b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Reporting Year (Target Year) Scope 3' = ```
+			
+			VAR _currentYear  = YEAR ( TODAY() )
+			VAR _isFebOrLater = MONTH ( TODAY() ) >= 2
+			VAR _targetYear   = IF ( _isFebOrLater, _currentYear - 1, _currentYear - 2 )
+			RETURN _targetYear
+			
+			```
+		formatString: 0
+		lineageTag: 37ac82a6-3d07-4fef-a313-ef422c9754a9
+
+	measure '% reduction' =
+			
+			DIVIDE(
+			    [Baseline Year 2019] - [ACT],
+			    [Baseline Year 2019]
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 4f17a3be-626d-4c45-939c-8152b6c44f32
 
 	column Year
 		dataType: int64
@@ -574,7 +603,7 @@ table 'CORP_GHG DTbl_Scope3'
 				    Source
 				```
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

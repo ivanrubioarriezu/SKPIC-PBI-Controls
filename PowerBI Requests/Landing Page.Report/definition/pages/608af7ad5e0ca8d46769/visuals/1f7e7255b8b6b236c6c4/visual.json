@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "1f7e7255b8b6b236c6c4",
   "position": {
     "x": 29,
@@ -559,48 +559,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "53aefd39d0537e330226",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope1&2"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "028c16068183e1ee9dae",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope1&2"
-              }
-            },
-            "Property": "Act new measure"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a71f27e03b7b1908092a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope1&2"
-              }
-            },
-            "Property": "Target"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

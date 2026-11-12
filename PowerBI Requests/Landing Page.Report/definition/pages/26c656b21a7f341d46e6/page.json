@@ -53,17 +53,5 @@
         }
       }
     ]
-  },
-  "visualInteractions": [
-    {
-      "source": "fa17fb074a9ce363f82c",
-      "target": "bf2272b9598cfd97c13a",
-      "type": "DataFilter"
-    },
-    {
-      "source": "bf2272b9598cfd97c13a",
-      "target": "fa17fb074a9ce363f82c",
-      "type": "NoFilter"
-    }
-  ]
+  }
 }

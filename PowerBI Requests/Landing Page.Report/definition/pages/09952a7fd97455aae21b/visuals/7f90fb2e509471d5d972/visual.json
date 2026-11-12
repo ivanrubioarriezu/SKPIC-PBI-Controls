@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "63fa11068d41125c3aa4",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "7f90fb2e509471d5d972",
   "position": {
-    "x": 10,
-    "y": 109,
-    "z": 0,
-    "height": 391,
-    "width": 975,
-    "tabOrder": 0
+    "x": 0,
+    "y": 97,
+    "z": 1001,
+    "height": 403,
+    "width": 1000,
+    "tabOrder": 1001
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope3"
+                      "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
                     }
                   },
                   "Property": "Year"
                 }
               },
-              "queryRef": "CORP_GHG DTbl_Scope3.Year",
-              "nativeQueryRef": "Year",
+              "queryRef": "CORP_GHG DMV_Scope3_Target_Overall.Year",
+              "nativeQueryRef": "Suma de Year",
               "active": true
             }
           ]
@@ -36,31 +36,41 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope3"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
+                        }
+                      },
+                      "Property": "Co2e_Target_Aggregated"
                     }
                   },
-                  "Property": "Target scope3"
+                  "Function": 0
                 }
               },
-              "queryRef": "CORP_GHG DTbl_Scope3.Target scope3",
-              "nativeQueryRef": "Target scope3"
+              "queryRef": "Sum(CORP_GHG DMV_Scope3_Target_Overall.Co2e_Target_Aggregated)",
+              "nativeQueryRef": "Suma de Co2e_Target_Aggregated"
             },
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "CORP_GHG DTbl_Scope3"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
+                        }
+                      },
+                      "Property": "Co2e_Actual"
                     }
                   },
-                  "Property": "ACT"
+                  "Function": 0
                 }
               },
-              "queryRef": "CORP_GHG DTbl_Scope3.ACT",
-              "nativeQueryRef": "ACT"
+              "queryRef": "Sum(CORP_GHG DMV_Scope3_Target_Overall.Co2e_Actual)",
+              "nativeQueryRef": "Suma de Co2e_Actual"
             }
           ]
         }
@@ -72,7 +82,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CORP_GHG DTbl_Scope3"
+                    "Entity": "CORP_GHG DMV_Scope3_Target_Overall"
                   }
                 },
                 "Property": "Year"
@@ -172,7 +182,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEFEF'"
+                      "Value": "'#E5E5E5'"
                     }
                   }
                 }
@@ -180,7 +190,7 @@
             }
           },
           "selector": {
-            "metadata": "CORP_GHG DTbl_Scope3.Target scope3"
+            "metadata": "Sum(CORP_GHG DMV_Scope3_Target_Overall.Co2e_Target_Aggregated)"
           }
         },
         {
@@ -198,7 +208,7 @@
             }
           },
           "selector": {
-            "metadata": "CORP_GHG DTbl_Scope3.ACT"
+            "metadata": "Sum(CORP_GHG DMV_Scope3_Target_Overall.Co2e_Actual)"
           }
         }
       ]

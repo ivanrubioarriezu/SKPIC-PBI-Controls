@@ -1,0 +1,120 @@
+table 'CORP_GHG DMV_Scope3_Target_Overall'
+	lineageTag: 97815cbe-ae60-4633-9e87-6e3528ff8b2f
+
+	measure 'Emissions Baseline Year 2019' = ```
+			
+			CALCULATE (
+			    SUM([Co2e_Actual]),  -- your existing measure
+			
+			    KEEPFILTERS ( 'CORP_GHG DMV_Scope3_Target_Overall'[Year] = 2019 )
+			)
+			
+			```
+		lineageTag: 10498466-2034-4b1a-b978-fc2a6f18414a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure EMISSIONSACT =
+			
+			CALCULATE (
+			    SUM ('CORP_GHG DMV_Scope3_Target_Overall'[Co2e_Actual] ),
+			    FILTER (
+			        'CORP_GHG DMV_Scope3_Target_Overall',
+			        'CORP_GHG DMV_Scope3_Target_Overall'[Year]
+			            = [Year Target (Target Year) Scope 3]
+			    )
+			)
+		lineageTag: 8e2196bb-a1e8-4dbb-a82c-9dff0e84a38d
+
+	measure Scope3Target = (0.25)
+		lineageTag: ea9eb54f-b693-4e6c-8010-e19db353a013
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Percentage Red' =
+			
+			DIVIDE(
+			    [Emissions Baseline Year 2019] - [EMISSIONSACT],
+			    [Emissions Baseline Year 2019]
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: f3f122d7-6989-4174-9067-22440adf43ba
+
+	measure 'Year Target (Target Year) Scope 3' =
+			
+			VAR _currentYear  = YEAR ( TODAY() )
+			VAR _isFebOrLater = MONTH ( TODAY() ) >= 2
+			VAR _targetYear   = IF ( _isFebOrLater, _currentYear - 1, _currentYear - 2 )
+			RETURN _targetYear
+		formatString: 0
+		lineageTag: b7f6e723-9b33-449c-8941-a4165fcf289c
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 9722029b-7c5c-4d30-8511-065b1a3b3611
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column SBT_Relevant
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3b2b51c2-a0f9-4425-b66d-5effc51ee6cb
+		summarizeBy: none
+		sourceColumn: SBT_Relevant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Co2e_Target_Aggregated
+		dataType: double
+		lineageTag: 73be32bb-2094-4785-a9d9-860aa38e1760
+		summarizeBy: sum
+		sourceColumn: Co2e_Target_Aggregated
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Co2e_Target_Total
+		dataType: double
+		lineageTag: 06c32989-cb0e-408a-bfb9-dc0619358448
+		summarizeBy: sum
+		sourceColumn: Co2e_Target_Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Co2e_Actual
+		dataType: double
+		lineageTag: 29e7783a-1d78-420f-a467-5eef36ae1275
+		summarizeBy: sum
+		sourceColumn: Co2e_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'CORP_GHG DMV_Scope3_Target_Overall' = m
+		mode: import
+		source = ```
+				let
+				    Origen = Value.NativeQuery(Databricks.Catalogs(hostname, httpPath, [Catalog=Catalogue, Database=null, EnableAutomaticProxyDiscovery="enabled"]){[Name=Catalogue,Kind="Database"]}[Data], 
+				    "SELECT
+				    year AS Year,
+				    sbt_relevant AS SBT_Relevant,
+				    co2e_target_aggregated AS Co2e_Target_Aggregated,
+				    co2e_target_total AS Co2e_Target_Total,
+				    co2e_actual AS Co2e_Actual
+				FROM generaldiscovery_intfc_sustainability_r.sus_skpic_corp_ghg_dmt_scope3_target_overall_intfc_view"
+				    , null, [EnableFolding=true])
+				in
+				    Origen
+				```
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Exception
+

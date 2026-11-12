@@ -3,10 +3,14 @@ expression hostname = "adb-4071335540424391.11.azuredatabricks.net" meta [IsPara
 
 	annotation PBI_ResultType = Text
 
+	annotation PBI_NavigationStepName = Navegación
+
 expression httpPath = "/sql/1.0/warehouses/a4d70720d95e4e2a" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
 	lineageTag: ab0dab1b-a40e-4334-8b9c-22c7e7b5e2ff
 
 	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navegación
 
 expression Catalogue = "efdataonelh_prd" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 9c2979cd-0d94-4571-bf6c-6f344e518731

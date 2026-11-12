@@ -1,12 +1,12 @@
 model Model
 	culture: en-US
 	defaultPowerBIDataSourceVersion: powerBI_V3
-	sourceQueryCulture: en-150
+	sourceQueryCulture: es-ES
 	dataAccessOptions
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["CH_UP DMT_Target","CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail","CORP_GHG DTbl_Scope1&2","CORP_GHG DTbl_Scope3","PH_WH DTbl_Target","hostname","httpPath","Catalogue"]
+annotation PBI_QueryOrder = ["CH_UP DMT_Target","CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail","CORP_GHG DTbl_Scope1&2","CORP_GHG DTbl_Scope3","PH_WH DTbl_Target","CORP_GHG DMV_Scope3_Target_Overall","hostname","httpPath","Catalogue"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -28,6 +28,7 @@ ref table LocalDateTable_9c56350e-32f9-4a1d-9fef-879f9195bdfb
 ref table LocalDateTable_c279285b-83d4-451e-ab24-e65dbcbad5f0
 ref table LocalDateTable_2211dd37-a581-4df3-b3c4-36c25dac8085
 ref table LocalDateTable_ef6fda95-66c5-4aa7-9c31-b9d6339d0e3d
+ref table 'CORP_GHG DMV_Scope3_Target_Overall'
 
 ref cultureInfo en-US
 

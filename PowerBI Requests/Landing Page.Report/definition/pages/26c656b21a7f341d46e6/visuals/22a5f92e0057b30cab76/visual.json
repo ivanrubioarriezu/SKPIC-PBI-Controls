@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "177418cb5f1378f3d0a1",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "22a5f92e0057b30cab76",
   "position": {
-    "x": 2184.0280483054148,
-    "y": 831.72574990261012,
-    "z": 30000,
-    "height": 212.41916634203352,
-    "width": 771.88936501753028,
-    "tabOrder": 30000
+    "x": 2158.6901763224182,
+    "y": 617.12846347607046,
+    "z": 31000,
+    "height": 476.0705289672544,
+    "width": 841.30982367758179,
+    "tabOrder": 44000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -31,6 +31,20 @@
             },
             {
               "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMT_Target"
+                    }
+                  },
+                  "Property": "ACT Reporting Year CH"
+                }
+              },
+              "queryRef": "CH_UP DMT_Target.ACT Reporting Year CH",
+              "nativeQueryRef": "ACT Reporting Year CH"
+            },
+            {
+              "field": {
                 "Aggregation": {
                   "Expression": {
                     "Column": {
@@ -45,8 +59,8 @@
                   "Function": 0
                 }
               },
-              "queryRef": "CountNonNull(CH_UP DMT_Target.ACT Baseline Year CH)",
-              "nativeQueryRef": "Sum of ACT Baseline Year CH"
+              "queryRef": "Sum(CH_UP DMT_Target.ACT Baseline Year CH)",
+              "nativeQueryRef": "Suma de ACT Baseline Year CH"
             }
           ]
         }
@@ -87,6 +101,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'LeftCenter'"
+                }
+              }
             }
           }
         }
@@ -97,21 +118,26 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "32D"
                 }
               }
             },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -119,22 +145,85 @@
         },
         {
           "properties": {
-            "fontSize": {
+            "showSeries": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "false"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "CountNonNull(CH_UP DMT_Target.ACT Baseline Year CH)"
+            "metadata": "CH_UP DMT_Target.Target 2030 CH"
+          }
+        },
+        {
+          "properties": {
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CH_UP DMT_Target.ACT Baseline Year CH)"
+          }
+        },
+        {
+          "properties": {
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CH_UP DMT_Target.ACT Reporting Year CH"
           }
         }
       ],
       "categoryAxis": [
         {
           "properties": {
+            "outerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "30L"
+                }
+              }
+            },
             "innerPadding": {
               "expr": {
                 "Literal": {
@@ -142,24 +231,10 @@
                 }
               }
             },
-            "preferredCategoryWidth": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "180D"
-                }
-              }
-            },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "30L"
-                }
-              }
-            },
-            "switchAxisPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -170,48 +245,14 @@
                 }
               }
             },
-            "fontSize": {
+            "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
+                  "Value": "''"
                 }
               }
             },
             "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -224,114 +265,47 @@
       "layout": [
         {
           "properties": {
-            "clusteredGapSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "48D"
-                }
-              }
-            },
             "clusteredGapOverlaps": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "y1AxisReferenceLine": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             },
-            "displayName": {
-              "expr": {
-                "Literal": {
-                  "Value": "'2030'"
-                }
-              }
-            },
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CS_SHF DMTbl_FarmerActual_Target_Timeline_Detail"
-                    }
-                  },
-                  "Property": "Target 2030"
-                }
-              }
-            },
-            "style": {
-              "expr": {
-                "Literal": {
-                  "Value": "'solid'"
-                }
-              }
-            },
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "6D"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "40D"
-                }
-              }
-            },
-            "dataLabelShow": {
+            "clusteredGapOverlapReverse": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "dataLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "dataLabelText": {
+            "clusteredGapSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'Name'"
+                  "Value": "10D"
                 }
               }
             }
-          },
-          "selector": {
-            "id": "2"
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ],
@@ -369,46 +343,31 @@
             }
           },
           "selector": {
-            "metadata": "CountNonNull(CH_UP DMT_Target.ACT Baseline Year CH)"
+            "metadata": "CH_UP DMT_Target.ACT Reporting Year CH"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#788EB9'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(CH_UP DMT_Target.ACT Baseline Year CH)"
           }
         }
       ]
     },
     "visualContainerObjects": {
       "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "top": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
         {
           "properties": {
             "show": {
@@ -433,66 +392,62 @@
             }
           }
         }
-      ]
-    },
-    "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "90ea0f29db5fba5a52ed",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CH_UP DMT_Target"
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
             },
-            "Property": "ACT Base year label CH"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c",
-              "Entity": "CH_UP DMT_Target",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "c"
-                          }
-                        },
-                        "Property": "ACT Base year label CH"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'BY 2019'"
-                        }
-                      }
-                    ]
-                  ]
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'4ff4e87bd508962ec127'"
                 }
               }
             }
-          ]
-        },
-        "howCreated": "User"
-      }
-    ]
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
   }
 }

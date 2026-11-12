@@ -58,3 +58,7 @@ relationship e0508a5f-97db-4a99-a415-937a8d4063fd
 	fromColumn: 'CH_UP DMT_Target'.ValidTo
 	toColumn: LocalDateTable_ef6fda95-66c5-4aa7-9c31-b9d6339d0e3d.Date
 
+relationship AutoDetected_434c5042-812d-42e3-8172-21a1b9669b2a
+	fromColumn: 'CORP_GHG DMV_Scope3_Target_Overall'.Year
+	toColumn: 'PH_WH DTbl_Target'.Year
+

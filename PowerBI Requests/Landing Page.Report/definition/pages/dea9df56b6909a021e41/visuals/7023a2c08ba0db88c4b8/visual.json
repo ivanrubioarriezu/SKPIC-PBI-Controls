@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "7023a2c08ba0db88c4b8",
   "position": {
     "x": 29.629629629629626,
@@ -622,34 +622,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "dc1172100720a7cb12e3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope1&2"
-              }
-            },
-            "Property": "1Act new measure"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "eb2242d53dc557d191ac",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CORP_GHG DTbl_Scope1&2"
-              }
-            },
-            "Property": "Target"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
