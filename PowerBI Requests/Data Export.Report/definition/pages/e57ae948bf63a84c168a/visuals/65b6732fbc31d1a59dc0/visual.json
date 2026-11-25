@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "65b6732fbc31d1a59dc0",
   "position": {
     "x": 336.74485228304258,
@@ -23,11 +23,11 @@
                       "Entity": "CH_UP DMT_KPI"
                     }
                   },
-                  "Property": "Fiscal_Period"
+                  "Property": "Fiscal_Month"
                 }
               },
-              "queryRef": "CH_UP DMT_KPI.Fiscal_Period",
-              "nativeQueryRef": "Fiscal_Period",
+              "queryRef": "CH_UP DMT_KPI.Fiscal_Month",
+              "nativeQueryRef": "Fiscal_Month",
               "active": true
             }
           ]
@@ -43,7 +43,7 @@
                     "Entity": "CH_UP DMT_KPI"
                   }
                 },
-                "Property": "Fiscal_Period"
+                "Property": "Fiscal_Month"
               }
             },
             "direction": "Descending"
@@ -123,7 +123,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Fiscal Period'"
+                  "Value": "'Month'"
                 }
               }
             }

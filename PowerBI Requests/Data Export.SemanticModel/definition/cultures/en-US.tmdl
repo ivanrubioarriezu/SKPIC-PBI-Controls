@@ -33,19 +33,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Farmer_FC1_Full_Year"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Farmer_FC1_Full_Year": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "stored_procedure_cs_shf_dmtbl_shf.farmer_fc2_full_year": {
 			      "Definition": {
@@ -54,19 +42,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Farmer_FC2_Full_Year"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Farmer_FC2_Full_Year": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "stored_procedure_cs_shf_dmtbl_shf.farmer_fc3_full_year": {
 			      "Definition": {
@@ -75,19 +51,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Farmer_FC3_Full_Year"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Farmer_FC3_Full_Year": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "stored_procedure_cs_shf_dmtbl_shf.farmer_actual_previous_full_year": {
 			      "Definition": {
@@ -184,6 +148,48 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "diff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stored_procedure_cs_shf_dmtbl_shf.shf_act_ytd": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stored procedure CS_SHF DMTbl_SHF",
+			          "ConceptualProperty": "SHF_ACT YTD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Farmer Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ch_up_dmv_salesdata.period_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CH_UP DMV_SalesData",
+			          "ConceptualProperty": "Period_Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "MONTH": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

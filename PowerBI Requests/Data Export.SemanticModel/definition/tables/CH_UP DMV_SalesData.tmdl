@@ -224,12 +224,36 @@ table 'CH_UP DMV_SalesData'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Period_Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c9ff0a2e-a0f6-4b30-a532-ec9f2b4a9473
+		summarizeBy: sum
+		sourceColumn: Period_Month
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'CH_UP DMV_SalesData' = m
 		mode: directQuery
 		source =
 				let
-				    Source = Sql.Database("sustsqlprod.database.windows.net", "sustsqlproddb"),
-				    CH_UP_DMV_SalesData = Source{[Schema="CH_UP",Item="DMV_SalesData"]}[Data]
+				    Source = Sql.Database(
+				        "sustsqlprod.database.windows.net",
+				        "sustsqlproddb"
+				    ),
+				    RowCount = Value.NativeQuery(
+				        Source,
+				        "
+				SELECT *,
+				       CAST(Period AS INT) AS Period_Month
+				FROM CH_UP.DMV_SalesData
+				        "
+				    )
 				in
-				    CH_UP_DMV_SalesData
+				    RowCount
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
 

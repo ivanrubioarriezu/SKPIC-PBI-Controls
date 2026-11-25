@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a2b1ec91275879c49d2e",
   "position": {
     "x": 0,
-    "y": 165.5555555555562,
+    "y": 167.700718020067,
     "z": 0,
     "height": 820,
     "width": 2950,
@@ -42,6 +42,21 @@
               },
               "queryRef": "CH_UP DMV_SalesData.0FISCPER",
               "nativeQueryRef": "0FISCPER"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CH_UP DMV_SalesData"
+                    }
+                  },
+                  "Property": "Period_Month"
+                }
+              },
+              "queryRef": "Sum(CH_UP DMV_SalesData.Period_Month)",
+              "nativeQueryRef": "MONTH",
+              "displayName": "MONTH"
             },
             {
               "field": {

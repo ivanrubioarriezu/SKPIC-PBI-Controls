@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "0fb1a7ef0b9b38b85494",
   "position": {
     "x": 334.00192864030845,
-    "y": 0,
+    "y": 2.145162464510828,
     "z": 250,
     "height": 130,
     "width": 296.66666666666669,
@@ -23,15 +23,32 @@
                       "Entity": "CH_UP DMV_SalesData"
                     }
                   },
-                  "Property": "DRESPO__DIMKKA2___T"
+                  "Property": "Period_Month"
                 }
               },
-              "queryRef": "CH_UP DMV_SalesData.DRESPO__DIMKKA2___T",
-              "nativeQueryRef": "DRESPO__DIMKKA2___T",
+              "queryRef": "CH_UP DMV_SalesData.Period_Month",
+              "nativeQueryRef": "Period_Month",
               "active": true
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CH_UP DMV_SalesData"
+                  }
+                },
+                "Property": "Period_Month"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
@@ -106,7 +123,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Region'"
+                  "Value": "'Month'"
                 }
               }
             }
