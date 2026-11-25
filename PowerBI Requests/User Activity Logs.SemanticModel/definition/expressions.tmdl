@@ -1,6 +1,5 @@
 expression fnCommitChanges =
-		let
-		    Source = (commitId as text) =>
+		(commitId as text, PAT as text) =>
 		
 		let
 		    Source =
@@ -9,17 +8,26 @@ expression fnCommitChanges =
 		                "https://dev.azure.com",
 		                [
 		                    RelativePath =
-		                        "EF-GDA/Sustainability%20Reporting%20Bayer%20Global/_apis/git/repositories/72767a98-d07b-4942-9c39-6f4999faf0b1/commits/"
+		                        "EF-GDA/Sustainability Reporting Bayer Global/_apis/git/repositories/72767a98-d07b-4942-9c39-6f4999faf0b1/commits/"
 		                        & commitId &
 		                        "/changes",
+		
 		                    Query = [
 		                        #"api-version" = "7.1"
+		                    ],
+		
+		                    Headers = [
+		                        Authorization =
+		                            "Basic " &
+		                            Binary.ToText(
+		                                Text.ToBinary(":" & PAT),
+		                                BinaryEncoding.Base64
+		                            ),
+		                        Accept = "application/json"
 		                    ]
 		                ]
 		            )
 		        )
-		in
-		    Source
 		in
 		    Source
 	lineageTag: b8d0a471-0156-4599-ba96-7a7fea5bd916

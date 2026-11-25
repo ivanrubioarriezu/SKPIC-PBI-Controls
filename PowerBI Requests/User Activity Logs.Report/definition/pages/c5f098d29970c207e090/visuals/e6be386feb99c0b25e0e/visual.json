@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e6be386feb99c0b25e0e",
   "position": {
-    "x": 23.49869451697128,
-    "y": 168.25065274151436,
+    "x": 13.617021276595745,
+    "y": 168.26747720364742,
     "z": 6000,
-    "height": 551.74934725848561,
-    "width": 1242.6109660574411,
-    "tabOrder": 7000
+    "height": 551.48936170212767,
+    "width": 1252.7659574468087,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "tableEx",
@@ -116,8 +116,8 @@
                 }
               },
               "queryRef": "commits.value.comment",
-              "nativeQueryRef": "Comment",
-              "displayName": "Comment"
+              "nativeQueryRef": "DevOps Ticket Number",
+              "displayName": "DevOps Ticket Number"
             },
             {
               "field": {
@@ -127,12 +127,11 @@
                       "Entity": "commits"
                     }
                   },
-                  "Property": "value.url"
+                  "Property": "Azure DevOps URL"
                 }
               },
-              "queryRef": "commits.value.url",
-              "nativeQueryRef": "URL",
-              "displayName": "URL"
+              "queryRef": "commits.Azure DevOps URL",
+              "nativeQueryRef": "Azure DevOps URL"
             }
           ]
         }
@@ -183,10 +182,41 @@
             "urlIcon": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "webURL": {
+              "expr": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "commits"
+                        }
+                      },
+                      "Property": "Azure DevOps URL"
+                    }
+                  },
+                  "Function": 3
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "commits.Azure DevOps URL"
           }
         }
       ],
@@ -256,6 +286,92 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "149.25878320479862D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "commits.value.author.date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "166.7763473049851D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "commits.ArtifactName"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "146.35733329100373D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "commits.Classification"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "133.13737275589185D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "commits.value.author.name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "205.6461024490116D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "commits.value.author.email"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "145.16195506255062D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "commits.fnCommitChanges.changes.changeType"
           }
         }
       ]
@@ -356,7 +472,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "1fac1cb27b506060b200",
+        "name": "453ecba050b5b8d42374",
         "field": {
           "Column": {
             "Expression": {
@@ -370,7 +486,21 @@
         "type": "Categorical"
       },
       {
-        "name": "d4015532322074bb0028",
+        "name": "7a96803c8133216410a7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "commits"
+              }
+            },
+            "Property": "ArtifactName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6ef0b50007c829b74767",
         "field": {
           "Column": {
             "Expression": {
@@ -384,7 +514,7 @@
         "type": "Categorical"
       },
       {
-        "name": "327326a71122edec1a06",
+        "name": "e4a09ca97a633a387016",
         "field": {
           "Column": {
             "Expression": {
@@ -398,7 +528,7 @@
         "type": "Categorical"
       },
       {
-        "name": "1ac99c5f0c95b40ddc73",
+        "name": "7a74a3ac1e20cb8b0720",
         "field": {
           "Column": {
             "Expression": {
@@ -412,7 +542,7 @@
         "type": "Categorical"
       },
       {
-        "name": "07edb1cbe644675bb1b9",
+        "name": "1c2f96ea3bd680295893",
         "field": {
           "Column": {
             "Expression": {
@@ -426,7 +556,7 @@
         "type": "Categorical"
       },
       {
-        "name": "3f5e7c0fba73b83606ad",
+        "name": "216184f9379a0c3d3043",
         "field": {
           "Column": {
             "Expression": {
@@ -440,7 +570,7 @@
         "type": "Categorical"
       },
       {
-        "name": "b4cca7c2c6c0ec20b380",
+        "name": "5e08bc4eddc49c2149ce",
         "field": {
           "Column": {
             "Expression": {
@@ -448,82 +578,10 @@
                 "Entity": "commits"
               }
             },
-            "Property": "value.url"
+            "Property": "Azure DevOps URL"
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "3d7ae25fa90c5b0918b6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "commits"
-              }
-            },
-            "Property": "ArtifactName"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c",
-              "Entity": "commits",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "c"
-                              }
-                            },
-                            "Property": "ArtifactName"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
       }
     ]
   }

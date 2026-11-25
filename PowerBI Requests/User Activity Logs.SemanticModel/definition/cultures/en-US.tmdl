@@ -3146,7 +3146,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Comment": {
+			          "DevOps Ticket Number": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -3497,16 +3497,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "Path": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3980,42 +3970,194 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    }
-			  },
-			  "Relationships": {
-			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "commits"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "commit.value_committer_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.date_hierarchy"
-			          }
-			        },
-			        "commit.value_committer_date.year": {
-			          "Target": {
-			            "Entity": "commit.value_committer_date.year"
-			          }
+			    },
+			    "commit.azure_DevOps_URL": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "Azure DevOps URL"
 			        }
 			      },
-			      "Phrasings": [
+			      "State": "Generated",
+			      "Terms": [
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "commit.value_committer_date.date_hierarchy"
+			          "azure DevOps URL": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "azure DevOp URL": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "azure devop website": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
 			            },
-			            "Object": {
-			              "Role": "commit.value_committer_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "value___committer___date_hierarchies_have_value___committer___years"
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "azure devop site": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "azure devop web address": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.604
+			          }
 			        }
 			      ]
 			    },
+			    "commit.distinct_changes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "commits",
+			          "ConceptualProperty": "Distinct Changes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distinct changes": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "changes": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "distinct vicissitudes": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "distinct variation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "distinct vagary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "distinct fluctuation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "distinct deviation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "vicissitudes": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "variation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "vagary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fluctuation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "deviation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "Records": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
 			    "commit_value_committer_date_has_date_hierarchy": {
 			      "Binding": {
 			        "ConceptualEntity": "commits"
@@ -4376,6 +4518,72 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "value_project_lastUpdateTimes_have_value___project___lastUpdateTime_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "commit_has_distinct_changes": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.distinct_changes": {
+			          "Target": {
+			            "Entity": "commit.distinct_changes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.distinct_changes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_distinct_changes"
+			        }
+			      ]
+			    },
+			    "commit_has_azure_DevOps_URL": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit": {
+			          "Target": {
+			            "Entity": "commit"
+			          }
+			        },
+			        "commit.azure_DevOps_URL": {
+			          "Target": {
+			            "Entity": "commit.azure_DevOps_URL"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit"
+			            },
+			            "Object": {
+			              "Role": "commit.azure_DevOps_URL"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "commits_have_azure_DevOps_URLs"
 			        }
 			      ]
 			    },
@@ -6018,6 +6226,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "changes_are_in_value_project_states"
+			        }
+			      ]
+			    },
+			    "commit_value_committer_date_date_hierarchy_has_commit_value_committer_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "commits"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "commit.value_committer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.date_hierarchy"
+			          }
+			        },
+			        "commit.value_committer_date.year": {
+			          "Target": {
+			            "Entity": "commit.value_committer_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "commit.value_committer_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "commit.value_committer_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "value___committer___date_hierarchies_have_value___committer___years"
 			        }
 			      ]
 			    },

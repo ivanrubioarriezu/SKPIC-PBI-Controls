@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "0ca64c7062b709233541",
   "position": {
     "x": 453.123457901846,
@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 65.556092714993241,
     "width": 190.87618190004503,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -220,23 +220,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "90b8bfb08e9879a03c19",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "commits"
-              }
-            },
-            "Property": "value.author.name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

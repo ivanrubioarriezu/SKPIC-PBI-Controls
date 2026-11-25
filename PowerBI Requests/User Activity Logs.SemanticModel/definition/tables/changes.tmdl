@@ -166,16 +166,127 @@ table changes
 
 	partition changes = m
 		mode: import
-		source =
+		source = ```
 				let
-				    Source = Json.Document(Web.Contents("https://dev.azure.com/EF-GDA/Sustainability%20Reporting%20Bayer%20Global/_apis/git/repositories?api-version=7.1")),
+				    PAT = "4o07QB1Xi2cAd7W0v9bU5oygKEENjGeWVVkNy5UPpKdz2LnC5pIGJQQJ99CKACAAAAAa4npVAAAGAZDO2xz6",
+				    
+				    Source =
+				        Json.Document(
+				            Web.Contents(
+				                "https://dev.azure.com",
+				                [
+				                    RelativePath = "EF-GDA/Sustainability Reporting Bayer Global/_apis/git/repositories",
+				                    Query = [
+				                        #"api-version" = "7.1"
+				                    ],
+				                    Headers = [
+				                        Authorization =
+				                            "Basic " &
+				                            Binary.ToText(
+				                                Text.ToBinary(":" & PAT),
+				                                BinaryEncoding.Base64
+				                            ),
+				                        Accept = "application/json"
+				                    ]
+				                ]
+				            )
+				        ),
+				
 				    #"Converted to Table" = Table.FromRecords({Source}),
-				    #"Expanded value" = Table.ExpandListColumn(#"Converted to Table", "value"),
-				    #"Expanded value1" = Table.ExpandRecordColumn(#"Expanded value", "value", {"id", "name", "url", "project", "defaultBranch", "size", "remoteUrl", "sshUrl", "webUrl", "isDisabled", "isInMaintenance"}, {"value.id", "value.name", "value.url", "value.project", "value.defaultBranch", "value.size", "value.remoteUrl", "value.sshUrl", "value.webUrl", "value.isDisabled", "value.isInMaintenance"}),
-				    #"Expanded value.project" = Table.ExpandRecordColumn(#"Expanded value1", "value.project", {"id", "name", "description", "url", "state", "revision", "visibility", "lastUpdateTime"}, {"value.project.id", "value.project.name", "value.project.description", "value.project.url", "value.project.state", "value.project.revision", "value.project.visibility", "value.project.lastUpdateTime"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded value.project",{{"value.id", type text}, {"value.name", type text}, {"value.url", type text}, {"value.project.id", type text}, {"value.project.name", type text}, {"value.project.description", type text}, {"value.project.url", type text}, {"value.project.state", type text}, {"value.project.revision", Int64.Type}, {"value.project.visibility", type text}, {"value.project.lastUpdateTime", type datetime}, {"value.defaultBranch", type text}, {"value.size", Int64.Type}, {"value.remoteUrl", type text}, {"value.sshUrl", type text}, {"value.webUrl", type text}, {"value.isDisabled", type logical}, {"value.isInMaintenance", type logical}, {"count", Int64.Type}})
+				
+				    #"Expanded value" =
+				        Table.ExpandListColumn(
+				            #"Converted to Table",
+				            "value"
+				        ),
+				
+				    #"Expanded value1" =
+				        Table.ExpandRecordColumn(
+				            #"Expanded value",
+				            "value",
+				            {
+				                "id",
+				                "name",
+				                "url",
+				                "project",
+				                "defaultBranch",
+				                "size",
+				                "remoteUrl",
+				                "sshUrl",
+				                "webUrl",
+				                "isDisabled",
+				                "isInMaintenance"
+				            },
+				            {
+				                "value.id",
+				                "value.name",
+				                "value.url",
+				                "value.project",
+				                "value.defaultBranch",
+				                "value.size",
+				                "value.remoteUrl",
+				                "value.sshUrl",
+				                "value.webUrl",
+				                "value.isDisabled",
+				                "value.isInMaintenance"
+				            }
+				        ),
+				
+				    #"Expanded value.project" =
+				        Table.ExpandRecordColumn(
+				            #"Expanded value1",
+				            "value.project",
+				            {
+				                "id",
+				                "name",
+				                "description",
+				                "url",
+				                "state",
+				                "revision",
+				                "visibility",
+				                "lastUpdateTime"
+				            },
+				            {
+				                "value.project.id",
+				                "value.project.name",
+				                "value.project.description",
+				                "value.project.url",
+				                "value.project.state",
+				                "value.project.revision",
+				                "value.project.visibility",
+				                "value.project.lastUpdateTime"
+				            }
+				        ),
+				
+				    #"Changed Type" =
+				        Table.TransformColumnTypes(
+				            #"Expanded value.project",
+				            {
+				                {"value.id", type text},
+				                {"value.name", type text},
+				                {"value.url", type text},
+				                {"value.project.id", type text},
+				                {"value.project.name", type text},
+				                {"value.project.description", type text},
+				                {"value.project.url", type text},
+				                {"value.project.state", type text},
+				                {"value.project.revision", Int64.Type},
+				                {"value.project.visibility", type text},
+				                {"value.project.lastUpdateTime", type datetimezone},
+				                {"value.defaultBranch", type text},
+				                {"value.size", Int64.Type},
+				                {"value.remoteUrl", type text},
+				                {"value.sshUrl", type text},
+				                {"value.webUrl", type text},
+				                {"value.isDisabled", type logical},
+				                {"value.isInMaintenance", type logical},
+				                {"count", Int64.Type}
+				            }
+				        )
+				
 				in
 				    #"Changed Type"
+				```
 
 	annotation PBI_NavigationStepName = Navigation
 
